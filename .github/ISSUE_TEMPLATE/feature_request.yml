@@ -1,0 +1,81 @@
+name: Feature Request
+description: Request a new mockup capability or design-bootstrap workflow feature.
+title: "[Feature] "
+labels:
+  - "type/feature"
+  - "status/needs-review"
+  - "evidence/required"
+body:
+  - type: input
+    id: mockup_version
+    attributes:
+      label: Mockup Version
+      placeholder: V34 / v1.0.0-rc.1
+    validations:
+      required: true
+  - type: input
+    id: page_route
+    attributes:
+      label: Page / Route
+      placeholder: Proposed or nearest existing route
+    validations:
+      required: true
+  - type: input
+    id: component_name
+    attributes:
+      label: Component Name
+      placeholder: Proposed shared component or workflow area
+  - type: input
+    id: component_reference
+    attributes:
+      label: Component Reference ID
+      placeholder: Existing reference used as a starting point, when available
+  - type: input
+    id: visual_design_key
+    attributes:
+      label: Visual Design Key
+      placeholder: Existing or proposed Visual Design Key
+  - type: input
+    id: viewport
+    attributes:
+      label: Viewport
+      placeholder: Relevant desktop and mobile widths
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Attach references, sketches or current-state captures that support the request.
+      placeholder: Drag reviewed evidence here or provide links.
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Behavior
+      description: Describe the gap in the current mockup or agent workflow.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe the outcome, affected users and acceptance boundary.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: State whether this changes design identity, shared contracts or release scope.

@@ -1,0 +1,11 @@
+{
+  "format": "forma-repository-release.v1",
+  "repository": "forma-ui-bootstrap",
+  "version": "v1.0.0-rc.1",
+  "baseline": "V34",
+  "status": "release-candidate",
+  "stable": false,
+  "release_branch": "main",
+  "review_branch": "dev",
+  "source_package_sha256": "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8"
+}

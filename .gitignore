@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+playwright-report/
+test-results/
+*.log
+
+# Generated release assets are rebuilt from the tagged source.
+dist/
+release-assets/
+forma-ui-bootstrap-v*.zip
+skill.zip

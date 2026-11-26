@@ -1,0 +1,83 @@
+name: Responsive Bug
+description: Report an observed breakpoint, overflow, overlap or device-size defect.
+title: "[Responsive] "
+labels:
+  - "type/responsive"
+  - "status/needs-review"
+  - "evidence/required"
+body:
+  - type: input
+    id: mockup_version
+    attributes:
+      label: Mockup Version
+      placeholder: V34 / v1.0.0-rc.1
+    validations:
+      required: true
+  - type: input
+    id: page_route
+    attributes:
+      label: Page / Route
+      placeholder: pilot/admin/catalog
+    validations:
+      required: true
+  - type: input
+    id: component_name
+    attributes:
+      label: Component Name
+      placeholder: Core.DataTable.Toolbar
+    validations:
+      required: true
+  - type: input
+    id: component_reference
+    attributes:
+      label: Component Reference ID
+      placeholder: pilot/admin/catalog#Core.Button@1vrx2c5
+  - type: input
+    id: visual_design_key
+    attributes:
+      label: Visual Design Key
+      placeholder: forma.collection.adaptive
+  - type: input
+    id: viewport
+    attributes:
+      label: Viewport
+      placeholder: 320 x 568; compare with 390 x 844 and 768 x 1024
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Provide clean evidence at the failing width and at least one comparison width.
+      placeholder: Drag reviewed screenshots here or provide evidence links.
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Behavior
+      description: Include overflow, overlap, clipped content or inaccessible control details.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe the required responsive outcome without changing design identity.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Include browser, zoom/density, orientation and gesture assumptions.

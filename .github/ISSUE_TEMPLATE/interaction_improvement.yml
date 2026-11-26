@@ -1,0 +1,83 @@
+name: Interaction Improvement
+description: Propose an evidence-backed interaction, accessibility or feedback improvement.
+title: "[Interaction] "
+labels:
+  - "type/interaction"
+  - "status/needs-review"
+  - "evidence/required"
+body:
+  - type: input
+    id: mockup_version
+    attributes:
+      label: Mockup Version
+      placeholder: V34 / v1.0.0-rc.1
+    validations:
+      required: true
+  - type: input
+    id: page_route
+    attributes:
+      label: Page / Route
+      placeholder: pilot/admin/catalog
+    validations:
+      required: true
+  - type: input
+    id: component_name
+    attributes:
+      label: Component Name
+      placeholder: Core.Dialog
+    validations:
+      required: true
+  - type: input
+    id: component_reference
+    attributes:
+      label: Component Reference ID
+      placeholder: pilot/admin/catalog#Core.Dialog@abc123
+  - type: input
+    id: visual_design_key
+    attributes:
+      label: Visual Design Key
+      placeholder: forma.feedback.destructive
+  - type: input
+    id: viewport
+    attributes:
+      label: Viewport
+      placeholder: 1440 x 900
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Attach current-state evidence; include focus or state captures when relevant.
+      placeholder: Drag reviewed screenshots here or provide evidence links.
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Behavior
+      description: Include exact keyboard, pointer, state or feedback behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe the required behavior and acceptance signal.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Include browser, assistive technology, motion and device assumptions.

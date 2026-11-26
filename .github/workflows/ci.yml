@@ -1,0 +1,96 @@
+name: Validate repository
+
+on:
+  push:
+    branches: [main, dev]
+  pull_request:
+    branches: [main, dev]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static-validation:
+    name: Static validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate JSON
+        run: |
+          find references -type f -name '*.json' -print0 | xargs -0 -n1 jq empty
+          jq empty release.json .github/labels.json
+
+      - name: Validate JavaScript syntax
+        run: node --check assets/mockup/ui-inspector.js
+
+      - name: Validate Python syntax
+        run: python3 -m py_compile scripts/forma_ui.py scripts/test_forma_ui.py scripts/validate_repository.py scripts/browser_smoke.py
+
+      - name: Verify pinned manifest
+        run: python3 scripts/forma_ui.py verify
+
+      - name: Run supplied CLI tests
+        run: python3 scripts/test_forma_ui.py
+
+      - name: Validate repository and public safety
+        run: python3 scripts/validate_repository.py
+
+  browser-smoke:
+    name: Browser smoke test
+    needs: static-validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ephemeral browser test dependency
+        run: |
+          python3 -m pip install --disable-pip-version-check playwright==1.55.0
+          python3 -m playwright install --with-deps chromium
+
+      - name: Start static preview server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory . > /tmp/forma-http.log 2>&1 &
+          echo $! > /tmp/forma-http.pid
+          for i in {1..20}; do
+            curl --fail --silent http://127.0.0.1:4173/ >/dev/null && exit 0
+            sleep 0.5
+          done
+          cat /tmp/forma-http.log
+          exit 1
+
+      - name: Run Desktop and mobile smoke
+        run: python3 scripts/browser_smoke.py --base-url http://127.0.0.1:4173/
+
+      - name: Upload smoke evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-smoke-${{ github.sha }}
+          path: browser-evidence/
+          if-no-files-found: warn
+          retention-days: 7

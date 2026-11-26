@@ -1,0 +1,308 @@
+{
+  "format": "forma-package-baseline.v1",
+  "source": "skill.zip",
+  "source_sha256": "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8",
+  "file_count": 60,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 1791,
+      "sha256": "99c98cb8a38668378510e2ef78ec27e79eee09951717c3d71a936b6fc24ca890"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 6948,
+      "sha256": "fe1177e3731849e2a430df521c2fbd845763d8b8f8bb7606da43c641f3caa524"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 156,
+      "sha256": "37c64eb46f7bd879f57e93d3b3c0a9141e23d1c211afe8816df4cbfa4fc515e1"
+    },
+    {
+      "path": "assets/mockup/screenshots/assistant-debug-1440.png",
+      "bytes": 143346,
+      "sha256": "70cb2d0ebb76b52b076936a7c413b3dbb97ac4500945ca9ee8cbc75ce4979607"
+    },
+    {
+      "path": "assets/mockup/screenshots/builder-1440-cli-clean.png",
+      "bytes": 143079,
+      "sha256": "d8b6ec26e2a5896e0020f305be102c2ec03767b65cd9126592891999f6e8ad0a"
+    },
+    {
+      "path": "assets/mockup/screenshots/builder-1440-cli-debug.png",
+      "bytes": 215121,
+      "sha256": "b441b4d8166ed33bb39f108e4108cbcae03fb4fcf9514b29f459278db9ea86d5"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-390-cli-clean.png",
+      "bytes": 47539,
+      "sha256": "a6918874363208d79b86c1a9e41117115d70baa532440a69184573db70a9c8b0"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-390-cli-debug.png",
+      "bytes": 69501,
+      "sha256": "83c73b1ac81ac6ce978ac68fd92ccb4cdc968deb6ad7357707e2819e87daf15f"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-debug-1440.png",
+      "bytes": 158739,
+      "sha256": "263ce9736151495dd23daae57b65093bff1f3347f9f82a0b41cc7a3bbdc11930"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-debug-320.png",
+      "bytes": 44370,
+      "sha256": "7d44158cc7de8410e67add3e64054fbd251f6211acf876fa800f5b47c6bb51a9"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-debug-390.png",
+      "bytes": 69501,
+      "sha256": "83c73b1ac81ac6ce978ac68fd92ccb4cdc968deb6ad7357707e2819e87daf15f"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-debug-768.png",
+      "bytes": 138725,
+      "sha256": "457f1589a8d6792a293196856fc494a441ad7521bd2a92a88b051324fb2c0693"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-ids-1440.png",
+      "bytes": 208938,
+      "sha256": "0a8e9e0b875113b319c8b38a9f5ae69d60f201697f32b4bf261a2a2c8dd7269a"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-picked-1440.png",
+      "bytes": 165841,
+      "sha256": "438d36675ca9cba6706fe5c89c36d221f2bc5587ff02129a581b57936e7f3a53"
+    },
+    {
+      "path": "assets/mockup/screenshots/catalog-picked-390.png",
+      "bytes": 74711,
+      "sha256": "83d648930e2b55737e9e0eed75a464292b5e8bcfc456d6b2d9480b187522cd6e"
+    },
+    {
+      "path": "assets/mockup/screenshots/components-debug-1440.png",
+      "bytes": 202245,
+      "sha256": "bbb4fba1a9f7d76fff16a1dcb2ccefa537bfa9db0c27b8d254d5e3f824f9e2a1"
+    },
+    {
+      "path": "assets/mockup/screenshots/dark-catalog-1440.png",
+      "bytes": 78248,
+      "sha256": "35c194f3f2012156c7073f07b92cb5fa5cccc6419222f0166949a220f3ee7d9c"
+    },
+    {
+      "path": "assets/mockup/screenshots/dialog-debug-1440.png",
+      "bytes": 110098,
+      "sha256": "60fb24e21b1fbebbf535308bf4c53f3183051144ee04714638a4016b144459b0"
+    },
+    {
+      "path": "assets/mockup/screenshots/directory-debug-1440.png",
+      "bytes": 252065,
+      "sha256": "1cf9c5d8f8a37346a33b7fb8e626908b36333e881348365c56d3dbec822eb6ce"
+    },
+    {
+      "path": "assets/mockup/screenshots/f33components-1440.png",
+      "bytes": 139822,
+      "sha256": "063b291b075f1a4c49e7a6efacd0feaa4087fa966dcc4229816b34e9549aab08"
+    },
+    {
+      "path": "assets/mockup/screenshots/f33components-390.png",
+      "bytes": 49185,
+      "sha256": "76007a52ac4a4a81be29d036a30de9b56b421e66cb7753a7944d19d42ac6ec86"
+    },
+    {
+      "path": "assets/mockup/screenshots/f33home-1440.png",
+      "bytes": 139164,
+      "sha256": "e238f912433a056ab1469207801601e733244eb3ee55bf551622f257f27b89cd"
+    },
+    {
+      "path": "assets/mockup/screenshots/f33home-390.png",
+      "bytes": 47451,
+      "sha256": "e2596533bbc9567ff50789644af00e6b0ef4a0e5d07a0a29ac076c8965e9a867"
+    },
+    {
+      "path": "assets/mockup/screenshots/f33landing-390.png",
+      "bytes": 37799,
+      "sha256": "5e2913e1f99b9fb79f087517cf501b03c75b65da224835ac1a4b79b610895cda"
+    },
+    {
+      "path": "assets/mockup/screenshots/files-debug-1440.png",
+      "bytes": 212650,
+      "sha256": "73b0ef719bde0a8d491972695c79f3523e4626e569d3f209135d05e8eaf5b1bb"
+    },
+    {
+      "path": "assets/mockup/screenshots/index.html",
+      "bytes": 2116,
+      "sha256": "dcd45e34ee79d29da85cfa48665a49a904f46989b392b18d3710d7d62acbb544"
+    },
+    {
+      "path": "assets/mockup/screenshots/page-builder-debug-1440.png",
+      "bytes": 215121,
+      "sha256": "b441b4d8166ed33bb39f108e4108cbcae03fb4fcf9514b29f459278db9ea86d5"
+    },
+    {
+      "path": "assets/mockup/screenshots/register-390-cli-clean.png",
+      "bytes": 33582,
+      "sha256": "82ea8ea999ad3245f5971d4ec8c30dea9f0c0cfd695d14f5bb0fac72d85b70a2"
+    },
+    {
+      "path": "assets/mockup/screenshots/register-390-cli-debug.png",
+      "bytes": 55388,
+      "sha256": "59645cbcdadbdaed90a89c767db7803ce0f8c24e0e67908409badc3ce058578b"
+    },
+    {
+      "path": "assets/mockup/standalone.html",
+      "bytes": 996464,
+      "sha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b"
+    },
+    {
+      "path": "assets/mockup/ui-inspector.js",
+      "bytes": 30274,
+      "sha256": "0bd0f2d3290c73e26a3331054a8b5565f2f055627a819e696cfa24dfb9155e1e"
+    },
+    {
+      "path": "references/COMPONENT_INVENTORY.md",
+      "bytes": 3315,
+      "sha256": "6e3237e83d908c71ee8ad599312a1bcc045f38feabc6897664370c82134a105f"
+    },
+    {
+      "path": "references/COMPONENT_REGISTRY.json",
+      "bytes": 13966,
+      "sha256": "560f4a45bbfed85acc42b7cb2102ca86660a90fbefe42be811678faf9133727c"
+    },
+    {
+      "path": "references/DESIGN_SYSTEM.md",
+      "bytes": 4339,
+      "sha256": "d444daca66987e26231c8490a59a7e8d63b1caf10637731078b5ccb32777d744"
+    },
+    {
+      "path": "references/MANIFEST.json",
+      "bytes": 874,
+      "sha256": "2166462caacb21f100e4f9c0eb40e0400ca3b7f65b33fbc0ce278855aa19f178"
+    },
+    {
+      "path": "references/MOCKUP_V34_README.md",
+      "bytes": 1059,
+      "sha256": "99a8caec16501e4c681b7edfd36a29c9972642e86fe530b1eb8dacca5e09cb97"
+    },
+    {
+      "path": "references/PAGE_INDEX.json",
+      "bytes": 32174,
+      "sha256": "79994520034476fb0c4f2b68cb42d08dd77a1c38d3ce39b0cd5e7e49edf0fde1"
+    },
+    {
+      "path": "references/REVIEW_BACKLOG.md",
+      "bytes": 1613,
+      "sha256": "17b6f086a190be02c99f148bae18f64ccb90885b142957367dd5bc23565db012"
+    },
+    {
+      "path": "references/TOOLS.md",
+      "bytes": 4222,
+      "sha256": "7b2e4e6b0416b59bd7c1161a5918982e7c9479265a19d9bc6672ed1bb39bfccc"
+    },
+    {
+      "path": "references/UI_INSPECTOR_CONTRACT.md",
+      "bytes": 3969,
+      "sha256": "6fa8412840f48247682a72c4e8539703998019ebd02126662f5a612a2af74279"
+    },
+    {
+      "path": "references/VISUAL_KEYS.json",
+      "bytes": 7889,
+      "sha256": "0ad1724236dfb04903b461e7dfb465c4e8ee6f9a1fea68778ac4fb6b89d1f5b7"
+    },
+    {
+      "path": "references/examples/BOOTSTRAP_TEST_REPORT.json",
+      "bytes": 2833,
+      "sha256": "13b1859aa92a9b9d6bdf98641b6dafed2fd2d0f16d21ac9576973c1deade2a9c"
+    },
+    {
+      "path": "references/examples/V33_TEST_REPORT.json",
+      "bytes": 61926,
+      "sha256": "54108a1c2be182f2e6d24eaf794a4f9abc1044fd7f89f32996cbe2d57b9db123"
+    },
+    {
+      "path": "references/examples/V34_TEST_REPORT.json",
+      "bytes": 11034,
+      "sha256": "d57f7a6a16f713b9a4547ac0264b9958492e83d91f32fd48452f5e3506f3b365"
+    },
+    {
+      "path": "references/examples/bootstrap-static-tests.txt",
+      "bytes": 658,
+      "sha256": "e84cf28666282c5d9868d71529d96693a66fbbeddbbc31121094c16cd2a85df6"
+    },
+    {
+      "path": "references/examples/builder-1440-capture.json",
+      "bytes": 713,
+      "sha256": "37f8b720ca57e9355ac446f0decfe4611249086b636d57574abbd6eff62aecca"
+    },
+    {
+      "path": "references/examples/builder-1440-cli-capture.json",
+      "bytes": 713,
+      "sha256": "37f8b720ca57e9355ac446f0decfe4611249086b636d57574abbd6eff62aecca"
+    },
+    {
+      "path": "references/examples/builder-1440-cli-inventory-1.json",
+      "bytes": 101451,
+      "sha256": "37aa76aaef7ec18d262a28cdffe74d47a1ff2eff40f9748e7f4c1e1b59b591d2"
+    },
+    {
+      "path": "references/examples/catalog-390-capture.json",
+      "bytes": 677,
+      "sha256": "20bd6e6a9365ad18ff89b6488aba3647d771c54226eb5c49e6753c49470369fd"
+    },
+    {
+      "path": "references/examples/catalog-390-cli-capture.json",
+      "bytes": 677,
+      "sha256": "20bd6e6a9365ad18ff89b6488aba3647d771c54226eb5c49e6753c49470369fd"
+    },
+    {
+      "path": "references/examples/catalog-390-cli-inventory-0.json",
+      "bytes": 49218,
+      "sha256": "1c6e5065016f4dcec638f9b220ae10ed7133b53d98b25ee5d1e5fa7036dc051f"
+    },
+    {
+      "path": "references/examples/example-inventory-1440.json",
+      "bytes": 85086,
+      "sha256": "dab0c58f3f119d4caa56644d34f8d7252ec214991c1286b7712a113d41893524"
+    },
+    {
+      "path": "references/examples/example-inventory-390.json",
+      "bytes": 49217,
+      "sha256": "20e9577bb83ba0b7fe883e09c3036865f7af69631b69da9265353558ea424cd7"
+    },
+    {
+      "path": "references/examples/example-reference-1440.json",
+      "bytes": 625,
+      "sha256": "c0ad3499ae56179c5da7d66cf775a918246bbff5bcd1e5a7ca0749d39d2acd53"
+    },
+    {
+      "path": "references/examples/example-reference-390.json",
+      "bytes": 621,
+      "sha256": "2cd518f7709c0bcb0e9b0752562dfad9564eef9b4eb0a1a581f6a12cd557817c"
+    },
+    {
+      "path": "references/examples/example-task.json",
+      "bytes": 6333,
+      "sha256": "eb1af0b10f0ba349721974a22c083ff201b94c8053fde4b6be02e9d5713e9a5e"
+    },
+    {
+      "path": "references/examples/register-390-cli-capture.json",
+      "bytes": 702,
+      "sha256": "3795cfe06e9711ab06823e2b4f9f03e9aa38fc8db3b42d3597bca00e9a60cb31"
+    },
+    {
+      "path": "references/examples/register-390-cli-inventory-0.json",
+      "bytes": 17381,
+      "sha256": "27cda73de41cf64ca0b8a1e70ea00eaac34b2a180e2ce6a932d39f543b215ab8"
+    },
+    {
+      "path": "scripts/forma_ui.py",
+      "bytes": 10670,
+      "sha256": "55ff7edc6cca7fe1a8631eabe3b09f2e226bdd4742df47a814202bdd19f1c34b"
+    },
+    {
+      "path": "scripts/test_forma_ui.py",
+      "bytes": 3024,
+      "sha256": "d6fd138d51a88e493fdf3ad3c461b3c21b7c9630bb62feb776af6dd96558be0a"
+    }
+  ]
+}

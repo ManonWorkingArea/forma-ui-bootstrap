@@ -1,0 +1,12 @@
+[
+  {"name":"type/ui-bug","color":"d73a4a","description":"Verified visual defect with reproduction evidence"},
+  {"name":"type/responsive","color":"fbca04","description":"Breakpoint, overflow, overlap or responsive defect"},
+  {"name":"type/design","color":"a2eeef","description":"Design-system improvement or design review work"},
+  {"name":"type/interaction","color":"7057ff","description":"Interaction, accessibility or feedback improvement"},
+  {"name":"type/feature","color":"0075ca","description":"New capability or workflow request"},
+  {"name":"status/needs-review","color":"ededed","description":"Awaiting evidence and Lead Agent triage"},
+  {"name":"status/accepted","color":"0e8a16","description":"Acceptance criteria approved and ready for work"},
+  {"name":"status/in-progress","color":"1d76db","description":"Implementation or review is in progress"},
+  {"name":"status/blocked","color":"b60205","description":"Work cannot proceed without a decision or dependency"},
+  {"name":"evidence/required","color":"5319e7","description":"Structured reference and before evidence are required"}
+]

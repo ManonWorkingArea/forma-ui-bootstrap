@@ -1,0 +1,16 @@
+{
+  "format": "forma-release-manifest.v1",
+  "repository": "https://github.com/ManonWorkingArea/forma-ui-bootstrap",
+  "version": "v1.0.0-rc.1",
+  "baseline": "V34",
+  "release_channel": "pre-release",
+  "source_package_sha256": "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8",
+  "tracked_package_files": 60,
+  "assets": [
+    "forma-ui-bootstrap-v1.0.0-rc.1.zip",
+    "forma-ui-bootstrap-v1.0.0-rc.1-standalone.html",
+    "skill.zip",
+    "release-assets-manifest.json"
+  ],
+  "checksum_manifest": "release-assets-manifest.json"
+}

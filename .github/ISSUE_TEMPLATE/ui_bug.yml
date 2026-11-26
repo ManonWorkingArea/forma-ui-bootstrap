@@ -1,0 +1,89 @@
+name: UI Bug
+description: Report a verified visual defect in the Forma UI mockup.
+title: "[UI] "
+labels:
+  - "type/ui-bug"
+  - "status/needs-review"
+  - "evidence/required"
+body:
+  - type: input
+    id: mockup_version
+    attributes:
+      label: Mockup Version
+      description: Use the visible baseline or release version.
+      placeholder: V34 / v1.0.0-rc.1
+    validations:
+      required: true
+  - type: input
+    id: page_route
+    attributes:
+      label: Page / Route
+      description: Exact mockup hash route or page name.
+      placeholder: pilot/admin/catalog
+    validations:
+      required: true
+  - type: input
+    id: component_name
+    attributes:
+      label: Component Name
+      placeholder: Core.DataTable
+    validations:
+      required: true
+  - type: input
+    id: component_reference
+    attributes:
+      label: Component Reference ID
+      description: Paste the full reference exported by the Inspector.
+      placeholder: pilot/admin/catalog#Core.Button@1vrx2c5
+    validations:
+      required: true
+  - type: input
+    id: visual_design_key
+    attributes:
+      label: Visual Design Key
+      placeholder: forma.collection.adaptive
+  - type: input
+    id: viewport
+    attributes:
+      label: Viewport
+      description: Include width and height in CSS pixels.
+      placeholder: 390 x 844
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Attach or link a clean screenshot and exported reference JSON when possible.
+      placeholder: Drag screenshots into this field or provide reviewed evidence links.
+    validations:
+      required: true
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Behavior
+      description: State only what was observed. Include reproduction steps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Reference the design contract, token or comparable accepted pattern.
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Include browser, interaction state and any uncertainty.
