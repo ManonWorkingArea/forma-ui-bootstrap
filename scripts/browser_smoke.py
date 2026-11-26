@@ -576,6 +576,35 @@ def check_labels_geometry(browser, base_url: str, width: int) -> None:
     context.close()
 
 
+def run_touch_routes(browser, base_url: str, output: Path) -> int:
+    cases = 0
+    for width in (1920, 1440, 1024, 768, 430, 390, 320):
+        context = browser.new_context(viewport={"width": width, "height": 900}, has_touch=width < 600, device_scale_factor=1)
+        page = context.new_page()
+        errors: list[str] = []
+        page.on("pageerror", lambda error: errors.append(str(error)))
+        page.goto(base_url, wait_until="load", timeout=20_000)
+        page.wait_for_url("**/assets/mockup/standalone.html", timeout=10_000)
+        page.evaluate("(h) => { location.hash = h }", "#pilot/admin/f33touchlab")
+        page.wait_for_selector("#f33touch-lab [data-touch-specimen]", timeout=10_000)
+        count = page.locator("#f33touch-lab [data-touch-specimen]").count()
+        if count != 14:
+            raise AssertionError(f"touch/{width}: expected 14 specimens, found {count}")
+        if not page.evaluate("!!window.FormaTouch && window.FormaTouch.gestures.length >= 10"):
+            raise AssertionError(f"touch/{width}: shared FormaTouch engine is unavailable")
+        for theme in ("light", "dark"):
+            page.evaluate("(t) => { document.documentElement.dataset.f33Theme = t }", theme)
+            page.wait_for_timeout(60)
+            if page.evaluate("document.documentElement.scrollWidth > innerWidth"):
+                raise AssertionError(f"touch/{width}/{theme}: document has horizontal overflow")
+            cases += 1
+        if errors:
+            raise AssertionError(f"touch/{width}: page errors: {errors[:2]}")
+        page.screenshot(path=str(output / f"touch-{width}.png"), full_page=False)
+        context.close()
+    return cases
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default="http://127.0.0.1:4173/")
@@ -601,11 +630,12 @@ def main() -> int:
             check_canonical_defaults(browser, args.base_url)
             check_inactive_controls(browser, args.base_url)
             check_playground_clipboard(browser, args.base_url, 390)
+            touch_cases = run_touch_routes(browser, args.base_url, output)
         finally:
             browser.close()
     print(
         "Browser smoke: PASS (desktop-1440, mobile-390, "
-        f"{cases} layout theme cases at {', '.join(map(str, LAYOUT_WIDTHS))}, direct copies, focus/status, canonical re-entry, inactive controls, AI positive state, label identity/geometry, playground copy/export)"
+        f"{cases} layout theme cases at {', '.join(map(str, LAYOUT_WIDTHS))}, {touch_cases} touch route/theme cases, direct copies, focus/status, canonical re-entry, inactive controls, AI positive state, label identity/geometry, playground copy/export)"
     )
     return 0
 

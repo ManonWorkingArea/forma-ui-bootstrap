@@ -1,21 +1,21 @@
 {
   "format": "forma-package-baseline.v1",
   "source": "skill.zip",
-  "source_provenance": "Immutable original upload provenance. The member entries below are current V34.1 dev checksums and no longer describe the original ZIP bytes.",
+  "source_provenance": "Immutable original upload provenance. The member entries below are current V34.2 dev checksums and no longer describe the original ZIP bytes.",
   "source_sha256": "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8",
-  "baseline": "V34.1",
-  "member_checksum_scope": "current V34.1 working tree",
+  "baseline": "V34.2",
+  "member_checksum_scope": "current V34.2 working tree",
   "file_count": 60,
   "files": [
     {
       "path": "README.md",
-      "bytes": 2477,
-      "sha256": "daeab4b02c80b1b7a4c89e4ffd0570181bd31c60986c220a315fbb9ad56f9326"
+      "bytes": 3033,
+      "sha256": "1b74b90859c6a09db8b60c032720bf705f70d00b2258671505c621872e19c574"
     },
     {
       "path": "SKILL.md",
-      "bytes": 7731,
-      "sha256": "b7de35b09bece36a2a495e77f3371402376a324cc1d0280f6e4a8ac408bab5a7"
+      "bytes": 8399,
+      "sha256": "485585dc634c621bd711c0b033b90bd07641eec0dfbbc5412828849d797574d5"
     },
     {
       "path": "agents/openai.yaml",
@@ -154,43 +154,43 @@
     },
     {
       "path": "assets/mockup/standalone.html",
-      "bytes": 1063264,
-      "sha256": "00e72b94fc6433cbf94d3febfa8c931ec6d51dcd5bbf9494505adc77353ebc31"
+      "bytes": 1135892,
+      "sha256": "519a88fdf5713e2d50e1726cbf557ce79f0ec394f580ccfc7d0afb97e7c2e062"
     },
     {
       "path": "assets/mockup/ui-inspector.js",
-      "bytes": 30465,
-      "sha256": "53162848b2793826573f1a377186c532586ff3913033aa86d774e08a7098fb6a"
+      "bytes": 30495,
+      "sha256": "d2aa5941e3b86fadde57a30d9d66c75db4ad98f22fe9c56f674d18d317e9bdd6"
     },
     {
       "path": "references/COMPONENT_INVENTORY.md",
-      "bytes": 3750,
-      "sha256": "f276ea9ae02251662028ff9d0a88a24714f3e07076db4bbf18975b8554f9af77"
+      "bytes": 4177,
+      "sha256": "5214cf31f4814a2c2ef4932a7c9d83803d5abb961e56eef997adb93827094425"
     },
     {
       "path": "references/COMPONENT_REGISTRY.json",
-      "bytes": 17172,
-      "sha256": "3250543b7119c7a7158e85feaa8799b051a5d7fde95d80c52e3e7a63561ff02f"
+      "bytes": 20510,
+      "sha256": "07f7f22017f9a4b829252b541ba0f33d062e9684aef17e75d3ab2a5f2dd615bb"
     },
     {
       "path": "references/DESIGN_SYSTEM.md",
-      "bytes": 6317,
-      "sha256": "036d8608aa6d1bd3fc435d0133bbe76297c714184b7eb58d48b2d0761f8a27a5"
+      "bytes": 7602,
+      "sha256": "8c7437c7fba67ac62f92b8c49a4d9f48524b2945c9a58cc252046db608f1b840"
     },
     {
       "path": "references/MANIFEST.json",
-      "bytes": 1028,
-      "sha256": "901d41eb32280162f215c9c17cb8ebb7842ebd00544db78cae491f3561052b9f"
+      "bytes": 1250,
+      "sha256": "966d937ca1a76dc2447986fdcbac416f6ff0448418e41dccb6266e9d8a02cb61"
     },
     {
       "path": "references/MOCKUP_V34_README.md",
-      "bytes": 1662,
-      "sha256": "de627308c14abd90cbdfff546e3882056a229d1a88ae32b75d7db72bc6b8a391"
+      "bytes": 2001,
+      "sha256": "c348842731665bb1488426be7003fea799fa81b20c8d42cd8b2d9f6e5d06ff2c"
     },
     {
       "path": "references/PAGE_INDEX.json",
-      "bytes": 35086,
-      "sha256": "f52728eaec961b3268cd4a73f6bcdf0af4c937ebe14ad3ae2179719c1eb58682"
+      "bytes": 35727,
+      "sha256": "bf9b3f5db9179b7adfd8f1bfd9f7ba176f94400186603a1232572f589294411f"
     },
     {
       "path": "references/REVIEW_BACKLOG.md",
@@ -199,18 +199,18 @@
     },
     {
       "path": "references/TOOLS.md",
-      "bytes": 5068,
-      "sha256": "9161dfbfbd6f50fca6c189177f2e35ffab98d36858c3be4ad16f46ed345ab3c7"
+      "bytes": 5717,
+      "sha256": "6222809e4eee381cb517de1b58d98017f00908dd8d34f1c2507cb15fe73b0d5f"
     },
     {
       "path": "references/UI_INSPECTOR_CONTRACT.md",
-      "bytes": 4987,
-      "sha256": "3da9be0a9d3d7e24cbc91acfdfdb669126a4550630a229374314f3bf8f6f08c5"
+      "bytes": 5321,
+      "sha256": "54907c416cd90b644e1cbc70fcac4fdd765ebd36bb6c4673f8da860c66feea4d"
     },
     {
       "path": "references/VISUAL_KEYS.json",
-      "bytes": 8563,
-      "sha256": "1fff39a0b0a11b412c9e24e5c4c5ff5087969ccfb25c666436ed40e661eb89b5"
+      "bytes": 11714,
+      "sha256": "884d38ff244751282eb767860eab87e23d19d95d26339b4a2df45ad07823996e"
     },
     {
       "path": "references/examples/BOOTSTRAP_TEST_REPORT.json",
@@ -299,13 +299,13 @@
     },
     {
       "path": "scripts/forma_ui.py",
-      "bytes": 11062,
-      "sha256": "b5eb2924c18da2d1d47dd3535bf3d8cf1f7b4923679759768562dc6281180363"
+      "bytes": 11663,
+      "sha256": "73bd56dd9ca7ff8ca08f54014dd8393fa78557e52cbd8f5a22ebad736a9dc8c8"
     },
     {
       "path": "scripts/test_forma_ui.py",
-      "bytes": 3822,
-      "sha256": "30a104abb68f7a4824970eddf33d907be4a6ceda4be5d8850eeeb560289e58c2"
+      "bytes": 4340,
+      "sha256": "ee550776ab8730da04cf323bd36f268b300b57592b9a81da1bd0038308c5f0e8"
     }
   ]
 }

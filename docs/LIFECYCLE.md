@@ -24,6 +24,10 @@ GitHub Pages deploys automatically after a push to `dev`. A release is a separat
 9. Pages updates automatically and Owner reviews the live result.
 10. Owner explicitly authorizes a release.
 
+## Browser evidence
+
+Static validation runs the CLI and registry checks. Browser evidence runs `scripts/browser_smoke.py` for routes, layouts, labels and copy/export, then `scripts/touch_interaction_smoke.py` for shared pointer/touch behavior. Chromium uses native CDP touch; WebKit and Firefox use the documented pointer fallback. Native touch is claimed only for the browser that emitted it. Physical-device status remains **Pending Owner Review** and is not implied by CI.
+
 ## Evidence standard
 
 Before and after evidence must identify the mockup version, route, component, reference ID, Visual Key, viewport and app revision. Use clean screenshots for visual review and debug/inventory captures for references. Missing evidence is an unresolved item, not a PASS.

@@ -1,16 +1,18 @@
 {
   "format": "forma-bootstrap-manifest.v1",
-  "baseline": "V34.1",
-  "scope": "current V34.1 member checksums",
+  "baseline": "V34.2",
+  "scope": "current V34.2 member checksums",
   "status": "REVIEW CANDIDATE; no design freeze",
   "sha256": {
-    "assets/mockup/standalone.html": "00e72b94fc6433cbf94d3febfa8c931ec6d51dcd5bbf9494505adc77353ebc31",
-    "assets/mockup/ui-inspector.js": "53162848b2793826573f1a377186c532586ff3913033aa86d774e08a7098fb6a",
-    "references/LAYOUT_REGISTRY.json": "8de3c7c1d3b0f7846de7a799fde50eb2bfaaa02a7e0f25bc7b8ba0c48c270108",
-    "references/COMPONENT_REGISTRY.json": "3250543b7119c7a7158e85feaa8799b051a5d7fde95d80c52e3e7a63561ff02f",
-    "references/DESIGN_SYSTEM.md": "036d8608aa6d1bd3fc435d0133bbe76297c714184b7eb58d48b2d0761f8a27a5",
-    "references/PAGE_INDEX.json": "f52728eaec961b3268cd4a73f6bcdf0af4c937ebe14ad3ae2179719c1eb58682",
-    "references/UI_INSPECTOR_CONTRACT.md": "3da9be0a9d3d7e24cbc91acfdfdb669126a4550630a229374314f3bf8f6f08c5",
-    "references/VISUAL_KEYS.json": "1fff39a0b0a11b412c9e24e5c4c5ff5087969ccfb25c666436ed40e661eb89b5"
+    "assets/mockup/standalone.html": "519a88fdf5713e2d50e1726cbf557ce79f0ec394f580ccfc7d0afb97e7c2e062",
+    "assets/mockup/ui-inspector.js": "d2aa5941e3b86fadde57a30d9d66c75db4ad98f22fe9c56f674d18d317e9bdd6",
+    "references/LAYOUT_REGISTRY.json": "e0c40b5b1e74aef2c34ce11d9855df105b6ca8e8901732a09954b965f672c45a",
+    "references/INTERACTION_REGISTRY.json": "48e8af1067cec4b140624d612664ae9e21503c420bfb9ec2874acb71b19529a4",
+    "references/INTERACTION_COVERAGE.md": "9e0246723fde81cc20c7cbc337235efa615b5de8595705851e436bfa8931779d",
+    "references/COMPONENT_REGISTRY.json": "07f7f22017f9a4b829252b541ba0f33d062e9684aef17e75d3ab2a5f2dd615bb",
+    "references/DESIGN_SYSTEM.md": "8c7437c7fba67ac62f92b8c49a4d9f48524b2945c9a58cc252046db608f1b840",
+    "references/PAGE_INDEX.json": "bf9b3f5db9179b7adfd8f1bfd9f7ba176f94400186603a1232572f589294411f",
+    "references/UI_INSPECTOR_CONTRACT.md": "54907c416cd90b644e1cbc70fcac4fdd765ebd36bb6c4673f8da860c66feea4d",
+    "references/VISUAL_KEYS.json": "884d38ff244751282eb767860eab87e23d19d95d26339b4a2df45ad07823996e"
   }
 }

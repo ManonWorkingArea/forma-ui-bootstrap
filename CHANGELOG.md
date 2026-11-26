@@ -2,6 +2,28 @@
 
 All notable repository and design-reference changes are recorded here. The UI mockup itself is versioned by baseline and remains unchanged in this release candidate unless an Owner-approved issue explicitly records a design revision.
 
+## Unreleased - V34.2 touch interactions
+
+### Fixed
+
+- Files rows/cards use shared long press and multi-select while preserving checkboxes and the existing Move/Copy/Trash sheet; Gallery viewer uses shared pinch with native scroll preserved; F33 DataTable has touch selection, a visible action bar and persisted column-width gesture.
+- Chat and Inbox swipes mutate read/archive state with visible buttons; Directory long press mutates `d29Selected`; Theme controls are 44px and hover-free; the real Layout Playground split separator uses shared resize and updates actual pane geometry.
+- Real Kanban movement now mutates `f24Tasks` status and order and survives re-render; Gantt drag/resize mutates `start`/`len`; Calendar swipe changes `wDate`; Workflow order mutates `wNodes`/`f24NodeTypes`; Studio part order mutates `s31Current().parts`.
+- Sortable is model-backed through `FormaTouch.defineSortable(group,{apply,undo,redo})`; undo/redo uses inverse model operations and survives DOM replacement. Ctrl+Z is scoped to the focused sortable container.
+- Keyboard parity: Space starts, Arrow moves, Space commits, Escape restores; Alt+Arrow is an immediate alias with one live announcement per state change.
+- The real shell uses 20 px edge gestures, drives the actual `.canvas` transform without transition during drag and settles through `shift-left`/`shift-right`; public stays no-slide.
+- Auto-scroll is disabled under reduced motion; a second pointer either starts a declared pinch or cancels the active gesture safely.
+- Touch smoke launches Chromium, WebKit and Firefox with browser-compatible options and reports native touch honestly; real module state, keyboard, undo, multi-touch, shell and 44 px geometry are asserted. Files/Gallery/DataTable/Chat/Directory/Theme remain explicitly Lab-only.
+
+### Added
+
+- One shared `FormaTouch` Pointer Events engine with tap, double tap, long press, swipe, pan, drag, sortable, resize, pinch, pointer capture, cancellation, axis lock, rAF updates, edge auto-scroll, momentum, nested-scroll yielding, tap suppression and reduced-motion behavior.
+- Design System routes `#pilot/admin/f33touch` and `#pilot/admin/f33touchlab` with fourteen working specimens, live gesture/pointer/component log and keyboard/button alternatives.
+- Sortable foundation with handle, ghost, placeholder, cross-container and nested moves, keyboard movement, undo and real mockup order/state updates.
+- Touch behavior for shell canvas follow (live transform then existing shift classes), layout panels, bottom sheets, pinch, builders and documented module hooks.
+- `references/INTERACTION_REGISTRY.json` (`forma-interaction-registry.v1`), `references/INTERACTION_COVERAGE.md`, CLI `interactions` / `interaction <id>`, and the nine `forma.touch.*` Visual Keys.
+- Cross-browser `scripts/touch_interaction_smoke.py` with Chromium native CDP touch and WebKit/Firefox pointer fallback; CI installs all three browsers.
+
 ## Unreleased - V34.1 layout templates
 
 ### Added

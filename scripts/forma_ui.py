@@ -16,6 +16,11 @@ def layout(id):
     for row in layouts():
         if row['id']==id: return row
     raise ValueError(f"Unknown layout id: {id}. Use 'layouts' to list valid ids.")
+def interactions(): return load(REF/'INTERACTION_REGISTRY.json')['interactions']
+def interaction(id):
+    for row in interactions():
+        if row['id']==id: return row
+    raise ValueError(f"Unknown interaction id: {id}. Use 'interactions' to list valid ids.")
 def search(rows,q): return [x for x in rows if q.casefold() in json.dumps(x,ensure_ascii=False).casefold()]
 def manifest(): return load(REF/'MANIFEST.json')
 def check_manifest():
@@ -118,10 +123,11 @@ def capture(args):
 def main():
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='cmd',required=True)
     s.add_parser('verify');s.add_parser('tokens')
-    for cmd in ('components','pages','keys','layouts'):
+    for cmd in ('components','pages','keys','layouts','interactions'):
         q=s.add_parser(cmd);q.add_argument('query',nargs='?',default='')
     q=s.add_parser('context');q.add_argument('component')
     q=s.add_parser('layout');q.add_argument('id')
+    q=s.add_parser('interaction');q.add_argument('id')
     q=s.add_parser('locate');q.add_argument('literal');q.add_argument('--limit',type=int,default=8)
     q=s.add_parser('inspect');q.add_argument('inventory');q.add_argument('query',nargs='?',default='')
     q=s.add_parser('issue');q.add_argument('reference');q.add_argument('--problem',required=True);q.add_argument('--expected',required=True)
@@ -136,6 +142,8 @@ def main():
         elif a.cmd=='keys':r=search(visual()['keys'],a.query)
         elif a.cmd=='layouts':r=search(layouts(),a.query)
         elif a.cmd=='layout':r=layout(a.id)
+        elif a.cmd=='interactions':r=search(interactions(),a.query)
+        elif a.cmd=='interaction':r=interaction(a.id)
         elif a.cmd=='context':r=context(a.component)
         elif a.cmd=='locate':r=locate(a.literal,max(1,min(a.limit,30)))
         elif a.cmd=='inspect':
@@ -146,5 +154,7 @@ def main():
         emit(r)
         if (a.cmd=='verify' and not r['ok']) or (a.cmd=='capture' and (not r['frames'] or r['errors'])):return 1
         return 0
-    except Exception as e:print(f'Error: {e}',file=sys.stderr);return 1
+    except Exception as e:
+        if a.cmd=='interaction':print(json.dumps({'error':{'code':'unknown_interaction','message':str(e)}},ensure_ascii=False));return 1
+        print(f'Error: {e}',file=sys.stderr);return 1
 if __name__=='__main__':sys.exit(main())
