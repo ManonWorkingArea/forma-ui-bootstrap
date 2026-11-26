@@ -10,6 +10,7 @@ Coverage means a reference specimen or existing working mockup is present, not p
 | Text/code | Advanced components | Contenteditable rich text, basic formatting, links/image/table; JSON validation, sandboxed HTML/CSS preview |
 | File/media | Files; Advanced components | Existing explorer/pickers, gallery/zoom/navigation, file metadata/drop specimen |
 | Layout | Page patterns; Mobile patterns | Resizable split, collapse/restore, responsive data collection, wizard, mobile selection/reorder |
+| Touch interactions | Touch interactions; Touch Interaction Lab | Shared Pointer Events engine, fourteen specimens, sortable/cross/nested drag, cancel, auto-scroll, sheet, pinch, resize, shell follow and Inspector pick cancellation |
 | Layout templates | Layout templates; Layout Playground | Eight shell/content templates with explicit `Core.Layout.*` slots, locks, slot labels, light/dark preview, 1440/768/390/320 behavior, copy reference/config and normalized JSON export |
 | States | UX states | 20 visual states, retry/progress/partial result/conflict/unsaved examples |
 | Master screens | Page patterns | 15 patterns; full-screen editor links into existing CMS/Studio |

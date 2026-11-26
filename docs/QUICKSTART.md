@@ -7,7 +7,8 @@
 3. Use the top-bar **Debug** control on desktop or the bottom-left control on narrow/editor views. `Alt+Shift+D` also toggles the Inspector.
 4. Select **Pick**, choose an element, and copy or export its structured reference.
 5. Use the matching issue form and attach a clean screenshot plus the reference JSON when available.
-6. Review layout templates at `#pilot/admin/f33layouts`, open a direct template route (`#pilot/admin/f33layouts/<id>`) or configure one in `#pilot/admin/f33playground`.
+6. Review touch interactions at `#pilot/admin/f33touch` or `#pilot/admin/f33touchlab`.
+7. Review layout templates at `#pilot/admin/f33layouts`, open a direct template route (`#pilot/admin/f33layouts/<id>`) or configure one in `#pilot/admin/f33playground`.
 
 The Preview is static. It needs no install, backend, account or database.
 
@@ -18,6 +19,8 @@ Run commands from the repository root:
 ```bash
 python3 scripts/forma_ui.py verify
 python3 scripts/forma_ui.py layouts
+python3 scripts/forma_ui.py interactions
+python3 scripts/forma_ui.py interaction shell.sidebar-swipe
 python3 scripts/forma_ui.py layout sidebar
 python3 scripts/forma_ui.py pages catalog
 python3 scripts/forma_ui.py components Core.DataTable

@@ -26,6 +26,8 @@ This is the Filter button in the current Catalog specimen. Its reference was ver
 <button data-ui-component="Core.Button" data-ui-id="catalog.filter.open">Filter</button>
 ```
 
+Touch surfaces use explicit `Core.Touch.*`, `Core.Sortable.*`, `Core.BottomSheet` and `Core.ResizeHandle` identities with `data-ui-id` and `data-touch*` attributes. While `FormaUIInspector.picking` is true the shared engine ignores gestures, so Pick emits one reference and no underlying touch action; Escape/clear cancels the pick.
+
 `data-ui-component` takes precedence over the selector mapping. Explicit `Core.Layout.*` names and any element with `data-layout-slot` are classified as `layout`; layout slots therefore render in the layout color instead of the content color. The same rule is kept in `assets/mockup/ui-inspector.js` and the inline inspector in `standalone.html`. `data-ui-id` should be unique per route and stable across rendering, responsive modes and translation. Use explicit IDs for every important component instance and stable business record keys for repeating components. The current V34 is a compatibility adapter over V33's legacy HTML, not a full migration of all markup to explicit IDs.
 
 Layout identities use `Core.Layout.<Template>` on the content root and `Core.Layout.<Slot>` on every slot, for example `data-ui-component="Core.Layout.PageHeader" data-ui-id="layout.sidebar.page-header" data-layout-slot="page-header"`. Slot names are lowercase, hyphenated and stable: `primary-sidebar`, `context-sidebar`, `top-bar`, `top-nav`, `workspace-toolbar`, `page-header`, `toolbar`, `content`, `list-pane`, `detail-pane`, `inspector`, `footer`, `public-header`, `public-footer`, `ai-sidebar`. Playground instances use `layout.playground.<template>.<slot>`.

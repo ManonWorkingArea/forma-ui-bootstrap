@@ -1,0 +1,1165 @@
+{
+  "format": "forma-interaction-registry.v1",
+  "baseline": "V34.2",
+  "note": "Shared Pointer Events interaction contracts. The engine and lab are additive mockup foundations; module states are local previews, not production APIs.",
+  "engine": {
+    "name": "FormaTouch",
+    "version": "1.0.0",
+    "source": "assets/mockup/standalone.html",
+    "pointerEvents": true,
+    "api": [
+      "state",
+      "log",
+      "gestures",
+      "register",
+      "unregister",
+      "cancel",
+      "undoSort",
+      "bindShell",
+      "tap",
+      "swipe",
+      "longPress",
+      "pinch",
+      "simulate",
+      "drag",
+      "pointerCancel"
+    ],
+    "listeners": [
+      "pointerdown",
+      "pointermove",
+      "pointerup",
+      "pointercancel",
+      "lostpointercapture",
+      "click",
+      "keydown"
+    ],
+    "cleanup": [
+      "pointer capture release",
+      "pointercancel",
+      "lostpointercapture",
+      "window blur",
+      "visibilitychange"
+    ],
+    "reducedMotion": "transitions and momentum disabled under prefers-reduced-motion"
+  },
+  "touchVisualKeys": [
+    "forma.touch.geometry",
+    "forma.touch.pointer",
+    "forma.touch.gesture",
+    "forma.touch.drag-sortable",
+    "forma.touch.cancellation",
+    "forma.touch.auto-scroll",
+    "forma.touch.sheet-resize",
+    "forma.touch.announcement",
+    "forma.touch.evidence"
+  ],
+  "specimens": [
+    {
+      "id": "tap",
+      "name": "Tap",
+      "component": "Core.Touch.Tap",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "double-tap",
+      "name": "Double tap",
+      "component": "Core.Touch.DoubleTap",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "long-press",
+      "name": "Long press",
+      "component": "Core.Touch.LongPress",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "swipe",
+      "name": "Swipe",
+      "component": "Core.Touch.Swipe",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "sortable",
+      "name": "Sortable",
+      "component": "Core.Touch.Sortable",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "cross-container",
+      "name": "Cross container",
+      "component": "Core.Touch.CrossContainer",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "nested-drag",
+      "name": "Nested drag",
+      "component": "Core.Touch.NestedDrag",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "cancel",
+      "name": "Cancellation",
+      "component": "Core.Touch.Cancel",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "auto-scroll",
+      "name": "Auto-scroll",
+      "component": "Core.Touch.AutoScroll",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "bottom-sheet",
+      "name": "Bottom sheet",
+      "component": "Core.Touch.BottomSheet",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "pinch-zoom",
+      "name": "Pinch zoom",
+      "component": "Core.Touch.Pinch",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "panel-resize",
+      "name": "Panel resize",
+      "component": "Core.Touch.PanelResize",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "shell-canvas",
+      "name": "Shell canvas",
+      "component": "Core.Touch.Shell",
+      "route": "pilot/admin/f33touchlab"
+    },
+    {
+      "id": "tap-suppression",
+      "name": "Tap suppression",
+      "component": "Core.Touch.TapSuppression",
+      "route": "pilot/admin/f33touchlab"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "core.tap",
+      "name": "Tap",
+      "component": "Core.Touch.Tap",
+      "specimen": "tap",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "files",
+        "directory",
+        "gallery"
+      ],
+      "gestures": [
+        "tap"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "tap count",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.double-tap",
+      "name": "Double tap",
+      "component": "Core.Touch.DoubleTap",
+      "specimen": "double-tap",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "gallery"
+      ],
+      "gestures": [
+        "double-tap"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "double tap count",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.long-press",
+      "name": "Long press",
+      "component": "Core.Touch.LongPress",
+      "specimen": "long-press",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "files",
+        "chat"
+      ],
+      "gestures": [
+        "long-press"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "pressed state",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.swipe",
+      "name": "Swipe",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "chat",
+        "inbox",
+        "directory"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "last direction",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.sortable",
+      "name": "Sortable reorder",
+      "component": "Core.Touch.Sortable",
+      "specimen": "sortable",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "kanban",
+        "workflow",
+        "files",
+        "builder"
+      ],
+      "gestures": [
+        "sortable",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "order array",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.cross-container",
+      "name": "Cross container move",
+      "component": "Core.Touch.CrossContainer",
+      "specimen": "cross-container",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "kanban",
+        "workflow"
+      ],
+      "gestures": [
+        "sortable",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "source and target order",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.nested-drag",
+      "name": "Nested move",
+      "component": "Core.Touch.NestedDrag",
+      "specimen": "nested-drag",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "builder",
+        "workflow"
+      ],
+      "gestures": [
+        "sortable",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "nested container order",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.cancel",
+      "name": "Gesture cancellation",
+      "component": "Core.Touch.Cancel",
+      "specimen": "cancel",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "sortable",
+        "builder"
+      ],
+      "gestures": [
+        "cancel"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "restored order",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.auto-scroll",
+      "name": "Edge auto-scroll",
+      "component": "Core.Touch.AutoScroll",
+      "specimen": "auto-scroll",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "kanban",
+        "files"
+      ],
+      "gestures": [
+        "sortable",
+        "auto-scroll"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "scroll offset",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.bottom-sheet",
+      "name": "Bottom sheet",
+      "component": "Core.Touch.BottomSheet",
+      "specimen": "bottom-sheet",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "mobile",
+        "files",
+        "chat"
+      ],
+      "gestures": [
+        "pan",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "open or closed",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.pinch-zoom",
+      "name": "Pinch zoom",
+      "component": "Core.Touch.Pinch",
+      "specimen": "pinch-zoom",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "builder",
+        "gallery"
+      ],
+      "gestures": [
+        "pinch"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "scale percent",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.panel-resize",
+      "name": "Panel resize",
+      "component": "Core.Touch.PanelResize",
+      "specimen": "panel-resize",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "layout-playground",
+        "editor"
+      ],
+      "gestures": [
+        "resize"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "panel size",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "core.tap-suppression",
+      "name": "Tap suppression",
+      "component": "Core.Touch.TapSuppression",
+      "specimen": "tap-suppression",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "design-system",
+        "inspector",
+        "sortable"
+      ],
+      "gestures": [
+        "tap",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "underlying action count",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "shell.canvas-follow",
+      "name": "Shell canvas follow",
+      "component": "Core.Touch.Shell",
+      "specimen": "shell-canvas",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "shell",
+        "layout-templates"
+      ],
+      "gestures": [
+        "pan",
+        "shell"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "live transform then shift class",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "shell.sidebar-swipe",
+      "name": "Sidebar swipe",
+      "component": "Core.Touch.Shell",
+      "specimen": "shell-canvas",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "shell",
+        "layout-templates"
+      ],
+      "gestures": [
+        "shell"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "shift-left class",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "shell.ai-swipe",
+      "name": "Assistant swipe",
+      "component": "Core.Touch.Shell",
+      "specimen": "shell-canvas",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "shell",
+        "ai-assistant"
+      ],
+      "gestures": [
+        "shell"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "shift-right class",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "shell.detail-back",
+      "name": "Detail swipe back",
+      "component": "Core.Touch.Shell",
+      "specimen": "shell-canvas",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "shell",
+        "record-detail"
+      ],
+      "gestures": [
+        "shell"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "back navigation",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "kanban.reorder",
+      "name": "Kanban status and order",
+      "component": "Core.Touch.Sortable",
+      "specimen": "sortable",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "kanban",
+        "workspace"
+      ],
+      "gestures": [
+        "sortable"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "task status and order",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "calendar.swipe",
+      "name": "Calendar period swipe",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "calendar",
+        "workspace"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "visible period",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "gantt.drag",
+      "name": "Gantt bar drag",
+      "component": "Core.Touch.Drag",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "gantt",
+        "workspace"
+      ],
+      "gestures": [
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "start and length",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "files.swipe",
+      "name": "Files row swipe",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "files"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "revealed row action",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "gallery.swipe",
+      "name": "Gallery swipe",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "gallery"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "active item",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "datatable.row-swipe",
+      "name": "DataTable row swipe",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "datatable",
+        "catalog"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "row action",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "workflow.node-drag",
+      "name": "Workflow node drag",
+      "component": "Core.Touch.Sortable",
+      "specimen": "nested-drag",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "workflow",
+        "workspace"
+      ],
+      "gestures": [
+        "sortable",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "node position",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "builder.part-order",
+      "name": "Builder part order",
+      "component": "Core.Touch.Sortable",
+      "specimen": "sortable",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "builder",
+        "studio"
+      ],
+      "gestures": [
+        "sortable",
+        "drag"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "part order",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "builder.canvas-pan",
+      "name": "Builder canvas pan",
+      "component": "Core.Touch.Pan",
+      "specimen": "shell-canvas",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "builder",
+        "studio"
+      ],
+      "gestures": [
+        "pan"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "canvas offset",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "builder.pinch-zoom",
+      "name": "Builder pinch zoom",
+      "component": "Core.Touch.Pinch",
+      "specimen": "pinch-zoom",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "builder",
+        "studio"
+      ],
+      "gestures": [
+        "pinch"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "canvas zoom",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "theme.preview-pan",
+      "name": "Theme preview pan",
+      "component": "Core.Touch.Pan",
+      "specimen": "shell-canvas",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "theme",
+        "cms"
+      ],
+      "gestures": [
+        "pan"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "preview offset",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "chat.swipe-archive",
+      "name": "Chat swipe archive",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "chat",
+        "inbox",
+        "workspace"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "archived state",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "directory.swipe",
+      "name": "Directory swipe action",
+      "component": "Core.Touch.Swipe",
+      "specimen": "swipe",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "directory"
+      ],
+      "gestures": [
+        "swipe"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "contact action",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "layout.playground-panel",
+      "name": "Playground panel resize",
+      "component": "Core.Touch.PanelResize",
+      "specimen": "panel-resize",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "layout-playground"
+      ],
+      "gestures": [
+        "resize"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "panel width",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    },
+    {
+      "id": "inspector.pick-cancel",
+      "name": "Inspector pick and cancel",
+      "component": "Core.Touch.Cancel",
+      "specimen": "tap-suppression",
+      "route": "pilot/admin/f33touchlab",
+      "modules": [
+        "ui-inspector"
+      ],
+      "gestures": [
+        "tap",
+        "cancel"
+      ],
+      "pointerTypes": [
+        "mouse",
+        "touch",
+        "pen"
+      ],
+      "state": "one reference, no action",
+      "keyboard": "Documented in the Touch Interaction Lab card",
+      "cancel": "pointercancel and lostpointercapture restore the prior state",
+      "visualKeys": [
+        "forma.touch.pointer",
+        "forma.touch.gesture",
+        "forma.touch.announcement"
+      ],
+      "evidence": [
+        "chromium-native-touch",
+        "pointer-fallback"
+      ]
+    }
+  ],
+  "checks": {
+    "touchKeysExact": true,
+    "specimens": 14,
+    "nativeTouchClaim": "Chromium only when CDP emits touch; WebKit and Firefox use pointer fallback",
+    "physicalDevice": "Pending Owner Review"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "format": "forma-visual-keys.v1",
-  "baseline": "V34 / V33 Quiet Precision",
+  "baseline": "V34.2 / V33 Quiet Precision",
   "note": "New machine-readable identifiers for documented design principles, not existing CSS variable names. Values transcribed from DESIGN_SYSTEM.md; semantic identity from UI_INSPECTOR_CONTRACT.md.",
   "tokens": {
     "colors": {
@@ -124,6 +124,17 @@
         "padding": "2px 6px",
         "status": "provisional"
       }
+    },
+    "touch": {
+      "touchTargetPx": 44,
+      "comfortableTouchTargetPx": 48,
+      "longPressMs": 500,
+      "doubleTapMs": 320,
+      "tapSlopPx": 8,
+      "dragThresholdPx": 6,
+      "autoScrollEdgePx": 44,
+      "pinchMin": 0.4,
+      "pinchMax": 3
     }
   },
   "keys": [
@@ -299,6 +310,82 @@
         "Core.AppShell"
       ],
       "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.touch.pointer",
+      "rule": "Use Pointer Events as the only gesture source. One shared engine handles mouse, touch and pen with pointer capture and cleanup; no module-specific touch recognition.",
+      "components": [
+        "Core.Touch",
+        "Core.PointerCapture",
+        "Core.Touch.Surface"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.gesture",
+      "rule": "Define tap slop, double-tap window, long-press delay, axis lock, swipe velocity and pinch scale once. Emit visible state, pointer type and component identity.",
+      "components": [
+        "Core.Touch.Gesture",
+        "Core.Touch.Tap",
+        "Core.Touch.Swipe"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.drag-sortable",
+      "rule": "Sortable uses a handle, ghost and placeholder with same-group drop zones, cross-container and nested moves, keyboard movement, undo and real mockup state updates.",
+      "components": [
+        "Core.Sortable",
+        "Core.Sortable.Container",
+        "Core.Sortable.Item"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.cancellation",
+      "rule": "pointercancel, lostpointercapture and Escape restore prior state, release capture and suppress only the click that follows the gesture.",
+      "components": [
+        "Core.Touch.Cancel",
+        "Core.Touch.TapSuppression"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.auto-scroll",
+      "rule": "Edge drag auto-scrolls the nearest scroll container, yields to nested scrolling and stops on capture loss or reduced motion.",
+      "components": [
+        "Core.Touch.AutoScroll",
+        "Core.Sortable"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.sheet-resize",
+      "rule": "Bottom sheets are draggable with snap states; panels resize with live size, ARIA and 44–48 px touch targets inside safe areas.",
+      "components": [
+        "Core.BottomSheet",
+        "Core.ResizeHandle",
+        "Core.Touch.PanelResize"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.announcement",
+      "rule": "Announce gesture, pointer type and component identity in a persistent live region; never rely on hover or color alone.",
+      "components": [
+        "Core.Touch.Log",
+        "Core.Touch.Specimen"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
+    },
+    {
+      "id": "forma.touch.evidence",
+      "rule": "Claim native touch only where the browser emits it. Chromium CDP touch, WebKit/Firefox pointer fallback and physical-device Pending Owner Review are separate evidence states.",
+      "components": [
+        "Core.Touch",
+        "Core.Touch.Log"
+      ],
+      "source": "INTERACTION_REGISTRY.json"
     }
   ]
 }

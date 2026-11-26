@@ -1,6 +1,6 @@
 {
   "format": "forma-layout-registry.v1",
-  "baseline": "V34.1",
+  "baseline": "V34.2",
   "configSchema": "forma.layout.config.v1",
   "note": "Additive V34.1 layout templates for the existing F33 Design System routes. Application Shell and Content Layout are separate identities. All examples are generic Core patterns with synthetic content; no business module, backend or real write. Preview widths are simulated in an in-page container-scoped stage.",
   "regions": {
@@ -1865,5 +1865,26 @@
       },
       "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"public\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.FrontendShell\" data-ui-id=\"layout.public.shell\">\n    <div class=\"f33pv-main\">\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"public\" data-ui-component=\"Core.Layout.Public\" data-ui-id=\"layout.public\">\n        <header class=\"f33pv-publicheader\" data-layout-region=\"content\" data-layout-slot=\"public-header\" data-ui-component=\"Core.Layout.PublicHeader\" data-ui-id=\"layout.public.public-header\"></header>\n        <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.public.content\" data-content-width=\"fluid\"></div>\n        <footer class=\"f33pv-publicfooter\" data-layout-region=\"content\" data-layout-slot=\"public-footer\" data-ui-component=\"Core.Layout.PublicFooter\" data-ui-id=\"layout.public.public-footer\"></footer>\n      </section>\n    </div>\n  </div>\n</div>"
     }
-  ]
+  ],
+  "touch": {
+    "registry": "references/INTERACTION_REGISTRY.json",
+    "engine": "FormaTouch 1.0.0",
+    "keys": [
+      "forma.touch.geometry",
+      "forma.touch.pointer",
+      "forma.touch.gesture",
+      "forma.touch.drag-sortable",
+      "forma.touch.cancellation",
+      "forma.touch.auto-scroll",
+      "forma.touch.sheet-resize",
+      "forma.touch.announcement",
+      "forma.touch.evidence"
+    ],
+    "shellGestures": [
+      "shell.sidebar-swipe",
+      "shell.ai-swipe",
+      "shell.canvas-follow"
+    ],
+    "notes": "Layout preview panels resize through the shared engine; shell routes keep the existing canvas slide shift classes and public stays no-slide."
+  }
 }

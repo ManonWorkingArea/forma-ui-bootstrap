@@ -701,6 +701,136 @@
       "component": "Core.Layout.PublicFooter",
       "selector": ".f33pv-publicfooter",
       "kind": "layout"
+    },
+    {
+      "component": "Core.Touch",
+      "selector": "[data-touch]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Surface",
+      "selector": "[data-touch-shell],[data-touch-zoom]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Gesture",
+      "selector": "[data-touch]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Specimen",
+      "selector": "[data-touch-specimen]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Log",
+      "selector": "#touch-log",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Touch.Tap",
+      "selector": "[data-ui-component=\"Core.Touch.Tap\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.DoubleTap",
+      "selector": "[data-ui-component=\"Core.Touch.DoubleTap\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.LongPress",
+      "selector": "[data-ui-component=\"Core.Touch.LongPress\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Swipe",
+      "selector": "[data-ui-component=\"Core.Touch.Swipe\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Cancel",
+      "selector": "[data-ui-component=\"Core.Touch.Cancel\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.AutoScroll",
+      "selector": "[data-ui-component=\"Core.Touch.AutoScroll\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Pinch",
+      "selector": "[data-ui-component=\"Core.Touch.Pinch\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Shell",
+      "selector": "[data-touch-shell]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.TapSuppression",
+      "selector": "[data-ui-component=\"Core.Touch.TapSuppression\"]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Sortable",
+      "selector": "[data-sortable-container]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Sortable.Container",
+      "selector": "[data-sortable-container]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Sortable.Item",
+      "selector": "[data-sortable-item]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.BottomSheet",
+      "selector": ".f33touch-sheet",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.ResizeHandle",
+      "selector": "[data-touch-resize]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Sortable",
+      "selector": "[data-sortable-container]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.CrossContainer",
+      "selector": "[data-sortable-group]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.NestedDrag",
+      "selector": "[data-sortable-container] [data-sortable-container]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Drag",
+      "selector": "[data-sortable-item]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.Pan",
+      "selector": "[data-touch-pan],[data-touch-shell]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.PanelResize",
+      "selector": "[data-touch-resize]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Touch.BottomSheet",
+      "selector": ".f33touch-sheet",
+      "kind": "control"
     }
   ]
 }

@@ -14,6 +14,8 @@ Run from this skill directory (or invoke the script by its absolute path):
 python3 scripts/forma_ui.py verify
 python3 scripts/forma_ui.py layouts
 python3 scripts/forma_ui.py layout sidebar
+python3 scripts/forma_ui.py interactions
+python3 scripts/forma_ui.py interaction shell.sidebar-swipe
 python3 scripts/forma_ui.py pages catalog
 python3 scripts/forma_ui.py components DataTable
 python3 scripts/forma_ui.py context Core.DataTable
@@ -27,7 +29,7 @@ If verification fails, stop using the mismatched snapshot and report it. The CLI
 2. Resolve the composition first: **Layout Template → Page Pattern → Component**. Query `layouts`/`layout <id>` for the eight shell/content templates, then `pages`, `components`, `keys` and `context` for a small relevant slice; consult `references/DESIGN_SYSTEM.md` and `references/UI_INSPECTOR_CONTRACT.md` as needed. The page index contains inherited V33 tested example routes, not a full registry of all possible pages. Registry mappings are legacy selectors, not production APIs. See `references/TOOLS.md` for command recipes.
 3. For a specific visual issue, inspect the actual mockup at the affected viewport. Capture clean and debug screenshots/inventories, or use the supplied owner evidence. Use `issue` with a selected reference for a structured handoff; `locate` gives candidate source snippets, not a guaranteed implementation location. Mark ambiguity rather than choosing a lookalike silently. If reference and documented design intent conflict, expose the difference; do not quietly canonize a mockup defect.
 4. Map the pattern to reusable Svelte components and semantic tokens in the target repo. Reuse existing implementation first; only add a shared component when the needed contract does not exist. Keep business-specific views in extensions and avoid copying version-prefixed selectors from the mockup. Use semantic `data-ui-component` and explicit stable `data-ui-id` unique per route; use stable record keys in repeated elements, not translated labels, CSS classes, indexes or DOM hashes. Maintain explicit action-per-request, shared registered action dispatcher and authorization boundaries. Do not use direct DB access or treat an AI confirmation as permission. Do not introduce new runtime architecture for UI-only tasks.
-5. For layout work, start from a layout template and its slots (`Core.Layout.*`, `data-layout-slot`), then map to the page pattern and finally to components. Preserve existing page behavior and test relevant states: loading, empty, error, disabled, readonly, confirmation, focus, responsive and reduced motion where applicable. Test the affected breakpoints, no horizontal scroll in DataTable, proportionate controls, no overlapping labels/assistant, and use clean browser screenshots as well as debug evidence. Use actual target-app screenshots for implementation acceptance, not reference-only captures. Follow the project's existing quality gates; do not modify protected acceptance tests or claim design freeze without owner approval.
+5. For interaction work, use the shared `FormaTouch` Pointer Events engine and `data-touch*` / `data-sortable*` contracts. Do not add module-specific touch listeners; register gestures through the engine, preserve pointer capture/cancel cleanup and expose keyboard/button alternatives. Start layout work from a layout template and its slots (`Core.Layout.*`, `data-layout-slot`), then map to the page pattern and finally to components. Preserve existing page behavior and test relevant states: loading, empty, error, disabled, readonly, confirmation, focus, responsive and reduced motion where applicable. Test the affected breakpoints, no horizontal scroll in DataTable, proportionate controls, no overlapping labels/assistant, and use clean browser screenshots as well as debug evidence. Use actual target-app screenshots for implementation acceptance, not reference-only captures. Follow the project's existing quality gates; do not modify protected acceptance tests or claim design freeze without owner approval.
 6. Return a concise handoff with baseline SHA, route, component/reference/explicit ID, Visual Keys, changed files, actual checks/evidence, unresolved deviations and regression risk. Separate visual match, functional checks and owner acceptance. Never claim PASS for an unexecuted check.
 
 ## Required design rules
@@ -42,9 +44,11 @@ If verification fails, stop using the mismatched snapshot and report it. The CLI
 ## Load only relevant supporting files
 
 - `references/VISUAL_KEYS.json`: machine-readable design rules and tokens, newly named semantic Visual Keys.
+- `references/INTERACTION_REGISTRY.json`: shared Pointer Events contracts, engine API, fourteen Touch Lab specimens, module interactions and the nine `forma.touch.*` keys.
+- `references/INTERACTION_COVERAGE.md`: module/gesture coverage and evidence states.
 - `references/LAYOUT_REGISTRY.json`: eight layout templates with shell/content separation, slots, locks, defaults, responsive behavior, Visual Keys, normalized `forma.layout.config.v1` schema and agent-ready HTML examples.
-- `references/COMPONENT_REGISTRY.json`: 140 selector mappings (some names repeat for different editor contexts); not 140 distinct component exports.
-- `references/PAGE_INDEX.json`: 126 tested Pilot example routes, eight layout routes and the layout playground, with scope and widths.
+- `references/COMPONENT_REGISTRY.json`: 166 selector mappings (some names repeat for different editor contexts); not 166 distinct component exports.
+- `references/PAGE_INDEX.json`: 128 tested Pilot example routes, including eight layout routes, the layout playground and the two touch routes, with scope and widths.
 - `references/DESIGN_SYSTEM.md`, `references/COMPONENT_INVENTORY.md`, `references/REVIEW_BACKLOG.md`: intent, specimen coverage, known gaps.
 - `references/UI_INSPECTOR_CONTRACT.md`: V34/V34.1 bounding boxes, layout slot identity, name/reference semantics, clipboard/export limitations.
 - `references/TOOLS.md`: CLI usage, deployment and integration conventions.

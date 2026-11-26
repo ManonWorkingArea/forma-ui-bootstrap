@@ -1,6 +1,6 @@
 {
   "format": "forma-page-index.v1",
-  "baseline": "V34.1",
+  "baseline": "V34.2",
   "note": "Pilot example routes derived from passing V33 test entries, with public/admin surface inferred from dispatch and report order. Not an exhaustive manifest or V34 retest. Dynamic IDs are fixture examples.",
   "pages": [
     {
@@ -285,6 +285,38 @@
         320
       ],
       "hash": "#pilot/admin/f33playground"
+    },
+    {
+      "route": "pilot/admin/f33touch",
+      "title": "Touch interactions",
+      "group": "foundation",
+      "evidence": "V34.2 touch engine",
+      "widths": [
+        1920,
+        1440,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33touch"
+    },
+    {
+      "route": "pilot/admin/f33touchlab",
+      "title": "Touch Interaction Lab",
+      "group": "foundation",
+      "evidence": "V34.2 touch engine",
+      "widths": [
+        1920,
+        1440,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33touchlab"
     },
     {
       "route": "pilot/public/f33landing",

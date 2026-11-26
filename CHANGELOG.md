@@ -2,6 +2,17 @@
 
 All notable repository and design-reference changes are recorded here. The UI mockup itself is versioned by baseline and remains unchanged in this release candidate unless an Owner-approved issue explicitly records a design revision.
 
+## Unreleased - V34.2 touch interactions
+
+### Added
+
+- One shared `FormaTouch` Pointer Events engine with tap, double tap, long press, swipe, pan, drag, sortable, resize, pinch, pointer capture, cancellation, axis lock, rAF updates, edge auto-scroll, momentum, nested-scroll yielding, tap suppression and reduced-motion behavior.
+- Design System routes `#pilot/admin/f33touch` and `#pilot/admin/f33touchlab` with fourteen working specimens, live gesture/pointer/component log and keyboard/button alternatives.
+- Sortable foundation with handle, ghost, placeholder, cross-container and nested moves, keyboard movement, undo and real mockup order/state updates.
+- Touch behavior for shell canvas follow (live transform then existing shift classes), layout panels, bottom sheets, pinch, builders and documented module hooks.
+- `references/INTERACTION_REGISTRY.json` (`forma-interaction-registry.v1`), `references/INTERACTION_COVERAGE.md`, CLI `interactions` / `interaction <id>`, and the nine `forma.touch.*` Visual Keys.
+- Cross-browser `scripts/touch_interaction_smoke.py` with Chromium native CDP touch and WebKit/Firefox pointer fallback; CI installs all three browsers.
+
 ## Unreleased - V34.1 layout templates
 
 ### Added

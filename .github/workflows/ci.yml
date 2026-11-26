@@ -57,7 +57,7 @@ jobs:
     name: Browser smoke test
     needs: static-validation
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -70,7 +70,7 @@ jobs:
       - name: Install ephemeral browser test dependency
         run: |
           python3 -m pip install --disable-pip-version-check playwright==1.55.0
-          python3 -m playwright install --with-deps chromium
+          python3 -m playwright install --with-deps chromium webkit firefox
 
       - name: Start static preview server
         run: |
@@ -86,11 +86,16 @@ jobs:
       - name: Run Desktop and mobile smoke
         run: python3 scripts/browser_smoke.py --base-url http://127.0.0.1:4173/
 
+      - name: Run cross-browser touch and pointer evidence
+        run: python3 scripts/touch_interaction_smoke.py --base-url http://127.0.0.1:4173/ --browser all --out touch-evidence
+
       - name: Upload smoke evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: browser-smoke-${{ github.sha }}
-          path: browser-evidence/
+          path: |
+            browser-evidence/
+            touch-evidence/
           if-no-files-found: warn
           retention-days: 7

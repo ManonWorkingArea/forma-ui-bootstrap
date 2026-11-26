@@ -42,6 +42,8 @@ required = [
     "release-manifest.json",
     ".gitignore",
     "references/LAYOUT_REGISTRY.json",
+    "references/INTERACTION_REGISTRY.json",
+    "references/INTERACTION_COVERAGE.md",
     "docs/QUICKSTART.md",
     "docs/LIFECYCLE.md",
     "docs/RELEASES.md",
@@ -88,28 +90,28 @@ baseline = load_json(ROOT / ".github/package-baseline.json")
 ORIGINAL_SOURCE_SHA256 = "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8"
 if baseline.get("format") != "forma-package-baseline.v1":
     fail("unexpected package baseline format")
-if baseline.get("baseline") != "V34.1":
-    fail("package baseline must identify the current V34.1 baseline")
-if baseline.get("member_checksum_scope") != "current V34.1 working tree":
-    fail("package baseline must declare the current V34.1 member checksum scope")
+if baseline.get("baseline") != "V34.2":
+    fail("package baseline must identify the current V34.2 baseline")
+if baseline.get("member_checksum_scope") != "current V34.2 working tree":
+    fail("package baseline must declare the current V34.2 member checksum scope")
 if baseline.get("source") != "skill.zip" or baseline.get("source_sha256") != ORIGINAL_SOURCE_SHA256:
     fail("original source package provenance must stay immutable")
 if not baseline.get("source_provenance"):
     fail("package baseline must distinguish source provenance from member checksums")
 if baseline.get("file_count") != 60 or len(baseline.get("files", [])) != 60:
-    fail("authorized dev baseline must contain exactly 60 V34.1 member files")
+    fail("authorized dev baseline must contain exactly 60 V34.2 member files")
 for row in baseline.get("files", []):
     path = ROOT / row["path"]
     if not path.is_file():
-        fail(f"V34.1 member file missing: {row['path']}")
+        fail(f"V34.2 member file missing: {row['path']}")
     elif path.stat().st_size != row["bytes"]:
-        fail(f"V34.1 member file size changed: {row['path']}")
+        fail(f"V34.2 member file size changed: {row['path']}")
     elif sha256(path) != row["sha256"]:
-        fail(f"V34.1 member file checksum changed: {row['path']}")
+        fail(f"V34.2 member file checksum changed: {row['path']}")
 
 manifest = load_json(REF / "MANIFEST.json")
-if manifest.get("scope") != "current V34.1 member checksums":
-    fail("manifest must declare its current V34.1 member checksum scope")
+if manifest.get("scope") != "current V34.2 member checksums":
+    fail("manifest must declare its current V34.2 member checksum scope")
 for rel, expected in manifest.get("sha256", {}).items():
     path = ROOT / rel
     if not path.is_file() or sha256(path) != expected:
@@ -118,14 +120,14 @@ for rel, expected in manifest.get("sha256", {}).items():
 registry = load_json(REF / "COMPONENT_REGISTRY.json")
 page_index = load_json(REF / "PAGE_INDEX.json")
 visual = load_json(REF / "VISUAL_KEYS.json")
-if len(registry.get("components", [])) != 140:
-    fail("component registry must contain 140 mappings")
+if len(registry.get("components", [])) != 166:
+    fail("component registry must contain 166 mappings")
 pages = page_index.get("pages", [])
-if len(pages) != 126 or len({row.get("route") for row in pages}) != 126:
-    fail("page index must contain 126 unique routes")
+if len(pages) != 128 or len({row.get("route") for row in pages}) != 128:
+    fail("page index must contain 128 unique routes")
 keys = visual.get("keys", [])
-if len(keys) != 16 or len({row.get("id") for row in keys}) != 16:
-    fail("visual keys must contain 16 unique IDs")
+if len(keys) != 24 or len({row.get("id") for row in keys}) != 24:
+    fail("visual keys must contain 24 unique IDs")
 if registry.get("format") != "forma-ui-component-registry.v1":
     fail("unexpected component registry format")
 if not str(page_index.get("baseline", "")).startswith("V34"):
@@ -214,6 +216,43 @@ for template in layout_templates:
             fail(f"{tid}: example_html missing {slot_id}")
         if f'data-layout-slot="{slot["name"]}"' not in example:
             fail(f"{tid}: example_html missing data-layout-slot for {slot["name"]}")
+
+interaction_registry = load_json(REF / "INTERACTION_REGISTRY.json")
+if interaction_registry.get("format") != "forma-interaction-registry.v1":
+    fail("unexpected interaction registry format")
+if interaction_registry.get("baseline") != "V34.2":
+    fail("interaction registry baseline must be V34.2")
+engine = interaction_registry.get("engine", {})
+for api in ("state", "log", "gestures", "cancel", "simulate"):
+    if api not in engine.get("api", []):
+        fail(f"interaction engine API missing: {api}")
+if engine.get("name") != "FormaTouch":
+    fail("interaction engine must be FormaTouch")
+touch_keys = [row.get("id") for row in keys if str(row.get("id", "")).startswith("forma.touch.")]
+if len(touch_keys) != 9 or set(touch_keys) != set(interaction_registry.get("touchVisualKeys", [])):
+    fail("interaction registry must define the nine forma.touch.* keys")
+specimens = interaction_registry.get("specimens", [])
+if len(specimens) != 14 or len({row.get("id") for row in specimens}) != 14:
+    fail("interaction registry must contain fourteen unique specimens")
+interaction_rows = interaction_registry.get("interactions", [])
+if len(interaction_rows) != 32 or len({row.get("id") for row in interaction_rows}) != 32:
+    fail("interaction registry must contain 32 unique interactions")
+interaction_ids = {row.get("id") for row in interaction_rows}
+for required in ("shell.sidebar-swipe", "shell.ai-swipe", "core.tap", "core.sortable", "core.cancel", "core.pinch-zoom", "core.panel-resize"):
+    if required not in interaction_ids:
+        fail(f"interaction registry missing {required}")
+for row in interaction_rows:
+    if not row.get("component") or row.get("component") not in component_names:
+        fail(f"{row.get('id')}: interaction component missing from COMPONENT_REGISTRY")
+    if not row.get("visualKeys") or any(key not in visual_ids for key in row.get("visualKeys", [])):
+        fail(f"{row.get('id')}: interaction Visual Key missing")
+for template in layout_templates:
+    if "touch" not in layout_registry:
+        fail("layout registry must describe touch interaction impact")
+        break
+for route in ("pilot/admin/f33touch", "pilot/admin/f33touchlab"):
+    if route not in page_routes:
+        fail(f"page index missing touch route: {route}")
 
 release = load_json(ROOT / "release.json")
 release_manifest = load_json(ROOT / "release-manifest.json")
@@ -312,9 +351,9 @@ if ERRORS:
     raise SystemExit(1)
 print("Repository validation: PASS")
 print(f"- original source provenance: skill.zip {ORIGINAL_SOURCE_SHA256[:12]}… (immutable)")
-print(f"- current V34.1 member checksums: {baseline['file_count']} files verified")
-print("- registry: 140 mappings")
-print("- page index: 126 unique routes")
-print("- visual keys: 16 unique IDs")
+print(f"- current V34.2 member checksums: {baseline['file_count']} files verified")
+print("- registry: 166 mappings")
+print("- page index: 128 unique routes")
+print("- visual keys: 24 unique IDs (9 forma.touch.*)")
 print("- issue templates: 5 complete")
 print("- public safety: no disallowed secrets, URLs, emails or PNG metadata")
