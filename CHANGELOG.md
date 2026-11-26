@@ -18,7 +18,9 @@ All notable repository and design-reference changes are recorded here. The UI mo
 - Direct layout routes start from the template's canonical defaults instead of retaining Playground customization.
 - The Playground keeps focus on the Template select after a template change.
 - Context and assistant controls only render for enabled slots: no inert context launcher, no disabled-AI launcher, no `ai-open` state and no empty assistant target.
-- Slot labels reserve a small label band instead of overlaying content, and stay legible without horizontal overflow at 320, 390, 768 and 1440.
+- Slot labels reserve a label band instead of overlaying content, name both the slot and its `Core.Layout.*` component, wrap at 9–10px, and stay legible without horizontal overflow at 320, 390, 768 and 1440.
+- Direct layout routes reset to canonical defaults on every genuine entry, including detail → non-layout page → the same detail, while a same-route repaint keeps user changes.
+- The role=status announcement region now lives outside the replaced workbench, so template changes stay announced to assistive technology.
 - Package baseline metadata now separates immutable original `skill.zip` provenance from current V34.1 member checksums; validator output reports both.
 
 ### Changed

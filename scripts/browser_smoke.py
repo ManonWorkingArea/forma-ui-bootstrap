@@ -373,16 +373,25 @@ def check_focus(browser, base_url: str) -> None:
     context, page, errors = open_layouts_page(browser, base_url, 1440)
     page.evaluate("(h) => { location.hash = h }", "#pilot/admin/f33playground")
     page.wait_for_selector("#f33pg-root [data-config-key='template']", timeout=10_000)
+    page.evaluate("window.__f33StatusNode = document.getElementById('f33pg-status')")
     select = page.locator("#f33pg-root [data-config-key='template']")
     select.focus()
     select.select_option("semi")
     page.wait_for_timeout(200)
     active = page.evaluate("document.activeElement?.dataset?.configKey || ''")
     value = page.evaluate("document.querySelector('#f33pg-root [data-config-key=template]')?.value")
+    persisted = page.evaluate("window.__f33StatusNode === document.getElementById('f33pg-status')")
+    outside = page.evaluate("document.getElementById('f33pg-status')?.closest('#f33pg-root') === null")
+    region = page.evaluate("document.getElementById('f33pg-status')?.getAttribute('role')")
+    status_text = page.locator("#f33pg-status").text_content() or ""
     if active != "template":
         raise AssertionError(f"playground: focus left the Template select ({active or 'none'})")
     if value != "semi":
         raise AssertionError("playground: Template select did not apply the change")
+    if not persisted or not outside or region != "status":
+        raise AssertionError("playground: template change replaced the persistent status region")
+    if "Semi Layout" not in status_text:
+        raise AssertionError("playground: persistent status did not announce the new layout")
     if errors:
         raise AssertionError(f"playground focus: page errors: {errors}")
     context.close()
@@ -398,6 +407,19 @@ def check_canonical_defaults(browser, base_url: str) -> None:
         "contextSidebar: false, aiAssistant: true, contentWidth: 'narrow'}) }"
     )
     page.wait_for_timeout(200)
+    open_detail(page, "sidebar")
+    page.evaluate("() => { window.FormaLayouts.setConfig({theme: 'dark', viewport: 390}) }")
+    page.wait_for_timeout(150)
+    page.evaluate("() => { render() }")
+    page.wait_for_timeout(200)
+    repainted = page.evaluate("window.FormaLayouts.getConfig()")
+    if repainted.get("theme") != "dark" or repainted.get("viewport") != 390:
+        raise AssertionError("sidebar: same-route repaint reset user changes")
+    page.evaluate("(h) => { location.hash = h }", "#pilot/admin/f33home")
+    page.wait_for_timeout(250)
+    reentered = open_detail(page, "sidebar")
+    if reentered != defaults["sidebar"]:
+        raise AssertionError(f"sidebar: detail -> non-layout -> same detail kept stale state: {reentered}")
     for template in LAYOUT_IDS:
         actual = open_detail(page, template)
         expected = defaults[template]
@@ -452,11 +474,14 @@ def check_inactive_controls(browser, base_url: str) -> None:
               const frame = document.querySelector('#f33pg-preview .f33pv-frame');
               return {slot: frame.querySelectorAll('[data-layout-slot="ai-sidebar"]').length,
                       launcher: frame.querySelectorAll('.f33pv-launcher').length,
-                      aiOpen: frame.dataset.aiOpen};
+                      aiOpen: frame.dataset.aiOpen,
+                      transform: getComputedStyle(frame.querySelector('.f33pv-canvas')).transform};
             }"""
         )
         if enabled["slot"] != 1 or enabled["aiOpen"] != "true":
             raise AssertionError(f"{template}: enabled AI did not open a real panel")
+        if enabled["transform"] in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
+            raise AssertionError(f"{template}: enabled AI did not shift to a real panel")
         if enabled["launcher"] != (1 if template != "fullscreen" else 0):
             raise AssertionError(f"{template}: launcher does not follow the immersive exception")
         page.evaluate("() => { window.FormaLayouts.setConfig({aiAssistant: false}) }")
@@ -500,8 +525,17 @@ def check_labels_geometry(browser, base_url: str, width: int) -> None:
                 const rootSlot = slot.dataset.layoutSlot === 'application-shell' || slot.dataset.layoutSlot === 'content-layout';
                 if (!label) { if (!rootSlot) problems.push('missing label ' + slot.dataset.layoutSlot); continue; }
                 const labelRect = label.getBoundingClientRect();
+                const labelStyle = getComputedStyle(label);
+                const labelText = label.textContent || '';
                 if (labelRect.width < 8 || labelRect.height < 8) problems.push('label too small ' + slot.dataset.layoutSlot);
-                const maxHeight = slot.dataset.layoutSlot === 'primary-sidebar' ? 25 : 19;
+                if (parseFloat(labelStyle.fontSize) < 9) problems.push('label font too small ' + slot.dataset.layoutSlot);
+                if (!labelText.includes(slot.dataset.layoutSlot) || !labelText.includes(slot.dataset.uiComponent)) {
+                  problems.push('label identity missing ' + slot.dataset.layoutSlot);
+                }
+                if (labelStyle.overflow !== 'visible' || label.scrollHeight > label.clientHeight + 1) {
+                  problems.push('label clips identity ' + slot.dataset.layoutSlot);
+                }
+                const maxHeight = slot.dataset.layoutSlot === 'primary-sidebar' ? 68 : 32;
                 if (labelRect.left < slotRect.left - 1 || labelRect.right > slotRect.right + 1 ||
                     labelRect.top < slotRect.top - 1 || labelRect.bottom > slotRect.top + maxHeight) {
                   problems.push('label outside ' + slot.dataset.layoutSlot);
@@ -571,7 +605,7 @@ def main() -> int:
             browser.close()
     print(
         "Browser smoke: PASS (desktop-1440, mobile-390, "
-        f"{cases} layout theme cases at {', '.join(map(str, LAYOUT_WIDTHS))}, direct copies, focus, canonical defaults, inactive controls, label geometry, playground copy/export)"
+        f"{cases} layout theme cases at {', '.join(map(str, LAYOUT_WIDTHS))}, direct copies, focus/status, canonical re-entry, inactive controls, AI positive state, label identity/geometry, playground copy/export)"
     )
     return 0
 

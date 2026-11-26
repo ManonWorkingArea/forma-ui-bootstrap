@@ -154,8 +154,8 @@
     },
     {
       "path": "assets/mockup/standalone.html",
-      "bytes": 1063029,
-      "sha256": "8974f4578796d1ccb9bea61bc0ae4636f0ad68b70ebc986d9d64d40b1cb9ed2a"
+      "bytes": 1063264,
+      "sha256": "00e72b94fc6433cbf94d3febfa8c931ec6d51dcd5bbf9494505adc77353ebc31"
     },
     {
       "path": "assets/mockup/ui-inspector.js",
@@ -174,13 +174,13 @@
     },
     {
       "path": "references/DESIGN_SYSTEM.md",
-      "bytes": 6123,
-      "sha256": "660b510e2effd82c7671c9e514ef75b34d2f750712316c100efd248cf8d4159d"
+      "bytes": 6317,
+      "sha256": "036d8608aa6d1bd3fc435d0133bbe76297c714184b7eb58d48b2d0761f8a27a5"
     },
     {
       "path": "references/MANIFEST.json",
       "bytes": 1028,
-      "sha256": "799bbe891391b53ab2fae20d62336f7811067fad33e1d28cda42a89e18bf5a50"
+      "sha256": "901d41eb32280162f215c9c17cb8ebb7842ebd00544db78cae491f3561052b9f"
     },
     {
       "path": "references/MOCKUP_V34_README.md",

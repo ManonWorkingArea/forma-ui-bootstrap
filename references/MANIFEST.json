@@ -4,11 +4,11 @@
   "scope": "current V34.1 member checksums",
   "status": "REVIEW CANDIDATE; no design freeze",
   "sha256": {
-    "assets/mockup/standalone.html": "8974f4578796d1ccb9bea61bc0ae4636f0ad68b70ebc986d9d64d40b1cb9ed2a",
+    "assets/mockup/standalone.html": "00e72b94fc6433cbf94d3febfa8c931ec6d51dcd5bbf9494505adc77353ebc31",
     "assets/mockup/ui-inspector.js": "53162848b2793826573f1a377186c532586ff3913033aa86d774e08a7098fb6a",
     "references/LAYOUT_REGISTRY.json": "8de3c7c1d3b0f7846de7a799fde50eb2bfaaa02a7e0f25bc7b8ba0c48c270108",
     "references/COMPONENT_REGISTRY.json": "3250543b7119c7a7158e85feaa8799b051a5d7fde95d80c52e3e7a63561ff02f",
-    "references/DESIGN_SYSTEM.md": "660b510e2effd82c7671c9e514ef75b34d2f750712316c100efd248cf8d4159d",
+    "references/DESIGN_SYSTEM.md": "036d8608aa6d1bd3fc435d0133bbe76297c714184b7eb58d48b2d0761f8a27a5",
     "references/PAGE_INDEX.json": "f52728eaec961b3268cd4a73f6bcdf0af4c937ebe14ad3ae2179719c1eb58682",
     "references/UI_INSPECTOR_CONTRACT.md": "3da9be0a9d3d7e24cbc91acfdfdb669126a4550630a229374314f3bf8f6f08c5",
     "references/VISUAL_KEYS.json": "1fff39a0b0a11b412c9e24e5c4c5ff5087969ccfb25c666436ed40e661eb89b5"
