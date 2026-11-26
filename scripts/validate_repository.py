@@ -223,7 +223,9 @@ if interaction_registry.get("format") != "forma-interaction-registry.v1":
 if interaction_registry.get("baseline") != "V34.2":
     fail("interaction registry baseline must be V34.2")
 engine = interaction_registry.get("engine", {})
-for api in ("state", "log", "gestures", "cancel", "simulate"):
+if "defineSortable" not in engine.get("api", []):
+    fail("interaction engine must expose the model-backed defineSortable contract")
+for api in ("state", "log", "gestures", "cancel", "simulate", "defineSortable", "undoSort", "redoSort", "announce"):
     if api not in engine.get("api", []):
         fail(f"interaction engine API missing: {api}")
 if engine.get("name") != "FormaTouch":
@@ -238,7 +240,7 @@ interaction_rows = interaction_registry.get("interactions", [])
 if len(interaction_rows) != 32 or len({row.get("id") for row in interaction_rows}) != 32:
     fail("interaction registry must contain 32 unique interactions")
 interaction_ids = {row.get("id") for row in interaction_rows}
-for required in ("shell.sidebar-swipe", "shell.ai-swipe", "core.tap", "core.sortable", "core.cancel", "core.pinch-zoom", "core.panel-resize"):
+for required in ("shell.sidebar-swipe", "shell.ai-swipe", "core.tap", "core.sortable", "core.cancel", "core.pinch-zoom", "core.panel-resize", "kanban.reorder", "gantt.drag", "calendar.swipe", "workflow.node-drag", "builder.part-order"):
     if required not in interaction_ids:
         fail(f"interaction registry missing {required}")
 for row in interaction_rows:
@@ -246,6 +248,9 @@ for row in interaction_rows:
         fail(f"{row.get('id')}: interaction component missing from COMPONENT_REGISTRY")
     if not row.get("visualKeys") or any(key not in visual_ids for key in row.get("visualKeys", [])):
         fail(f"{row.get('id')}: interaction Visual Key missing")
+coverage = (REF / "INTERACTION_COVERAGE.md").read_text(encoding="utf-8")
+if "lab-only" not in coverage or "Pending Owner Review" not in coverage:
+    fail("coverage matrix must distinguish lab-only surfaces and pending physical review")
 for template in layout_templates:
     if "touch" not in layout_registry:
         fail("layout registry must describe touch interaction impact")

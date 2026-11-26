@@ -46,15 +46,22 @@ def ids(page, selector: str) -> list[str]:
 
 
 def launch(playwright, name: str, chromium_path: str | None):
-    options = {"headless": True, "args": ["--disable-dev-shm-usage"]}
-    if name == "chromium" and chromium_path:
-        options["executable_path"] = chromium_path
+    options = {"headless": True}
+    if name == "chromium":
+        options["args"] = ["--disable-dev-shm-usage"]
+        if chromium_path:
+            options["executable_path"] = chromium_path
     return playwright[name].launch(**options)
 
 
 def open_lab(browser, base_url: str, name: str, width: int = 390):
     height = 844 if width <= 500 else 900
-    context = browser.new_context(viewport={"width": width, "height": height}, has_touch=True, is_mobile=width <= 500, permissions=["clipboard-read", "clipboard-write"])
+    options = {"viewport": {"width": width, "height": height}, "has_touch": True}
+    if width <= 500:
+        options["is_mobile"] = True
+    if name == "chromium":
+        options["permissions"] = ["clipboard-read", "clipboard-write"]
+    context = browser.new_context(**options)
     page = context.new_page()
     errors: list[str] = []
     page.on("pageerror", lambda error: errors.append(str(error)))
@@ -278,6 +285,136 @@ def run_fallback(page, ev: Evidence) -> None:
     ev.check("pointer shell follow", value(page, "shell-canvas") == "context", value(page, "shell-canvas"))
 
 
+def go(page, route: str, selector: str = "#app") -> None:
+    page.evaluate("(h) => { location.hash = h }", route)
+    page.wait_for_timeout(450)
+    page.wait_for_selector(selector, timeout=10_000)
+
+
+def module_drag(page, native: bool, source: str, target: str) -> None:
+    if native:
+        touch_drag(page, source, target)
+    else:
+        page.evaluate("([a, b]) => { window.FormaTouch.drag(document.querySelector(a), document.querySelector(b)) }", [source, target])
+    page.wait_for_timeout(250)
+
+
+def run_real_modules(page, ev: Evidence, native: bool) -> None:
+    page.set_viewport_size({"width": 1024, "height": 900})
+    page.wait_for_timeout(150)
+    # Kanban: model status and order, then model undo.
+    go(page, "#pilot/admin/project19")
+    page.evaluate("() => f24view('Kanban')")
+    page.wait_for_timeout(300)
+    before = page.evaluate("() => f24Tasks.map(t => t.s).join(',')")
+    module_drag(page, False, '[data-sort-id="task-0"]', '[data-sortable-id="kanban-lane-1"]')
+    after = page.evaluate("() => f24Tasks.map(t => t.s).join(',')")
+    ev.check("kanban model move", after != before, f"{before} -> {after}")
+    page.evaluate("() => window.FormaTouch.undoSort('kanban')")
+    page.wait_for_timeout(250)
+    ev.check("kanban model undo", page.evaluate("() => f24Tasks.map(t => t.s).join(',')") == before, page.evaluate("() => f24Tasks.map(t => t.s).join(',')"))
+    # Gantt: drag start and resize length.
+    page.evaluate("() => f24view('Gantt')")
+    page.wait_for_timeout(300)
+    before = page.evaluate("() => [f24Tasks[0].start, f24Tasks[0].len]")
+    page.evaluate("() => window.FormaTouch.swipe(document.querySelector('#gantt-bar-0'), 70, 0)")
+    page.wait_for_timeout(250)
+    after = page.evaluate("() => [f24Tasks[0].start, f24Tasks[0].len]")
+    ev.check("gantt drag start", after[0] != before[0], f"{before} -> {after}")
+    page.evaluate("""() => { const h=document.querySelector('#gantt-bar-0 .gbar-resize'); const b=h.getBoundingClientRect(); window.FormaTouch.simulate('pointerdown',h,{x:b.x+4,y:b.y+8}); window.FormaTouch.simulate('pointermove',h,{x:b.x+170,y:b.y+8}); window.FormaTouch.simulate('pointerup',h,{x:b.x+170,y:b.y+8}) }""")
+    page.wait_for_timeout(250)
+    resized = page.evaluate("() => f24Tasks[0].len")
+    ev.check("gantt resize length", resized != after[1], f"{after[1]} -> {resized}")
+    # Calendar month state.
+    go(page, "#pilot/admin/calendar19")
+    month = page.evaluate("() => wDate.getMonth()")
+    page.evaluate("() => window.FormaTouch.swipe(document.querySelector('.calgrid'), -90, 4)")
+    page.wait_for_timeout(300)
+    ev.check("calendar month change", page.evaluate("() => wDate.getMonth()") != month, f"{month} -> {page.evaluate('() => wDate.getMonth()')}")
+    # Workflow model order and undo.
+    go(page, "#pilot/admin/workflow19")
+    before = page.evaluate("() => wNodes.join('|')")
+    module_drag(page, False, '[data-sort-id="workflow-0"]', '[data-sortable-id="workflow-nodes"] [data-node-id="2"]')
+    after = page.evaluate("() => wNodes.join('|')")
+    ev.check("workflow model move", after != before, f"{before} -> {after}")
+    page.evaluate("() => window.FormaTouch.undoSort('workflow')")
+    page.wait_for_timeout(250)
+    ev.check("workflow model undo", page.evaluate("() => wNodes.join('|')") == before, page.evaluate("() => wNodes.join('|')"))
+    # Studio parts model order and undo.
+    go(page, "#pilot/admin/s31editor/form-enquiry", ".s31-layer[data-part-id]")
+    before = page.evaluate("() => s31Current().parts.map(p => p.id).join(',')")
+    module_drag(page, False, ".s31-layer[data-part-id]:nth-child(1)", ".s31-layer[data-part-id]:nth-child(3)")
+    after = page.evaluate("() => s31Current().parts.map(p => p.id).join(',')")
+    ev.check("studio parts model move", after != before, "parts reordered")
+    page.evaluate("() => window.FormaTouch.undoSort('studio-parts')")
+    page.wait_for_timeout(250)
+    ev.check("studio parts model undo", page.evaluate("() => s31Current().parts.map(p => p.id).join(',')") == before, "restored")
+    # Keyboard parity: Space, Arrow, Space and Escape cancel.
+    page.goto(page.url.split("#")[0] + "#pilot/admin/f33touchlab", wait_until="load", timeout=20_000)
+    page.wait_for_selector("#app", timeout=10_000)
+    try:
+        page.wait_for_selector("#touch-sortable [data-sortable-item]", timeout=10_000)
+    except Exception:
+        print("DEBUG", page.url, page.locator("#f33touch-lab").count(), page.locator("#touch-sortable").count(), page.locator("#touch-sortable [data-sortable-item]").count(), page.locator("h1").first.text_content() if page.locator("h1").count() else "")
+        raise
+    page.locator("#touch-sortable [data-sortable-item]").first.focus()
+    order = page.evaluate("() => [...document.querySelectorAll('#touch-sortable [data-sortable-item]')].map(x => x.dataset.sortId).join(',')")
+    page.keyboard.press("Space")
+    page.keyboard.press("ArrowDown")
+    page.keyboard.press("Space")
+    page.wait_for_timeout(200)
+    moved = page.evaluate("() => [...document.querySelectorAll('#touch-sortable [data-sortable-item]')].map(x => x.dataset.sortId).join(',')")
+    ev.check("keyboard reorder commit", moved != order, f"{order} -> {moved}")
+    live_text = page.locator("#ft-live").text_content() or ""
+    ev.check("keyboard live announcement", "Moved" in live_text or "Position" in live_text, live_text)
+    page.evaluate("() => window.FormaTouch.undoSort('lab-sort')")
+    page.wait_for_timeout(150)
+    page.locator("#touch-sortable [data-sortable-item]").first.focus()
+    page.keyboard.press("Space")
+    page.keyboard.press("ArrowDown")
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(150)
+    ev.check("keyboard reorder cancel", page.evaluate("() => [...document.querySelectorAll('#touch-sortable [data-sortable-item]')].map(x => x.dataset.sortId).join(',')") == order, "restored")
+    # Multi-touch cancellation keeps the model unchanged.
+    cancel_before = page.evaluate("() => [...document.querySelectorAll('#touch-cancel-list [data-sortable-item]')].map(x => x.dataset.sortId).join(',')")
+    page.evaluate("""() => {
+      const el = document.querySelector('#touch-cancel-list [data-sortable-item]');
+      window.FormaTouch.simulate('pointerdown', el, {x: 20, y: 20, pointerId: 41});
+      window.FormaTouch.simulate('pointermove', el, {x: 20, y: 60, pointerId: 41});
+      window.FormaTouch.simulate('pointerdown', document.body, {x: 200, y: 200, pointerId: 42});
+      window.FormaTouch.simulate('pointerup', document.body, {x: 200, y: 200, pointerId: 42});
+      window.FormaTouch.simulate('pointerup', el, {x: 20, y: 60, pointerId: 41});
+    }""")
+    page.wait_for_timeout(200)
+    ev.check("multi-touch cancel", page.evaluate("() => window.FormaTouch.state.active") == 0 and page.evaluate("() => [...document.querySelectorAll('#touch-cancel-list [data-sortable-item]')].map(x => x.dataset.sortId).join(',')") == cancel_before, "second pointer cancelled safely")
+    # 44 px touch geometry.
+    small = page.evaluate("""() => [...document.querySelectorAll('.f33touch-card button, .f33touch-row')].filter(el => el.getBoundingClientRect().height > 0 && el.getBoundingClientRect().height < 44).length""")
+    ev.check("touch targets 44px", small == 0, str(small) + " undersized targets")
+    # Real shell edge gesture, including public no-slide.
+    go(page, "#pilot/admin/overview")
+    page.evaluate("""() => {
+      const s=document.querySelector('.shell'); const b=s.getBoundingClientRect();
+      window.FormaTouch.simulate('pointerdown',s,{x:b.right-6,y:420,pointerId:51});
+      window.FormaTouch.simulate('pointermove',s,{x:b.right-6-90,y:420,pointerId:51});
+      window.FormaTouch.simulate('pointerup',s,{x:b.right-6-90,y:420,pointerId:51});
+    }""")
+    page.wait_for_timeout(300)
+    ev.check("real shell edge gesture", "shift-right" in page.evaluate("() => document.querySelector('.canvas').className") or "shift-left" in page.evaluate("() => document.querySelector('.canvas').className"), page.evaluate("() => document.querySelector('.canvas').className"))
+    page.keyboard.press("Escape")
+    page.wait_for_timeout(150)
+    go(page, "#pilot/public/home")
+    page.evaluate("""() => {
+      const s=document.querySelector('.shell'); if(!s) return;
+      window.FormaTouch.simulate('pointerdown',s,{x:innerWidth-6,y:420,pointerId:52});
+      window.FormaTouch.simulate('pointermove',s,{x:innerWidth-96,y:420,pointerId:52});
+      window.FormaTouch.simulate('pointerup',s,{x:innerWidth-96,y:420,pointerId:52});
+    }""")
+    page.wait_for_timeout(200)
+    ev.check("public shell no slide", "shift-left" not in page.evaluate("() => document.querySelector('.canvas').className"), page.evaluate("() => document.querySelector('.canvas').className"))
+    page.set_viewport_size({"width": 390, "height": 844})
+    page.wait_for_timeout(120)
+
+
 def run_browser(playwright, base_url: str, name: str, chromium_path: str | None, output: Path, force_fallback: bool = False) -> Evidence:
     browser = launch(playwright, name, chromium_path)
     native = name == "chromium" and not force_fallback
@@ -290,6 +427,7 @@ def run_browser(playwright, base_url: str, name: str, chromium_path: str | None,
         else:
             run_fallback(page, ev)
             ev.check("native touch capability", True, "not emitted in this browser; pointer fallback only")
+        run_real_modules(page, ev, native)
         ev.check("no page errors", not errors, str(errors[:3]))
         ev.check("no document overflow", not page.evaluate("document.documentElement.scrollWidth > innerWidth"), ("390 px" if native else "1024 px") + " viewport")
         page.screenshot(path=str(output / f"touch-{name}-{390 if native else 1024}.png"), full_page=False)

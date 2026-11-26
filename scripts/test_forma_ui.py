@@ -23,6 +23,7 @@ class TestCLI(unittest.TestCase):
         rows=run('layouts');self.assertEqual(len(rows),8);self.assertEqual([x['id'] for x in rows],['sidebar','semi','full','fullscreen','split','centered','inspector','public']);self.assertEqual(run('layouts','Public Layout')[0]['id'],'public');self.assertIn('split',{x['id'] for x in run('layouts','split')});self.assertEqual(run('layout','inspector')['config']['locked'],[]);self.assertIn('aiAssistant',run('layout','public')['config']['locked'])
     def test_layout(self):
         d=run('layout','sidebar');self.assertEqual(d['name'],'Sidebar Layout');self.assertEqual(len(d['slots']),8);self.assertTrue(d['defaults']['contextSidebar']);self.assertEqual(d['responsive']['390'][:9],'Rail 52 p');self.assertFalse(run('layout','unknown-layout',ok=False).returncode==0)
+        p=run('interaction','no-such-interaction',ok=False);self.assertEqual(p.returncode,1);self.assertEqual(json.loads(p.stdout)['error']['code'],'unknown_interaction')
     def test_interactions(self):
         rows=run('interactions');self.assertEqual(len(rows),32);self.assertTrue(any(x['id']=='shell.sidebar-swipe' for x in rows));d=run('interaction','shell.sidebar-swipe');self.assertEqual(d['component'],'Core.Touch.Shell')
     def test_keys(self):self.assertEqual(len(run('keys')),24);self.assertEqual(len([x for x in run('keys') if x['id'].startswith('forma.touch.')]),9);self.assertEqual(run('keys','forma.collection.adaptive')[0]['id'],'forma.collection.adaptive')

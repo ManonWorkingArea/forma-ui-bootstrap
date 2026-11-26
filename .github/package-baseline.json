@@ -9,8 +9,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 2766,
-      "sha256": "8d4fd51e2287a2e6012d42324036d81c5899e6ea3c349c187753c295d1ce8d6f"
+      "bytes": 2929,
+      "sha256": "5fafda6f3fcf8092f85fb65c47ecab96574434bed9c4545a2ee32e26db94ccd0"
     },
     {
       "path": "SKILL.md",
@@ -154,8 +154,8 @@
     },
     {
       "path": "assets/mockup/standalone.html",
-      "bytes": 1114829,
-      "sha256": "88da58775b7da7c2a64169e5ac516e07653241d8deedd4e169868d666789e6c2"
+      "bytes": 1128968,
+      "sha256": "f361090b6208a9c7ca491942a980bffb0758ff0d59684a941206080334e2ed69"
     },
     {
       "path": "assets/mockup/ui-inspector.js",
@@ -164,8 +164,8 @@
     },
     {
       "path": "references/COMPONENT_INVENTORY.md",
-      "bytes": 3985,
-      "sha256": "a0b98984bc05ca03331dc165b41754b4a3a9eac0fa7bd9a41c460f1b98db0c4e"
+      "bytes": 4020,
+      "sha256": "eba1d2adadfbf213137b2dea6203ee5ae4f2d28e13ae503bfba19597cde579dd"
     },
     {
       "path": "references/COMPONENT_REGISTRY.json",
@@ -174,18 +174,18 @@
     },
     {
       "path": "references/DESIGN_SYSTEM.md",
-      "bytes": 7245,
-      "sha256": "bdad125b4028b71fd7a57fe22af2283a3ad09a6776dc241b569c131add6d9cdd"
+      "bytes": 7517,
+      "sha256": "84685c564c251a7269e33ab126b0a591a485f999bdc823276542791a5fc13bce"
     },
     {
       "path": "references/MANIFEST.json",
       "bytes": 1250,
-      "sha256": "632073a19bd9952577ecba20c5985fdd5fb5f0e2344c0872f326d4a6df383670"
+      "sha256": "ca752f33d0737763087f244c154744a811e05044d3cafda92763f041395e0d74"
     },
     {
       "path": "references/MOCKUP_V34_README.md",
-      "bytes": 1908,
-      "sha256": "1daa910bae41896b2af3657c510afd565c8445e08a0e6780bf2170f1032f61e4"
+      "bytes": 2001,
+      "sha256": "c348842731665bb1488426be7003fea799fa81b20c8d42cd8b2d9f6e5d06ff2c"
     },
     {
       "path": "references/PAGE_INDEX.json",
@@ -199,8 +199,8 @@
     },
     {
       "path": "references/TOOLS.md",
-      "bytes": 5384,
-      "sha256": "2e8587f473be05b1d471aaa3a5f28195b4ba281744714ba9b0ea29db83cdc8d5"
+      "bytes": 5642,
+      "sha256": "de9dc3fe3e5799029b95644e69561f2ad88eb7ba12b1cc85d4525e7a629bdb5d"
     },
     {
       "path": "references/UI_INSPECTOR_CONTRACT.md",
@@ -299,13 +299,13 @@
     },
     {
       "path": "scripts/forma_ui.py",
-      "bytes": 11517,
-      "sha256": "4a70a6ff5de8453747d256b9367fc3786e0d747bec508a153e78165846d6c889"
+      "bytes": 11663,
+      "sha256": "73bd56dd9ca7ff8ca08f54014dd8393fa78557e52cbd8f5a22ebad736a9dc8c8"
     },
     {
       "path": "scripts/test_forma_ui.py",
-      "bytes": 4169,
-      "sha256": "6549413bd27c89bde83d075519f58be5e53e6f8de522ef879df22edbb2e1362e"
+      "bytes": 4340,
+      "sha256": "ee550776ab8730da04cf323bd36f268b300b57592b9a81da1bd0038308c5f0e8"
     }
   ]
 }

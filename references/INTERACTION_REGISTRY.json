@@ -22,7 +22,10 @@
       "pinch",
       "simulate",
       "drag",
-      "pointerCancel"
+      "pointerCancel",
+      "defineSortable",
+      "redoSort",
+      "announce"
     ],
     "listeners": [
       "pointerdown",
@@ -40,7 +43,16 @@
       "window blur",
       "visibilitychange"
     ],
-    "reducedMotion": "transitions and momentum disabled under prefers-reduced-motion"
+    "reducedMotion": "transitions and momentum disabled under prefers-reduced-motion",
+    "modulesWired": [
+      "shell",
+      "kanban",
+      "gantt",
+      "calendar",
+      "workflow",
+      "studio-parts"
+    ],
+    "notes": "Real modules use model callbacks; unwired module rows in INTERACTION_COVERAGE are lab-only, not PASS."
   },
   "touchVisualKeys": [
     "forma.touch.geometry",
@@ -718,7 +730,6 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
         "pointer-fallback"
       ]
     },
@@ -749,7 +760,6 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
         "pointer-fallback"
       ]
     },
@@ -780,7 +790,6 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
         "pointer-fallback"
       ]
     },
@@ -801,7 +810,7 @@
         "touch",
         "pen"
       ],
-      "state": "revealed row action",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -810,8 +819,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -831,7 +840,7 @@
         "touch",
         "pen"
       ],
-      "state": "active item",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -840,8 +849,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -862,7 +871,7 @@
         "touch",
         "pen"
       ],
-      "state": "row action",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -871,8 +880,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -903,7 +912,6 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
         "pointer-fallback"
       ]
     },
@@ -914,8 +922,8 @@
       "specimen": "sortable",
       "route": "pilot/admin/f33touchlab",
       "modules": [
-        "builder",
-        "studio"
+        "studio",
+        "builder"
       ],
       "gestures": [
         "sortable",
@@ -926,7 +934,7 @@
         "touch",
         "pen"
       ],
-      "state": "part order",
+      "state": "s31 parts order",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -935,7 +943,6 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
         "pointer-fallback"
       ]
     },
@@ -1019,7 +1026,7 @@
         "touch",
         "pen"
       ],
-      "state": "preview offset",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1028,8 +1035,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -1051,7 +1058,7 @@
         "touch",
         "pen"
       ],
-      "state": "archived state",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1060,8 +1067,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -1081,7 +1088,7 @@
         "touch",
         "pen"
       ],
-      "state": "contact action",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1090,8 +1097,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -1111,7 +1118,7 @@
         "touch",
         "pen"
       ],
-      "state": "panel width",
+      "state": "Lab specimen only · module surface not wired in this round",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1120,8 +1127,8 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "chromium-native-touch",
-        "pointer-fallback"
+        "lab-only",
+        "pending-module-wiring"
       ]
     },
     {
@@ -1152,7 +1159,7 @@
       ],
       "evidence": [
         "chromium-native-touch",
-        "pointer-fallback"
+        "no-underlying-action"
       ]
     }
   ],
@@ -1161,5 +1168,23 @@
     "specimens": 14,
     "nativeTouchClaim": "Chromium only when CDP emits touch; WebKit and Firefox use pointer fallback",
     "physicalDevice": "Pending Owner Review"
-  }
+  },
+  "testedSurfaces": [
+    "kanban",
+    "gantt",
+    "calendar",
+    "workflow",
+    "studio-parts",
+    "shell",
+    "touch-lab"
+  ],
+  "labOnly": [
+    "chat.swipe-archive",
+    "datatable.row-swipe",
+    "directory.swipe",
+    "files.swipe",
+    "gallery.swipe",
+    "layout.playground-panel",
+    "theme.preview-pan"
+  ]
 }

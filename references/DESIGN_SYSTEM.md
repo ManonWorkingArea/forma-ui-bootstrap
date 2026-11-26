@@ -44,7 +44,7 @@ Provisional layout tokens: inspector 280px (240–320), split list 320px (280–
 
 ## Touch and pointer interactions (V34.2)
 
-Use one shared Pointer Events engine for mouse, touch and pen. Modules subscribe to `formatouch:*` events or `data-touch*` / `data-sortable*` attributes; they never add their own touch recognizer. Tap slop is 8px, drag threshold 6px, long press 500ms, double tap 320ms, auto-scroll edge 44px. Release pointer capture on pointerup, pointercancel, lostpointercapture, blur and tab hide. Suppress only the click that follows a gesture.
+Use one shared Pointer Events engine for mouse, touch and pen. Real modules use model callbacks (`defineSortable({apply,undo,redo})`) so drag results survive re-render; the shell uses a 20px edge gesture and existing shift classes. Keyboard Space/Arrow/Space/Escape mirrors pointer reorder with one live announcement per state change. Modules subscribe to `formatouch:*` events or `data-touch*` / `data-sortable*` attributes; they never add their own touch recognizer. Tap slop is 8px, drag threshold 6px, long press 500ms, double tap 320ms, auto-scroll edge 44px. Release pointer capture on pointerup, pointercancel, lostpointercapture, blur and tab hide. Suppress only the click that follows a gesture.
 
 Sortable and drag surfaces use a handle, ghost and placeholder with same-group containers, cross-container/nested moves, keyboard Alt+Arrow, undo and real local state. Touch targets are 44–48px inside safe areas; dynamic viewport and visualViewport keyboard handling are required. Keep non-hover fallbacks and persistent live announcements of gesture, pointer type and component identity. Physical-device verification remains Pending Owner Review.
 

@@ -4,6 +4,15 @@ All notable repository and design-reference changes are recorded here. The UI mo
 
 ## Unreleased - V34.2 touch interactions
 
+### Fixed
+
+- Real Kanban movement now mutates `f24Tasks` status and order and survives re-render; Gantt drag/resize mutates `start`/`len`; Calendar swipe changes `wDate`; Workflow order mutates `wNodes`/`f24NodeTypes`; Studio part order mutates `s31Current().parts`.
+- Sortable is model-backed through `FormaTouch.defineSortable(group,{apply,undo,redo})`; undo/redo uses inverse model operations and survives DOM replacement. Ctrl+Z is scoped to the focused sortable container.
+- Keyboard parity: Space starts, Arrow moves, Space commits, Escape restores; Alt+Arrow is an immediate alias with one live announcement per state change.
+- The real shell uses 20 px edge gestures, drives the actual `.canvas` transform without transition during drag and settles through `shift-left`/`shift-right`; public stays no-slide.
+- Auto-scroll is disabled under reduced motion; a second pointer either starts a declared pinch or cancels the active gesture safely.
+- Touch smoke launches Chromium, WebKit and Firefox with browser-compatible options and reports native touch honestly; real module state, keyboard, undo, multi-touch, shell and 44 px geometry are asserted. Files/Gallery/DataTable/Chat/Directory/Theme remain explicitly Lab-only.
+
 ### Added
 
 - One shared `FormaTouch` Pointer Events engine with tap, double tap, long press, swipe, pan, drag, sortable, resize, pinch, pointer capture, cancellation, axis lock, rAF updates, edge auto-scroll, momentum, nested-scroll yielding, tap suppression and reduced-motion behavior.

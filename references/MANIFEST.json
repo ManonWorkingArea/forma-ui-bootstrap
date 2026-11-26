@@ -4,13 +4,13 @@
   "scope": "current V34.2 member checksums",
   "status": "REVIEW CANDIDATE; no design freeze",
   "sha256": {
-    "assets/mockup/standalone.html": "88da58775b7da7c2a64169e5ac516e07653241d8deedd4e169868d666789e6c2",
+    "assets/mockup/standalone.html": "f361090b6208a9c7ca491942a980bffb0758ff0d59684a941206080334e2ed69",
     "assets/mockup/ui-inspector.js": "d2aa5941e3b86fadde57a30d9d66c75db4ad98f22fe9c56f674d18d317e9bdd6",
-    "references/LAYOUT_REGISTRY.json": "d6f37bbf0c19211d96629657187c0af81180c9ba7e1ed2ac6744cae9570868a6",
-    "references/INTERACTION_REGISTRY.json": "c8e5413bcf1a76b0a22a7af23361d3ca3eb5fb2edf847a07ccbd7e02539eb890",
-    "references/INTERACTION_COVERAGE.md": "534e49c3bd3279835fd2c1fe5203ce0c12d2a435d6acf90f111b37093dcf7087",
+    "references/LAYOUT_REGISTRY.json": "e0c40b5b1e74aef2c34ce11d9855df105b6ca8e8901732a09954b965f672c45a",
+    "references/INTERACTION_REGISTRY.json": "57335310d20b0c2cd276490accd90fcdf1c50499c405767164832b5a4a6b6b30",
+    "references/INTERACTION_COVERAGE.md": "1e5ad9a7e3508ccd8167896f228e2e792453a5738b5413845e147c47bb326c6d",
     "references/COMPONENT_REGISTRY.json": "07f7f22017f9a4b829252b541ba0f33d062e9684aef17e75d3ab2a5f2dd615bb",
-    "references/DESIGN_SYSTEM.md": "bdad125b4028b71fd7a57fe22af2283a3ad09a6776dc241b569c131add6d9cdd",
+    "references/DESIGN_SYSTEM.md": "84685c564c251a7269e33ab126b0a591a485f999bdc823276542791a5fc13bce",
     "references/PAGE_INDEX.json": "bf9b3f5db9179b7adfd8f1bfd9f7ba176f94400186603a1232572f589294411f",
     "references/UI_INSPECTOR_CONTRACT.md": "54907c416cd90b644e1cbc70fcac4fdd765ebd36bb6c4673f8da860c66feea4d",
     "references/VISUAL_KEYS.json": "884d38ff244751282eb767860eab87e23d19d95d26339b4a2df45ad07823996e"

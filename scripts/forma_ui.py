@@ -154,5 +154,7 @@ def main():
         emit(r)
         if (a.cmd=='verify' and not r['ok']) or (a.cmd=='capture' and (not r['frames'] or r['errors'])):return 1
         return 0
-    except Exception as e:print(f'Error: {e}',file=sys.stderr);return 1
+    except Exception as e:
+        if a.cmd=='interaction':print(json.dumps({'error':{'code':'unknown_interaction','message':str(e)}},ensure_ascii=False));return 1
+        print(f'Error: {e}',file=sys.stderr);return 1
 if __name__=='__main__':sys.exit(main())

@@ -7,8 +7,9 @@
 3. Use the top-bar **Debug** control on desktop or the bottom-left control on narrow/editor views. `Alt+Shift+D` also toggles the Inspector.
 4. Select **Pick**, choose an element, and copy or export its structured reference.
 5. Use the matching issue form and attach a clean screenshot plus the reference JSON when available.
-6. Review touch interactions at `#pilot/admin/f33touch` or `#pilot/admin/f33touchlab`.
-7. Review layout templates at `#pilot/admin/f33layouts`, open a direct template route (`#pilot/admin/f33layouts/<id>`) or configure one in `#pilot/admin/f33playground`.
+6. Review real module touch behavior on Project (Kanban/Gantt), Calendar, Workflow and Studio parts; files/gallery/directory/chat/theme are Lab-only this round.
+7. Review touch interactions at `#pilot/admin/f33touch` or `#pilot/admin/f33touchlab`.
+8. Review layout templates at `#pilot/admin/f33layouts`, open a direct template route (`#pilot/admin/f33layouts/<id>`) or configure one in `#pilot/admin/f33playground`.
 
 The Preview is static. It needs no install, backend, account or database.
 

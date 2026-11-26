@@ -1885,6 +1885,6 @@
       "shell.ai-swipe",
       "shell.canvas-follow"
     ],
-    "notes": "Layout preview panels resize through the shared engine; shell routes keep the existing canvas slide shift classes and public stays no-slide."
+    "notes": "Layout preview panels resize through the shared engine; the real shell uses a 20 px edge gesture and settles through shift-left/shift-right, while public stays no-slide."
   }
 }

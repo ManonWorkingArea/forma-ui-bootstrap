@@ -1,30 +1,37 @@
-# Touch interaction coverage — V34.2
+# Touch interaction coverage — V34.2 corrective
 
-One shared Pointer Events engine (`FormaTouch`) owns gesture recognition for mouse, touch and pen. Module code subscribes to `formatouch:*` events or uses documented `data-touch*` / `data-sortable*` attributes; no module keeps its own touch recognizer.
+One shared Pointer Events engine (`FormaTouch`) owns gesture recognition. Modules subscribe through `formatouch:*` events, model callbacks or `data-touch*` / `data-sortable*` attributes. No module keeps a duplicate touch recognizer.
 
-**Evidence states:** `native-touch` = Chromium CDP emits real touch events; `pointer-fallback` = WebKit/Firefox pointer events or documented `FormaTouch` API; `physical` = **Pending Owner Review** until reviewed on a device.
+**Evidence states:** `native-touch` = Chromium CDP emits real touch; `pointer-fallback` = WebKit/Firefox pointer events through the documented API; `lab-only` = the interaction exists only in the Design System Touch Lab and is **not** wired to that module; `physical` = **Pending Owner Review** until reviewed on a device. Synthetic WebKit/Firefox pointer checks are not native touch.
 
-| Surface | Gestures / interactions | Registry IDs | State changed | Evidence |
+| Surface | Wired? | Verified by smoke | Model/state changed | Evidence |
 |---|---|---|---|---|
-| Design System Touch Lab | tap, double tap, long press, swipe, sortable, cross-container, nested, cancel, auto-scroll, sheet, pinch, resize, shell, tap suppression | `core.*` | specimen counters, order arrays, sheet, zoom, panel, shell panel | native-touch (Chromium), pointer-fallback |
-| Shell | sidebar swipe, assistant swipe, canvas follow | `shell.sidebar-swipe`, `shell.ai-swipe`, `shell.canvas-follow` | existing `shift-left` / `shift-right` classes, no main reflow | pointer-fallback; physical pending |
-| Public layout | no slide, no assistant | `shell.canvas-follow` | unchanged public canvas | static check |
-| Layout Playground | panel resize, split, direct routes | `layout.playground-panel`, `core.panel-resize` | panel width and split geometry | pointer-fallback |
-| Kanban (workspace) | reorder, move between lanes | `kanban.reorder`, `core.cross-container` | `f24Tasks` status and order | pointer-fallback; physical pending |
-| Calendar / Gantt | period swipe, bar drag | `calendar.swipe`, `gantt.drag` | view period, start/length | pointer-fallback |
-| Files / Gallery / DataTable | row and card swipe | `files.swipe`, `gallery.swipe`, `datatable.row-swipe` | revealed action / active card | pointer-fallback |
-| Workflow / builders | node and part drag, canvas pan/pinch | `workflow.node-drag`, `builder.part-order`, `builder.canvas-pan`, `builder.pinch-zoom` | node position, part order, canvas offset/zoom | pointer-fallback |
-| Theme / Chat / Directory | preview pan, swipe archive, swipe action | `theme.preview-pan`, `chat.swipe-archive`, `directory.swipe` | preview offset, archived state, contact action | pointer-fallback |
-| UI Inspector | pick and cancel during a gesture | `inspector.pick-cancel` | one reference, no underlying action | native-touch (Chromium) |
-| Bottom sheets / panels | drag sheet, resize panel | `core.bottom-sheet`, `core.panel-resize` | snap state, size | native-touch (Chromium) |
+| Shell | yes | yes (all engines) | existing `shift-left` / `shift-right` classes after live `.canvas` follow; 20 px edge rule | Chromium native touch + pointer fallback |
+| Touch Lab (14 specimens) | yes | yes (all engines) | specimen counters, order arrays, sheet, zoom, panel, shell classes | Chromium native touch + pointer fallback |
+| Kanban (`project19`) | yes | yes (all engines) | `f24Tasks` status and order, survives re-render | pointer fallback |
+| Gantt (`project19`) | yes | yes (all engines) | `f24Tasks[i].start` and `.len` | pointer fallback |
+| Calendar (`calendar19`) | yes | yes (all engines) | `wDate` month state | pointer fallback |
+| Workflow (`workflow19`) | yes | yes (all engines) | `wNodes` / `f24NodeTypes` order | pointer fallback |
+| Studio parts (`s31editor/form-enquiry`) | yes | yes (all engines) | `s31Current().parts` order, saved and re-rendered | pointer fallback |
+| Layout Playground split | yes | Lab panel resize only | split percentage / panel size | pointer fallback |
+| UI Inspector pick | yes | Chromium | one reference, underlying lab action suppressed | Chromium native touch |
+| Files | **lab-only** | no module run | not wired in this round | Lab only / Pending |
+| Gallery | **lab-only** | no module run | not wired in this round | Lab only / Pending |
+| DataTable | **lab-only** | no module run | not wired in this round | Lab only / Pending |
+| Chat / Inbox | **lab-only** | no module run | not wired in this round | Lab only / Pending |
+| Directory | **lab-only** | no module run | not wired in this round | Lab only / Pending |
+| Theme preview | **lab-only** | no module run | not wired in this round | Lab only / Pending |
+| Page builder (`builder19`) | n/a | — | Route redirects to CMS; `wBlocks` model exists but is not exposed by a route | Not claimed |
 
 ## Contract
 
 - Pointer Events only. HTML drag/drop remains a desktop fallback in the CMS builder.
-- Pointer capture is released on `pointerup`, `pointercancel`, `lostpointercapture`, window blur and tab hide.
-- Thresholds: tap slop 8px, drag threshold 6px, long press 500ms, double tap 320ms, auto-scroll edge 44px.
-- Axis lock, tap suppression scoped to the gesture target, nested scroll yielding, reduced-motion respected.
-- Sortable: handle, ghost, placeholder, same-group containers, cross-container and nested moves, keyboard Alt+Arrow, undo, and real mockup order/state updates.
-- Touch targets 44–48px, safe-area padding, dynamic viewport and `visualViewport` keyboard handling.
-- A persistent `role=status` live region announces gesture, pointer type and component identity.
-- Physical-device verification remains **Pending Owner Review**; it is not implied by automated evidence.
+- Tap slop 8px, drag threshold 6px, long press 500ms, double tap 320ms, auto-scroll edge 44px.
+- Auto-scroll is disabled under `prefers-reduced-motion`, as are transitions and momentum.
+- Pointer capture is released on `pointerup`, `pointercancel`, `lostpointercapture`, blur and tab hide.
+- A second pointer either starts a declared pinch from the shared pointer map or cancels the active gesture safely; `FormaTouch.state.active` returns to zero.
+- Model-backed sortable: stable item ids, source/target containers, indices, `defineSortable(group,{apply,undo,redo})`, inverse model undo/redo, re-render from model state. Ctrl+Z is scoped to the focused sortable container.
+- Keyboard parity: Space starts, Arrow moves, Space commits, Escape restores; Alt+Arrow is an immediate alias. One `#ft-live` `role=status` announcement per state change.
+- Real shell uses 20 px edge gestures and settles through the existing canvas shift classes; public canvas never slides.
+- Touch targets are 44–48px and the smoke asserts no visible lab target below 44px.
+- Physical-device verification remains **Pending Owner Review**; it is not implied by CI or synthetic pointer tests.

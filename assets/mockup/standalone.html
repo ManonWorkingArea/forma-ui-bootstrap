@@ -521,6 +521,9 @@ body.f33pv-labels-off .f33pv-slotlabel{display:none}
 [data-sortable-item]{touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
 [data-sortable-item]:focus-visible,[data-touch]:focus-visible,.f33touch-card button:focus-visible,.f33touch-card [tabindex]:focus-visible{outline:2px solid var(--f33-focus);outline-offset:2px}
 .f33touch-card [data-touch-resize],[data-touch-resize]{touch-action:none}
+.ft-live{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.gbar-resize{display:block;position:absolute;right:-2px;top:0;bottom:0;width:14px;cursor:ew-resize;touch-action:none;background:transparent}
+.gbar{position:relative}
 .ft-ghost{opacity:.92;border:1px solid var(--f33-focus);border-radius:6px;background:var(--f33-surface);box-shadow:0 10px 30px #18203333;pointer-events:none;overflow:hidden}
 .ft-placeholder{border:2px dashed var(--f33-focus);border-radius:6px;background:var(--f33-soft);margin:2px 0}
 .ft-dragging{opacity:.25}
@@ -548,7 +551,7 @@ body.f33pv-labels-off .f33pv-slotlabel{display:none}
 .f33touch-sheetwrap{position:relative;min-height:190px;overflow:hidden;border:1px solid var(--f33-line);border-radius:6px;background:var(--f33-raised);padding:8px}
 .f33touch-sheet{position:absolute;left:4px;right:4px;bottom:4px;display:grid;gap:8px;padding:10px;border:1px solid var(--f33-line);border-radius:8px 8px 4px 4px;background:var(--f33-surface);box-shadow:0 -6px 20px #1820331f;transform:translateY(calc(100% + 10px));transition:transform 220ms cubic-bezier(.22,1,.36,1)}
 .f33touch-sheet[data-open=true]{transform:none}
-.f33touch-handle{min-height:32px!important;cursor:grab;background:var(--f33-soft)!important;touch-action:none}
+.f33touch-handle{min-height:44px!important;cursor:grab;background:var(--f33-soft)!important;touch-action:none}
 .f33touch-zoom{display:grid;place-items:center;min-height:120px;overflow:hidden;border:1px solid var(--f33-line);border-radius:6px;background:var(--f33-raised);touch-action:none}
 .f33touch-zoombox{display:grid;place-items:center;width:96px;height:64px;border:1px solid var(--f33-focus);border-radius:6px;background:var(--f33-surface);font-size:12px;transition:transform 120ms ease}
 .f33touch-resize{display:flex;align-items:stretch;height:128px;border:1px solid var(--f33-line);border-radius:6px;overflow:hidden;background:var(--f33-raised)}
@@ -565,10 +568,10 @@ body.f33pv-labels-off .f33pv-slotlabel{display:none}
 .f33touch-shellpanel{position:absolute;top:0;bottom:0;width:64%;padding:10px;font-size:11px;color:var(--f33-muted);background:var(--f33-surface);border:1px solid var(--f33-line)}
 .f33touch-shellpanel.ctx{left:0;transform:translateX(-100%);transition:transform 220ms}
 .f33touch-shellpanel.ai{right:0;transform:translateX(100%);transition:transform 220ms}
-.f33touch-shell[data-touch-panel=context] .touch-shell-canvas{transform:translateX(64%)}
-.f33touch-shell[data-touch-panel=context] .f33touch-shellpanel.ctx{transform:none}
-.f33touch-shell[data-touch-panel=ai] .touch-shell-canvas{transform:translateX(-64%)}
-.f33touch-shell[data-touch-panel=ai] .f33touch-shellpanel.ai{transform:none}
+.touch-shell-canvas.shift-left{transform:translateX(64%)}
+.touch-shell-canvas.shift-left+.f33touch-shellpanel.ctx{transform:none}
+.touch-shell-canvas.shift-right{transform:translateX(-64%)}
+.touch-shell-canvas.shift-right+.f33touch-shellpanel.ai{transform:none}
 .f33touch-console{display:grid;gap:8px;border:1px solid var(--f33-line);border-radius:8px;padding:10px 12px;background:var(--f33-surface);min-width:0}
 .f33touch-console p{margin:0;font-size:12px;color:var(--f33-muted);min-height:18px}
 .f33touch-log{display:grid;gap:4px;margin:0;padding:0;list-style:none;max-height:150px;overflow:auto;min-width:0}
@@ -721,7 +724,7 @@ function f24selected(){return new Date(wDate.getFullYear(),wDate.getMonth(),wDay
 function f24changeMonth(n){wDate=new Date(wDate.getFullYear(),wDate.getMonth()+n,1);wDay=1;f24refresh()}
 function f24day(y,m,d){wDate=new Date(y,m,d);wDay=wDate.getDate();f24refresh()}
 function f24eventAdd(){f24form('New event',f24field('Event title','title')+f24field('Date','d',f24date(f24selected()),'date')+f24field('Start time','time','09:00','time')+f24field('End time','end','10:00','time')+f24field('Location','where','Meeting room A'),v=>{f24Events.push({...v,kind:'info'});let a=v.d.split('-').map(Number);f24day(a[0],a[1]-1,a[2]);f24toast('Event added')},'Create event')}
-function f24calendar(pub=false){let sel=f24selected(),y=sel.getFullYear(),m=sel.getMonth(),start=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),cells=Math.ceil((start+days)/7)*7,ym=f24date(sel).slice(0,7),monthEvents=f24Events.filter(e=>e.d.startsWith(ym)),events=f24Events.filter(e=>e.d===f24date(sel)).sort((a,b)=>a.time.localeCompare(b.time));let title=sel.toLocaleDateString('en',{month:'long',year:'numeric'});return `<div class="frame calendar24">${f24bar(`<h2>${title}</h2><div class="row">${f24ic('wleft','f24changeMonth(-1)','Previous month')}${f24ic('wright','f24changeMonth(1)','Next month')}${f24btn('Today','wDate=new Date();wDay=wDate.getDate();f24refresh()')}</div>`,pub?f24pill('Events','',false):f24btn('New event','f24eventAdd()','wplus','primary'))}<div class="cal-layout"><div><div class="calgrid">${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(t=>`<div class="weekday">${t}</div>`).join('')}${Array.from({length:cells},(_,i)=>{let d=new Date(y,m,i-start+1),e=f24Events.filter(x=>x.d===f24date(d)),isSel=f24date(d)===f24date(sel);return `<button class="date24 ${d.getMonth()!==m?'out':''} ${isSel?'selected':''}" type="button" aria-pressed="${isSel}" aria-label="${d.toLocaleDateString('en',{dateStyle:'long'})}, ${e.length} events" onclick="f24day(${d.getFullYear()},${d.getMonth()},${d.getDate()})"><span class="daynum">${d.getDate()}</span>${e.slice(0,2).map(x=>`<span class="event24 ${x.kind}"><span class="ell">${esc(x.title)}</span></span>`).join('')}${e.length>2?`<span class="meta event-more24">+${e.length-2} more</span>`:''}<span class="evdots">${e.slice(0,3).map(x=>`<i class="${x.kind}"></i>`).join('')}</span></button>`}).join('')}</div>${f24foot(`${monthEvents.length} events this month`,'<span class="row"><span class="dot24" style="color:#7e8da4"></span> Meeting <span class="dot24" style="color:#6b9b7c"></span> Customer <span class="dot24" style="color:#c19a60"></span> Task</span>')}</div><aside class="cal-side"><div class="pane24"><div class="kicker">Daily agenda</div><div class="row" style="margin:8px 0 12px"><span class="daybig">${wDay}</span><div class="stack"><h3>${sel.toLocaleDateString('en',{weekday:'long'})}</h3><small>${sel.toLocaleDateString('en',{month:'long',year:'numeric'})}</small></div><span class="grow"></span>${f24pill(`${events.length} events`,'',false)}</div><div class="rule"></div><div class="agenda24">${events.length?events.map(e=>`<div class="agenda-entry ${e.kind}"><div class="stack"><strong class="num">${esc(e.time)}</strong><small>${esc(e.end)}</small></div><div class="stack"><strong>${esc(e.title)}</strong><small>${esc(e.where)}</small></div></div>`).join(''):f24empty('No events','Choose another date or add an event.','calendar19')}</div></div>${pub?'':`<div class="cal-summary"><div class="row between"><span class="meta">Monthly schedule</span><strong>${monthEvents.length} events</strong></div>${f24btn('Add to selected day','f24eventAdd()','wplus')}</div>`}</aside></div></div>`}
+function f24calendar(pub=false){let sel=f24selected(),y=sel.getFullYear(),m=sel.getMonth(),start=new Date(y,m,1).getDay(),days=new Date(y,m+1,0).getDate(),cells=Math.ceil((start+days)/7)*7,ym=f24date(sel).slice(0,7),monthEvents=f24Events.filter(e=>e.d.startsWith(ym)),events=f24Events.filter(e=>e.d===f24date(sel)).sort((a,b)=>a.time.localeCompare(b.time));let title=sel.toLocaleDateString('en',{month:'long',year:'numeric'});return `<div class="frame calendar24">${f24bar(`<h2>${title}</h2><div class="row">${f24ic('wleft','f24changeMonth(-1)','Previous month')}${f24ic('wright','f24changeMonth(1)','Next month')}${f24btn('Today','wDate=new Date();wDay=wDate.getDate();f24refresh()')}</div>`,pub?f24pill('Events','',false):f24btn('New event','f24eventAdd()','wplus','primary'))}<div class="cal-layout"><div><div class="calgrid" data-touch="swipe" data-touch-id="calendar.grid" data-ui-component="Core.Touch.Swipe" data-ui-id="calendar.grid">${['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(t=>`<div class="weekday">${t}</div>`).join('')}${Array.from({length:cells},(_,i)=>{let d=new Date(y,m,i-start+1),e=f24Events.filter(x=>x.d===f24date(d)),isSel=f24date(d)===f24date(sel);return `<button class="date24 ${d.getMonth()!==m?'out':''} ${isSel?'selected':''}" type="button" aria-pressed="${isSel}" aria-label="${d.toLocaleDateString('en',{dateStyle:'long'})}, ${e.length} events" onclick="f24day(${d.getFullYear()},${d.getMonth()},${d.getDate()})"><span class="daynum">${d.getDate()}</span>${e.slice(0,2).map(x=>`<span class="event24 ${x.kind}"><span class="ell">${esc(x.title)}</span></span>`).join('')}${e.length>2?`<span class="meta event-more24">+${e.length-2} more</span>`:''}<span class="evdots">${e.slice(0,3).map(x=>`<i class="${x.kind}"></i>`).join('')}</span></button>`}).join('')}</div>${f24foot(`${monthEvents.length} events this month`,'<span class="row"><span class="dot24" style="color:#7e8da4"></span> Meeting <span class="dot24" style="color:#6b9b7c"></span> Customer <span class="dot24" style="color:#c19a60"></span> Task</span>')}</div><aside class="cal-side"><div class="pane24"><div class="kicker">Daily agenda</div><div class="row" style="margin:8px 0 12px"><span class="daybig">${wDay}</span><div class="stack"><h3>${sel.toLocaleDateString('en',{weekday:'long'})}</h3><small>${sel.toLocaleDateString('en',{month:'long',year:'numeric'})}</small></div><span class="grow"></span>${f24pill(`${events.length} events`,'',false)}</div><div class="rule"></div><div class="agenda24">${events.length?events.map(e=>`<div class="agenda-entry ${e.kind}"><div class="stack"><strong class="num">${esc(e.time)}</strong><small>${esc(e.end)}</small></div><div class="stack"><strong>${esc(e.title)}</strong><small>${esc(e.where)}</small></div></div>`).join(''):f24empty('No events','Choose another date or add an event.','calendar19')}</div></div>${pub?'':`<div class="cal-summary"><div class="row between"><span class="meta">Monthly schedule</span><strong>${monthEvents.length} events</strong></div>${f24btn('Add to selected day','f24eventAdd()','wplus')}</div>`}</aside></div></div>`}
 // Communication: thread messages carry direction and timestamps, not just a string.
 const f24Contacts=[{name:'Maya Chen',channel:'LINE',time:'10:42',unread:2,kind:'ok'},{name:'Alex Morgan',channel:'Email',time:'10:18',unread:1,kind:'info'},{name:'Nina Park',channel:'Web chat',time:'09:56',unread:0,kind:''},{name:'Sam Lee',channel:'Messenger',time:'09:21',unread:0,kind:'info'},{name:'Jamie Fox',channel:'LINE',time:'Yesterday',unread:0,kind:'ok'}];
 let f24Threads=[[{t:'Hi! I would like to check my reservation for Friday.',at:'10:36',mine:false},{t:'Hello Maya, I can help with that. Is this the booking for two guests?',at:'10:38',mine:true},{t:'Yes, that is correct. Can you confirm the booking?',at:'10:42',mine:false}],[{t:'Updated proposal attached. Please review the revised scope.',at:'10:18',mine:false}],[{t:'Is this item available for delivery next week?',at:'09:56',mine:false}],[{t:'Thanks for your help.',at:'09:21',mine:false}],[{t:'I received the confirmation. Thank you!',at:'16:30',mine:false}]];
@@ -740,14 +743,14 @@ function f24inbox(pub=false){let visible=f24Mail.map((a,i)=>({a,i})).filter(x=>x
 let f24Tasks=[{t:'Discovery & requirements',s:2,start:1,len:3,owner:'Alex Morgan',due:'27 Nov',p:'Medium'},{t:'Design system',s:2,start:2,len:4,owner:'Maya Chen',due:'29 Nov',p:'High'},{t:'Application shell',s:1,start:4,len:4,owner:'Nina Park',due:'2 Dec',p:'High'},{t:'Workspace components',s:1,start:6,len:5,owner:'Alex Morgan',due:'5 Dec',p:'High'},{t:'Acceptance review',s:0,start:10,len:3,owner:'Sam Lee',due:'7 Dec',p:'Medium'},{t:'Handover & release',s:0,start:12,len:3,owner:'Maya Chen',due:'8 Dec',p:'Low'}];const f24Status=['To do','In progress','Done'];
 function f24view(t){wView=t;f24refresh()}
 function f24taskAdd(status=0){f24form('New task',f24field('Task name','t')+f24field('Assignee','owner','Alex Morgan')+`<label class="field24">Status<select name="s">${f24Status.map((t,i)=>`<option value="${i}" ${i===status?'selected':''}>${t}</option>`).join('')}</select></label>`+f24field('Due date','due','8 Dec'),v=>{f24Tasks.push({...v,s:Number(v.s),start:1,len:3,p:'Medium'});f24refresh();f24toast('Task added')},'Create task')}
-function f24taskMove(i){f24Tasks[i].s=(f24Tasks[i].s+1)%3;f24refresh();f24toast('Task status updated')}
-function f24taskCard(a,i,pub=false){return `<article class="task24"><div class="row between"><span class="mono">FM-${String(i+1).padStart(3,'0')}</span>${f24pill(a.p,a.p==='High'?'warn':'',false)}</div><h4>${esc(a.t)}</h4><div class="row between"><div class="row">${f24avatar(a.owner,i,true)}<small class="ell">${esc(a.owner)}</small></div>${pub?'':f24ic('wright',`f24taskMove(${i})`,'Move to next status')}</div><div class="row between"><small>${ico('wclock')} ${esc(a.due)}</small><span class="meta">${a.s===2?'Complete':a.s===1?'Active':'Planned'}</span></div></article>`}
-function f24project(pub=false){let done=f24Tasks.filter(x=>x.s===2).length,active=f24Tasks.filter(x=>x.s===1).length,pct=Math.round(done/f24Tasks.length*100),v=pub?'List':wView;let content=v==='Kanban'?`<div class="board24">${f24Status.map((t,j)=>`<div class="lane24"><div class="lanehead"><span class="dot24" style="color:${['#9299a6','#7c8fae','#789581'][j]}"></span><h3>${t}</h3><small>${f24Tasks.filter(x=>x.s===j).length}</small><span class="grow"></span>${f24ic('wplus',`f24taskAdd(${j})`,'Add '+t+' task','plain')}</div>${f24Tasks.map((a,i)=>a.s===j?f24taskCard(a,i):'').join('')}</div>`).join('')}</div>`:v==='List'?`<div class="tasklist24"><div class="taskrow24 heading"><span>Task</span><span>Assignee</span><span>Status</span><span>Due date</span></div>${f24Tasks.map((a,i)=>`<div class="taskrow24"><div class="stack"><span class="strong">${esc(a.t)}</span><small>FM-${String(i+1).padStart(3,'0')}</small></div><div class="row t-owner">${f24avatar(a.owner,i,true)}<span class="ell">${esc(a.owner)}</span></div><span>${f24pill(f24Status[a.s],a.s===2?'ok':a.s===1?'info':'')}</span><span class="t-due num">${esc(a.due)}</span></div>`).join('')}</div>`:`<div class="gantt24"><div class="g-label g-head">Task / Assignee</div><div class="g-time g-head">${Array.from({length:14},(_,i)=>`<span class="tick">${new Date(2026,10,25+i).getDate()}</span>`).join('')}</div>${f24Tasks.map((a,i)=>`<div class="g-label">${f24avatar(a.owner,i,true)}<span class="stack grow"><strong class="ell">${esc(a.t)}</strong><small class="ell">${esc(a.owner)}</small></span></div><div class="g-time"><div class="gbar s${a.s}" style="grid-column:${a.start}/span ${Math.min(a.len,15-a.start)}" title="${esc(a.t)}">${a.s===2?'✓ ':''}${a.len}d</div></div>`).join('')}</div>`;return `<div class="frame"><div class="project-info"><div class="stack"><span class="kicker">Current project</span><h2>Forma workspace release</h2><div class="row">${f24pill('On track','ok')}<small>FM-2026-01</small></div></div><div class="stack"><small>Progress</small><strong class="n num">${pct}%</strong><div class="progress24"><i style="width:${pct}%"></i></div></div><div class="stack"><small>Tasks complete</small><strong class="n num">${done}<small> / ${f24Tasks.length}</small></strong><small>${active} in progress</small></div><div class="stack"><small>Target date</small><strong class="n" style="font-size:19px">08 Dec</strong><small>Delivery milestone</small></div></div>${f24bar(pub?'<h3>Project milestones</h3>':f24seg(['List','Gantt','Kanban'],wView,'f24view'),pub?f24pill('Read-only','',false):f24btn('New task','f24taskAdd()','wplus','primary'))}${v==='Gantt'?'<div class="subbar row between"><strong>25 November – 8 December</strong><small>14-day timeline</small></div>':''}${content}${f24foot(`${f24Tasks.length} tasks · ${done} complete`,v==='Gantt'?'Timeline / days':v==='Kanban'?'Move tasks using their status action':'Project delivery')}</div>`}
+function f24taskMove(i){f24Tasks[i].s=(f24Tasks[i].s+1)%3;f24refresh();f24toast('Task status updated')}function f24GanttKey(e,i){if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();let t=f24Tasks[i],d=e.key==='ArrowRight'?1:-1;if(e.shiftKey)t.len=Math.max(1,Math.min(15-t.start,t.len+d));else t.start=Math.max(1,Math.min(15-t.len+1,t.start+d));f24refresh();formatouchAnnounce(i)}
+function f24taskCard(a,i,pub=false){return `<article class="task24" data-sortable-item data-sortable-group="kanban" data-sort-id="task-${i}" data-task-id="${i}" data-task-lane="${a.s}" data-ui-component="Core.Touch.Sortable" data-ui-id="kanban.task.${i}"><div class="row between"><span class="mono">FM-${String(i+1).padStart(3,'0')}</span>${f24pill(a.p,a.p==='High'?'warn':'',false)}</div><h4>${esc(a.t)}</h4><div class="row between"><div class="row">${f24avatar(a.owner,i,true)}<small class="ell">${esc(a.owner)}</small></div>${pub?'':f24ic('wright',`f24taskMove(${i})`,'Move to next status').replace('<button','<button data-no-drag')}</div><div class="row between"><small>${ico('wclock')} ${esc(a.due)}</small><span class="meta">${a.s===2?'Complete':a.s===1?'Active':'Planned'}</span></div></article>`}
+function f24project(pub=false){let done=f24Tasks.filter(x=>x.s===2).length,active=f24Tasks.filter(x=>x.s===1).length,pct=Math.round(done/f24Tasks.length*100),v=pub?'List':wView;let content=v==='Kanban'?`<div class="board24">${f24Status.map((t,j)=>`<div class="lane24" data-sortable-container data-sortable-group="kanban" data-sortable-id="kanban-lane-${j}" data-lane-index="${j}" data-ui-component="Core.Touch.Sortable" data-ui-id="kanban.lane.${j}"><div class="lanehead"><span class="dot24" style="color:${['#9299a6','#7c8fae','#789581'][j]}"></span><h3>${t}</h3><small>${f24Tasks.filter(x=>x.s===j).length}</small><span class="grow"></span>${f24ic('wplus',`f24taskAdd(${j})`,'Add '+t+' task','plain')}</div>${f24Tasks.map((a,i)=>a.s===j?f24taskCard(a,i):'').join('')}</div>`).join('')}</div>`:v==='List'?`<div class="tasklist24"><div class="taskrow24 heading"><span>Task</span><span>Assignee</span><span>Status</span><span>Due date</span></div>${f24Tasks.map((a,i)=>`<div class="taskrow24"><div class="stack"><span class="strong">${esc(a.t)}</span><small>FM-${String(i+1).padStart(3,'0')}</small></div><div class="row t-owner">${f24avatar(a.owner,i,true)}<span class="ell">${esc(a.owner)}</span></div><span>${f24pill(f24Status[a.s],a.s===2?'ok':a.s===1?'info':'')}</span><span class="t-due num">${esc(a.due)}</span></div>`).join('')}</div>`:`<div class="gantt24"><div class="g-label g-head">Task / Assignee</div><div class="g-time g-head">${Array.from({length:14},(_,i)=>`<span class="tick">${new Date(2026,10,25+i).getDate()}</span>`).join('')}</div>${f24Tasks.map((a,i)=>`<div class="g-label">${f24avatar(a.owner,i,true)}<span class="stack grow"><strong class="ell">${esc(a.t)}</strong><small class="ell">${esc(a.owner)}</small></span></div><div class="g-time"><div class="gbar s${a.s}" id="gantt-bar-${i}" data-gantt-index="${i}" data-touch="swipe" tabindex="0" onkeydown="f24GanttKey(event,${i})" data-ui-component="Core.Touch.Drag" data-ui-id="gantt.bar.${i}" style="grid-column:${a.start}/span ${Math.min(a.len,15-a.start)}" title="${esc(a.t)}">${a.s===2?'✓ ':''}${a.len}d<span class="gbar-resize" data-touch-resize data-touch-resize-target="#gantt-bar-${i}" data-touch-resize-axis="x" data-touch-resize-readonly data-ui-component="Core.ResizeHandle" data-ui-id="gantt.resize.${i}" aria-hidden="true"></span></div></div>`).join('')}</div>`;return `<div class="frame"><div class="project-info"><div class="stack"><span class="kicker">Current project</span><h2>Forma workspace release</h2><div class="row">${f24pill('On track','ok')}<small>FM-2026-01</small></div></div><div class="stack"><small>Progress</small><strong class="n num">${pct}%</strong><div class="progress24"><i style="width:${pct}%"></i></div></div><div class="stack"><small>Tasks complete</small><strong class="n num">${done}<small> / ${f24Tasks.length}</small></strong><small>${active} in progress</small></div><div class="stack"><small>Target date</small><strong class="n" style="font-size:19px">08 Dec</strong><small>Delivery milestone</small></div></div>${f24bar(pub?'<h3>Project milestones</h3>':f24seg(['List','Gantt','Kanban'],wView,'f24view'),pub?f24pill('Read-only','',false):f24btn('New task','f24taskAdd()','wplus','primary'))}${v==='Gantt'?'<div class="subbar row between"><strong>25 November – 8 December</strong><small>14-day timeline</small></div>':''}${content}${f24foot(`${f24Tasks.length} tasks · ${done} complete`,v==='Gantt'?'Timeline / days':v==='Kanban'?'Move tasks using their status action':'Project delivery')}</div>`}
 // Workflow: editor and public request progress are different experiences.
 wNodes=['Request received','Validate request','Notify assigned team'];let f24NodeTypes=['Trigger','Action','Action'];
 function f24addNode(){f24form('Add action node',f24field('Node name','name'),v=>{wNodes.push(v.name);f24NodeTypes.push('Action');wNode=wNodes.length-1;f24Run=false;f24refresh();f24toast('Node added')},'Add node')}
 async function f24removeNode(){if(wNode===0)return;let ok=await fbOpen({type:'confirm',kind:'error',title:'Remove this node?',message:'The selected action will be removed from the preview workflow.',action:'Remove'});if(ok){wNodes.splice(wNode,1);f24NodeTypes.splice(wNode,1);wNode=Math.max(0,wNode-1);f24Run=false;f24refresh();f24toast('Node removed')}}
-function f24workflow(pub=false){if(pub)return `<div class="frame">${f24bar('<h2>Request FM-1024</h2>',f24pill('In progress','info'))}<div class="pub-flow24"><div class="pane24"><h3>Request timeline</h3><div class="rule"></div>${['Request received','Details validated','Assigned to support team','Resolution and confirmation'].map((t,i)=>`<div class="track24 ${i<2?'done':''}"><span class="step24">${i<2?ico('wcheck'):i+1}</span><div class="stack"><h3>${t}</h3><small>${i===0?'25 Nov · 09:42':i===1?'25 Nov · 10:15':i===2?'In progress':'Pending'}</small></div></div>`).join('')}</div><div class="pane24"><div class="kicker">Request details</div><div class="data24"><span>Reference</span><span>FM-1024</span></div><div class="data24"><span>Category</span><span>Booking support</span></div><div class="data24"><span>Owner</span><span>Customer team</span></div><div style="margin-top:12px">${f24btn('Contact support',"go('publicchat','public')",'chat19')}</div></div></div></div>`;let name=wNodes[wNode]||'';return `<div class="frame">${f24bar(`<h3>Customer request routing</h3>${f24pill('Draft','warn')}`,f24btn('Add node','f24addNode()','wplus')+f24btn('Test run',"f24Run=true;f24refresh();f24toast('Simulation completed')",'wbolt','primary'))}<div class="editor24"><div class="canvas24"><div class="canvas-label"><span class="kicker">Execution path</span>${f24pill(`${wNodes.length} steps`,'',false)}</div>${wNodes.map((t,i)=>`${i?'<div class="wire24" aria-hidden="true"></div>':''}<button type="button" class="node24 ${wNode===i?'selected':''}" onclick="wNode=${i};f24refresh()" aria-pressed="${wNode===i}">${i?'<i class="port topport"></i>':''}<span class="nodeicon">${ico(i===0?'wbolt':i===1?'wcheck':'wsend')}</span><span class="stack"><span class="kicker">${f24NodeTypes[i]} · ${String(i+1).padStart(2,'0')}</span><strong class="ell">${esc(t)}</strong></span><span class="dim">${ico('wright')}</span>${i<wNodes.length-1?'<i class="port"></i>':''}</button>`).join('')}<div class="wire24" style="height:18px"></div>${f24ic('wplus','f24addNode()','Add next action')}</div><aside class="inspector24"><div class="sectionbar"><h3>Node properties</h3><small>${String(wNode+1).padStart(2,'0')}</small></div><div class="pane24"><div class="ins-mark"><span class="avatar24">${ico(wNode?'wcheck':'wbolt')}</span><div class="stack"><h3>${f24NodeTypes[wNode]}</h3><small>Step ${wNode+1}</small></div></div><label class="field24">Node name<input value="${esc(name)}" onchange="wNodes[wNode]=this.value;f24Run=false;f24refresh()"></label><div class="kicker">Execution</div><div class="data24"><span>Type</span><span>${f24NodeTypes[wNode]}</span></div><div class="data24"><span>Next step</span><span>${esc(wNodes[wNode+1]||'End')}</span></div><div class="data24"><span>Mode</span><span>Simulation</span></div>${wNode?f24btn('Remove node','f24removeNode()','wtrash'):''}${f24Run?`<div class="runlog"><strong>${ico('wcheck')} Test completed</strong><small>${wNodes.length} steps evaluated in preview.</small></div>`:''}</div></aside></div>${f24foot('Linear execution · Preview data','No external actions executed')}</div>`}
+function f24workflow(pub=false){if(pub)return `<div class="frame">${f24bar('<h2>Request FM-1024</h2>',f24pill('In progress','info'))}<div class="pub-flow24"><div class="pane24"><h3>Request timeline</h3><div class="rule"></div>${['Request received','Details validated','Assigned to support team','Resolution and confirmation'].map((t,i)=>`<div class="track24 ${i<2?'done':''}"><span class="step24">${i<2?ico('wcheck'):i+1}</span><div class="stack"><h3>${t}</h3><small>${i===0?'25 Nov · 09:42':i===1?'25 Nov · 10:15':i===2?'In progress':'Pending'}</small></div></div>`).join('')}</div><div class="pane24"><div class="kicker">Request details</div><div class="data24"><span>Reference</span><span>FM-1024</span></div><div class="data24"><span>Category</span><span>Booking support</span></div><div class="data24"><span>Owner</span><span>Customer team</span></div><div style="margin-top:12px">${f24btn('Contact support',"go('publicchat','public')",'chat19')}</div></div></div></div>`;let name=wNodes[wNode]||'';return `<div class="frame">${f24bar(`<h3>Customer request routing</h3>${f24pill('Draft','warn')}`,f24btn('Add node','f24addNode()','wplus')+f24btn('Test run',"f24Run=true;f24refresh();f24toast('Simulation completed')",'wbolt','primary'))}<div class="editor24"><div class="canvas24" data-sortable-container data-sortable-group="workflow" data-sortable-id="workflow-nodes" data-ui-component="Core.Touch.Sortable" data-ui-id="workflow.canvas"><div class="canvas-label"><span class="kicker">Execution path</span>${f24pill(`${wNodes.length} steps`,'',false)}</div>${wNodes.map((t,i)=>`${i?'<div class="wire24" aria-hidden="true"></div>':''}<button type="button" class="node24 ${wNode===i?'selected':''}" data-sortable-item data-sortable-group="workflow" data-sort-id="workflow-${i}" data-node-id="${i}" data-ui-component="Core.Touch.Sortable" data-ui-id="workflow.node.${i}" onclick="wNode=${i};f24refresh()" aria-pressed="${wNode===i}">${i?'<i class="port topport"></i>':''}<span class="nodeicon">${ico(i===0?'wbolt':i===1?'wcheck':'wsend')}</span><span class="stack"><span class="kicker">${f24NodeTypes[i]} · ${String(i+1).padStart(2,'0')}</span><strong class="ell">${esc(t)}</strong></span><span class="dim">${ico('wright')}</span>${i<wNodes.length-1?'<i class="port"></i>':''}</button>`).join('')}<div class="wire24" style="height:18px"></div>${f24ic('wplus','f24addNode()','Add next action')}</div><aside class="inspector24"><div class="sectionbar"><h3>Node properties</h3><small>${String(wNode+1).padStart(2,'0')}</small></div><div class="pane24"><div class="ins-mark"><span class="avatar24">${ico(wNode?'wcheck':'wbolt')}</span><div class="stack"><h3>${f24NodeTypes[wNode]}</h3><small>Step ${wNode+1}</small></div></div><label class="field24">Node name<input value="${esc(name)}" onchange="wNodes[wNode]=this.value;f24Run=false;f24refresh()"></label><div class="kicker">Execution</div><div class="data24"><span>Type</span><span>${f24NodeTypes[wNode]}</span></div><div class="data24"><span>Next step</span><span>${esc(wNodes[wNode+1]||'End')}</span></div><div class="data24"><span>Mode</span><span>Simulation</span></div>${wNode?f24btn('Remove node','f24removeNode()','wtrash'):''}${f24Run?`<div class="runlog"><strong>${ico('wcheck')} Test completed</strong><small>${wNodes.length} steps evaluated in preview.</small></div>`:''}</div></aside></div>${f24foot('Linear execution · Preview data','No external actions executed')}</div>`}
 // Page builder
 wBlocks=[['Heading','Make room for better work.'],['Text','Plan your day, collaborate with your team and keep your projects moving in one considered workspace.'],['Button','Explore your workspace'],['Image','Workspace overview']];
 const f24BlockIcons={Heading:'wtext',Text:'wfile',Button:'wbutton',Image:'wimage'};
@@ -756,7 +759,7 @@ function f24addblock(t){wBlocks.push([t,t==='Heading'?'New heading':t==='Text'?'
 function f24moveblock(n){let i=wBlock+n;if(i<0||i>=wBlocks.length)return;[wBlocks[i],wBlocks[wBlock]]=[wBlocks[wBlock],wBlocks[i]];wBlock=i;f24refresh()}
 function f24removeblock(){wBlocks.splice(wBlock,1);wBlock=Math.min(wBlock,Math.max(0,wBlocks.length-1));f24refresh();f24toast('Block removed')}
 function f24blockhtml(a,pub=false){return a[0]==='Heading'?`<h2>${esc(a[1])}</h2>`:a[0]==='Text'?`<p>${esc(a[1])}</p>`:a[0]==='Button'?(pub?f24btn(a[1],"go('publicproject','public')",'wright','primary'):`<span class="pill24" style="padding:7px 12px;background:var(--accent);color:white;border-color:var(--accent);font-size:12px">${esc(a[1])} ${ico('wright')}</span>`):`<div class="blockimage" role="img" aria-label="${esc(a[1])}"><svg class="art24" viewBox="0 0 360 138" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="358" height="136" rx="6" fill="#edf0f4" stroke="#dce1e8"/><rect x="26" y="17" width="308" height="104" rx="5" fill="white" stroke="#d5dbe4"/><rect x="26" y="17" width="52" height="104" rx="5" fill="#f4f5f7"/><rect x="34" y="26" width="16" height="16" rx="4" fill="#282c36"/><path d="M39 31h7m-7 0v7m0-3h5" stroke="white" stroke-width="1.5" fill="none"/><g fill="#dce1e8"><rect x="34" y="53" width="34" height="5" rx="2"/><rect x="34" y="65" width="27" height="5" rx="2"/><rect x="34" y="77" width="31" height="5" rx="2"/></g><path d="M78 17v104M78 40h256" stroke="#e0e4ea"/><rect x="88" y="26" width="66" height="5" rx="2" fill="#7b8596"/><rect x="294" y="23" width="30" height="11" rx="3" fill="#282c36"/><g stroke="#e0e4ea" fill="#fafbfc"><rect x="88" y="49" width="75" height="24" rx="3"/><rect x="169" y="49" width="75" height="24" rx="3"/><rect x="250" y="49" width="74" height="24" rx="3"/></g><g fill="#8f9bad"><rect x="94" y="55" width="24" height="3" rx="1"/><rect x="175" y="55" width="24" height="3" rx="1"/><rect x="256" y="55" width="24" height="3" rx="1"/></g><g fill="#4c5b70"><rect x="94" y="62" width="12" height="5" rx="1"/><rect x="175" y="62" width="18" height="5" rx="1"/><rect x="256" y="62" width="14" height="5" rx="1"/></g><path d="M88 87h236M88 99h236M88 111h236" stroke="#e0e4ea"/><g fill="#a9b5c7"><rect x="94" y="81" width="70" height="4" rx="2"/><rect x="94" y="93" width="57" height="4" rx="2"/><rect x="94" y="105" width="63" height="4" rx="2"/></g><g fill="#dcebe0"><rect x="287" y="80" width="30" height="6" rx="2"/><rect x="287" y="92" width="30" height="6" rx="2"/></g><rect x="287" y="104" width="30" height="6" rx="2" fill="#efe5d4"/></svg></div>`}
-function f24builder(pub=false){if(pub)return `<div class="frame"><div class="public-hero24"><span class="kicker">Forma / Studio</span>${wBlocks.filter(a=>a[0]!=='Image').map(a=>f24blockhtml(a,true)).join('')}</div>${wBlocks.filter(a=>a[0]==='Image').map(a=>`<div class="pane24">${f24blockhtml(a,true)}</div>`).join('')}<div class="public-tiles24">${[['calendar19','Plan your day','View upcoming events and appointments.','publiccalendar'],['chat19','Stay connected','Reach our support team directly.','publicchat'],['project19','Track delivery','Follow project milestones and progress.','publicproject']].map(([ic,t,d,k])=>`<div>${ico(ic)}<h3>${t}</h3><p class="meta">${d}</p><a class="strong" href="${url(k,'public')}">Open ${ico('wright')}</a></div>`).join('')}</div></div>`;let a=wBlocks[wBlock];return `<div class="frame">${f24bar(`<h3>Home / Workspace</h3>${f24pill('Draft','warn')}`,f24seg(['Desktop','Mobile'],f24Device,'f24device')+f24btn(f24BuilderPreview?'Edit page':'Preview','f24BuilderPreview=!f24BuilderPreview;f24refresh()','wmonitor')+f24btn('Save draft',"f24toast('Draft saved (preview)')",'wcheck','primary'))}<div class="builder24 ${f24BuilderPreview?'preview':''}"><aside class="library24"><div class="sectionbar"><h3>Blocks</h3></div><div class="pane24"><div class="kicker" style="grid-column:1/-1">Content</div>${Object.entries(f24BlockIcons).map(([t,ic])=>f24btn(t,`f24addblock('${t}')`,ic,'lib24')).join('')}<div class="rule" style="grid-column:1/-1"></div><div class="kicker" style="grid-column:1/-1">Page outline</div>${wBlocks.map((b,i)=>f24btn(`${i+1}. ${b[0]}`,`wBlock=${i};f24refresh()`,f24BlockIcons[b[0]],'lib24',`aria-pressed="${i===wBlock}"`)).join('')}</div></aside><div class="builder-canvas"><div class="row between" style="width:100%"><span class="mono">${f24Device==='Mobile'?'MOBILE':'DESKTOP'} PREVIEW</span><small>${wBlocks.length} blocks</small></div><div class="sheet24 ${f24Device==='Mobile'?'narrow':''}"><div class="sheetbar"><span class="sheetlogo">Forma.</span><span class="grow"></span><small>Workspace</small></div><div class="sheetbody">${wBlocks.map((b,i)=>`<div class="block24 ${i===wBlock&&!f24BuilderPreview?'selected':''}" ${f24BuilderPreview?'':`role="button" tabindex="0" aria-label="Select ${b[0]} block" onclick="wBlock=${i};f24refresh()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wBlock=${i};f24refresh()}"`}><span class="blocktag">${b[0]} / ${String(i+1).padStart(2,'0')}</span>${f24blockhtml(b)}</div>`).join('')}</div><div class="pagefoot24">© Forma Studio · Workspace</div></div></div><aside class="inspector24"><div class="sectionbar"><h3>Properties</h3><small>${a?`Block ${wBlock+1}`:''}</small></div><div class="pane24">${a?`<div class="ins-mark"><span class="avatar24">${ico(f24BlockIcons[a[0]])}</span><div class="stack"><h3>${a[0]}</h3><small>Content block</small></div></div><label class="field24">Content<textarea rows="4" onchange="wBlocks[wBlock][1]=this.value;f24refresh()">${esc(a[1])}</textarea></label><div class="kicker">Arrangement</div><div class="row">${f24ic('wup','f24moveblock(-1)','Move block up')}${f24ic('wdown','f24moveblock(1)','Move block down')}<span class="grow"></span>${f24ic('wtrash','f24removeblock()','Remove block')}</div><div class="data24"><span>Position</span><span>${wBlock+1} / ${wBlocks.length}</span></div>`:f24empty('No block selected','Add a block from the library.','builder19')}</div></aside></div>${f24foot('Local page draft · No publishing','<a href="'+url('publicbuilder','public')+'">View published preview →</a>')}</div>`}
+function f24builder(pub=false){if(pub)return `<div class="frame"><div class="public-hero24"><span class="kicker">Forma / Studio</span>${wBlocks.filter(a=>a[0]!=='Image').map(a=>f24blockhtml(a,true)).join('')}</div>${wBlocks.filter(a=>a[0]==='Image').map(a=>`<div class="pane24">${f24blockhtml(a,true)}</div>`).join('')}<div class="public-tiles24">${[['calendar19','Plan your day','View upcoming events and appointments.','publiccalendar'],['chat19','Stay connected','Reach our support team directly.','publicchat'],['project19','Track delivery','Follow project milestones and progress.','publicproject']].map(([ic,t,d,k])=>`<div>${ico(ic)}<h3>${t}</h3><p class="meta">${d}</p><a class="strong" href="${url(k,'public')}">Open ${ico('wright')}</a></div>`).join('')}</div></div>`;let a=wBlocks[wBlock];return `<div class="frame">${f24bar(`<h3>Home / Workspace</h3>${f24pill('Draft','warn')}`,f24seg(['Desktop','Mobile'],f24Device,'f24device')+f24btn(f24BuilderPreview?'Edit page':'Preview','f24BuilderPreview=!f24BuilderPreview;f24refresh()','wmonitor')+f24btn('Save draft',"f24toast('Draft saved (preview)')",'wcheck','primary'))}<div class="builder24 ${f24BuilderPreview?'preview':''}"><aside class="library24"><div class="sectionbar"><h3>Blocks</h3></div><div class="pane24"><div class="kicker" style="grid-column:1/-1">Content</div>${Object.entries(f24BlockIcons).map(([t,ic])=>f24btn(t,`f24addblock('${t}')`,ic,'lib24')).join('')}<div class="rule" style="grid-column:1/-1"></div><div class="kicker" style="grid-column:1/-1">Page outline</div>${wBlocks.map((b,i)=>f24btn(`${i+1}. ${b[0]}`,`wBlock=${i};f24refresh()`,f24BlockIcons[b[0]],'lib24',`aria-pressed="${i===wBlock}"`)).join('')}</div></aside><div class="builder-canvas"><div class="row between" style="width:100%"><span class="mono">${f24Device==='Mobile'?'MOBILE':'DESKTOP'} PREVIEW</span><small>${wBlocks.length} blocks</small></div><div class="sheet24 ${f24Device==='Mobile'?'narrow':''}"><div class="sheetbar"><span class="sheetlogo">Forma.</span><span class="grow"></span><small>Workspace</small></div><div class="sheetbody" data-sortable-container data-sortable-group="builder" data-sortable-id="builder-blocks" data-ui-component="Core.Touch.Sortable" data-ui-id="builder.blocks">${wBlocks.map((b,i)=>`<div class="block24 ${i===wBlock&&!f24BuilderPreview?'selected':''}" data-sortable-item data-sortable-group="builder" data-sort-id="builder-${i}" data-block-id="${i}" data-ui-component="Core.Touch.Sortable" data-ui-id="builder.block.${i}" ${f24BuilderPreview?'':`role="button" tabindex="0" aria-label="Select ${b[0]} block" onclick="wBlock=${i};f24refresh()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();wBlock=${i};f24refresh()}"`}><span class="blocktag">${b[0]} / ${String(i+1).padStart(2,'0')}</span>${f24blockhtml(b)}</div>`).join('')}</div><div class="pagefoot24">© Forma Studio · Workspace</div></div></div><aside class="inspector24"><div class="sectionbar"><h3>Properties</h3><small>${a?`Block ${wBlock+1}`:''}</small></div><div class="pane24">${a?`<div class="ins-mark"><span class="avatar24">${ico(f24BlockIcons[a[0]])}</span><div class="stack"><h3>${a[0]}</h3><small>Content block</small></div></div><label class="field24">Content<textarea rows="4" onchange="wBlocks[wBlock][1]=this.value;f24refresh()">${esc(a[1])}</textarea></label><div class="kicker">Arrangement</div><div class="row">${f24ic('wup','f24moveblock(-1)','Move block up')}${f24ic('wdown','f24moveblock(1)','Move block down')}<span class="grow"></span>${f24ic('wtrash','f24removeblock()','Remove block')}</div><div class="data24"><span>Position</span><span>${wBlock+1} / ${wBlocks.length}</span></div>`:f24empty('No block selected','Add a block from the library.','builder19')}</div></aside></div>${f24foot('Local page draft · No publishing','<a href="'+url('publicbuilder','public')+'">View published preview →</a>')}</div>`}
 function f24content(key,pub=false){return ({calendar19:f24calendar,chat19:f24chat,inbox19:f24inbox,project19:f24project,workflow19:f24workflow,builder19:f24builder}[key]||f24calendar)(pub)}
 const f24OldAdmin=admin;admin=function(){let h=f24OldAdmin();if(!(page in wPages)&&!(page in f24Map))return h;let d=new DOMParser().parseFromString(h,'text/html'),p=d.querySelector('.master-page'),k=f24key();if(p)p.innerHTML=masterHeader({title:names[page],subtitle:f24Descriptions[k],icon:k})+`<div class="f24" data-work="${k}">${f24content(k,page in f24Map)}</div>`;return d.body.innerHTML};
 const f24PublicBase=publicPage;publicPage=function(){if(!(page in f24Map))return f24PublicBase();let k=f24key(),desc={publiccalendar:'Discover upcoming events and find your daily schedule.',publicchat:'Talk to our customer care team.',publicinbox:'Read updates and send messages to our team.',publicproject:'Follow your project milestones and delivery status.',publicworkflow:'Follow the progress of your request.',publicbuilder:'A considered workspace for everyday work.'}[page];return `<div class="f24-public public"><header class="f24-pubhead"><nav class="f24-pubnav"><a class="publicbrand" href="${url('publicbuilder','public')}">Forma.</a>${Object.entries(f24Names).filter(([x])=>x!=='publicbuilder').map(([x,t])=>`<a class="${x===page?'active':''}" href="${url(x,'public')}">${t}</a>`).join('')}<span style="flex:1"></span><a href="${url(k,'admin')}">Backoffice ↗</a></nav></header><main class="f24-pubmain"><header class="f24-pubtitle"><span class="eyebrow">Customer workspace</span><h1>${names[page]}</h1><p>${desc}</p></header><div class="f24" data-work="${k}">${f24content(k,true)}</div></main><footer class="public-footer24"><span>Forma Studio · Customer portal</span><span>Interactive preview · Synthetic data</span></footer></div>`};
@@ -1366,7 +1369,7 @@ function s31WikiTree(rows,active='',pub=false,parent='',depth=0,seen=new Set()){
 function s31KnowledgeList(rows,all){let a=rows[0];return `<div class="s31-row"><div class="s31-search">${p30SearchInput(s31Query,'s31Search(this.value)','Search knowledge')}</div><span class="s31-grow"></span>${s31Btn('Templates',"s31Templates('knowledge')",'cmsstore')}${s31Btn('New article',"s31New('knowledge')",'flplus',true)}</div><div class="s31-wiki">${s31Surface('Article tree',`<div class="s31-wikitree">${s31Query?rows.map(r=>`<a href="${s31URL('s31detail',r.id)}">${s31E(r.title)}</a>`).join(''):s31WikiTree(all)||'<small>No articles</small>'}</div>`)}<section class="s31-surface"><div class="s31-head"><h3>${rows.length} articles</h3>${s31Btn('Public portal',"s31Go('s31portal','','public')",'cmsview')}</div><div class="s31-body">${rows.map(r=>`<div class="s31-row" style="border-bottom:1px solid var(--line);padding-bottom:10px"><span class="s31-docicon">${ico('cmsarticles')}</span><a class="s31-grow" href="${s31URL('s31detail',r.id)}"><strong>${s31E(r.title)}</strong><p class="s31-muted">${s31E(r.description)}</p></a>${s31Status(r)}${s31Btn('Edit',`s31Go('s31editor','${r.id}')`)}</div>`).join('')||s31Empty('No matching articles','Create an article or change the search.')}</div></section></div>`}
 function s31Inspector(r){let p=s31PartCurrent(r),field=(label,k,type='text',opts=[])=>s31Field(label,p?.[k]??'',`s31Set('${k}',this.value)`,type,opts),setting=(label,k,type='text',opts=[])=>s31Field(label,r.settings[k]??'',`s31Setting('${k}',this.value)`,type,opts),rf=(label,k,type='text',opts=[])=>s31Field(label,r[k]??'',`s31SetR('${k}',this.value)`,type,opts),src=s31Source(r.source);let a='';if(r.type==='report'){let s=src;a=s31FieldSet('Registered data source',`<label class="s31-field">Data source<select aria-label="Data source" onchange="s31SetR('source',this.value)">${s31SourceOptions(r.source)}</select></label><small>${s.rows.length} available records</small>`)+s31FieldSet('Columns',s.fields.map(k=>s31Check(k,r.columns.includes(k),`s31ToggleField(${JSON.stringify(k)},this.checked)`)).join(''))+s31FieldSet('Filter',rf('Filter field','filterField','select',[['','No filter'],...s.fields])+rf('Contains','filterValue'))+s31FieldSet('Grouping',rf('Group by','group','select',[['','No grouping'],...s.fields])+rf('Aggregation','aggregate','select',[['count','Count'],['sum','Sum'],['average','Average']])+rf('Numeric field','measure','select',[['','Select numeric field'],...(s.numeric||[])]));return `<div class="s31-fields">${a}</div>`}if(p){a=field('Element name','label');if(r.type==='form'){if(p.type==='heading')a+=field('Heading text','text','textarea');else{a+=field('Placeholder','placeholder')+s31Check('Required field',p.required,"s31Set('required',this.checked)");if(['select','radio'].includes(p.type))a+=field('Options (one per line)','options','textarea');let prior=r.parts.slice(0,r.parts.indexOf(p)).filter(x=>x.type!=='heading');a+=s31FieldSet('Conditional visibility',field('Show when field','conditionField','select',[['','Always visible'],...prior.map(x=>[x.id,x.label])])+(p.conditionField?field('Equals value','conditionValue','text')+'<small>For a checked checkbox, use Yes. Match is exact.</small>':''))}}else if(r.type==='dashboard'){a+=`<label class="s31-field">Data source<select aria-label="Widget data source" onchange="s31Set('source',this.value)">${s31SourceOptions(p.source)}</select></label>`;let s=s31Source(p.source);if(p.type==='chart')a+=field('Group by','field','select',s.fields.filter(k=>k!=='ID'));if(p.type==='kpi')a+=field('Metric','metric','select',[['count','Record count'],['sum','Sum'],['average','Average']])+((p.metric||'count')!=='count'?field('Numeric field','field','select',[['','Select numeric field'],...(s.numeric||[])]):'');if(p.type==='note')a+=field('Text','text','textarea');a+=field('Width','span','select',[['half','Half width'],['full','Full width']])}else if(r.type==='document'||r.type==='knowledge'){if(['text','heading','callout'].includes(p.type))a+=field('Content','text','textarea');if(['fields','table'].includes(p.type))a+=s31FieldSet('Visible data fields',src.fields.map(k=>s31Check(k,(p.fields||[]).includes(k),`s31ToggleField(${JSON.stringify(k)},this.checked,true)`)).join(''));if(p.type==='image')a+=s31Btn('Choose from Files','s31Img()','flmedia')+field('Alt text','alt');if(p.type==='link')a+=field('Link URL','url','url')}let i=r.parts.indexOf(p);a+=s31FieldSet('Element actions',`<div class="s31-insactions"><button type="button" aria-label="Move element up" ${i===0?'disabled':''} onclick="s31Move(-1)">${ico('mailup')}</button><button type="button" aria-label="Move element down" ${i===r.parts.length-1?'disabled':''} onclick="s31Move(1)">${ico('maildown')}</button>${s31Btn('Duplicate','s31Duplicate()','flcopy')}${s31Btn('Remove','s31Remove()','fltrash')}</div>`)}else a='<small>Select an element on the canvas or in Layers.</small>';if(r.type==='form')a+=s31FieldSet('Form settings',setting('Submit button','submit')+setting('Success message','thanks','textarea')+setting('Accent color','accent','color'));if(r.type==='document')a+=s31FieldSet('Data & paper',`<label class="s31-field">Data source<select aria-label="Document data source" onchange="s31SetR('source',this.value)">${s31SourceOptions(r.source)}</select></label>`+rf('Merge record','record','select',[['','First record'],...src.rows.slice(0,100).map(x=>[x.ID,x.Reference||x.Name||x.Title||x.ID])])+setting('Paper size','paper','select',['A4','Letter'])+setting('Orientation','orientation','select',[['portrait','Portrait'],['landscape','Landscape']])+setting('Page margin','margin','number')+setting('Header','header')+setting('Footer','footer')+`<div class="s31-notice">Merge fields: ${src.fields.map(k=>s31E('{{'+k+'}}')).join(', ')}</div>`);return `<div class="s31-fields">${a}</div>`}
 function s31Canvas(r,edit=true){return r.type==='form'?s31FormCanvas(r,edit):r.type==='dashboard'?s31DashboardCanvas(r,edit):r.type==='report'?s31ReportCanvas(r,edit):r.type==='document'?s31DocCanvas(r,edit):s31WikiCanvas(r,edit)}
-function s31Editor(r){if(!r)return s31Empty('Design unavailable','Choose an existing design.');let t=S31_TYPES[r.type],p=s31PartCurrent(r),lib=S31_PARTS[r.type]||[];return `<div class="s31-toolbar">${s31Btn('Details',`s31Go('s31detail','${r.id}')`,'wleft')}<button aria-label="Undo" onclick="s31History()" ${s31Undo.length?'':'disabled'}>${ico('mailundo')}</button><button aria-label="Redo" onclick="s31History(true)" ${s31Redo.length?'':'disabled'}>${ico('mailredo')}</button><span class="s31-grow"></span><small>${r.published&&r.published.updated!==r.updated?'Unpublished changes':'Local draft'}</small>${s31Btn('Save template','s31SaveTemplate()','cmsstore')}${s31Btn('Preview','s31Preview(true)','cmsview')}${s31Btn('Publish','s31Publish()','flcheck',true)}</div><div class="s31-mobiletabs">${[['layers','Layers'],['canvas','Canvas'],['inspect','Inspector']].map(([k,v])=>`<button aria-pressed="${s31View===k}" onclick="s31View='${k}';s31Paint()">${v}</button>`).join('')}</div><div class="s31-editor" data-view="${s31View}"><aside class="s31-pane s31-left"><div class="s31-panehead"><h3>${r.type==='report'?'Report structure':'Structure'}</h3>${lib.length?`<button title="Add elements" aria-label="Add elements" onclick="s31Library='add';s31Paint()">${ico('flplus')}</button>`:''}</div><div class="s31-panecontent">${r.type==='report'?`<span class="s31-label">Report configuration</span><div class="s31-notice">Choose a registered data source, columns, filters and grouping in Inspector.</div><button onclick="s31View='inspect';s31Paint()">Configure report</button><span class="s31-label">Selected columns</span>${r.columns.map(x=>`<small>${s31E(x)}</small>`).join('')}`:`<div class="s31-row"><button aria-pressed="${s31Library==='layers'}" onclick="s31Library='layers';s31Paint()">Layers</button><button aria-pressed="${s31Library==='add'}" onclick="s31Library='add';s31Paint()">Add</button></div>${s31Library==='add'?`<div class="s31-componentgrid">${lib.map(([k,l,i])=>`<button onclick="s31NewPart('${k}')" aria-label="Add ${s31E(l)}">${ico(i)}<span>${s31E(l)}</span></button>`).join('')}</div>`:`<span class="s31-label">${r.parts.length} elements</span><div class="s31-layers">${r.parts.map(x=>`<button class="s31-layer" aria-pressed="${x.id===s31Selected}" onclick="s31Select('${x.id}',true)">${ico(s31Icon(x,r))}<span>${s31E(x.label)}</span>${x.conditionField?'<small>IF</small>':''}</button>`).join('')||'<small>No elements</small>'}</div><button onclick="s31Library='add';s31Paint()">${ico('flplus')} Add element</button>`}`}</div></aside><div class="s31-canvas"><div class="s31-canvasbar"><span class="s31-label">${s31E(t.singular)} canvas</span><div class="s31-row"><button aria-label="Desktop preview" aria-pressed="${s31Device==='desktop'}" onclick="s31Device='desktop';s31Paint()">${ico('mailmonitor')}</button><button aria-label="Mobile preview" aria-pressed="${s31Device==='mobile'}" onclick="s31Device='mobile';s31Paint()">${ico('mailphone')}</button></div></div><div class="s31-stage">${s31Canvas(r)}<small>Preview uses local sample data. Select an element to configure.</small></div></div><aside class="s31-pane s31-right"><div class="s31-panehead"><h3>Inspector</h3><small>${s31E(p?.type||r.type)}</small></div><div class="s31-panecontent">${s31Inspector(r)}</div></aside></div>`}
+function s31Editor(r){if(!r)return s31Empty('Design unavailable','Choose an existing design.');let t=S31_TYPES[r.type],p=s31PartCurrent(r),lib=S31_PARTS[r.type]||[];return `<div class="s31-toolbar">${s31Btn('Details',`s31Go('s31detail','${r.id}')`,'wleft')}<button aria-label="Undo" onclick="s31History()" ${s31Undo.length?'':'disabled'}>${ico('mailundo')}</button><button aria-label="Redo" onclick="s31History(true)" ${s31Redo.length?'':'disabled'}>${ico('mailredo')}</button><span class="s31-grow"></span><small>${r.published&&r.published.updated!==r.updated?'Unpublished changes':'Local draft'}</small>${s31Btn('Save template','s31SaveTemplate()','cmsstore')}${s31Btn('Preview','s31Preview(true)','cmsview')}${s31Btn('Publish','s31Publish()','flcheck',true)}</div><div class="s31-mobiletabs">${[['layers','Layers'],['canvas','Canvas'],['inspect','Inspector']].map(([k,v])=>`<button aria-pressed="${s31View===k}" onclick="s31View='${k}';s31Paint()">${v}</button>`).join('')}</div><div class="s31-editor" data-view="${s31View}"><aside class="s31-pane s31-left"><div class="s31-panehead"><h3>${r.type==='report'?'Report structure':'Structure'}</h3>${lib.length?`<button title="Add elements" aria-label="Add elements" onclick="s31Library='add';s31Paint()">${ico('flplus')}</button>`:''}</div><div class="s31-panecontent">${r.type==='report'?`<span class="s31-label">Report configuration</span><div class="s31-notice">Choose a registered data source, columns, filters and grouping in Inspector.</div><button onclick="s31View='inspect';s31Paint()">Configure report</button><span class="s31-label">Selected columns</span>${r.columns.map(x=>`<small>${s31E(x)}</small>`).join('')}`:`<div class="s31-row"><button aria-pressed="${s31Library==='layers'}" onclick="s31Library='layers';s31Paint()">Layers</button><button aria-pressed="${s31Library==='add'}" onclick="s31Library='add';s31Paint()">Add</button></div>${s31Library==='add'?`<div class="s31-componentgrid">${lib.map(([k,l,i])=>`<button onclick="s31NewPart('${k}')" aria-label="Add ${s31E(l)}">${ico(i)}<span>${s31E(l)}</span></button>`).join('')}</div>`:`<span class="s31-label">${r.parts.length} elements</span><div class="s31-layers" data-sortable-container data-sortable-group="studio-parts" data-sortable-id="studio-parts" data-ui-component="Core.Touch.Sortable" data-ui-id="studio.parts">${r.parts.map(x=>`<button class="s31-layer" data-sortable-item data-sortable-group="studio-parts" data-sort-id="part-${x.id}" data-part-id="${x.id}" data-ui-component="Core.Touch.Sortable" data-ui-id="studio.part.${x.id}" aria-pressed="${x.id===s31Selected}" onclick="s31Select('${x.id}',true)">${ico(s31Icon(x,r))}<span>${s31E(x.label)}</span>${x.conditionField?'<small>IF</small>':''}</button>`).join('')||'<small>No elements</small>'}</div><button onclick="s31Library='add';s31Paint()">${ico('flplus')} Add element</button>`}`}</div></aside><div class="s31-canvas"><div class="s31-canvasbar"><span class="s31-label">${s31E(t.singular)} canvas</span><div class="s31-row"><button aria-label="Desktop preview" aria-pressed="${s31Device==='desktop'}" onclick="s31Device='desktop';s31Paint()">${ico('mailmonitor')}</button><button aria-label="Mobile preview" aria-pressed="${s31Device==='mobile'}" onclick="s31Device='mobile';s31Paint()">${ico('mailphone')}</button></div></div><div class="s31-stage">${s31Canvas(r)}<small>Preview uses local sample data. Select an element to configure.</small></div></div><aside class="s31-pane s31-right"><div class="s31-panehead"><h3>Inspector</h3><small>${s31E(p?.type||r.type)}</small></div><div class="s31-panecontent">${s31Inspector(r)}</div></aside></div>`}
 function s31Preview(draft=true){let r=s31Current();if(!r)return;if(!draft&&r.published){if(s31CanPublic(r))s31Go({form:'s31formview',document:'s31docview',knowledge:'s31wikiview'}[r.type],r.id,'public');else s31Go('s31view',r.id);return}let x=draft?r:r.published;if(!x)return;let html=`<div class="s31"><div class="s31-notice">${draft?'Draft preview · no changes to published content':'Published preview'}</div>${r.type==='form'&&draft?s31FormCanvas(x,false,true,true):s31Canvas(x,false)}</div>`;p30Dialog(r.title,'Design preview',html,s31Btn('Close','p30Close()')+(r.type==='document'?s31Btn('Export HTML','s31ExportDoc()','fldownload',true):''),true);let f=document.getElementById('s31-testform');if(f)s31Values(f,r)}
 function s31Download(html,name){let u=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();setTimeout(()=>{a.remove();URL.revokeObjectURL(u)},500)}
 function s31ExportDoc(published=false){let r=s31Current();if(!r||r.type!=='document')return;let x=published?r.published:r;if(!x)return;let html=`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${s31E(x.title)}</title><style>@page{size:${x.settings.paper==='Letter'?'letter':'A4'} ${x.settings.orientation==='landscape'?'landscape':'portrait'};margin:${Math.max(8,Math.min(32,Number(x.settings.margin)||18))}mm}*{box-sizing:border-box}body{margin:24px;color:#292d36;font:13px/1.55 system-ui,sans-serif}.s31-pagepaper{max-width:780px;margin:auto;display:grid;gap:12px}.s31-dochead{display:flex;justify-content:space-between;border-bottom:1px solid #d7dce2;padding-bottom:12px}.s31-dochead strong{font-size:18px}h2,h3,p{margin:0}h2{font-size:23px}h3{font-size:14px}small,.s31-docfooter{color:#6c737e}.s31-docfooter{border-top:1px solid #d7dce2;padding-top:12px;font-size:11px}.d29-kv{display:grid;grid-template-columns:1fr 2fr;gap:6px}dd{margin:0}.s31-reportrow{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:8px;border-bottom:1px solid #e3e5e9;padding:8px 0}.s31-reportrow b{display:none}.s31-reportrow.header{font-weight:600}@media(max-width:500px){.s31-reportrow{grid-template-columns:1fr 1fr}.s31-reportrow.header{display:none}.s31-reportrow b{display:block;font-size:10px}body{margin:12px}}</style><body>${s31DocCanvas(x,false)}</body></html>`;s31Download(html,r.id+'.html');s31Toast('HTML export started')}
@@ -1827,7 +1830,56 @@ render();
   let session = null, pinch = null, pending = null, frame = 0, suppressUntil = 0, suppressEl = null, longTimer = 0, autoTimer = 0;
   let lastTap = { time: 0, x: 0, y: 0, el: null };
   const undoStack = [];
+  const models = new Map();
+  const history = new Map();
+  let keyboardSort = null;
   const bound = new WeakMap();
+  const live = document.createElement('div');
+  live.id = 'ft-live'; live.className = 'ft-live'; live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite');
+  document.body.append(live);
+  function announce(text) {
+    if (live.textContent === text) return;
+    live.textContent = text;
+    document.dispatchEvent(new CustomEvent('formatouch:announce', { detail: { text: text } }));
+  }
+  function groupOf(el) { const c = el && el.closest ? el.closest('[data-sortable-container]') : null; return c ? (c.getAttribute('data-sortable-group') || 'default') : ''; }
+  function commitSort(detail, item) {
+    const model = models.get(detail.group);
+    if (model && model.apply) model.apply(detail);
+    const h = history.get(detail.group) || { undo: [], redo: [] };
+    h.undo.push(detail); h.redo = []; history.set(detail.group, h);
+    record('sortable', item, detail);
+    emit(item, 'sort', detail);
+    announce('Moved ' + detail.id + ' to ' + detail.to + ' position ' + (detail.toIndex + 1) + ' of ' + detail.group);
+  }
+  function undoSort(group) {
+    let g = group;
+    if (!g) { const ctx = document.activeElement && document.activeElement.closest ? document.activeElement.closest('[data-sortable-container]') : null; g = ctx ? ctx.getAttribute('data-sortable-group') : ''; }
+    const h = history.get(g);
+    if (!h || !h.undo.length) return false;
+    const detail = h.undo.pop();
+    const model = models.get(g);
+    if (model && model.undo) model.undo(detail);
+    h.redo.push(detail);
+    record('sortable', null, Object.assign({}, detail, { undone: true }));
+    document.dispatchEvent(new CustomEvent('formatouch:sort', { detail: Object.assign({}, detail, { undone: true }) }));
+    announce('Undo ' + detail.id + ' in ' + g);
+    return true;
+  }
+  function redoSort(group) {
+    let g = group;
+    if (!g) { const ctx = document.activeElement && document.activeElement.closest ? document.activeElement.closest('[data-sortable-container]') : null; g = ctx ? ctx.getAttribute('data-sortable-group') : ''; }
+    const h = history.get(g);
+    if (!h || !h.redo.length) return false;
+    const detail = h.redo.pop();
+    const model = models.get(g);
+    if (model && model.redo) model.redo(detail);
+    h.undo.push(detail);
+    record('sortable', null, Object.assign({}, detail, { redone: true }));
+    document.dispatchEvent(new CustomEvent('formatouch:sort', { detail: Object.assign({}, detail, { redone: true }) }));
+    announce('Redo ' + detail.id + ' in ' + g);
+    return true;
+  }
 
   function ident(el) {
     const host = el && el.closest ? el.closest('[data-ui-id],[id]') : null;
@@ -1885,7 +1937,7 @@ render();
 
   function startAutoScroll(container, x, y) {
     stopAutoScroll();
-    if (!container) return;
+    if (!container || reduce.matches) return;
     const r = container.getBoundingClientRect();
     const edge = 44;
     const step = y < r.top + edge ? -14 : y > r.bottom - edge ? 14 : 0;
@@ -1945,7 +1997,7 @@ render();
     session = {
       kind: 'resize', el: handle, id: e.pointerId, target: target, startX: p.x, startY: p.y, lastX: p.x, lastY: p.y,
       t0: p.t, moved: false, axis: handle.getAttribute('data-touch-resize-axis') || 'x',
-      min: Number(handle.getAttribute('data-touch-resize-min') || 0), max: Number(handle.getAttribute('data-touch-resize-max') || 100)
+      min: Number(handle.getAttribute('data-touch-resize-min') || 0), max: Number(handle.getAttribute('data-touch-resize-max') || 1000)
     };
     capture(handle, e.pointerId);
     state.active = 1;
@@ -1957,8 +2009,9 @@ render();
     const ps = points();
     const a = ps[0], b = ps[1] || p0(e);
     const dist = Math.hypot(a.x - b.x, a.y - b.y) || 1;
-    pinch = { el: el, start: dist, scale: 1, id: e.pointerId, x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-    capture(el, e.pointerId);
+    pinch = { el: el, start: dist, scale: 1, ids: ps.map(p => p.id), x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+    ps.forEach(p => capture(el, p.id));
+    state.active = ps.length;
     record('start', el, { gesture: 'pinch' });
     emit(el, 'pinchstart', { id: ident(el).id, component: ident(el).component, scale: 1 });
   }
@@ -1970,7 +2023,7 @@ render();
     if (document.querySelector('.canvas.publiccanvas')) return;
     const p = point(e);
     const rect = el.getBoundingClientRect();
-    const edges = el.getAttribute('data-touch-shell-any') === 'true' ? 0 : Number(el.getAttribute('data-touch-shell-edges') || 28);
+    const edges = el.getAttribute('data-touch-shell-any') === 'true' ? 0 : Number(el.getAttribute('data-touch-shell-edges') || 20);
     if (edges && p.x > rect.left + edges && p.x < rect.right - edges) return;
     state.pointerType = e.pointerType || 'mouse';
     session = { kind: 'shell', el: el, canvas: canvas, id: e.pointerId, startX: p.x, startY: p.y, lastX: p.x, lastY: p.y, t0: p.t, moved: false, axis: null, dx: 0 };
@@ -2050,9 +2103,7 @@ render();
           toIndex: toIndex,
           committed: true
         };
-        undoStack.push({ item: item, container: s.from, next: s.fromNext });
-        record('sortable', item, detail);
-        emit(item, 'sort', detail);
+        commitSort(detail, item);
       } else {
         s.placeholder.remove();
         if (s.from) s.from.insertBefore(item, s.fromNext);
@@ -2081,8 +2132,9 @@ render();
         if (dx < 0) { if (typeof menu !== 'undefined' && menu) toggleMenu(); else if (typeof ai !== 'undefined' && !ai) toggleAI(); }
         else { if (typeof ai !== 'undefined' && ai) toggleAI(); else if (typeof menu !== 'undefined' && !menu) toggleMenu(); }
       } else {
-        const panel = dx < 0 ? 'ai' : 'context';
-        s.el.setAttribute('data-touch-panel', panel);
+        const canvas = s.el.querySelector('.touch-shell-canvas');
+        if (canvas) { canvas.classList.toggle('shift-left', dx > 60); canvas.classList.toggle('shift-right', dx < -60); }
+        s.el.setAttribute('data-touch-panel', dx < 0 ? 'ai' : dx > 60 ? 'context' : '');
       }
       record('shell', s.el, { direction: dx < 0 ? 'left' : 'right', dx: Math.round(dx) });
       emit(s.el, 'shell', { direction: dx < 0 ? 'left' : 'right', dx: Math.round(dx) });
@@ -2107,9 +2159,10 @@ render();
     if (e.target.closest('[data-touch-ignore]')) return;
     if (window.FormaUIInspector && window.FormaUIInspector.picking) return;
     if (e.target.closest('dialog') && !e.target.closest('[data-touch]')) return;
-    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, target: e.target });
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, target: e.target, id: e.pointerId });
     const zoom = e.target.closest('[data-touch-zoom]');
     if (zoom && pointers.size === 2) { startPinch(e, zoom); return; }
+    if (session && pointers.size > 1) { cancelSession(false); announce('Gesture cancelled: second pointer'); return; }
     const resize = e.target.closest('[data-touch-resize]');
     if (resize) { startResize(e, resize); return; }
     const sort = e.target.closest('[data-sortable-item]');
@@ -2126,7 +2179,7 @@ render();
 
   function move(e) {
     if (!pointers.has(e.pointerId)) return;
-    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, target: e.target });
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, target: e.target, id: e.pointerId });
     if (pinch && pointers.size >= 2) {
       const ps = points();
       const dist = Math.hypot(ps[0].x - ps[1].x, ps[0].y - ps[1].y) || 1;
@@ -2151,7 +2204,7 @@ render();
       const raw = s.axis === 'x' ? (s.target.getAttribute('data-touch-resize-origin') === 'right' ? r.right - e.clientX : e.clientX - r.left) : e.clientY - r.top;
       const size = Math.max(s.min, Math.min(s.max || 1000, raw));
       s.size = Math.round(size);
-      if (!s.target.hasAttribute('data-touch-resize-readonly')) { if (s.axis === 'x') s.target.style.width = s.size + 'px'; else s.target.style.height = s.size + 'px'; }
+      if (!s.el.hasAttribute('data-touch-resize-readonly') && !s.target.hasAttribute('data-touch-resize-readonly')) { if (s.axis === 'x') s.target.style.width = s.size + 'px'; else s.target.style.height = s.size + 'px'; }
       emit(s.el, 'resize', { axis: s.axis, size: s.size, target: s.target.id || '' });
       return;
     }
@@ -2180,7 +2233,7 @@ render();
       if (pointers.size < 2) {
         emit(pinch.el, 'pinchend', { scale: pinch.scale });
         record('pinchend', pinch.el, { scale: pinch.scale });
-        release(pinch.el, pinch.id);
+        (pinch.ids || []).forEach(id => release(pinch.el, id));
         pinch = null;
         state.active = 0;
       }
@@ -2228,30 +2281,102 @@ render();
     cancelSession(false);
   }
 
+  function sortMeta(item, container, fromIndex, toIndex) {
+    return {
+      id: item.getAttribute('data-sort-id') || ident(item).id,
+      group: (container && container.getAttribute('data-sortable-group')) || item.getAttribute('data-sortable-group') || 'default',
+      from: (container && (container.id || container.getAttribute('data-sortable-id'))) || '',
+      to: (container && (container.id || container.getAttribute('data-sortable-id'))) || '',
+      fromIndex: fromIndex,
+      toIndex: toIndex,
+      committed: true
+    };
+  }
+  function moveSortItem(item, dir) {
+    const container = item.closest('[data-sortable-container]');
+    if (!container) return false;
+    const siblings = [...container.children].filter(x => x.matches('[data-sortable-item]'));
+    const i = siblings.indexOf(item);
+    if ((dir < 0 && i <= 0) || (dir > 0 && i >= siblings.length - 1)) return false;
+    if (dir < 0) container.insertBefore(item, siblings[i - 1]);
+    else container.insertBefore(siblings[i + 1], item);
+    return true;
+  }
+  function commitKeyboardSort() {
+    const k = keyboardSort;
+    if (!k) return;
+    const container = k.item.closest('[data-sortable-container]') || k.container;
+    const siblings = [...container.children].filter(x => x.matches('[data-sortable-item]'));
+    const toIndex = siblings.indexOf(k.item);
+    const detail = sortMeta(k.item, container, k.startIndex, toIndex);
+    k.item.removeAttribute('aria-grabbed');
+    keyboardSort = null;
+    commitSort(detail, k.item);
+  }
+  function cancelKeyboardSort() {
+    const k = keyboardSort;
+    if (!k) return;
+    if (k.next && k.next.parentElement === k.container) k.container.insertBefore(k.item, k.next);
+    else k.container.appendChild(k.item);
+    k.item.removeAttribute('aria-grabbed');
+    keyboardSort = null;
+    announce('Reorder cancelled');
+    document.dispatchEvent(new CustomEvent('formatouch:announce', { detail: { text: 'Reorder cancelled' } }));
+  }
   function onKey(e) {
     const item = e.target.closest && e.target.closest('[data-sortable-item]');
-    if (item && e.altKey && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+    const container = item && item.closest('[data-sortable-container]');
+    if (item && e.code === 'Space' && !e.altKey) {
       e.preventDefault();
-      const container = item.closest('[data-sortable-container]');
-      const siblings = [...container.children].filter(x => x.matches('[data-sortable-item]'));
-      const i = siblings.indexOf(item);
-      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-        if (i > 0) container.insertBefore(item, siblings[i - 1]);
-      } else if (i < siblings.length - 1) container.insertBefore(siblings[i + 1], item);
-      const detail = { id: item.getAttribute('data-sort-id') || ident(item).id, group: item.getAttribute('data-sortable-group') || container.getAttribute('data-sortable-group') || 'default', from: container.id || '', to: container.id || '', toIndex: [...container.children].filter(x => x.matches('[data-sortable-item]')).indexOf(item), committed: true };
-      record('sortable', item, Object.assign({ keyboard: true }, detail));
-      emit(item, 'sort', detail);
+      if (keyboardSort && keyboardSort.item === item) commitKeyboardSort();
+      else if (!keyboardSort) {
+        const siblings = [...container.children].filter(x => x.matches('[data-sortable-item]'));
+        keyboardSort = { item: item, container: container, next: item.nextElementSibling, startIndex: siblings.indexOf(item) };
+        item.setAttribute('aria-grabbed', 'true');
+        announce('Reorder started: ' + (item.getAttribute('data-sort-id') || 'item') + ', position ' + (keyboardSort.startIndex + 1));
+      }
       return;
     }
-    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && undoStack.length && document.querySelector('[data-sortable-item]')) {
-      const last = undoStack.pop();
-      if (last && last.item && last.container) {
-        last.container.insertBefore(last.item, last.next || null);
-        record('sortable', last.item, { undone: true });
-        emit(last.item, 'sort', { undone: true, id: last.item.getAttribute('data-sort-id') || '' });
+    if (keyboardSort && e.key === 'Escape') {
+      e.preventDefault();
+      cancelKeyboardSort();
+      return;
+    }
+    if (keyboardSort && item === keyboardSort.item && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+      e.preventDefault();
+      const dir = e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 1;
+      if (moveSortItem(item, dir)) {
+        const siblings = [...item.closest('[data-sortable-container]').children].filter(x => x.matches('[data-sortable-item]'));
+        announce('Position ' + (siblings.indexOf(item) + 1) + ' of ' + siblings.length);
+      }
+      return;
+    }
+    if (item && e.altKey && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+      e.preventDefault();
+      const siblings = [...container.children].filter(x => x.matches('[data-sortable-item]'));
+      const fromIndex = siblings.indexOf(item);
+      const dir = e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 1;
+      if (moveSortItem(item, dir)) {
+        const next = [...container.children].filter(x => x.matches('[data-sortable-item]'));
+        commitSort(sortMeta(item, container, fromIndex, next.indexOf(item)), item);
+      }
+      return;
+    }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
+      const ctx = e.target.closest && e.target.closest('[data-sortable-container]');
+      const group = ctx ? ctx.getAttribute('data-sortable-group') : '';
+      if (group && ctx.contains(item || ctx)) {
+        e.preventDefault();
+        if (e.shiftKey) redoSort(group); else undoSort(group);
       }
     }
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'y') {
+      const ctx = e.target.closest && e.target.closest('[data-sortable-container]');
+      const group = ctx ? ctx.getAttribute('data-sortable-group') : '';
+      if (group && ctx.contains(item || ctx)) { e.preventDefault(); redoSort(group); }
+    }
   }
+
 
   function onClickCapture(e) {
     if (now() < suppressUntil && e.detail > 0 && (!suppressEl || suppressEl.contains(e.target))) { e.preventDefault(); e.stopImmediatePropagation(); }
@@ -2278,11 +2403,14 @@ render();
     register(el, options) { bound.set(el, options || {}); return el; },
     unregister(el) { bound.delete(el); },
     cancel() { cancelSession(false); },
-    undoSort() { undoStack.pop(); },
+    announce(text) { announce(text); },
+    defineSortable(group, model) { models.set(group, model || {}); return group; },
+    undoSort(group) { return undoSort(group); },
+    redoSort(group) { return redoSort(group); },
     bindShell(root) {
       (root || document).querySelectorAll('.shell').forEach(el => {
         el.setAttribute('data-touch-shell', '');
-        el.setAttribute('data-touch-shell-edges', '28');
+        el.setAttribute('data-touch-shell-edges', '20');
         if (!el.querySelector('.ft-shell-grip')) {
           for (const side of ['left', 'right']) {
             const grip = document.createElement('div');
@@ -2387,7 +2515,7 @@ function f33TouchSpecimens(lab) {
     f33TouchCard('bottom-sheet', 'Bottom sheet', 'Core.Touch.BottomSheet', `<div class="f33touch-sheetwrap"><button type="button" data-touch-alt="bottom-sheet" data-touch-alt-action="open">Open sheet</button><div class="f33touch-sheet" id="touch-sheet" data-ui-component="Core.BottomSheet" data-ui-id="touch.sheet"><button type="button" class="f33touch-handle" id="touch-sheet-handle" data-touch="pan" data-ui-component="Core.BottomSheet.Handle" data-ui-id="touch.sheet.handle" aria-label="Drag bottom sheet">Drag</button><strong>Sheet content</strong><small>Drag to close, or use the button.</small><button type="button" data-touch-alt="bottom-sheet" data-touch-alt-action="close">Close sheet</button></div></div><span data-touch-value="bottom-sheet">closed</span>`, 'Drag the handle or use the keyboard buttons.'),
     f33TouchCard('pinch-zoom', 'Pinch zoom', 'Core.Touch.Pinch', `<div class="f33touch-zoom" data-touch-zoom data-ui-component="Core.Touch.PinchSurface" data-ui-id="touch.pinch.surface"><div class="f33touch-zoombox" id="touch-zoom-box">Pinch</div></div><span data-touch-value="pinch-zoom">100%</span><div class="f33touch-row"><button type="button" data-touch-alt="pinch-zoom" data-touch-alt-action="zoom-out">−</button><button type="button" data-touch-alt="pinch-zoom" data-touch-alt-action="zoom-in">+</button><button type="button" data-touch-alt="pinch-zoom" data-touch-alt-action="zoom-reset">Reset</button></div>`, 'Two pointers scale around the center.'),
     f33TouchCard('panel-resize', 'Panel resize', 'Core.Touch.PanelResize', `<div class="f33touch-resize" id="touch-resize"><div class="f33touch-pane" id="touch-resize-pane" style="width:55%"><strong>List</strong><small data-touch-value="panel-resize">55%</small></div><button type="button" class="f33touch-rs" id="touch-resize-handle" data-touch-resize data-touch-resize-target="#touch-resize-pane" data-touch-resize-axis="x" data-touch-resize-min="120" data-touch-resize-max="420" data-ui-component="Core.ResizeHandle" data-ui-id="touch.resize.handle" aria-label="Resize panel"></button><div class="f33touch-pane alt">Detail</div></div><div class="f33touch-row"><button type="button" data-touch-alt="panel-resize" data-touch-alt-action="narrow">Narrow</button><button type="button" data-touch-alt="panel-resize" data-touch-alt-action="wide">Wide</button></div>`, 'Drag the handle or use the buttons.'),
-    f33TouchCard('shell-canvas', 'Shell canvas', 'Core.Touch.Shell', `<div class="f33touch-shell" id="touch-shell" data-touch-shell data-touch-shell-any="true" data-ui-component="Core.Touch.ShellSurface" data-ui-id="touch.shell.surface"><div class="touch-shell-canvas"><div class="f33touch-shellbar">Workspace</div><div class="f33touch-shellbody">Swipe the edge</div></div><div class="f33touch-shellpanel ctx">Context</div><div class="f33touch-shellpanel ai">Assistant</div></div><span data-touch-value="shell-canvas">closed</span>`, 'Live canvas follow; settles through shift classes.'),
+    f33TouchCard('shell-canvas', 'Shell canvas', 'Core.Touch.Shell', `<div class="f33touch-shell" id="touch-shell" data-touch-shell data-ui-component="Core.Touch.ShellSurface" data-ui-id="touch.shell.surface"><div class="touch-shell-canvas"><div class="f33touch-shellbar">Workspace</div><div class="f33touch-shellbody">Swipe the edge</div></div><div class="f33touch-shellpanel ctx">Context</div><div class="f33touch-shellpanel ai">Assistant</div></div><span data-touch-value="shell-canvas">closed</span>`, 'Live canvas follow; settles through shift classes.'),
     f33TouchCard('tap-suppression', 'Tap suppression', 'Core.Touch.TapSuppression', `<div id="touch-suppress-list" data-sortable-container data-sortable-group="lab-suppress" data-sortable-id="touch-suppress" data-ui-component="Core.Sortable.Container" data-ui-id="touch.suppress.container">${f33TouchRow('suppress-0', 'Drag me', '')}</div><button type="button" id="touch-suppress-button" data-ui-component="Core.Touch.TapTarget" data-ui-id="touch.suppress.button">Underlying action</button><span data-touch-value="tap-suppression">0 taps · 0 suppressed</span>`, 'A completed drag must not run the button action.')
   ];
   return `<div class="f33touch-grid" id="f33touch-lab">${cards.join('')}</div>`;
@@ -2423,10 +2551,10 @@ function f33TouchPaint() {
   if (status) status.setAttribute('data-touch-cancel-state', f33Touch.cancel);
 }
 function f33TouchSyncLists() {
-  const read = id => { const el = document.getElementById(id); return el ? [...el.querySelectorAll('[data-sortable-item]')].map(x => x.textContent.replace(/⠿|drag/g, '').trim()) : []; };
-  f33Touch.sort = read('touch-sortable');
-  f33Touch.crossA = read('touch-cross-a'); f33Touch.crossB = read('touch-cross-b');
-  f33Touch.nestedA = read('touch-nested-a'); f33Touch.nestedB = read('touch-nested-b');
+  const read = (id, current) => { const el = document.getElementById(id); return el ? [...el.querySelectorAll('[data-sortable-item]')].map(x => x.textContent.replace(/⠿|drag/g, '').trim()) : current; };
+  f33Touch.sort = read('touch-sortable', f33Touch.sort);
+  f33Touch.crossA = read('touch-cross-a', f33Touch.crossA); f33Touch.crossB = read('touch-cross-b', f33Touch.crossB);
+  f33Touch.nestedA = read('touch-nested-a', f33Touch.nestedA); f33Touch.nestedB = read('touch-nested-b', f33Touch.nestedB);
 }
 function f33TouchHandleAlt(el) {
   const id = el.getAttribute('data-touch-alt'), action = el.getAttribute('data-touch-alt-action');
@@ -2498,9 +2626,101 @@ f33Body = function () {
   return f33TouchBodyBase();
 };
 f33TouchWire();
+function formatouchAnnounce(i) { const t = typeof f24Tasks !== 'undefined' && f24Tasks[i]; FormaTouch.announce(t ? 'Gantt task ' + (i + 1) + ' start ' + t.start + ', length ' + t.len + ' days' : 'Gantt updated'); }
+function f24TaskSnapshot() { return f24Tasks.map(x => Object.assign({}, x)); }
+FormaTouch.defineSortable('kanban', {
+  apply: d => {
+    if (!d.before) d.before = f24TaskSnapshot();
+    const lanes = [...document.querySelectorAll('[data-sortable-id^="kanban-lane-"]')];
+    const next = [];
+    lanes.forEach(lane => [...lane.querySelectorAll('[data-task-id]')].forEach(el => {
+      const task = f24Tasks[Number(el.dataset.taskId)];
+      if (task) next.push(Object.assign({}, task, { s: Number(lane.dataset.laneIndex) }));
+    }));
+    if (next.length === f24Tasks.length) f24Tasks = next;
+    f24refresh();
+    d.after = f24TaskSnapshot();
+  },
+  undo: d => { if (d.before) { f24Tasks = d.before.map(x => Object.assign({}, x)); f24refresh(); } },
+  redo: d => { if (d.after) { f24Tasks = d.after.map(x => Object.assign({}, x)); f24refresh(); } }
+});
+FormaTouch.defineSortable('workflow', {
+  apply: d => {
+    if (!d.before) { d.before = wNodes.slice(); d.beforeTypes = f24NodeTypes.slice(); }
+    const order = [...document.querySelectorAll('[data-sortable-id="workflow-nodes"] [data-node-id]')].map(el => Number(el.dataset.nodeId));
+    if (order.length === wNodes.length) {
+      wNodes = order.map(i => d.before[i]);
+      f24NodeTypes = order.map(i => (d.beforeTypes || [])[i] || 'Action');
+      wNode = 0;
+    }
+    f24refresh();
+    d.after = wNodes.slice(); d.afterTypes = f24NodeTypes.slice();
+  },
+  undo: d => { if (d.before) { wNodes = d.before.slice(); f24NodeTypes = (d.beforeTypes || []).slice(); wNode = 0; f24refresh(); } },
+  redo: d => { if (d.after) { wNodes = d.after.slice(); f24NodeTypes = (d.afterTypes || []).slice(); wNode = 0; f24refresh(); } }
+});
+FormaTouch.defineSortable('builder', {
+  apply: d => {
+    if (!d.before) d.before = wBlocks.map(x => x.slice());
+    const order = [...document.querySelectorAll('[data-sortable-id="builder-blocks"] [data-block-id]')].map(el => Number(el.dataset.blockId));
+    if (order.length === wBlocks.length) wBlocks = order.map(i => d.before[i].slice());
+    wBlock = 0;
+    f24refresh();
+    d.after = wBlocks.map(x => x.slice());
+  },
+  undo: d => { if (d.before) { wBlocks = d.before.map(x => x.slice()); wBlock = 0; f24refresh(); } },
+  redo: d => { if (d.after) { wBlocks = d.after.map(x => x.slice()); wBlock = 0; f24refresh(); } }
+});
+FormaTouch.defineSortable('studio-parts', {
+  apply: d => {
+    const r = s31Current(); if (!r) return;
+    if (!d.before) d.before = r.parts.map(x => x.id);
+    const order = [...document.querySelectorAll('.s31-layers [data-part-id]')].map(el => el.dataset.partId);
+    const map = new Map(r.parts.map(p => [p.id, p]));
+    const next = order.map(id => map.get(id)).filter(Boolean);
+    if (next.length === r.parts.length) r.parts = next;
+    s31Selected = r.parts[0] ? r.parts[0].id : '';
+    s31Save(); s31Paint();
+    d.after = r.parts.map(x => x.id);
+  },
+  undo: d => { const r = s31Current(); if (!r || !d.before) return; const map = new Map(r.parts.map(p => [p.id, p])); r.parts = d.before.map(id => map.get(id)).filter(Boolean); s31Save(); s31Paint(); },
+  redo: d => { const r = s31Current(); if (!r || !d.after) return; const map = new Map(r.parts.map(p => [p.id, p])); r.parts = d.after.map(id => map.get(id)).filter(Boolean); s31Save(); s31Paint(); }
+});
+FormaTouch.defineSortable('lab-sort', {
+  apply: d => { if (!d.before) d.before = f33Touch.sort.slice(); f33TouchSyncLists(); d.after = f33Touch.sort.slice(); },
+  undo: d => { if (d.before) { f33Touch.sort = d.before.slice(); const el = document.getElementById('touch-sortable'); if (el) el.innerHTML = f33Touch.sort.map((x, i) => f33TouchRow('sort-' + i, x)).join(''); } },
+  redo: d => { if (d.after) { f33Touch.sort = d.after.slice(); const el = document.getElementById('touch-sortable'); if (el) el.innerHTML = f33Touch.sort.map((x, i) => f33TouchRow('sort-' + i, x)).join(''); } }
+});
+document.addEventListener('formatouch:swipe', e => {
+  const grid = e.target.closest && e.target.closest('.calgrid');
+  if (grid) { if (e.detail.direction === 'left' || e.detail.direction === 'right') { f24changeMonth(e.detail.direction === 'left' ? 1 : -1); FormaTouch.announce('Calendar moved to ' + wDate.toLocaleDateString('en', { month: 'long', year: 'numeric' })); } return; }
+  const bar = e.target.closest && e.target.closest('.gbar');
+  if (bar) {
+    const i = Number(bar.dataset.ganttIndex), time = bar.closest('.g-time');
+    if (!time) return;
+    const cw = time.getBoundingClientRect().width / 14;
+    const shift = Math.round(e.detail.dx / cw);
+    if (!shift) return;
+    const t = f24Tasks[i];
+    t.start = Math.max(1, Math.min(15 - t.len + 1, t.start + shift));
+    f24refresh();
+    formatouchAnnounce(i);
+  }
+});
 document.addEventListener('formatouch:resize', e => {
   const split = e.target.closest && e.target.closest('#f33-split');
   if (split && e.detail.target === 'f33-split') f33SplitSet((e.detail.size / split.getBoundingClientRect().width) * 100);
+  if (e.detail.target && e.detail.target.startsWith('gantt-bar-')) {
+    const bar = document.getElementById(e.detail.target);
+    const i = bar ? Number(bar.dataset.ganttIndex) : -1;
+    const time = bar && bar.closest('.g-time');
+    if (i >= 0 && time) {
+      const cw = time.getBoundingClientRect().width / 14;
+      f24Tasks[i].len = Math.max(1, Math.min(15 - f24Tasks[i].start, Math.round(e.detail.size / cw)));
+      f24refresh();
+      formatouchAnnounce(i);
+    }
+  }
 });
 document.addEventListener('formatouch:longpress', e => {
   const row = e.target.closest && e.target.closest('[data-f33-mobile-index]');
