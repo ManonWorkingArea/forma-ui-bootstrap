@@ -85,18 +85,31 @@ for name in issue_templates:
             fail(f"{name}: missing issue field: {field}")
 
 baseline = load_json(ROOT / ".github/package-baseline.json")
+ORIGINAL_SOURCE_SHA256 = "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8"
+if baseline.get("format") != "forma-package-baseline.v1":
+    fail("unexpected package baseline format")
+if baseline.get("baseline") != "V34.1":
+    fail("package baseline must identify the current V34.1 baseline")
+if baseline.get("member_checksum_scope") != "current V34.1 working tree":
+    fail("package baseline must declare the current V34.1 member checksum scope")
+if baseline.get("source") != "skill.zip" or baseline.get("source_sha256") != ORIGINAL_SOURCE_SHA256:
+    fail("original source package provenance must stay immutable")
+if not baseline.get("source_provenance"):
+    fail("package baseline must distinguish source provenance from member checksums")
 if baseline.get("file_count") != 60 or len(baseline.get("files", [])) != 60:
-    fail("authorized dev baseline must contain exactly 60 tracked files")
+    fail("authorized dev baseline must contain exactly 60 V34.1 member files")
 for row in baseline.get("files", []):
     path = ROOT / row["path"]
     if not path.is_file():
-        fail(f"tracked baseline file missing: {row['path']}")
+        fail(f"V34.1 member file missing: {row['path']}")
     elif path.stat().st_size != row["bytes"]:
-        fail(f"tracked baseline file size changed: {row['path']}")
+        fail(f"V34.1 member file size changed: {row['path']}")
     elif sha256(path) != row["sha256"]:
-        fail(f"tracked baseline file checksum changed: {row['path']}")
+        fail(f"V34.1 member file checksum changed: {row['path']}")
 
 manifest = load_json(REF / "MANIFEST.json")
+if manifest.get("scope") != "current V34.1 member checksums":
+    fail("manifest must declare its current V34.1 member checksum scope")
 for rel, expected in manifest.get("sha256", {}).items():
     path = ROOT / rel
     if not path.is_file() or sha256(path) != expected:
@@ -298,7 +311,8 @@ if ERRORS:
         print(f"- {error}", file=sys.stderr)
     raise SystemExit(1)
 print("Repository validation: PASS")
-print(f"- authorized dev baseline: {baseline['file_count']} tracked files (original source hash retained)")
+print(f"- original source provenance: skill.zip {ORIGINAL_SOURCE_SHA256[:12]}… (immutable)")
+print(f"- current V34.1 member checksums: {baseline['file_count']} files verified")
 print("- registry: 140 mappings")
 print("- page index: 126 unique routes")
 print("- visual keys: 16 unique IDs")

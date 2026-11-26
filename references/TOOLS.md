@@ -37,7 +37,7 @@ python3 scripts/forma_ui.py capture pilot/admin/catalog --width 390 --height 844
 python3 scripts/browser_smoke.py --base-url http://127.0.0.1:4173/ --out /tmp/forma-browser-evidence
 ```
 
-The smoke script checks the base mockup, all eight layout routes at 1440/768/390/320 in light and dark, Inspector layout/slot bounds, document overflow, generic interaction, preview and outer canvas behavior, clipboard fallback and the normalized JSON download. Keep generated evidence outside Git.
+The smoke script checks the base mockup, all eight layout routes at 1440/768/390/320 in light and dark, Inspector layout/slot bounds, document overflow, generic interaction, preview and outer canvas behavior, direct-route and Playground clipboard fallback, Template-select focus retention, canonical defaults after Playground customization, inactive context/AI controls, slot-label geometry and the normalized JSON download. Keep generated evidence outside Git.
 
 Output: `clean.png`, `debug.png`, `inventory-0.json` (and additional inspector-enabled frame inventories if visible), `capture.json`. Inspect actual heading, hash, viewport, errors and screenshots. Inactive or hidden frames may produce no inventory. Captures are of the reference mockup, not the production application. Existing fixture routes may redirect or require specific fixture IDs. No real mutations, network access, or credentials. Browser-native PDF/file widgets and sandboxed previews remain outside Inspector scope. Do not treat a capture as aesthetic approval or route acceptance.
 

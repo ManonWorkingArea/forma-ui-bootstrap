@@ -12,6 +12,15 @@ All notable repository and design-reference changes are recorded here. The UI mo
 - CLI `layouts [query]` and `layout <id>`; unknown ids exit non-zero.
 - Explicit `Core.Layout.*` / `data-layout-slot` Inspector identities and layout-kind classification in both inspector implementations.
 
+### Fixed
+
+- Direct layout routes now expose Copy Layout Reference, Copy Configuration and JSON export with the same clipboard fallback as the Playground, using the route, template and slot context of that route.
+- Direct layout routes start from the template's canonical defaults instead of retaining Playground customization.
+- The Playground keeps focus on the Template select after a template change.
+- Context and assistant controls only render for enabled slots: no inert context launcher, no disabled-AI launcher, no `ai-open` state and no empty assistant target.
+- Slot labels reserve a small label band instead of overlaying content, and stay legible without horizontal overflow at 320, 390, 768 and 1440.
+- Package baseline metadata now separates immutable original `skill.zip` provenance from current V34.1 member checksums; validator output reports both.
+
 ### Changed
 
 - `PAGE_INDEX.json` now lists 126 routes including the layout catalog, eight layout routes and the playground; `COMPONENT_REGISTRY.json` lists 140 mappings including layout and slot identities.

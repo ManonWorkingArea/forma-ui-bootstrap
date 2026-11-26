@@ -6,6 +6,7 @@ Open `standalone.html` (or `index.html`). Navigate to Catalog or any other scree
 
 - `UI_INSPECTOR_CONTRACT.md`: naming, identity and implementation handoff.
 - `LAYOUT_REGISTRY.json`: eight layout templates, slot identities, locks, defaults, responsive behavior and `forma.layout.config.v1`.
+- `MANIFEST.json` pins current V34.1 member checksums; `.github/package-baseline.json` keeps the original `skill.zip` digest as separate provenance.
 - `COMPONENT_REGISTRY.json`: semantic adapter mappings.
 - `source/ui-inspector.js`: standalone inspector source; the full merged application is in `standalone.html`.
 - `TEST_REPORT.json`: initial run, post-fix observations and final focused checks.

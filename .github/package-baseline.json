@@ -1,13 +1,16 @@
 {
   "format": "forma-package-baseline.v1",
   "source": "skill.zip",
+  "source_provenance": "Immutable original upload provenance. The member entries below are current V34.1 dev checksums and no longer describe the original ZIP bytes.",
   "source_sha256": "2c5b17775227085a1f9ccebf1c84521d0857555b5431cdc55bff332f3fdf1db8",
+  "baseline": "V34.1",
+  "member_checksum_scope": "current V34.1 working tree",
   "file_count": 60,
   "files": [
     {
       "path": "README.md",
-      "bytes": 2192,
-      "sha256": "315d6f0360defae4c0c33ad941910fb5410f3ddbc111ca2c86d284f24a40b242"
+      "bytes": 2477,
+      "sha256": "daeab4b02c80b1b7a4c89e4ffd0570181bd31c60986c220a315fbb9ad56f9326"
     },
     {
       "path": "SKILL.md",
@@ -151,8 +154,8 @@
     },
     {
       "path": "assets/mockup/standalone.html",
-      "bytes": 1062492,
-      "sha256": "b717669b81a7ad6324d9b971fb4551f2270ab52dbeb079f38ad2554d190e1ff1"
+      "bytes": 1063029,
+      "sha256": "8974f4578796d1ccb9bea61bc0ae4636f0ad68b70ebc986d9d64d40b1cb9ed2a"
     },
     {
       "path": "assets/mockup/ui-inspector.js",
@@ -171,18 +174,18 @@
     },
     {
       "path": "references/DESIGN_SYSTEM.md",
-      "bytes": 5859,
-      "sha256": "7fa70d6a8ea9d00843d8e6a458296be43e6e21aa2bf56de970dc48739f762e10"
+      "bytes": 6123,
+      "sha256": "660b510e2effd82c7671c9e514ef75b34d2f750712316c100efd248cf8d4159d"
     },
     {
       "path": "references/MANIFEST.json",
-      "bytes": 983,
-      "sha256": "59cb0d8e9634ab1e15ca43fbf08244b120bc22facc05607a5b0081a18b5f3de6"
+      "bytes": 1028,
+      "sha256": "799bbe891391b53ab2fae20d62336f7811067fad33e1d28cda42a89e18bf5a50"
     },
     {
       "path": "references/MOCKUP_V34_README.md",
-      "bytes": 1513,
-      "sha256": "ce62be006bf7241285bc3ea896e1464055b774daff5a3f1b3c0a67069271e3d1"
+      "bytes": 1662,
+      "sha256": "de627308c14abd90cbdfff546e3882056a229d1a88ae32b75d7db72bc6b8a391"
     },
     {
       "path": "references/PAGE_INDEX.json",
@@ -196,8 +199,8 @@
     },
     {
       "path": "references/TOOLS.md",
-      "bytes": 4905,
-      "sha256": "9a19bbdce8029eab0679742e5e9220b7fb3681767f757064868872d825b7ab74"
+      "bytes": 5068,
+      "sha256": "9161dfbfbd6f50fca6c189177f2e35ffab98d36858c3be4ad16f46ed345ab3c7"
     },
     {
       "path": "references/UI_INSPECTOR_CONTRACT.md",

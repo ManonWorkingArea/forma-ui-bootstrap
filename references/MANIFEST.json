@@ -1,13 +1,14 @@
 {
   "format": "forma-bootstrap-manifest.v1",
   "baseline": "V34.1",
+  "scope": "current V34.1 member checksums",
   "status": "REVIEW CANDIDATE; no design freeze",
   "sha256": {
-    "assets/mockup/standalone.html": "b717669b81a7ad6324d9b971fb4551f2270ab52dbeb079f38ad2554d190e1ff1",
+    "assets/mockup/standalone.html": "8974f4578796d1ccb9bea61bc0ae4636f0ad68b70ebc986d9d64d40b1cb9ed2a",
     "assets/mockup/ui-inspector.js": "53162848b2793826573f1a377186c532586ff3913033aa86d774e08a7098fb6a",
     "references/LAYOUT_REGISTRY.json": "8de3c7c1d3b0f7846de7a799fde50eb2bfaaa02a7e0f25bc7b8ba0c48c270108",
     "references/COMPONENT_REGISTRY.json": "3250543b7119c7a7158e85feaa8799b051a5d7fde95d80c52e3e7a63561ff02f",
-    "references/DESIGN_SYSTEM.md": "7fa70d6a8ea9d00843d8e6a458296be43e6e21aa2bf56de970dc48739f762e10",
+    "references/DESIGN_SYSTEM.md": "660b510e2effd82c7671c9e514ef75b34d2f750712316c100efd248cf8d4159d",
     "references/PAGE_INDEX.json": "f52728eaec961b3268cd4a73f6bcdf0af4c937ebe14ad3ae2179719c1eb58682",
     "references/UI_INSPECTOR_CONTRACT.md": "3da9be0a9d3d7e24cbc91acfdfdb669126a4550630a229374314f3bf8f6f08c5",
     "references/VISUAL_KEYS.json": "1fff39a0b0a11b412c9e24e5c4c5ff5087969ccfb25c666436ed40e661eb89b5"

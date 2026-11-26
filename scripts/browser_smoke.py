@@ -249,6 +249,8 @@ def check_playground_clipboard(browser, base_url: str, width: int) -> None:
     context, page, errors = open_layouts_page(browser, base_url, width)
     page.evaluate("(h) => { location.hash = h }", "#pilot/admin/f33playground")
     page.wait_for_selector("#f33pg-preview .f33pv-frame", timeout=10_000)
+    page.evaluate("() => { window.FormaLayouts.setConfig({template: 'sidebar'}) }")
+    page.wait_for_timeout(150)
     page.get_by_text("Copy Layout Reference").click()
     page.wait_for_timeout(250)
     reference = json.loads(page.evaluate("navigator.clipboard.readText()"))
@@ -307,6 +309,239 @@ def run_layout_width(browser, base_url: str, width: int) -> int:
     return cases
 
 
+def layout_canonical_defaults() -> dict:
+    registry = json.loads((Path(__file__).resolve().parents[1] / "references/LAYOUT_REGISTRY.json").read_text(encoding="utf-8"))
+    return {
+        template["id"]: {
+            "template": template["id"],
+            "viewport": 1440,
+            "theme": "light",
+            **template["defaults"],
+            "contentWidth": "fluid",
+        }
+        for template in registry["templates"]
+    }
+
+
+def open_detail(page, template: str) -> dict:
+    page.evaluate("(h) => { location.hash = h }", f"#pilot/admin/f33layouts/{template}")
+    page.wait_for_function(
+        "(t) => {const f = document.querySelector('#f33pg-preview .f33pv-frame');"
+        "return !!f && f.dataset.layoutTemplate === t}",
+        arg=template,
+        timeout=10_000,
+    )
+    page.wait_for_timeout(120)
+    return page.evaluate("window.FormaLayouts.getConfig()")
+
+
+def check_direct_copies(browser, base_url: str) -> None:
+    context, page, errors = open_layouts_page(browser, base_url, 390)
+    for template in LAYOUT_IDS:
+        open_detail(page, template)
+        page.get_by_text("Copy Layout Reference").click()
+        page.wait_for_timeout(150)
+        reference = json.loads(page.evaluate("navigator.clipboard.readText()"))
+        if reference.get("format") != "forma.layout.reference.v1" or reference.get("template") != template:
+            raise AssertionError(f"{template}: direct-route layout reference is invalid")
+        if reference.get("route") != f"pilot/admin/f33layouts/{template}":
+            raise AssertionError(f"{template}: layout reference route is {reference.get('route')}")
+        slots = reference.get("slots") or []
+        if not slots or not all(str(row.get("id", "")).startswith(f"layout.{template}") for row in slots):
+            raise AssertionError(f"{template}: layout reference slots lost their instance context")
+        page.get_by_text("Copy Configuration").click()
+        page.wait_for_timeout(150)
+        config = json.loads(page.evaluate("navigator.clipboard.readText()"))
+        if config.get("format") != "forma.layout.config.v1" or config.get("template") != template:
+            raise AssertionError(f"{template}: direct-route normalized configuration is invalid")
+        page.evaluate("() => { navigator.clipboard.writeText = () => { throw new Error('blocked') } }")
+        page.get_by_text("Copy Configuration").click()
+        page.wait_for_timeout(150)
+        fallback = page.locator("#f33pg-fallback")
+        if fallback.is_hidden():
+            raise AssertionError(f"{template}: direct-route clipboard fallback is hidden")
+        fallback_config = json.loads(fallback.input_value())
+        if fallback_config.get("template") != template:
+            raise AssertionError(f"{template}: clipboard fallback lost the template context")
+        page.evaluate("() => { delete navigator.clipboard.writeText }")
+    if errors:
+        raise AssertionError(f"direct-route copies: page errors: {errors}")
+    context.close()
+
+
+def check_focus(browser, base_url: str) -> None:
+    context, page, errors = open_layouts_page(browser, base_url, 1440)
+    page.evaluate("(h) => { location.hash = h }", "#pilot/admin/f33playground")
+    page.wait_for_selector("#f33pg-root [data-config-key='template']", timeout=10_000)
+    select = page.locator("#f33pg-root [data-config-key='template']")
+    select.focus()
+    select.select_option("semi")
+    page.wait_for_timeout(200)
+    active = page.evaluate("document.activeElement?.dataset?.configKey || ''")
+    value = page.evaluate("document.querySelector('#f33pg-root [data-config-key=template]')?.value")
+    if active != "template":
+        raise AssertionError(f"playground: focus left the Template select ({active or 'none'})")
+    if value != "semi":
+        raise AssertionError("playground: Template select did not apply the change")
+    if errors:
+        raise AssertionError(f"playground focus: page errors: {errors}")
+    context.close()
+
+
+def check_canonical_defaults(browser, base_url: str) -> None:
+    defaults = layout_canonical_defaults()
+    context, page, errors = open_layouts_page(browser, base_url, 1440)
+    page.evaluate("(h) => { location.hash = h }", "#pilot/admin/f33playground")
+    page.wait_for_selector("#f33pg-root [data-config-key='template']", timeout=10_000)
+    page.evaluate(
+        "() => { window.FormaLayouts.setConfig({template: 'sidebar', theme: 'dark', viewport: 390, "
+        "contextSidebar: false, aiAssistant: true, contentWidth: 'narrow'}) }"
+    )
+    page.wait_for_timeout(200)
+    for template in LAYOUT_IDS:
+        actual = open_detail(page, template)
+        expected = defaults[template]
+        if actual != expected:
+            raise AssertionError(f"{template}: direct route kept stale playground state: {actual}")
+        pressed = page.evaluate(
+            """() => document.querySelector("#f33pg-root [data-config-key=viewport][data-config-value='1440']")?.getAttribute('aria-pressed')"""
+        )
+        if pressed != "true":
+            raise AssertionError(f"{template}: controls do not expose canonical defaults")
+    if errors:
+        raise AssertionError(f"canonical defaults: page errors: {errors}")
+    context.close()
+
+
+def check_inactive_controls(browser, base_url: str) -> None:
+    defaults = layout_canonical_defaults()
+    context, page, errors = open_layouts_page(browser, base_url, 390)
+    for template in LAYOUT_IDS:
+        open_detail(page, template)
+        state = page.evaluate(
+            """() => {
+              const frame = document.querySelector('#f33pg-preview .f33pv-frame');
+              return {
+                contextSlot: frame.querySelectorAll('[data-layout-slot="context-sidebar"]').length,
+                contextButton: frame.querySelectorAll('button[aria-label="Open context navigation"]').length,
+                aiSlot: frame.querySelectorAll('[data-layout-slot="ai-sidebar"]').length,
+                launcher: frame.querySelectorAll('.f33pv-launcher').length,
+                aiOpen: frame.dataset.aiOpen,
+                transform: getComputedStyle(frame.querySelector('.f33pv-canvas')).transform,
+                aiDisabled: document.querySelector('#f33pg-root [data-config-key=aiAssistant]')?.disabled
+              };
+            }"""
+        )
+        expect_context = defaults[template]["contextSidebar"]
+        if bool(state["contextSlot"]) != expect_context:
+            raise AssertionError(f"{template}: context slot state does not match the canonical config")
+        if state["contextButton"] != (1 if expect_context else 0):
+            raise AssertionError(f"{template}: inert context control is present")
+        if state["aiSlot"] or state["launcher"]:
+            raise AssertionError(f"{template}: disabled AI rendered a target or launcher")
+        if state["aiOpen"] != "false":
+            raise AssertionError(f"{template}: disabled AI set ai-open")
+        if state["transform"] not in ("none", "matrix(1, 0, 0, 1, 0, 0)"):
+            raise AssertionError(f"{template}: disabled AI shifted the canvas")
+        if state["aiDisabled"]:
+            continue
+        page.evaluate("() => { window.FormaLayouts.setConfig({aiAssistant: true}) }")
+        page.wait_for_timeout(150)
+        enabled = page.evaluate(
+            """() => {
+              const frame = document.querySelector('#f33pg-preview .f33pv-frame');
+              return {slot: frame.querySelectorAll('[data-layout-slot="ai-sidebar"]').length,
+                      launcher: frame.querySelectorAll('.f33pv-launcher').length,
+                      aiOpen: frame.dataset.aiOpen};
+            }"""
+        )
+        if enabled["slot"] != 1 or enabled["aiOpen"] != "true":
+            raise AssertionError(f"{template}: enabled AI did not open a real panel")
+        if enabled["launcher"] != (1 if template != "fullscreen" else 0):
+            raise AssertionError(f"{template}: launcher does not follow the immersive exception")
+        page.evaluate("() => { window.FormaLayouts.setConfig({aiAssistant: false}) }")
+        page.wait_for_timeout(150)
+        closed = page.evaluate(
+            """() => {
+              const frame = document.querySelector('#f33pg-preview .f33pv-frame');
+              return {slot: frame.querySelectorAll('[data-layout-slot="ai-sidebar"]').length,
+                      launcher: frame.querySelectorAll('.f33pv-launcher').length,
+                      aiOpen: frame.dataset.aiOpen};
+            }"""
+        )
+        if closed["slot"] or closed["launcher"] or closed["aiOpen"] != "false":
+            raise AssertionError(f"{template}: disabling AI left an inert target")
+    if errors:
+        raise AssertionError(f"inactive controls: page errors: {errors}")
+    context.close()
+
+
+def check_labels_geometry(browser, base_url: str, width: int) -> None:
+    context, page, errors = open_layouts_page(browser, base_url, width)
+    for template in LAYOUT_IDS:
+        page.evaluate("(h) => { location.hash = h }", f"#pilot/admin/f33layouts/{template}")
+        page.wait_for_function(
+            "(t) => {const f = document.querySelector('#f33pg-preview .f33pv-frame');"
+            "return !!f && f.dataset.layoutTemplate === t}",
+            arg=template,
+            timeout=10_000,
+        )
+        page.evaluate("(w) => { window.FormaLayouts.setConfig({viewport: w}) }", width)
+        page.wait_for_timeout(150)
+        result = page.evaluate(
+            """() => {
+              const frame = document.querySelector('#f33pg-preview .f33pv-frame');
+              const frameRect = frame.getBoundingClientRect();
+              const problems = [];
+              for (const slot of frame.querySelectorAll('[data-layout-slot]')) {
+                const slotRect = slot.getBoundingClientRect();
+                if (slotRect.height <= 0) continue;
+                const label = slot.querySelector(':scope > .f33pv-slotlabel');
+                const rootSlot = slot.dataset.layoutSlot === 'application-shell' || slot.dataset.layoutSlot === 'content-layout';
+                if (!label) { if (!rootSlot) problems.push('missing label ' + slot.dataset.layoutSlot); continue; }
+                const labelRect = label.getBoundingClientRect();
+                if (labelRect.width < 8 || labelRect.height < 8) problems.push('label too small ' + slot.dataset.layoutSlot);
+                const maxHeight = slot.dataset.layoutSlot === 'primary-sidebar' ? 25 : 19;
+                if (labelRect.left < slotRect.left - 1 || labelRect.right > slotRect.right + 1 ||
+                    labelRect.top < slotRect.top - 1 || labelRect.bottom > slotRect.top + maxHeight) {
+                  problems.push('label outside ' + slot.dataset.layoutSlot);
+                }
+                const child = [...slot.children].find(el => !el.classList.contains('f33pv-slotlabel') && getComputedStyle(el).display !== 'none');
+                if (child) {
+                  const childRect = child.getBoundingClientRect();
+                  if (childRect.height > 0 && childRect.top < labelRect.bottom - 1) problems.push('label overlaps content ' + slot.dataset.layoutSlot);
+                }
+                if (slotRect.right > frameRect.right + 1) problems.push('slot overflows frame ' + slot.dataset.layoutSlot);
+              }
+              return {
+                problems,
+                overflow: document.documentElement.scrollWidth > innerWidth,
+                labels: frame.querySelectorAll('.f33pv-slotlabel').length,
+                identities: frame.querySelectorAll('[data-ui-id]').length
+              };
+            }"""
+        )
+        if result["labels"] == 0:
+            raise AssertionError(f"{template}/{width}: slot labels are not visible by default")
+        if result["problems"]:
+            raise AssertionError(f"{template}/{width}: slot label geometry: {result['problems'][:3]}")
+        if result["overflow"]:
+            raise AssertionError(f"{template}/{width}: slot labels caused document overflow")
+    labels_toggle = page.locator("#f33pg-root .f33pg-controls label", has_text="Slot labels").locator("input")
+    identities = page.evaluate("document.querySelectorAll('#f33pg-preview .f33pv-frame [data-ui-id]').length")
+    labels_toggle.uncheck()
+    page.wait_for_timeout(100)
+    hidden = page.evaluate("document.querySelectorAll('#f33pg-preview .f33pv-slotlabel:not([hidden])').length")
+    visible = page.evaluate("[...document.querySelectorAll('#f33pg-preview .f33pv-slotlabel')].filter(el => getComputedStyle(el).display !== 'none').length")
+    remaining = page.evaluate("document.querySelectorAll('#f33pg-preview .f33pv-frame [data-ui-id]').length")
+    if visible != 0 or remaining != identities:
+        raise AssertionError(f"labels/{width}: toggle removed Inspector identities or left labels visible")
+    labels_toggle.check()
+    if errors:
+        raise AssertionError(f"slot labels {width}: page errors: {errors}")
+    context.close()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-url", default="http://127.0.0.1:4173/")
@@ -326,12 +561,17 @@ def main() -> int:
             cases = 0
             for width in LAYOUT_WIDTHS:
                 cases += run_layout_width(browser, args.base_url, width)
+                check_labels_geometry(browser, args.base_url, width)
+            check_direct_copies(browser, args.base_url)
+            check_focus(browser, args.base_url)
+            check_canonical_defaults(browser, args.base_url)
+            check_inactive_controls(browser, args.base_url)
             check_playground_clipboard(browser, args.base_url, 390)
         finally:
             browser.close()
     print(
         "Browser smoke: PASS (desktop-1440, mobile-390, "
-        f"{cases} layout theme cases at {', '.join(map(str, LAYOUT_WIDTHS))}, playground copy/export)"
+        f"{cases} layout theme cases at {', '.join(map(str, LAYOUT_WIDTHS))}, direct copies, focus, canonical defaults, inactive controls, label geometry, playground copy/export)"
     )
     return 0
 

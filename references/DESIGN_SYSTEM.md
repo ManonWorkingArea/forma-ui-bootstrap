@@ -38,6 +38,8 @@ Layout work starts from a template, not from a component. Model every screen as 
 - Public keeps the existing `publiccanvas` exception: no canvas slide and no assistant. Fullscreen suppresses the mobile launcher, matching editor behavior.
 - The layout playground previews inside a container-scoped in-page stage (not an iframe). Fixed simulated widths (1440/768/390/320) scroll inside their stage only; the document never overflows.
 
+Slot labels occupy a reserved top band inside each slot (24px on the primary rail) instead of floating over content. Toggle them without removing Inspector identities; labels wrap or ellipsize inside the slot width and must never create horizontal page overflow.
+
 Provisional layout tokens: inspector 280px (240–320), split list 320px (280–360), content measure 960px standard / 680px narrow, centered card 420px, slot label 11px with a 4px radius. Keep controls compact 30px, standard 34px and touch 44px at ≤768px. Use existing semantic color pairs only; reduced motion removes sliding transitions.
 
 ## Reusable component contracts

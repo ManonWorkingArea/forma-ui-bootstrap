@@ -14,3 +14,5 @@ The mockup is V34 plus the Owner-approved additive V34.1 layout templates and pl
 CLI screenshots: `assets/mockup/screenshots/catalog-390-cli-clean.png`, `catalog-390-cli-debug.png`, `builder-1440-cli-clean.png`, `builder-1440-cli-debug.png`, `register-390-cli-clean.png`, `register-390-cli-debug.png`.
 
 Bootstrap validation: `references/examples/BOOTSTRAP_TEST_REPORT.json` and `bootstrap-static-tests.txt`.
+
+The 60 member checksums in `.github/package-baseline.json` describe the current V34.1 working tree; the immutable original `skill.zip` digest is retained separately as source provenance. `scripts/validate_repository.py` reports both, and `MANIFEST.json` pins the current V34.1 files.
