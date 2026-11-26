@@ -1,0 +1,1487 @@
+{
+  "format": "forma-page-index.v1",
+  "baseline": "V34",
+  "note": "Pilot example routes derived from passing V33 test entries, with public/admin surface inferred from dispatch and report order. Not an exhaustive manifest or V34 retest. Dynamic IDs are fixture examples.",
+  "pages": [
+    {
+      "route": "pilot/admin/f33home",
+      "title": "UI foundation",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33home"
+    },
+    {
+      "route": "pilot/admin/f33components",
+      "title": "Advanced components",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33components"
+    },
+    {
+      "route": "pilot/admin/f33patterns",
+      "title": "Page patterns",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33patterns"
+    },
+    {
+      "route": "pilot/admin/f33states",
+      "title": "UX states",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33states"
+    },
+    {
+      "route": "pilot/admin/f33appearance",
+      "title": "Appearance & language",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33appearance"
+    },
+    {
+      "route": "pilot/admin/f33mobile",
+      "title": "Mobile patterns",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33mobile"
+    },
+    {
+      "route": "pilot/admin/f33ai",
+      "title": "AI action interface",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33ai"
+    },
+    {
+      "route": "pilot/admin/f33accounts",
+      "title": "Account journeys",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33accounts"
+    },
+    {
+      "route": "pilot/admin/f33frontend",
+      "title": "Frontend patterns",
+      "group": "foundation",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33frontend"
+    },
+    {
+      "route": "pilot/public/f33landing",
+      "title": "Landing page",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33landing"
+    },
+    {
+      "route": "pilot/public/f33articles",
+      "title": "Articles",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33articles"
+    },
+    {
+      "route": "pilot/public/f33article/article-1",
+      "title": "Article detail",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33article/article-1"
+    },
+    {
+      "route": "pilot/public/f33collection",
+      "title": "Collections",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33collection"
+    },
+    {
+      "route": "pilot/public/f33content/page-home",
+      "title": "Content detail",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33content/page-home"
+    },
+    {
+      "route": "pilot/public/f33search",
+      "title": "Search",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33search"
+    },
+    {
+      "route": "pilot/public/f33member",
+      "title": "Member portal",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33member"
+    },
+    {
+      "route": "pilot/public/f33dashboard",
+      "title": "Member dashboard",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33dashboard"
+    },
+    {
+      "route": "pilot/public/f33form",
+      "title": "Public form",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33form"
+    },
+    {
+      "route": "pilot/public/f33support",
+      "title": "Support center",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33support"
+    },
+    {
+      "route": "pilot/public/f33help",
+      "title": "Help & FAQ",
+      "group": "frontend",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/public/f33help"
+    },
+    {
+      "route": "pilot/utility/f33signin",
+      "title": "Sign in",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33signin"
+    },
+    {
+      "route": "pilot/utility/f33register",
+      "title": "Create account",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33register"
+    },
+    {
+      "route": "pilot/utility/f33verify",
+      "title": "Verify email",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33verify"
+    },
+    {
+      "route": "pilot/utility/f33forgot",
+      "title": "Forgot password",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33forgot"
+    },
+    {
+      "route": "pilot/utility/f33reset",
+      "title": "Reset password",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33reset"
+    },
+    {
+      "route": "pilot/utility/f33twofactor",
+      "title": "Two-factor verification",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33twofactor"
+    },
+    {
+      "route": "pilot/utility/f33recovery",
+      "title": "Recovery code",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33recovery"
+    },
+    {
+      "route": "pilot/utility/f33invite",
+      "title": "Accept invitation",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33invite"
+    },
+    {
+      "route": "pilot/utility/f33onboard",
+      "title": "Getting started",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33onboard"
+    },
+    {
+      "route": "pilot/utility/f33setup",
+      "title": "Workspace setup",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33setup"
+    },
+    {
+      "route": "pilot/utility/f33switch",
+      "title": "Switch workspace",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33switch"
+    },
+    {
+      "route": "pilot/utility/f33account",
+      "title": "Account center",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33account"
+    },
+    {
+      "route": "pilot/utility/f33expired",
+      "title": "Session expired",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33expired"
+    },
+    {
+      "route": "pilot/utility/f33lock",
+      "title": "Unlock workspace",
+      "group": "account",
+      "evidence": "V33 responsive render",
+      "widths": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ],
+      "hash": "#pilot/utility/f33lock"
+    },
+    {
+      "route": "pilot/admin/overview",
+      "title": "Overview",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/overview"
+    },
+    {
+      "route": "pilot/admin/modules",
+      "title": "Modules",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/modules"
+    },
+    {
+      "route": "pilot/admin/actions",
+      "title": "Actions",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/actions"
+    },
+    {
+      "route": "pilot/admin/pages",
+      "title": "Pages",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/pages"
+    },
+    {
+      "route": "pilot/admin/settings",
+      "title": "Appearance",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/settings"
+    },
+    {
+      "route": "pilot/admin/system",
+      "title": "System information",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/system"
+    },
+    {
+      "route": "pilot/admin/design",
+      "title": "Design system",
+      "group": "foundation",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/design"
+    },
+    {
+      "route": "pilot/admin/formlab",
+      "title": "Form elements",
+      "group": "foundation",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/formlab"
+    },
+    {
+      "route": "pilot/admin/feedback",
+      "title": "Feedback & overlays",
+      "group": "foundation",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/feedback"
+    },
+    {
+      "route": "pilot/admin/gallery",
+      "title": "Component gallery",
+      "group": "foundation",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/gallery"
+    },
+    {
+      "route": "pilot/admin/catalog",
+      "title": "Catalog",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/catalog"
+    },
+    {
+      "route": "pilot/admin/booking",
+      "title": "Bookings",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/booking"
+    },
+    {
+      "route": "pilot/admin/new",
+      "title": "New booking",
+      "group": "core",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/new"
+    },
+    {
+      "route": "pilot/admin/calendar19",
+      "title": "Calendar & agenda",
+      "group": "workspaces",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/calendar19"
+    },
+    {
+      "route": "pilot/admin/chat19",
+      "title": "Multichannel chat",
+      "group": "workspaces",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/chat19"
+    },
+    {
+      "route": "pilot/admin/inbox19",
+      "title": "Inbox",
+      "group": "workspaces",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/inbox19"
+    },
+    {
+      "route": "pilot/admin/project19",
+      "title": "Project manager",
+      "group": "workspaces",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/project19"
+    },
+    {
+      "route": "pilot/admin/workflow19",
+      "title": "Workflow editor",
+      "group": "workspaces",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/workflow19"
+    },
+    {
+      "route": "pilot/admin/builder19",
+      "title": "Page builder (workspace specimen)",
+      "group": "workspaces",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/builder19"
+    },
+    {
+      "route": "pilot/admin/cmsarticles",
+      "title": "Articles",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmsarticles"
+    },
+    {
+      "route": "pilot/admin/cmspages",
+      "title": "Website pages",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmspages"
+    },
+    {
+      "route": "pilot/admin/cmsdetail/page-home",
+      "title": "Content details",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmsdetail/page-home"
+    },
+    {
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "title": "Visual builder",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmsbuilder/page-home"
+    },
+    {
+      "route": "pilot/admin/cmsemails",
+      "title": "Email templates",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmsemails"
+    },
+    {
+      "route": "pilot/admin/cmsthemes",
+      "title": "Website themes",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmsthemes"
+    },
+    {
+      "route": "pilot/admin/cmsstore",
+      "title": "Block store",
+      "group": "cms",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/cmsstore"
+    },
+    {
+      "route": "pilot/admin/flmy",
+      "title": "My files",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/flmy"
+    },
+    {
+      "route": "pilot/admin/flshared",
+      "title": "Shared with me",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/flshared"
+    },
+    {
+      "route": "pilot/admin/flout",
+      "title": "Shared by me",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/flout"
+    },
+    {
+      "route": "pilot/admin/flrecent",
+      "title": "Recent",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/flrecent"
+    },
+    {
+      "route": "pilot/admin/flstar",
+      "title": "Starred",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/flstar"
+    },
+    {
+      "route": "pilot/admin/flmedia",
+      "title": "Media library",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/flmedia"
+    },
+    {
+      "route": "pilot/admin/fltrash",
+      "title": "Trash",
+      "group": "files",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/fltrash"
+    },
+    {
+      "route": "pilot/admin/d29people",
+      "title": "People",
+      "group": "directory",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/d29people"
+    },
+    {
+      "route": "pilot/admin/d29orgs",
+      "title": "Organizations",
+      "group": "directory",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/d29orgs"
+    },
+    {
+      "route": "pilot/admin/d29groups",
+      "title": "Contact groups",
+      "group": "directory",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/d29groups"
+    },
+    {
+      "route": "pilot/admin/d29star",
+      "title": "Starred contacts",
+      "group": "directory",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/d29star"
+    },
+    {
+      "route": "pilot/admin/d29trash",
+      "title": "Trash",
+      "group": "directory",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/d29trash"
+    },
+    {
+      "route": "pilot/admin/d29detail/person-maya",
+      "title": "Contact details",
+      "group": "directory",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/d29detail/person-maya"
+    },
+    {
+      "route": "pilot/admin/p30users",
+      "title": "Users",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30users"
+    },
+    {
+      "route": "pilot/admin/p30teams",
+      "title": "Teams & groups",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30teams"
+    },
+    {
+      "route": "pilot/admin/p30roles",
+      "title": "Roles & permissions",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30roles"
+    },
+    {
+      "route": "pilot/admin/p30sessions",
+      "title": "Sessions & invitations",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30sessions"
+    },
+    {
+      "route": "pilot/admin/p30search",
+      "title": "Global search",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30search"
+    },
+    {
+      "route": "pilot/admin/p30notifications",
+      "title": "Notifications",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30notifications"
+    },
+    {
+      "route": "pilot/admin/p30data",
+      "title": "Import & export",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30data"
+    },
+    {
+      "route": "pilot/admin/p30records",
+      "title": "Shared record services",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30records"
+    },
+    {
+      "route": "pilot/admin/p30preferences",
+      "title": "Preferences",
+      "group": "platform",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/p30preferences"
+    },
+    {
+      "route": "pilot/admin/s31studio",
+      "title": "Studio",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31studio"
+    },
+    {
+      "route": "pilot/admin/s31forms",
+      "title": "Forms",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31forms"
+    },
+    {
+      "route": "pilot/admin/s31dashboards",
+      "title": "Dashboards",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31dashboards"
+    },
+    {
+      "route": "pilot/admin/s31reports",
+      "title": "Reports",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31reports"
+    },
+    {
+      "route": "pilot/admin/s31documents",
+      "title": "Documents",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31documents"
+    },
+    {
+      "route": "pilot/admin/s31knowledge",
+      "title": "Knowledge base",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31knowledge"
+    },
+    {
+      "route": "pilot/admin/s31detail/form-enquiry",
+      "title": "Design details",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31detail/form-enquiry"
+    },
+    {
+      "route": "pilot/admin/s31editor/form-enquiry",
+      "title": "Visual studio",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31editor/form-enquiry"
+    },
+    {
+      "route": "pilot/admin/s31submissions/form-enquiry",
+      "title": "Submissions",
+      "group": "studio",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/s31submissions/form-enquiry"
+    },
+    {
+      "route": "pilot/admin/m32home",
+      "title": "System administration",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32home"
+    },
+    {
+      "route": "pilot/admin/m32connections",
+      "title": "Connections",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32connections"
+    },
+    {
+      "route": "pilot/admin/m32webhooks",
+      "title": "Webhooks",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32webhooks"
+    },
+    {
+      "route": "pilot/admin/m32credentials",
+      "title": "API credentials",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32credentials"
+    },
+    {
+      "route": "pilot/admin/m32registry",
+      "title": "Module manager",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32registry"
+    },
+    {
+      "route": "pilot/admin/m32module/catalog",
+      "title": "Module manifest",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32module/catalog"
+    },
+    {
+      "route": "pilot/admin/m32actions",
+      "title": "Action explorer",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32actions"
+    },
+    {
+      "route": "pilot/admin/m32action/catalog.list",
+      "title": "Action inspector",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32action/catalog.list"
+    },
+    {
+      "route": "pilot/admin/m32jobs",
+      "title": "Job manager",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32jobs"
+    },
+    {
+      "route": "pilot/admin/m32schedules",
+      "title": "Scheduled tasks",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32schedules"
+    },
+    {
+      "route": "pilot/admin/m32audit",
+      "title": "Audit & logs",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32audit"
+    },
+    {
+      "route": "pilot/admin/m32settings",
+      "title": "Workspace settings",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32settings"
+    },
+    {
+      "route": "pilot/admin/m32design",
+      "title": "Design foundation",
+      "group": "administration",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/admin/m32design"
+    },
+    {
+      "route": "pilot/public/home",
+      "title": "Home",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/home"
+    },
+    {
+      "route": "pilot/public/catalog",
+      "title": "Catalog",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/catalog"
+    },
+    {
+      "route": "pilot/public/grid",
+      "title": "Catalog grid",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/grid"
+    },
+    {
+      "route": "pilot/public/publiccalendar",
+      "title": "Event calendar",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/publiccalendar"
+    },
+    {
+      "route": "pilot/public/publicchat",
+      "title": "Customer support",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/publicchat"
+    },
+    {
+      "route": "pilot/public/publicinbox",
+      "title": "My messages",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/publicinbox"
+    },
+    {
+      "route": "pilot/public/publicproject",
+      "title": "Project portal",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/publicproject"
+    },
+    {
+      "route": "pilot/public/publicworkflow",
+      "title": "Request tracker",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/publicworkflow"
+    },
+    {
+      "route": "pilot/public/publicbuilder",
+      "title": "Published page",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/publicbuilder"
+    },
+    {
+      "route": "pilot/public/cmsview/page-home",
+      "title": "Published content",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/cmsview/page-home"
+    },
+    {
+      "route": "pilot/public/s31portal",
+      "title": "Resource portal",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/s31portal"
+    },
+    {
+      "route": "pilot/public/s31formview/form-enquiry",
+      "title": "Form",
+      "group": "frontend",
+      "evidence": "V33 legacy entry smoke",
+      "widths": [
+        1440,
+        390
+      ],
+      "hash": "#pilot/public/s31formview/form-enquiry"
+    }
+  ]
+}

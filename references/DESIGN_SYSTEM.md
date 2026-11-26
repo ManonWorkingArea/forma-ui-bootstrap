@@ -1,0 +1,51 @@
+# Forma — Quiet Precision
+
+## Intent
+
+A compact, calm application foundation. Prefer useful hierarchy, direct labels, consistent surfaces and legible information over decorative cards. The engine and first-party modules should consume the same reusable UI contracts; the standalone mockup is a reference implementation, not the production component library.
+
+## Shared tokens (V33)
+
+| Token | Light | Dark |
+|---|---|---|
+| Surface | #ffffff | #20232a |
+| Raised | #fafbfc | #262a32 |
+| Text | #23252b | #e8eaf0 |
+| Muted | #666d78 | #a7afbd |
+| Border | #e1e4e9 | #3b414d |
+| Soft/selected | #eff1f4 | #303641 |
+| Action | #292d36 | #b6c7e3 |
+| On action | #ffffff | #17202c |
+| Focus | #7790b3 | #a9c0e9 |
+| Success | #386c52 | #8bc6a3 |
+| Warning | #91652d | #e3bb78 |
+| Error | #ad4449 | #f1a3a5 |
+
+Base text 13px, metadata 11px, compact control 30px, standard 34px, comfortable 38px. Row baselines 34/39/45px. Main spacing increments 4px; use 8/12/16/20 for internal groups. Radius 6px, overlays 9px, one low elevation for surfaces and a stronger elevation for overlays only. Use text and icons alongside state colors. Focus ring visible, reduced-motion preference respected.
+
+## Shell and navigation
+
+Primary icon rail + contextual navigation + main content + assistant side panel. Whole canvas shifts to reveal navigation/assistant. No floating navigation drawer. Desktop contextual width adjustable 168–256px. Mobile retains the canvas motion and uses a dedicated bottom launcher dock; mobile preview bubble suppressed to prevent obscured controls. Full-screen authoring tools omit the launcher. Large forms may use a full-screen dialog; context actions use a sheet on mobile.
+
+## Reusable component contracts
+
+These are implementation handoff contracts, not backend contracts.
+
+- Field: label, value, required, help, error, disabled, read-only; emit change/blur; preserve input across validation.
+- Select/record picker: options or a registered source, identity key, label, selection mode, search, loading, no results; emit selected IDs; restore focus.
+- Date/range: canonical date values; explicit range apply; keyboard navigation; localized display. Do not mutate saved dates merely because timezone display changed.
+- Collection: stable row IDs, search/filter/sort, paging, selection, bulk actions, adaptive list; no horizontal scrolling for data tables.
+- Detail: identity header, metadata, tabs, relationships, timeline, attachments, status and edit action; navigate back without losing collection state.
+- Modal/confirmation: title, description, intent, buttons, optional body; top-layer focus trap and restore focus; distinguish destructive actions; never treat dismissal as approval.
+- Toast/banner: kind, message, action when relevant, dismiss; errors remain understandable without color.
+- File viewer: asset reference, metadata, MIME-appropriate preview/fallback, zoom/navigation/download. Never copy file content unnecessarily for mere attachments.
+- Workspace editor: list/details own document lifecycle, full-screen editor owns an edit session; layers/canvas/inspector, draft/published separation, undo/redo, breakpoint preview and export.
+- AI action UI: select a single registered action, gather inputs, render the exact proposal, explicitly confirm, support edit/cancel/expiry/error, render typed result/reference. Backend authorization is independent of UI confirmation. V33 never executes real writes.
+
+## Responsive and frontend
+
+Use container queries for data and editor layouts; do not assume viewport equals content width. Keep visual checkbox/radio dimensions at 16px independent of 44px touch rows. Test 1920/1440/1280/1024/768/430/390/320 widths. On narrow screens use structured records, stacked sections and one editor pane at a time. Public pages use a separate responsive header/navigation/footer and customer account layout. Published content derives from published snapshots, not drafts. Theme for editor controls is separate from website/document design.
+
+## Acceptance
+
+Use `UI foundation` as the index. Review screenshots and interactions together. Implementation should replace duplicate legacy code with shared component exports gradually, rather than reproducing mockup version-specific wrappers. Do not declare design freeze before owner visual review and closure of the review backlog.

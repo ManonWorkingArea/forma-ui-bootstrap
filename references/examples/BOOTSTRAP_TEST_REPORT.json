@@ -1,0 +1,79 @@
+{
+  "baseline": "V34",
+  "htmlSha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
+  "staticCliTests": {
+    "passed": 11,
+    "failed": 0,
+    "log": "bootstrap-static-tests.txt"
+  },
+  "browserCaptures": [
+    {
+      "requestedRoute": "pilot/admin/catalog",
+      "actualHash": "#pilot/admin/catalog",
+      "title": "Forma V34 - UI Inspector",
+      "visibleHeading": "Catalog",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "route": "pilot/admin/catalog",
+          "count": 61,
+          "inventory": "inventory-0.json"
+        }
+      ],
+      "errors": [],
+      "documentOverflow": false,
+      "baselineSha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
+      "note": "Exact bundled mockup rendered in Chromium using set_content; network blocked. Inspect screenshots and actual heading; capture is not route acceptance or a full visual audit."
+    },
+    {
+      "requestedRoute": "pilot/admin/cmsbuilder/page-home",
+      "actualHash": "#pilot/admin/cmsbuilder/page-home",
+      "title": "Forma V34 - UI Inspector",
+      "visibleHeading": null,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "frames": [
+        {
+          "frame": 1,
+          "route": "pilot/admin/cmsbuilder/page-home",
+          "count": 122,
+          "inventory": "inventory-1.json"
+        }
+      ],
+      "errors": [],
+      "documentOverflow": false,
+      "baselineSha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
+      "note": "Exact bundled mockup rendered in Chromium using set_content; network blocked. Inspect screenshots and actual heading; capture is not route acceptance or a full visual audit."
+    },
+    {
+      "requestedRoute": "pilot/utility/f33register",
+      "actualHash": "#pilot/utility/f33register",
+      "title": "Forma V34 - UI Inspector",
+      "visibleHeading": "Create account",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "frames": [
+        {
+          "frame": 0,
+          "route": "pilot/utility/f33register",
+          "count": 21,
+          "inventory": "inventory-0.json"
+        }
+      ],
+      "errors": [],
+      "documentOverflow": false,
+      "baselineSha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
+      "note": "Exact bundled mockup rendered in Chromium using set_content; network blocked. Inspect screenshots and actual heading; capture is not route acceptance or a full visual audit."
+    }
+  ],
+  "scope": "CLI and bundled reference snapshot; not production implementation acceptance or full visual regression.",
+  "pageIndexCorrection": "14 account routes changed from public to utility; register route rendered correct heading."
+}

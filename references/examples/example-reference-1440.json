@@ -1,0 +1,33 @@
+{
+  "component": "Core.Button",
+  "reference": "pilot/admin/catalog#Core.Button@1vrx2c5",
+  "route": "pilot/admin/catalog",
+  "instancePath": "#dt/div:1/button:1",
+  "sourceSelector": "button",
+  "sourceHint": {
+    "domId": null,
+    "classes": [],
+    "handler": "dtPopup"
+  },
+  "element": "button",
+  "label": "Filter",
+  "bounds": {
+    "x": 595,
+    "y": 142.3,
+    "width": 60.5,
+    "height": 27
+  },
+  "visibleBounds": {
+    "x": 595,
+    "y": 142,
+    "width": 61,
+    "height": 27
+  },
+  "state": {
+    "disabled": false,
+    "expanded": null,
+    "selected": null,
+    "checked": null,
+    "readOnly": false
+  }
+}

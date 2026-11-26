@@ -1,0 +1,410 @@
+{
+  "version": "V34",
+  "environment": "Chromium headless, exact standalone HTML via set_content, desktop and simulated touch. No Android physical device test.",
+  "initial_run": {
+    "checks": [
+      {
+        "name": "1440: no layout movement on toggle",
+        "passed": true,
+        "detail": "({'x': 260, 'y': 133.78125, 'width': 1160, 'height': 343.5}, {'x': 260, 'y': 133.78125, 'width': 1160, 'height': 343.5})"
+      },
+      {
+        "name": "1440: visible elements",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: table classified",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: document horizontal overflow",
+        "passed": true,
+        "detail": "1440"
+      },
+      {
+        "name": "1440: dock within viewport",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: controls mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: elements mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: filter results",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: pick selects without activation",
+        "passed": true,
+        "detail": "Core.Button"
+      },
+      {
+        "name": "1440: reference metadata",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: valid JSON inventory",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "1440: clipboard or manual fallback",
+        "passed": true,
+        "detail": "Clipboard unavailable. Select and copy the reference manually."
+      },
+      {
+        "name": "1440: off removes visible overlay",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: no layout movement on toggle",
+        "passed": true,
+        "detail": "({'x': 260, 'y': 122.328125, 'width': 488, 'height': 913}, {'x': 260, 'y': 122.328125, 'width': 488, 'height': 913})"
+      },
+      {
+        "name": "768: visible elements",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: table classified",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: document horizontal overflow",
+        "passed": true,
+        "detail": "768"
+      },
+      {
+        "name": "768: dock within viewport",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: controls mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: elements mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: filter results",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "768: off removes visible overlay",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: no layout movement on toggle",
+        "passed": true,
+        "detail": "({'x': 12, 'y': 126.328125, 'width': 366, 'height': 913}, {'x': 12, 'y': 126.328125, 'width': 366, 'height': 913})"
+      },
+      {
+        "name": "390: visible elements",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: table classified",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: document horizontal overflow",
+        "passed": true,
+        "detail": "390"
+      },
+      {
+        "name": "390: dock within viewport",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: controls mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: elements mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: filter results",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: pick selects without activation",
+        "passed": true,
+        "detail": "Core.Button"
+      },
+      {
+        "name": "390: reference metadata",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: valid JSON inventory",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "390: clipboard or manual fallback",
+        "passed": true,
+        "detail": "Clipboard unavailable. Select and copy the reference manually."
+      },
+      {
+        "name": "390: off removes visible overlay",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: no layout movement on toggle",
+        "passed": false,
+        "detail": "({'x': 12, 'y': 125.125, 'width': 296, 'height': 913}, {'x': 6, 'y': 125.125, 'width': 296, 'height': 913})"
+      },
+      {
+        "name": "320: visible elements",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: table classified",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: document horizontal overflow",
+        "passed": true,
+        "detail": "320"
+      },
+      {
+        "name": "320: dock within viewport",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: controls mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: elements mode",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: filter results",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "320: off removes visible overlay",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "modal scope",
+        "passed": true,
+        "detail": "['Core.Dialog', 'Core.Heading', 'Core.Button', 'Core.Button']"
+      },
+      {
+        "name": "modal only",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "Files route updates",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "Directory route updates",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "advanced component classification",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "AI panel classification",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "CMS editor has independent inspector",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "CMS editor debug active inherited",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "CMS editor layer and canvas names",
+        "passed": true,
+        "detail": ""
+      },
+      {
+        "name": "no JS runtime errors",
+        "passed": true,
+        "detail": "[]"
+      }
+    ],
+    "passed": 53,
+    "total": 54,
+    "errors": [],
+    "environment": "Chromium headless; set_content from exact standalone HTML; simulated mobile touch"
+  },
+  "retest_observed": {
+    "passed_checks": [
+      "1440: no layout movement on toggle",
+      "1440: visible elements",
+      "1440: table classified",
+      "1440: document horizontal overflow",
+      "1440: dock within viewport",
+      "1440: controls mode",
+      "1440: elements mode",
+      "1440: filter results",
+      "1440: pick selects without activation",
+      "1440: reference metadata",
+      "1440: valid JSON inventory",
+      "1440: clipboard or manual fallback",
+      "1440: off removes visible overlay",
+      "768: no layout movement on toggle",
+      "768: visible elements",
+      "768: table classified",
+      "768: document horizontal overflow",
+      "768: dock within viewport",
+      "768: controls mode",
+      "768: elements mode",
+      "768: filter results",
+      "768: off removes visible overlay",
+      "390: no layout movement on toggle",
+      "390: visible elements",
+      "390: table classified",
+      "390: document horizontal overflow",
+      "390: dock within viewport",
+      "390: controls mode",
+      "390: elements mode",
+      "390: filter results",
+      "390: pick selects without activation",
+      "390: reference metadata",
+      "390: valid JSON inventory",
+      "390: clipboard or manual fallback",
+      "390: off removes visible overlay",
+      "320: no layout movement on toggle",
+      "320: visible elements",
+      "320: table classified",
+      "320: document horizontal overflow",
+      "320: dock within viewport",
+      "320: controls mode",
+      "320: elements mode",
+      "320: filter results",
+      "320: off removes visible overlay",
+      "modal scope",
+      "modal only",
+      "Files route updates",
+      "Directory route updates",
+      "advanced component classification",
+      "AI panel classification"
+    ],
+    "note": "Console output from the post-fix run confirmed every listed check. It timed out during the subsequent CMS builder portion before writing a second complete report. The focused final checks below independently verified the editor on the final file.",
+    "corrected_issue": "320px toggle no longer changes DataTable x: before and after x=12, width=296."
+  },
+  "final_focused_checks": [
+    {
+      "name": "keyboard toggle on",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "canonical reference uniqueness",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "stable reference across repaint",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "filter button reference stable",
+      "passed": true,
+      "detail": "('pilot/admin/catalog#Core.Button@1vrx2c5', 'pilot/admin/catalog#Core.Button@1vrx2c5')"
+    },
+    {
+      "name": "pick selection",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "parent selection",
+      "passed": true,
+      "detail": "Core.DataTable.Toolbar"
+    },
+    {
+      "name": "CMS editor frame loaded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CMS editor has independent inspector",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CMS editor debug active inherited",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CMS editor layer and canvas names",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "CMS editor toggle off",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no JS runtime errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "final_focused_passed": 12,
+  "final_focused_total": 12,
+  "limitations": [
+    "Only targeted inspector regressions, not full V33 regression.",
+    "Clipboard API unavailable in test environment; manual copy fallback verified.",
+    "Labels overlapping other labels or inspector dock are suppressed; boxes and JSON inventory remain available.",
+    "Reference IDs are derived from route and DOM path unless data-ui-id is explicitly authored. Structural changes may change fallback IDs.",
+    "Sandboxed Page Builder editor uses embedded inspector; other authored content/preview iframe internals are not inspected."
+  ],
+  "standalone_sha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b"
+}

@@ -1,0 +1,4276 @@
+{
+  "format": "forma-ui-inventory.v1",
+  "route": "pilot/admin/cmsbuilder/page-home",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "mode": "components",
+  "filter": "",
+  "elementCount": 122,
+  "elements": [
+    {
+      "component": "Studio.Editor",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Editor@0d23w79",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "div:1",
+      "sourceSelector": ".app",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "app"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Toolbar",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Toolbar@0o09yei",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar",
+      "sourceSelector": "#topbar,#toolstrip",
+      "sourceHint": {
+        "domId": "topbar",
+        "classes": [
+          "topbar"
+        ],
+        "handler": null
+      },
+      "element": "header",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 49
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 49
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1aqatkq",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn",
+          "cms-exit"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Back to CMS",
+      "bounds": {
+        "x": 12,
+        "y": 10,
+        "width": 30,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 10,
+        "width": 30,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Breadcrumb",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Breadcrumb@0nqnldl",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/div:3",
+      "sourceSelector": ".crumb,.fl-bread,.cms-path,.record-trail",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "crumb"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 226.5,
+        "y": 15.3,
+        "width": 121.5,
+        "height": 17.4
+      },
+      "visibleBounds": {
+        "x": 227,
+        "y": 15,
+        "width": 122,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1agb7vr",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "btn",
+          "desktop-only"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Save draft",
+      "bounds": {
+        "x": 962.4,
+        "y": 9,
+        "width": 102.3,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 962,
+        "y": 9,
+        "width": 102,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1a6bm6s",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn",
+          "desktop-only"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Page design settings",
+      "bounds": {
+        "x": 1074.7,
+        "y": 10,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 1075,
+        "y": 10,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@19wc0ht",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:4",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "btn",
+          "desktop-only"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Export",
+      "bounds": {
+        "x": 1112.7,
+        "y": 9,
+        "width": 81.5,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1113,
+        "y": 9,
+        "width": 82,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@19mcesu",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:5",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "btn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Preview page",
+      "bounds": {
+        "x": 1204.3,
+        "y": 9,
+        "width": 89.7,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1204,
+        "y": 9,
+        "width": 90,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@19cct3v",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:6",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "btn",
+          "primary"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Publish preview",
+      "bounds": {
+        "x": 1303.9,
+        "y": 9,
+        "width": 86.1,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1304,
+        "y": 9,
+        "width": 86,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@192d7ew",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#topbar/button:7",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "More actions",
+      "bounds": {
+        "x": 1400,
+        "y": 10,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 1400,
+        "y": 10,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Toolbar",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Toolbar@1fzhl3m",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip",
+      "sourceSelector": "#topbar,#toolstrip",
+      "sourceHint": {
+        "domId": "toolstrip",
+        "classes": [
+          "toolstrip"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 49,
+        "width": 1440,
+        "height": 43
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 49,
+        "width": 1440,
+        "height": 43
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1omf5xh",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Undo (Ctrl+Z)",
+      "bounds": {
+        "x": 12,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1nsgcuk",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:1/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Redo (Ctrl+Shift+Z)",
+      "bounds": {
+        "x": 44,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 44,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1o2fyjj",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:1/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Add component",
+      "bounds": {
+        "x": 81,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 81,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1n8h5gm",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:1/button:4",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn",
+          "desktop-only"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Select canvas",
+      "bounds": {
+        "x": 113,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 113,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0kawm01",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:2/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn",
+          "active"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "desktop viewport",
+      "bounds": {
+        "x": 646.4,
+        "y": 56.5,
+        "width": 30,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 646,
+        "y": 57,
+        "width": 30,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0jgxsx4",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:2/div:1/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "tablet viewport",
+      "bounds": {
+        "x": 678.4,
+        "y": 56.5,
+        "width": 30,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 678,
+        "y": 57,
+        "width": 30,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0jqxem3",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:2/div:1/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "mobile viewport",
+      "bounds": {
+        "x": 710.4,
+        "y": 56.5,
+        "width": 30,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 710,
+        "y": 57,
+        "width": 30,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@19p69i3",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:3/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "btn",
+          "ghost"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Canvas zoom",
+      "bounds": {
+        "x": 1303.8,
+        "y": 55,
+        "width": 92.2,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1304,
+        "y": 55,
+        "width": 92,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@19z5v72",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#toolstrip/div:3/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn",
+          "desktop-only"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Inspector",
+      "bounds": {
+        "x": 1400,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 1400,
+        "y": 56,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.MainContent",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.MainContent@1yxoomr",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#workspace",
+      "sourceSelector": "main",
+      "sourceHint": {
+        "domId": "workspace",
+        "classes": [
+          "workspace"
+        ],
+        "handler": null
+      },
+      "element": "main",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 781
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 781
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layers",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layers@18w5p5t",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#workspace/aside:1",
+      "sourceSelector": ".sidebar",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "sidebar"
+        ],
+        "handler": null
+      },
+      "element": "aside",
+      "label": "Pages and components",
+      "bounds": {
+        "x": 0,
+        "y": 92,
+        "width": 235,
+        "height": 781
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 92,
+        "width": 235,
+        "height": 781
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Tabs",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Tabs@1pjpcxr",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftTabs",
+      "sourceSelector": ".tabs",
+      "sourceHint": {
+        "domId": "leftTabs",
+        "classes": [
+          "tabs"
+        ],
+        "handler": null
+      },
+      "element": "nav",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 92,
+        "width": 234,
+        "height": 38
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 92,
+        "width": 234,
+        "height": 38
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0jz5qb5",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftTabs/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Content",
+      "bounds": {
+        "x": 10,
+        "y": 92,
+        "width": 48.4,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 10,
+        "y": 92,
+        "width": 48,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0j56x88",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftTabs/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "active"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Layers",
+      "bounds": {
+        "x": 67.4,
+        "y": 92,
+        "width": 41.5,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 67,
+        "y": 92,
+        "width": 42,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0jf6ix7",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftTabs/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Components",
+      "bounds": {
+        "x": 118,
+        "y": 92,
+        "width": 74.1,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 118,
+        "y": 92,
+        "width": 74,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@1ky6dew",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div:1/h2:1",
+      "sourceSelector": "h2",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h2",
+      "label": "Page structure",
+      "bounds": {
+        "x": 12,
+        "y": 148.3,
+        "width": 86.3,
+        "height": 17.4
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 148,
+        "width": 86,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1gxigau",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Add component",
+      "bounds": {
+        "x": 194,
+        "y": 143,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 194,
+        "y": 143,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Input",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Input@18j4qlr",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#layerSearch",
+      "sourceSelector": "input[type=\"text\"]",
+      "sourceHint": {
+        "domId": "layerSearch",
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Find a layer",
+      "bounds": {
+        "x": 41,
+        "y": 180,
+        "width": 172,
+        "height": 32.8
+      },
+      "visibleBounds": {
+        "x": 41,
+        "y": 180,
+        "width": 172,
+        "height": 33
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@08208ac",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@npbiirlv3:2",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Navigation",
+      "bounds": {
+        "x": 6,
+        "y": 223.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 224,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0t1jpac",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@npbiirlv3:2/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 12,
+        "y": 227.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 228,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0izplv4",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n0yov3euw:3",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Hero",
+      "bounds": {
+        "x": 6,
+        "y": 254.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 255,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@04iu048",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n0yov3euw:3/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 12,
+        "y": 258.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 259,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0lj2ytu",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nciw3zwdt:4",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Hero columns",
+      "bounds": {
+        "x": 6,
+        "y": 285.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 286,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0qxskia",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nciw3zwdt:4/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 24,
+        "y": 289.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 24,
+        "y": 290,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0mon4vi",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@np409uqla:5",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Hero copy",
+      "bounds": {
+        "x": 6,
+        "y": 316.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 317,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1ylxs86",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@np409uqla:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 36,
+        "y": 320.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 321,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0wjodbq",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n75ytusee:6",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Eyebrow",
+      "bounds": {
+        "x": 6,
+        "y": 347.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 348,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1ftu1r2",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n75ytusee:6/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 48,
+        "y": 351.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 48,
+        "y": 352,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@02axcqt",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n6s3nxmi1:7",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer",
+          "selected"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Main heading",
+      "bounds": {
+        "x": 6,
+        "y": 378.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 379,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@16d7v8n",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n6s3nxmi1:7/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 48,
+        "y": 382.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 48,
+        "y": 383,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@14z9urs",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n6s3nxmi1:7/button:4",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer-action"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Layer actions",
+      "bounds": {
+        "x": 205,
+        "y": 381.8,
+        "width": 17,
+        "height": 24
+      },
+      "visibleBounds": {
+        "x": 205,
+        "y": 382,
+        "width": 17,
+        "height": 24
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@19gso77",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n3m5dvdxi:8",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Introduction",
+      "bounds": {
+        "x": 6,
+        "y": 409.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 410,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@118dtzh",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n3m5dvdxi:8/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 48,
+        "y": 413.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 48,
+        "y": 414,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0dnu2z8",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nzz3bgq3b:9",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Primary action",
+      "bounds": {
+        "x": 6,
+        "y": 440.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 441,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1vbsxd0",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nzz3bgq3b:9/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 48,
+        "y": 444.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 48,
+        "y": 445,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0yxm012",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@ndg8n9gri:10",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Product illustration",
+      "bounds": {
+        "x": 6,
+        "y": 471.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 472,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1hqg2dq",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@ndg8n9gri:10/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 475.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 476,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@1v3ekh3",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n8kzklz66:11",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Features",
+      "bounds": {
+        "x": 6,
+        "y": 502.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 503,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0eou0tl",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n8kzklz66:11/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 12,
+        "y": 506.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 507,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@192er1x",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nejf6yjwb:12",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Section introduction",
+      "bounds": {
+        "x": 6,
+        "y": 533.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 534,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0bbgl5j",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nejf6yjwb:12/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 24,
+        "y": 537.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 24,
+        "y": 538,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@18aoea6",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nc0884860:13",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Section label",
+      "bounds": {
+        "x": 6,
+        "y": 564.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 565,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0u1o9om",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nc0884860:13/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 568.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 569,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0eqjccl",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nhdfa2mst:14",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Section heading",
+      "bounds": {
+        "x": 6,
+        "y": 595.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 596,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0kr38tj",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nhdfa2mst:14/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 599.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 600,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0xao21i",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n6nwe9djh:15",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Section description",
+      "bounds": {
+        "x": 6,
+        "y": 626.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 627,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0mhd9ha",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n6nwe9djh:15/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 630.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 631,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0ikjnyu",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nqk8j65gh:16",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Feature grid",
+      "bounds": {
+        "x": 6,
+        "y": 657.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 658,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@03yzuke",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@nqk8j65gh:16/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 24,
+        "y": 661.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 24,
+        "y": 662,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@1vjcr95",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n7xjnsvks:17",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Plan together",
+      "bounds": {
+        "x": 6,
+        "y": 688.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 689,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0qxf8r7",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n7xjnsvks:17/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 692.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 693,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0lwat7g",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@ngnv2pse3:18",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Stay aligned",
+      "bounds": {
+        "x": 6,
+        "y": 719.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 720,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1307dto",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@ngnv2pse3:18/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 723.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 724,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0cztlyj",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n9ove5tjz:19",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Make progress",
+      "bounds": {
+        "x": 6,
+        "y": 750.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 751,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0sq3vph",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@n9ove5tjz:19/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Leaf",
+      "bounds": {
+        "x": 36,
+        "y": 754.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 36,
+        "y": 755,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@0i8tnrp",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@npu4cjwp5:20",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Call to action",
+      "bounds": {
+        "x": 6,
+        "y": 781.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 782,
+        "width": 222,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@19s027r",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@npu4cjwp5:20/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 12,
+        "y": 785.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 12,
+        "y": 786,
+        "width": 14,
+        "height": 22
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Layer",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Layer@1o329og",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@ntk1wy804:21",
+      "sourceSelector": "[data-layer]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "layer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "CTA content",
+      "bounds": {
+        "x": 6,
+        "y": 812.8,
+        "width": 222,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 6,
+        "y": 813,
+        "width": 222,
+        "height": 11
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@015gl7s",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftBody/div@ntk1wy804:21/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "chev"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Toggle children",
+      "bounds": {
+        "x": 24,
+        "y": 816.8,
+        "width": 14,
+        "height": 22
+      },
+      "visibleBounds": {
+        "x": 24,
+        "y": 817,
+        "width": 14,
+        "height": 7
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@0webp49",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#leftFoot/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Site settings",
+      "bounds": {
+        "x": 194,
+        "y": 835,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 194,
+        "y": 835,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Canvas",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Canvas@01o4oni",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#workspace/section:1",
+      "sourceSelector": ".stage,.canvas-scroll",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "stage"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "Page canvas",
+      "bounds": {
+        "x": 235,
+        "y": 92,
+        "width": 919,
+        "height": 781
+      },
+      "visibleBounds": {
+        "x": 235,
+        "y": 92,
+        "width": 919,
+        "height": 781
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Canvas",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Canvas@0fggalz",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasScroll",
+      "sourceSelector": ".stage,.canvas-scroll",
+      "sourceHint": {
+        "domId": "canvasScroll",
+        "classes": [
+          "canvas-scroll"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 235,
+        "y": 117.9,
+        "width": 919,
+        "height": 755.1
+      },
+      "visibleBounds": {
+        "x": 235,
+        "y": 118,
+        "width": 919,
+        "height": 755
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Preview",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Preview@1nza0xc",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport",
+      "sourceSelector": ".canvas-viewport",
+      "sourceHint": {
+        "domId": "canvasViewport",
+        "classes": [
+          "canvas-viewport",
+          "edit-mode"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 253,
+        "y": 157.9,
+        "width": 883,
+        "height": 1302.6
+      },
+      "visibleBounds": {
+        "x": 253,
+        "y": 158,
+        "width": 883,
+        "height": 715
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0l25ki1",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-nav"
+        ],
+        "handler": null
+      },
+      "element": "header",
+      "label": "Navigation",
+      "bounds": {
+        "x": 253,
+        "y": 157.9,
+        "width": 883,
+        "height": 60.3
+      },
+      "visibleBounds": {
+        "x": 253,
+        "y": 158,
+        "width": 883,
+        "height": 60
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Link@0hglup4",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "site-logo"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Fieldwork",
+      "bounds": {
+        "x": 306,
+        "y": 175.7,
+        "width": 90.4,
+        "height": 24
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 176,
+        "width": 90,
+        "height": 24
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Navigation",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Navigation@1w1dxae",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1/nav:1",
+      "sourceSelector": "nav",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "site-nav-links"
+        ],
+        "handler": null
+      },
+      "element": "nav",
+      "label": "",
+      "bounds": {
+        "x": 628.6,
+        "y": 180.1,
+        "width": 136.8,
+        "height": 15.1
+      },
+      "visibleBounds": {
+        "x": 629,
+        "y": 180,
+        "width": 137,
+        "height": 15
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Link@00ggh47",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1/nav:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Features",
+      "bounds": {
+        "x": 628.6,
+        "y": 180.1,
+        "width": 38.7,
+        "height": 15.1
+      },
+      "visibleBounds": {
+        "x": 629,
+        "y": 180,
+        "width": 39,
+        "height": 15
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Link@00qg2t6",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1/nav:1/a:2",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "About",
+      "bounds": {
+        "x": 685.5,
+        "y": 180.1,
+        "width": 26.7,
+        "height": 15.1
+      },
+      "visibleBounds": {
+        "x": 685,
+        "y": 180,
+        "width": 27,
+        "height": 15
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Link@010foi5",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1/nav:1/a:3",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Contact",
+      "bounds": {
+        "x": 730.3,
+        "y": 180.1,
+        "width": 35.1,
+        "height": 15.1
+      },
+      "visibleBounds": {
+        "x": 730,
+        "y": 180,
+        "width": 35,
+        "height": 15
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Link@0iakns1",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/header@npbiirlv3:1/a:2",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "site-cta"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Get started",
+      "bounds": {
+        "x": 997.7,
+        "y": 171.3,
+        "width": 85.3,
+        "height": 32.8
+      },
+      "visibleBounds": {
+        "x": 998,
+        "y": 171,
+        "width": 85,
+        "height": 33
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0eblht8",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-section"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "Hero",
+      "bounds": {
+        "x": 253,
+        "y": 218.3,
+        "width": 883,
+        "height": 371.1
+      },
+      "visibleBounds": {
+        "x": 253,
+        "y": 218,
+        "width": 883,
+        "height": 371
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@06is5sy",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Hero columns",
+      "bounds": {
+        "x": 306,
+        "y": 260.9,
+        "width": 777.1,
+        "height": 286
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 261,
+        "width": 777,
+        "height": 286
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@1rhw7kv",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@np409uqla:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-stack"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Hero copy",
+      "bounds": {
+        "x": 306,
+        "y": 293.2,
+        "width": 374.3,
+        "height": 221.3
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 293,
+        "width": 374,
+        "height": 221
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0u6cvzw",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@np409uqla:1/p@n75ytusee:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-eyebrow"
+        ],
+        "handler": null
+      },
+      "element": "p",
+      "label": "Eyebrow",
+      "bounds": {
+        "x": 306,
+        "y": 293.2,
+        "width": 374.3,
+        "height": 13.9
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 293,
+        "width": 374,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@1k6m3kr",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@np409uqla:1/h1@n6s3nxmi1:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-heading",
+          "is-selected"
+        ],
+        "handler": null
+      },
+      "element": "h1",
+      "label": "Main heading",
+      "bounds": {
+        "x": 306,
+        "y": 320.5,
+        "width": 374.3,
+        "height": 95.4
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 320,
+        "width": 374,
+        "height": 95
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@1wba5bm",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@np409uqla:1/p@n3m5dvdxi:2",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-text"
+        ],
+        "handler": null
+      },
+      "element": "p",
+      "label": "Introduction",
+      "bounds": {
+        "x": 306,
+        "y": 429.3,
+        "width": 354.8,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 429,
+        "width": 355,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0t65t6s",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@np409uqla:1/div@nzz3bgq3b:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-button"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Primary action",
+      "bounds": {
+        "x": 306,
+        "y": 481.7,
+        "width": 374.3,
+        "height": 32.8
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 482,
+        "width": 374,
+        "height": 33
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Link@0ezwjfh",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@np409uqla:1/div@nzz3bgq3b:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Explore the workspace",
+      "bounds": {
+        "x": 306,
+        "y": 481.7,
+        "width": 163.7,
+        "height": 32.8
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 482,
+        "width": 164,
+        "height": 33
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@1r8w432",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@n0yov3euw:1/div@nciw3zwdt:1/div@ndg8n9gri:2",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-image"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Product illustration",
+      "bounds": {
+        "x": 708.7,
+        "y": 260.9,
+        "width": 374.3,
+        "height": 286
+      },
+      "visibleBounds": {
+        "x": 709,
+        "y": 261,
+        "width": 374,
+        "height": 286
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0ejvqdx",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": "features",
+        "classes": [
+          "page-node",
+          "node-section"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "Features",
+      "bounds": {
+        "x": 253,
+        "y": 589.4,
+        "width": 883,
+        "height": 270.1
+      },
+      "visibleBounds": {
+        "x": 253,
+        "y": 589,
+        "width": 883,
+        "height": 270
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@1tmxsij",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nejf6yjwb:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-stack"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Section introduction",
+      "bounds": {
+        "x": 306,
+        "y": 621,
+        "width": 777.1,
+        "height": 73
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 621,
+        "width": 777,
+        "height": 73
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@13xgsfe",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nejf6yjwb:1/p@nc0884860:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-eyebrow"
+        ],
+        "handler": null
+      },
+      "element": "p",
+      "label": "Section label",
+      "bounds": {
+        "x": 306,
+        "y": 621,
+        "width": 777.1,
+        "height": 13.9
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 621,
+        "width": 777,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@014vowq",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nejf6yjwb:1/h2@nhdfa2mst:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-heading"
+        ],
+        "handler": null
+      },
+      "element": "h2",
+      "label": "Section heading",
+      "bounds": {
+        "x": 306,
+        "y": 640.3,
+        "width": 777.1,
+        "height": 28.6
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 640,
+        "width": 777,
+        "height": 29
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0bc10t5",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nejf6yjwb:1/p@n6nwe9djh:2",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-text"
+        ],
+        "handler": null
+      },
+      "element": "p",
+      "label": "Section description",
+      "bounds": {
+        "x": 306,
+        "y": 674.5,
+        "width": 777.1,
+        "height": 19.5
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 674,
+        "width": 777,
+        "height": 20
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0cym4gf",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Feature grid",
+      "bounds": {
+        "x": 306,
+        "y": 712.1,
+        "width": 777.1,
+        "height": 115.9
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 712,
+        "width": 777,
+        "height": 116
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0tywtl8",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2/div@n7xjnsvks:1",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-card"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Plan together",
+      "bounds": {
+        "x": 306,
+        "y": 712.1,
+        "width": 252.2,
+        "height": 115.9
+      },
+      "visibleBounds": {
+        "x": 306,
+        "y": 712,
+        "width": 252,
+        "height": 116
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@1wxz02l",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2/div@n7xjnsvks:1/h3:1",
+      "sourceSelector": "h3",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h3",
+      "label": "Plan with confidence",
+      "bounds": {
+        "x": 324.1,
+        "y": 765,
+        "width": 215.9,
+        "height": 21.4
+      },
+      "visibleBounds": {
+        "x": 324,
+        "y": 765,
+        "width": 216,
+        "height": 21
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0b4lrcd",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2/div@ngnv2pse3:2",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-card"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Stay aligned",
+      "bounds": {
+        "x": 568.4,
+        "y": 712.1,
+        "width": 252.2,
+        "height": 115.9
+      },
+      "visibleBounds": {
+        "x": 568,
+        "y": 712,
+        "width": 252,
+        "height": 116
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@1u9ygjq",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2/div@ngnv2pse3:2/h3:1",
+      "sourceSelector": "h3",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h3",
+      "label": "Stay aligned",
+      "bounds": {
+        "x": 586.5,
+        "y": 765,
+        "width": 215.9,
+        "height": 21.4
+      },
+      "visibleBounds": {
+        "x": 587,
+        "y": 765,
+        "width": 216,
+        "height": 21
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0nk1cge",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2/div@n9ove5tjz:3",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-card"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "Make progress",
+      "bounds": {
+        "x": 830.8,
+        "y": 712.1,
+        "width": 252.2,
+        "height": 115.9
+      },
+      "visibleBounds": {
+        "x": 831,
+        "y": 712,
+        "width": 252,
+        "height": 116
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@15s5frj",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#features/div@nqk8j65gh:2/div@n9ove5tjz:3/h3:1",
+      "sourceSelector": "h3",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h3",
+      "label": "See progress",
+      "bounds": {
+        "x": 849,
+        "y": 765,
+        "width": 215.9,
+        "height": 21.4
+      },
+      "visibleBounds": {
+        "x": 849,
+        "y": 765,
+        "width": 216,
+        "height": 21
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Block",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Block@0jt2j4y",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#canvasViewport/div:1/section@npu4cjwp5:3",
+      "sourceSelector": "[data-node]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "page-node",
+          "node-section"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "Call to action",
+      "bounds": {
+        "x": 253,
+        "y": 859.5,
+        "width": 883,
+        "height": 125
+      },
+      "visibleBounds": {
+        "x": 253,
+        "y": 860,
+        "width": 883,
+        "height": 13
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.Inspector",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.Inspector@1826w2w",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#workspace/aside:2",
+      "sourceSelector": ".inspector",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "inspector"
+        ],
+        "handler": null
+      },
+      "element": "aside",
+      "label": "Layer inspector",
+      "bounds": {
+        "x": 1154,
+        "y": 92,
+        "width": 286,
+        "height": 781
+      },
+      "visibleBounds": {
+        "x": 1154,
+        "y": 92,
+        "width": 286,
+        "height": 781
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@0q2crgy",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insHead/div:2/h2:1",
+      "sourceSelector": "h2",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "ell"
+        ],
+        "handler": null
+      },
+      "element": "h2",
+      "label": "Main heading",
+      "bounds": {
+        "x": 1208,
+        "y": 104,
+        "width": 183,
+        "height": 18.8
+      },
+      "visibleBounds": {
+        "x": 1208,
+        "y": 104,
+        "width": 183,
+        "height": 19
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@06y0bas",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insHead/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "iconbtn"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Layer actions",
+      "bounds": {
+        "x": 1400,
+        "y": 106.7,
+        "width": 28,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 1400,
+        "y": 107,
+        "width": 28,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Tabs",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Tabs@0amq79a",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insTabs",
+      "sourceSelector": ".tabs",
+      "sourceHint": {
+        "domId": "insTabs",
+        "classes": [
+          "tabs"
+        ],
+        "handler": null
+      },
+      "element": "nav",
+      "label": "",
+      "bounds": {
+        "x": 1155,
+        "y": 147.3,
+        "width": 285,
+        "height": 38
+      },
+      "visibleBounds": {
+        "x": 1155,
+        "y": 147,
+        "width": 285,
+        "height": 38
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1in9gza",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insTabs/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "active"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Content",
+      "bounds": {
+        "x": 1166,
+        "y": 147.3,
+        "width": 48.4,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 1166,
+        "y": 147,
+        "width": 48,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1id9vab",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insTabs/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Style",
+      "bounds": {
+        "x": 1240.9,
+        "y": 147.3,
+        "width": 33.2,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 1241,
+        "y": 147,
+        "width": 33,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1i3a9lc",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insTabs/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Layout",
+      "bounds": {
+        "x": 1300.6,
+        "y": 147.3,
+        "width": 42,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 1301,
+        "y": 147,
+        "width": 42,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Button@1k17hg5",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insTabs/button:4",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Advanced",
+      "bounds": {
+        "x": 1369,
+        "y": 147.3,
+        "width": 60,
+        "height": 37
+      },
+      "visibleBounds": {
+        "x": 1369,
+        "y": 147,
+        "width": 60,
+        "height": 37
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Section",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Section@0thc55r",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:1",
+      "sourceSelector": "section",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "ins-section"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "",
+      "bounds": {
+        "x": 1155,
+        "y": 216.8,
+        "width": 285,
+        "height": 102.3
+      },
+      "visibleBounds": {
+        "x": 1155,
+        "y": 217,
+        "width": 285,
+        "height": 102
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@1hp4g4w",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:1/h3:1",
+      "sourceSelector": "h3",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h3",
+      "label": "Layer",
+      "bounds": {
+        "x": 1167,
+        "y": 228.8,
+        "width": 261,
+        "height": 15.9
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 229,
+        "width": 261,
+        "height": 16
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.FormField",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.FormField@0s26svr",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:1/label:1",
+      "sourceSelector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "field"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 1167,
+        "y": 254.8,
+        "width": 261,
+        "height": 51.3
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 255,
+        "width": 261,
+        "height": 51
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Input",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Input@0v72cm1",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:1/label:1/input:1",
+      "sourceSelector": "input[type=\"text\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Layer name",
+      "bounds": {
+        "x": 1167,
+        "y": 274.7,
+        "width": 261,
+        "height": 31.4
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 275,
+        "width": 261,
+        "height": 31
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Section",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Section@0trbquq",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:2",
+      "sourceSelector": "section",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "ins-section"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "",
+      "bounds": {
+        "x": 1155,
+        "y": 319.1,
+        "width": 285,
+        "height": 202.8
+      },
+      "visibleBounds": {
+        "x": 1155,
+        "y": 319,
+        "width": 285,
+        "height": 203
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Heading@1yj36ab",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:2/h3:1",
+      "sourceSelector": "h3",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h3",
+      "label": "Content",
+      "bounds": {
+        "x": 1167,
+        "y": 331.1,
+        "width": 261,
+        "height": 15.9
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 331,
+        "width": 261,
+        "height": 16
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.FormField",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.FormField@1797mve",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:2/label:1",
+      "sourceSelector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "field"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 1167,
+        "y": 357,
+        "width": 261,
+        "height": 91.9
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 357,
+        "width": 261,
+        "height": 92
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Textarea",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Textarea@0e9e7cg",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:2/label:1/textarea:1",
+      "sourceSelector": "textarea",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "textarea",
+      "label": "Heading",
+      "bounds": {
+        "x": 1167,
+        "y": 377,
+        "width": 261,
+        "height": 72
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 377,
+        "width": 261,
+        "height": 72
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.FormField",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.FormField@16z816f",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:2/label:2",
+      "sourceSelector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "field"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 1167,
+        "y": 458,
+        "width": 261,
+        "height": 50.9
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 458,
+        "width": 261,
+        "height": 51
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Select",
+      "reference": "pilot/admin/cmsbuilder/page-home#Core.Select@1rahi25",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#insBody/section:2/label:2/select:1",
+      "sourceSelector": "select",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "select",
+      "label": "HTML element",
+      "bounds": {
+        "x": 1167,
+        "y": 477.9,
+        "width": 261,
+        "height": 31
+      },
+      "visibleBounds": {
+        "x": 1167,
+        "y": 478,
+        "width": 261,
+        "height": 31
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Studio.StatusBar",
+      "reference": "pilot/admin/cmsbuilder/page-home#Studio.StatusBar@0tvrfs9",
+      "route": "pilot/admin/cmsbuilder/page-home",
+      "instancePath": "#statusbar",
+      "sourceSelector": ".statusbar",
+      "sourceHint": {
+        "domId": "statusbar",
+        "classes": [
+          "statusbar"
+        ],
+        "handler": null
+      },
+      "element": "footer",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 873,
+        "width": 1440,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 873,
+        "width": 1440,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    }
+  ]
+}

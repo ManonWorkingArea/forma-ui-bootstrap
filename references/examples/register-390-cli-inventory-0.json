@@ -1,0 +1,728 @@
+{
+  "format": "forma-ui-inventory.v1",
+  "route": "pilot/utility/f33register",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "mode": "components",
+  "filter": "",
+  "elementCount": 21,
+  "elements": [
+    {
+      "component": "Core.AccountShell",
+      "reference": "pilot/utility/f33register#Core.AccountShell@0j4l570",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1",
+      "sourceSelector": ".f33-account,.utilitycard",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-account"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.TopBar",
+      "reference": "pilot/utility/f33register#Core.TopBar@0soceax",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/header:1",
+      "sourceSelector": ".main .top,.f33-accounthead,.f33-pubhead,.f24-pubhead",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-accounthead"
+        ],
+        "handler": null
+      },
+      "element": "header",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 49
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 49
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/utility/f33register#Core.Link@0mby2yw",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/header:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-wordmark"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "F.Forma",
+      "bounds": {
+        "x": 14,
+        "y": 10,
+        "width": 79.7,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 14,
+        "y": 10,
+        "width": 80,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/utility/f33register#Core.Link@0n5ww1t",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/header:1/a:2",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "All journeys",
+      "bounds": {
+        "x": 304.3,
+        "y": 14.3,
+        "width": 71.7,
+        "height": 19.5
+      },
+      "visibleBounds": {
+        "x": 304,
+        "y": 14,
+        "width": 72,
+        "height": 20
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.MainContent",
+      "reference": "pilot/utility/f33register#Core.MainContent@1mo0jk9",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1",
+      "sourceSelector": "main",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-accountmain"
+        ],
+        "handler": null
+      },
+      "element": "main",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 49,
+        "width": 390,
+        "height": 754.5
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 49,
+        "width": 390,
+        "height": 755
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.AccountForm",
+      "reference": "pilot/utility/f33register#Core.AccountForm@0emc0ng",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1",
+      "sourceSelector": ".f33-accountcard",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-accountcard"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "",
+      "bounds": {
+        "x": 14,
+        "y": 153.6,
+        "width": 362,
+        "height": 545.3
+      },
+      "visibleBounds": {
+        "x": 14,
+        "y": 154,
+        "width": 362,
+        "height": 545
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/utility/f33register#Core.Heading@0trmxv3",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/h1:1",
+      "sourceSelector": "h1",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h1",
+      "label": "Create account",
+      "bounds": {
+        "x": 33,
+        "y": 201.6,
+        "width": 324,
+        "height": 28.8
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 202,
+        "width": 324,
+        "height": 29
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Form",
+      "reference": "pilot/utility/f33register#Core.Form@0ey89vi",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1",
+      "sourceSelector": ".formgrid,.d29-formgrid,.p30-form,.m32-form,form",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "preventDefault"
+      },
+      "element": "form",
+      "label": "",
+      "bounds": {
+        "x": 33,
+        "y": 277.9,
+        "width": 324,
+        "height": 368.5
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 278,
+        "width": 324,
+        "height": 369
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.FormField",
+      "reference": "pilot/utility/f33register#Core.FormField@0ssgjhy",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:1",
+      "sourceSelector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-field"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 33,
+        "y": 277.9,
+        "width": 324,
+        "height": 67
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 278,
+        "width": 324,
+        "height": 67
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Input",
+      "reference": "pilot/utility/f33register#Core.Input@057z525",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:1/input@name:1",
+      "sourceSelector": "input[type=\"text\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "name",
+      "bounds": {
+        "x": 33,
+        "y": 300.9,
+        "width": 324,
+        "height": 44
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 301,
+        "width": 324,
+        "height": 44
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.FormField",
+      "reference": "pilot/utility/f33register#Core.FormField@0sigxsz",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:2",
+      "sourceSelector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-field"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 33,
+        "y": 356.9,
+        "width": 324,
+        "height": 67
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 357,
+        "width": 324,
+        "height": 67
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.EmailInput",
+      "reference": "pilot/utility/f33register#Core.EmailInput@0we01f1",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:2/input@email:1",
+      "sourceSelector": "input[type=\"email\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "email",
+      "bounds": {
+        "x": 33,
+        "y": 379.9,
+        "width": 324,
+        "height": 44
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 380,
+        "width": 324,
+        "height": 44
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.FormField",
+      "reference": "pilot/utility/f33register#Core.FormField@0s8hc40",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:3",
+      "sourceSelector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-field"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 33,
+        "y": 435.9,
+        "width": 324,
+        "height": 88.5
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 436,
+        "width": 324,
+        "height": 89
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.PasswordInput",
+      "reference": "pilot/utility/f33register#Core.PasswordInput@105jny9",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:3/input@password:1",
+      "sourceSelector": "input[type=\"password\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "password",
+      "bounds": {
+        "x": 33,
+        "y": 458.9,
+        "width": 324,
+        "height": 44
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 459,
+        "width": 324,
+        "height": 44
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.CheckboxGroup",
+      "reference": "pilot/utility/f33register#Core.CheckboxGroup@0u6ejyt",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:4",
+      "sourceSelector": ".fl-choice,.f33-check,.d29-checkline",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-check"
+        ],
+        "handler": null
+      },
+      "element": "label",
+      "label": "",
+      "bounds": {
+        "x": 33,
+        "y": 536.4,
+        "width": 324,
+        "height": 50
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 536,
+        "width": 324,
+        "height": 50
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/utility/f33register#Core.Checkbox@103paok",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/label:4/input@terms:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "terms",
+      "bounds": {
+        "x": 37,
+        "y": 539.4,
+        "width": 202.5,
+        "height": 44
+      },
+      "visibleBounds": {
+        "x": 37,
+        "y": 539,
+        "width": 203,
+        "height": 44
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/utility/f33register#Core.Button@0i3oho6",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/form:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "primary"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "Create account",
+      "bounds": {
+        "x": 33,
+        "y": 610.4,
+        "width": 324,
+        "height": 36
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 610,
+        "width": 324,
+        "height": 36
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/utility/f33register#Core.Link@1ahw1id",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/main:1/section:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Already registered? Sign in",
+      "bounds": {
+        "x": 33,
+        "y": 660.4,
+        "width": 324,
+        "height": 19.5
+      },
+      "visibleBounds": {
+        "x": 33,
+        "y": 660,
+        "width": 324,
+        "height": 20
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Footer",
+      "reference": "pilot/utility/f33register#Core.Footer@0t2g43r",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/footer:1",
+      "sourceSelector": "footer",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "f33-accountfoot"
+        ],
+        "handler": null
+      },
+      "element": "footer",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 803.5,
+        "width": 390,
+        "height": 40.5
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 804,
+        "width": 390,
+        "height": 41
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/utility/f33register#Core.Link@1ra0ig6",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/footer:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Help center",
+      "bounds": {
+        "x": 64.9,
+        "y": 816.5,
+        "width": 60.2,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 65,
+        "y": 817,
+        "width": 60,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/utility/f33register#Core.Link@1r00wr7",
+      "route": "pilot/utility/f33register",
+      "instancePath": "#app/div:1/footer:1/a:2",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Website",
+      "bounds": {
+        "x": 134.2,
+        "y": 816.5,
+        "width": 41.8,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 134,
+        "y": 817,
+        "width": 42,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,576 @@
+{
+  "format": "forma-ui-component-registry.v1",
+  "note": "Selector adapter for V33 legacy mockup, not a production component registry. Core semantic names should be explicit in production templates. Studio iframe-specific mappings are included.",
+  "components": [
+    {
+      "component": "Core.AppShell",
+      "selector": ".shell,.cms-focus-shell",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.PrimarySidebar",
+      "selector": ".rail",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.ContextSidebar",
+      "selector": ".context",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Navigation",
+      "selector": ".nav,.railnav,.f33-pubnav,.f33-portalnav,.f24-pubnav",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.WorkspaceSwitcher",
+      "selector": ".switcher",
+      "kind": "control"
+    },
+    {
+      "component": "Core.TopBar",
+      "selector": ".main .top,.f33-accounthead,.f33-pubhead,.f24-pubhead",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Breadcrumb",
+      "selector": ".crumb,.fl-bread,.cms-path,.record-trail",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.MainContent",
+      "selector": ".main .content,.f33-pubmain,.f24-pubmain",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.MasterPage",
+      "selector": ".master-page",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.MasterHeader",
+      "selector": ".master-heading",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.HeaderActions",
+      "selector": ".master-actions,.topright",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.PageTitle",
+      "selector": ".master-title",
+      "kind": "content"
+    },
+    {
+      "component": "Core.DataTable",
+      "selector": ".dt-container,.p30-table,.cms-table,.f33-table",
+      "kind": "data"
+    },
+    {
+      "component": "Core.DataTable.Toolbar",
+      "selector": ".dt-toolbar",
+      "kind": "control"
+    },
+    {
+      "component": "Core.DataTable.Header",
+      "selector": ".dt-header,.fl-table-head,.d29-tablehead",
+      "kind": "data"
+    },
+    {
+      "component": "Core.DataTable.Row",
+      "selector": ".dt-row",
+      "kind": "data"
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "selector": ".dt-cell",
+      "kind": "data"
+    },
+    {
+      "component": "Core.DataTable.Pagination",
+      "selector": ".dt-footer,.fl-footer,.d29-footer",
+      "kind": "control"
+    },
+    {
+      "component": "Core.DataTable.Filter",
+      "selector": ".dt-pop,.dt-searchwrap",
+      "kind": "control"
+    },
+    {
+      "component": "Core.RecordDetail",
+      "selector": ".record-page,.d29-profile,.p30-profile",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.RecordSection",
+      "selector": ".record-section",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Form",
+      "selector": ".formgrid,.d29-formgrid,.p30-form,.m32-form,form",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.FormField",
+      "selector": ".field,.fl-field,.f33-field,.cms-field,.d29-field,.s31-field,.mail-field",
+      "kind": "control"
+    },
+    {
+      "component": "Core.SearchableSelect",
+      "selector": ".f33-selectbtn,.fl-select",
+      "kind": "control"
+    },
+    {
+      "component": "Core.SelectOption",
+      "selector": ".f33-option",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Toggle",
+      "selector": ".fl-switch",
+      "kind": "control"
+    },
+    {
+      "component": "Core.CheckboxGroup",
+      "selector": ".fl-choice,.f33-check,.d29-checkline",
+      "kind": "control"
+    },
+    {
+      "component": "Core.SegmentedControl",
+      "selector": ".fl-segment",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Tabs",
+      "selector": ".f33-tabs,.cms-tabs,.d29-tabs,.p30-tabs,.fl-dialog-tabs",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Tab",
+      "selector": ".cms-tab,[role=tab]",
+      "kind": "control"
+    },
+    {
+      "component": "Core.CalendarPicker",
+      "selector": ".f33-calendar",
+      "kind": "control"
+    },
+    {
+      "component": "Core.ColorPicker",
+      "selector": ".f33-swatches,.f33-colorpreview",
+      "kind": "control"
+    },
+    {
+      "component": "Core.RichTextEditor",
+      "selector": ".f33-rich",
+      "kind": "control"
+    },
+    {
+      "component": "Core.CodeEditor",
+      "selector": ".f33-codebox,.m32-code",
+      "kind": "control"
+    },
+    {
+      "component": "Core.SplitPanel",
+      "selector": ".f33-split,.split",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.DropZone",
+      "selector": ".fl-drop,.f33-drop,.p30-drop",
+      "kind": "control"
+    },
+    {
+      "component": "Core.FileViewer",
+      "selector": ".fl-preview-stage,.f33-viewstage",
+      "kind": "content"
+    },
+    {
+      "component": "Core.Dialog",
+      "selector": "dialog,[role=dialog]:not(.f33-fly)",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.DialogHeader",
+      "selector": ".fl-dhead,.f33-dialoghead,.d29-dialogheader",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.DialogBody",
+      "selector": ".fl-dbody,.f33-dialogbody,.d29-dialogbody",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.DialogFooter",
+      "selector": ".fl-dfoot,.f33-dialogfoot,.d29-dialogfooter",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.Popover",
+      "selector": ".f33-fly,.dt-pop",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.Tooltip",
+      "selector": ".f33-tooltip,[role=tooltip]",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.ContextMenu",
+      "selector": ".fl-contextmenu,.d29-menu,[role=menu]",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.Toast",
+      "selector": ".fb-card,.toast,[role=status]:not(.save-state)",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.Banner",
+      "selector": ".f33-notice,.m32-notice,.s31-notice",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.EmptyState",
+      "selector": ".empty,.dt-empty,.fl-empty,.d29-empty,.s31-empty,.f33-empty,.cms-empty,.m32-empty",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.Skeleton",
+      "selector": ".f33-skeleton",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.Progress",
+      "selector": ".f33-bar,.m32-bar,.s31-track,progress",
+      "kind": "data"
+    },
+    {
+      "component": "Core.StatusBadge",
+      "selector": ".badge,.cms-pill,.d29-status,.m32-status,.s31-status,.pill24,.f33-tag",
+      "kind": "data"
+    },
+    {
+      "component": "Core.Avatar",
+      "selector": ".avatar,.avatar24,.d29-avatar,.fl-avatar,.cms-avatar",
+      "kind": "content"
+    },
+    {
+      "component": "Core.KPI",
+      "selector": ".metric,.f33-kpi,.s31-kpi,.d29-stat,.cms-stat",
+      "kind": "data"
+    },
+    {
+      "component": "Core.Chart",
+      "selector": ".f33-ai-chart,.s31-bars,.sparkline",
+      "kind": "data"
+    },
+    {
+      "component": "Core.Timeline",
+      "selector": ".d29-timeline,.fl-activity,.m32-events",
+      "kind": "data"
+    },
+    {
+      "component": "Core.Panel",
+      "selector": ".panel,.f33-surface,.m32-surface,.d29-surface,.cms-panel,.fl-surface,.s31-surface,.pane24",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Card",
+      "selector": ".f33-linkcard,.f33-contentcard,.d29-card,.d29-groupcard,.fl-card",
+      "kind": "content"
+    },
+    {
+      "component": "Core.ListRow",
+      "selector": ".rowitem,.f33-listrow,.m32-listrow,.s31-listrow",
+      "kind": "data"
+    },
+    {
+      "component": "Core.Stepper",
+      "selector": ".f33-steps,.p30-steps",
+      "kind": "control"
+    },
+    {
+      "component": "Core.Step",
+      "selector": ".f33-step,.p30-step",
+      "kind": "control"
+    },
+    {
+      "component": "Core.FrontendShell",
+      "selector": ".f33-public,.f24-public,.public",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.FrontendFooter",
+      "selector": ".f33-pubfoot",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.AccountShell",
+      "selector": ".f33-account,.utilitycard",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.AccountForm",
+      "selector": ".f33-accountcard",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.CookieConsent",
+      "selector": ".f33-cookie",
+      "kind": "feedback"
+    },
+    {
+      "component": "Core.MobileActions",
+      "selector": ".f33-mobilebar",
+      "kind": "control"
+    },
+    {
+      "component": "Core.AI.Chathead",
+      "selector": "#forma-chathead",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Launcher",
+      "selector": ".ch-launch",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.PreviewBubble",
+      "selector": ".ch-preview",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Sidebar",
+      "selector": ".ai",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Header",
+      "selector": ".aihead",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Conversation",
+      "selector": ".chat",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.ActionCard",
+      "selector": ".f33-ai-card",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Result",
+      "selector": ".f33-ai-answer",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Context",
+      "selector": ".f33-ai-context",
+      "kind": "ai"
+    },
+    {
+      "component": "Core.AI.Composer",
+      "selector": ".composer",
+      "kind": "ai"
+    },
+    {
+      "component": "Workspace.Canvas",
+      "selector": ".w19,.f24",
+      "kind": "layout"
+    },
+    {
+      "component": "Workspace.ConversationList",
+      "selector": ".comm-list",
+      "kind": "layout"
+    },
+    {
+      "component": "Workspace.ConversationDetail",
+      "selector": ".comm-main",
+      "kind": "layout"
+    },
+    {
+      "component": "Workspace.TaskRow",
+      "selector": ".taskrow24",
+      "kind": "data"
+    },
+    {
+      "component": "Files.Toolbar",
+      "selector": ".fl-toolbar",
+      "kind": "control"
+    },
+    {
+      "component": "Files.Grid",
+      "selector": ".fl-grid",
+      "kind": "layout"
+    },
+    {
+      "component": "Files.Row",
+      "selector": ".fl-row",
+      "kind": "data"
+    },
+    {
+      "component": "Files.Inspector",
+      "selector": ".fl-inspector",
+      "kind": "layout"
+    },
+    {
+      "component": "Files.Picker",
+      "selector": ".fl-picker-grid",
+      "kind": "control"
+    },
+    {
+      "component": "Directory.Row",
+      "selector": ".d29-row",
+      "kind": "data"
+    },
+    {
+      "component": "Directory.ContactPicker",
+      "selector": ".d29-pickerlist",
+      "kind": "control"
+    },
+    {
+      "component": "Directory.Relationship",
+      "selector": ".d29-relrow",
+      "kind": "data"
+    },
+    {
+      "component": "Platform.SearchResults",
+      "selector": ".p30-results",
+      "kind": "layout"
+    },
+    {
+      "component": "Platform.SearchResult",
+      "selector": ".p30-result",
+      "kind": "data"
+    },
+    {
+      "component": "Platform.Notification",
+      "selector": ".p30-noti",
+      "kind": "feedback"
+    },
+    {
+      "component": "Platform.ImportMapping",
+      "selector": ".p30-maprow",
+      "kind": "control"
+    },
+    {
+      "component": "Platform.PermissionMatrix",
+      "selector": ".p30-perm",
+      "kind": "data"
+    },
+    {
+      "component": "Studio.Editor",
+      "selector": ".s31-editor,.mail-work",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Toolbar",
+      "selector": ".s31-toolbar,.mail-toolbar",
+      "kind": "control"
+    },
+    {
+      "component": "Studio.Layers",
+      "selector": ".s31-left,.mail-left,.s31-layers",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Layer",
+      "selector": ".s31-layer,.mail-layer",
+      "kind": "control"
+    },
+    {
+      "component": "Studio.Canvas",
+      "selector": ".s31-canvas,.s31-stage,.mail-stage",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Inspector",
+      "selector": ".s31-right,.mail-inspector",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.ComponentLibrary",
+      "selector": ".s31-componentgrid,.mail-library",
+      "kind": "control"
+    },
+    {
+      "component": "Studio.Preview",
+      "selector": ".s31-paper,.s31-pagepaper,.mail-artboard,.cms-previewhost",
+      "kind": "content"
+    },
+    {
+      "component": "Studio.Widget",
+      "selector": ".s31-widget,.s31-elem",
+      "kind": "content"
+    },
+    {
+      "component": "Studio.BlockStore",
+      "selector": ".cms-cards",
+      "kind": "layout"
+    },
+    {
+      "component": "System.Activity",
+      "selector": ".m32-event",
+      "kind": "data"
+    },
+    {
+      "component": "Studio.Editor",
+      "selector": ".app",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Toolbar",
+      "selector": "#topbar,#toolstrip",
+      "kind": "control"
+    },
+    {
+      "component": "Studio.Layers",
+      "selector": ".sidebar",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Inspector",
+      "selector": ".inspector",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Canvas",
+      "selector": ".stage,.canvas-scroll",
+      "kind": "layout"
+    },
+    {
+      "component": "Studio.Preview",
+      "selector": ".canvas-viewport",
+      "kind": "content"
+    },
+    {
+      "component": "Studio.Layer",
+      "selector": "[data-layer]",
+      "kind": "control"
+    },
+    {
+      "component": "Studio.Block",
+      "selector": "[data-node]",
+      "kind": "content"
+    },
+    {
+      "component": "Studio.MobileTabs",
+      "selector": ".mobile-nav",
+      "kind": "control"
+    },
+    {
+      "component": "Studio.StatusBar",
+      "selector": ".statusbar",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Tabs",
+      "selector": ".tabs",
+      "kind": "control"
+    }
+  ]
+}

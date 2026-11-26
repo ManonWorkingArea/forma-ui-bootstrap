@@ -1,0 +1,14 @@
+{
+  "format": "forma-bootstrap-manifest.v1",
+  "baseline": "V34",
+  "status": "REVIEW CANDIDATE; no design freeze",
+  "sha256": {
+    "assets/mockup/standalone.html": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
+    "assets/mockup/ui-inspector.js": "0bd0f2d3290c73e26a3331054a8b5565f2f055627a819e696cfa24dfb9155e1e",
+    "references/COMPONENT_REGISTRY.json": "560f4a45bbfed85acc42b7cb2102ca86660a90fbefe42be811678faf9133727c",
+    "references/DESIGN_SYSTEM.md": "d444daca66987e26231c8490a59a7e8d63b1caf10637731078b5ccb32777d744",
+    "references/PAGE_INDEX.json": "79994520034476fb0c4f2b68cb42d08dd77a1c38d3ce39b0cd5e7e49edf0fde1",
+    "references/UI_INSPECTOR_CONTRACT.md": "6fa8412840f48247682a72c4e8539703998019ebd02126662f5a612a2af74279",
+    "references/VISUAL_KEYS.json": "0ad1724236dfb04903b461e7dfb465c4e8ee6f9a1fea68778ac4fb6b89d1f5b7"
+  }
+}

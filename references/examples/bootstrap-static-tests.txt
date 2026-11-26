@@ -1,0 +1,16 @@
+test_compare (__main__.TestCLI.test_compare) ... ok
+test_components (__main__.TestCLI.test_components) ... ok
+test_context (__main__.TestCLI.test_context) ... ok
+test_inspect (__main__.TestCLI.test_inspect) ... ok
+test_invalid (__main__.TestCLI.test_invalid) ... ok
+test_issue (__main__.TestCLI.test_issue) ... ok
+test_keys (__main__.TestCLI.test_keys) ... ok
+test_locate (__main__.TestCLI.test_locate) ... ok
+test_pages (__main__.TestCLI.test_pages) ... ok
+test_tokens (__main__.TestCLI.test_tokens) ... ok
+test_verify (__main__.TestCLI.test_verify) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 16.023s
+
+OK

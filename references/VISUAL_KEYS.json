@@ -1,0 +1,273 @@
+{
+  "format": "forma-visual-keys.v1",
+  "baseline": "V34 / V33 Quiet Precision",
+  "note": "New machine-readable identifiers for documented design principles, not existing CSS variable names. Values transcribed from DESIGN_SYSTEM.md; semantic identity from UI_INSPECTOR_CONTRACT.md.",
+  "tokens": {
+    "colors": {
+      "surface": {
+        "light": "#ffffff",
+        "dark": "#20232a"
+      },
+      "raised": {
+        "light": "#fafbfc",
+        "dark": "#262a32"
+      },
+      "text": {
+        "light": "#23252b",
+        "dark": "#e8eaf0"
+      },
+      "muted": {
+        "light": "#666d78",
+        "dark": "#a7afbd"
+      },
+      "border": {
+        "light": "#e1e4e9",
+        "dark": "#3b414d"
+      },
+      "soft-selected": {
+        "light": "#eff1f4",
+        "dark": "#303641"
+      },
+      "action": {
+        "light": "#292d36",
+        "dark": "#b6c7e3"
+      },
+      "on-action": {
+        "light": "#ffffff",
+        "dark": "#17202c"
+      },
+      "focus": {
+        "light": "#7790b3",
+        "dark": "#a9c0e9"
+      },
+      "success": {
+        "light": "#386c52",
+        "dark": "#8bc6a3"
+      },
+      "warning": {
+        "light": "#91652d",
+        "dark": "#e3bb78"
+      },
+      "error": {
+        "light": "#ad4449",
+        "dark": "#f1a3a5"
+      }
+    },
+    "typographyPx": {
+      "base": 13,
+      "metadata": 11
+    },
+    "controlHeightPx": {
+      "compact": 30,
+      "standard": 34,
+      "comfortable": 38
+    },
+    "rowHeightPx": {
+      "compact": 34,
+      "standard": 39,
+      "comfortable": 45
+    },
+    "spacingPx": [
+      4,
+      8,
+      12,
+      16,
+      20
+    ],
+    "radiusPx": {
+      "default": 6,
+      "overlay": 9
+    },
+    "selectionVisualPx": 16,
+    "touchRowPx": 44,
+    "contextSidebarPx": [
+      168,
+      256
+    ],
+    "viewportsPx": [
+      1920,
+      1440,
+      1280,
+      1024,
+      768,
+      430,
+      390,
+      320
+    ]
+  },
+  "keys": [
+    {
+      "id": "forma.identity.quiet-precision",
+      "rule": "Compact, calm, information-rich UI. Avoid decorative cards, heavy shadows and gratuitous padding.",
+      "components": [
+        "Core.Panel",
+        "Core.Card",
+        "Core.MasterHeader"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.shell.canvas-slide",
+      "rule": "Primary icon rail, contextual sidebar, main content, assistant sidebar. Shift the whole canvas; do not overlay navigation. Context width 168–256px.",
+      "components": [
+        "Core.AppShell",
+        "Core.PrimarySidebar",
+        "Core.ContextSidebar",
+        "Core.AI.Sidebar"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.type.hierarchy",
+      "rule": "Base 13px; metadata 11px. Use explicit hierarchy and concise labels.",
+      "components": [
+        "Core.PageTitle",
+        "Core.FormField",
+        "Core.DataTable"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.spacing.compact",
+      "rule": "4px spacing scale; internal groups 8/12/16/20px. Radius 6px, overlay radius 9px. Low surface elevation; stronger overlays only.",
+      "components": [
+        "Core.Panel",
+        "Core.Card",
+        "Core.Dialog",
+        "Core.Button"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.controls.density",
+      "rule": "Control height 30/34/38px for compact/standard/comfortable; row baseline 34/39/45px.",
+      "components": [
+        "Core.Button",
+        "Core.FormField",
+        "Core.DataTable.Row",
+        "Core.ListRow"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.touch.geometry",
+      "rule": "16px visual checkbox/radio independent of 44px touch rows. Keep controls proportionate and focus visible.",
+      "components": [
+        "Core.CheckboxGroup",
+        "Core.Checkbox",
+        "Core.Radio",
+        "Core.Toggle",
+        "Core.Button"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.collection.adaptive",
+      "rule": "Container queries; full table to structured records at narrow widths. No horizontal scrolling for DataTable; preserve fields, stable IDs and filter/selection state.",
+      "components": [
+        "Core.DataTable",
+        "Core.DataTable.Toolbar",
+        "Core.DataTable.Row",
+        "Core.DataTable.Pagination"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.detail.full-page",
+      "rule": "Identity header, metadata, tabs, relationships, activity, attachments, edit action; back preserves collection state.",
+      "components": [
+        "Core.RecordDetail",
+        "Core.RecordSection",
+        "Core.Tabs",
+        "Core.Timeline"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.overlay.custom",
+      "rule": "Custom confirmation, prompt, dialog, toast, tooltip and context menu. Trap/restore focus; dismissal never approves; mobile contextual sheet/fullscreen form.",
+      "components": [
+        "Core.Dialog",
+        "Core.DialogFooter",
+        "Core.Toast",
+        "Core.Popover",
+        "Core.Tooltip",
+        "Core.ContextMenu"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.editor.lifecycle",
+      "rule": "CMS/list/detail owns document lifecycle; fullscreen editor owns edit session. Layers, canvas, inspector, responsive preview, undo/redo. Draft is distinct from published snapshot.",
+      "components": [
+        "Studio.Editor",
+        "Studio.Layers",
+        "Studio.Canvas",
+        "Studio.Inspector",
+        "Studio.BlockStore"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.frontend.separate",
+      "rule": "Separate public header/nav/footer and account layout; render published snapshots. Isolate authored content theme from editor theme.",
+      "components": [
+        "Core.FrontendShell",
+        "Core.FrontendFooter",
+        "Core.AccountShell",
+        "Studio.Preview"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.ai.action",
+      "rule": "Single registered action; gather parameters, exact proposal, explicit confirmation, edit/cancel/expiry/error, typed result. UI confirmation is not authorization. No real writes in mockup.",
+      "components": [
+        "Core.AI.ActionCard",
+        "Core.AI.Result",
+        "Core.AI.Context",
+        "Core.AI.Composer"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.ai.launcher",
+      "rule": "Avatar Chathead with preview and unread indicator. Mobile launcher dock must not cover controls; suppress preview bubble on mobile; hide in fullscreen authoring.",
+      "components": [
+        "Core.AI.Chathead",
+        "Core.AI.Launcher",
+        "Core.AI.PreviewBubble"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.theme.semantic",
+      "rule": "Use semantic light/dark tokens; avoid hard-coded legacy colors. State is not communicated through color alone. Respect reduced motion.",
+      "components": [
+        "Core.StatusBadge",
+        "Core.Banner",
+        "Core.AppShell",
+        "Core.Panel"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    },
+    {
+      "id": "forma.identity.semantic",
+      "rule": "Use explicit data-ui-component and unique data-ui-id per route; IDs independent of translated label, breakpoint and CSS. DOM-derived hashes are fallback, not durable IDs.",
+      "components": [
+        "Core.Button",
+        "Core.DataTable.Row",
+        "Studio.Layer"
+      ],
+      "source": "UI_INSPECTOR_CONTRACT.md"
+    },
+    {
+      "id": "forma.validation.evidence",
+      "rule": "Check actual browser at 1920/1440/1280/1024/768/430/390/320; inspect screenshots and interactions, not just syntax or overflow. Owner visual approval required.",
+      "components": [
+        "Core.AppShell"
+      ],
+      "source": "DESIGN_SYSTEM.md"
+    }
+  ]
+}

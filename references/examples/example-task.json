@@ -1,0 +1,218 @@
+{
+  "format": "forma-ui-task.v1",
+  "baseline": "V34",
+  "reference": {
+    "component": "Core.Button",
+    "reference": "pilot/admin/catalog#Core.Button@1vrx2c5",
+    "route": "pilot/admin/catalog",
+    "instancePath": "#dt/div:1/button:1",
+    "sourceSelector": "button",
+    "sourceHint": {
+      "domId": null,
+      "classes": [],
+      "handler": "dtPopup"
+    },
+    "element": "button",
+    "label": "Filter",
+    "bounds": {
+      "x": 595,
+      "y": 142.3,
+      "width": 60.5,
+      "height": 27
+    },
+    "visibleBounds": {
+      "x": 595,
+      "y": 142,
+      "width": 61,
+      "height": 27
+    },
+    "state": {
+      "disabled": false,
+      "expanded": null,
+      "selected": null,
+      "checked": null,
+      "readOnly": false
+    }
+  },
+  "problem": "Example: Filter spacing on mobile",
+  "expected": "Keep the 44px touch target and shared toolbar spacing",
+  "context": {
+    "component": "Core.Button",
+    "mappings": [],
+    "mappingStatus": "not in adapter; may be runtime fallback or proposed explicit name",
+    "visualKeys": [
+      {
+        "id": "forma.spacing.compact",
+        "rule": "4px spacing scale; internal groups 8/12/16/20px. Radius 6px, overlay radius 9px. Low surface elevation; stronger overlays only.",
+        "components": [
+          "Core.Panel",
+          "Core.Card",
+          "Core.Dialog",
+          "Core.Button"
+        ],
+        "source": "DESIGN_SYSTEM.md"
+      },
+      {
+        "id": "forma.controls.density",
+        "rule": "Control height 30/34/38px for compact/standard/comfortable; row baseline 34/39/45px.",
+        "components": [
+          "Core.Button",
+          "Core.FormField",
+          "Core.DataTable.Row",
+          "Core.ListRow"
+        ],
+        "source": "DESIGN_SYSTEM.md"
+      },
+      {
+        "id": "forma.touch.geometry",
+        "rule": "16px visual checkbox/radio independent of 44px touch rows. Keep controls proportionate and focus visible.",
+        "components": [
+          "Core.CheckboxGroup",
+          "Core.Checkbox",
+          "Core.Radio",
+          "Core.Toggle",
+          "Core.Button"
+        ],
+        "source": "DESIGN_SYSTEM.md"
+      },
+      {
+        "id": "forma.identity.semantic",
+        "rule": "Use explicit data-ui-component and unique data-ui-id per route; IDs independent of translated label, breakpoint and CSS. DOM-derived hashes are fallback, not durable IDs.",
+        "components": [
+          "Core.Button",
+          "Core.DataTable.Row",
+          "Studio.Layer"
+        ],
+        "source": "UI_INSPECTOR_CONTRACT.md"
+      }
+    ],
+    "tokens": {
+      "colors": {
+        "surface": {
+          "light": "#ffffff",
+          "dark": "#20232a"
+        },
+        "raised": {
+          "light": "#fafbfc",
+          "dark": "#262a32"
+        },
+        "text": {
+          "light": "#23252b",
+          "dark": "#e8eaf0"
+        },
+        "muted": {
+          "light": "#666d78",
+          "dark": "#a7afbd"
+        },
+        "border": {
+          "light": "#e1e4e9",
+          "dark": "#3b414d"
+        },
+        "soft-selected": {
+          "light": "#eff1f4",
+          "dark": "#303641"
+        },
+        "action": {
+          "light": "#292d36",
+          "dark": "#b6c7e3"
+        },
+        "on-action": {
+          "light": "#ffffff",
+          "dark": "#17202c"
+        },
+        "focus": {
+          "light": "#7790b3",
+          "dark": "#a9c0e9"
+        },
+        "success": {
+          "light": "#386c52",
+          "dark": "#8bc6a3"
+        },
+        "warning": {
+          "light": "#91652d",
+          "dark": "#e3bb78"
+        },
+        "error": {
+          "light": "#ad4449",
+          "dark": "#f1a3a5"
+        }
+      },
+      "typographyPx": {
+        "base": 13,
+        "metadata": 11
+      },
+      "controlHeightPx": {
+        "compact": 30,
+        "standard": 34,
+        "comfortable": 38
+      },
+      "rowHeightPx": {
+        "compact": 34,
+        "standard": 39,
+        "comfortable": 45
+      },
+      "spacingPx": [
+        4,
+        8,
+        12,
+        16,
+        20
+      ],
+      "radiusPx": {
+        "default": 6,
+        "overlay": 9
+      },
+      "selectionVisualPx": 16,
+      "touchRowPx": 44,
+      "contextSidebarPx": [
+        168,
+        256
+      ],
+      "viewportsPx": [
+        1920,
+        1440,
+        1280,
+        1024,
+        768,
+        430,
+        390,
+        320
+      ]
+    },
+    "contract": "references/DESIGN_SYSTEM.md",
+    "identity": "references/UI_INSPECTOR_CONTRACT.md",
+    "warning": "Selectors are legacy adapter hints, not production APIs. Preserve existing behavior. Confirm reference in browser."
+  },
+  "sourceCandidates": {
+    "dtPopup": [
+      {
+        "file": "assets/mockup/standalone.html",
+        "line": 360,
+        "column": 941,
+        "characterOffset": 277139,
+        "excerpt": "\"Search records\" value=\"${esc(s.q)}\" oninput=\"dtChange('q',this.value)\"></div><button onclick=\"dtPopup('filters')\"><svg class=\"dt-icon\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-lineca"
+      },
+      {
+        "file": "assets/mockup/standalone.html",
+        "line": 360,
+        "column": 1230,
+        "characterOffset": 277428,
+        "excerpt": "12 M4 8h8 M6 12h4\"/></svg><span>Filter ${s.filters.length||''}</span></button><button onclick=\"dtPopup('columns')\">Columns</button><button onclick=\"dtPopup('sort')\"><svg class=\"dt-icon\" viewBox=\"0 0 16 16\" fill=\"none\" stro"
+      },
+      {
+        "file": "assets/mockup/standalone.html",
+        "line": 360,
+        "column": 1283,
+        "characterOffset": 277481,
+        "excerpt": "ngth||''}</span></button><button onclick=\"dtPopup('columns')\">Columns</button><button onclick=\"dtPopup('sort')\"><svg class=\"dt-icon\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linecap=\""
+      }
+    ]
+  },
+  "acceptance": [
+    "Before/after screenshots at reported viewport and relevant alternate widths",
+    "Preserve existing behavior and shared component contracts",
+    "No horizontal scrolling on DataTable; no overlap; visible focus",
+    "Record actual test results and unresolved differences"
+  ],
+  "identityWarning": "Fallback DOM hash may change after restructure; do not guess a replacement. Re-export after changes."
+}

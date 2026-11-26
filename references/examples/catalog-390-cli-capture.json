@@ -1,0 +1,22 @@
+{
+  "requestedRoute": "pilot/admin/catalog",
+  "actualHash": "#pilot/admin/catalog",
+  "title": "Forma V34 - UI Inspector",
+  "visibleHeading": "Catalog",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "frames": [
+    {
+      "frame": 0,
+      "route": "pilot/admin/catalog",
+      "count": 61,
+      "inventory": "inventory-0.json"
+    }
+  ],
+  "errors": [],
+  "documentOverflow": false,
+  "baselineSha256": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
+  "note": "Exact bundled mockup rendered in Chromium using set_content; network blocked. Inspect screenshots and actual heading; capture is not route acceptance or a full visual audit."
+}

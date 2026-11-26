@@ -1,0 +1,3654 @@
+{
+  "format": "forma-ui-inventory.v1",
+  "route": "pilot/admin/catalog",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "mode": "components",
+  "filter": "",
+  "elementCount": 106,
+  "elements": [
+    {
+      "component": "Core.AppShell",
+      "reference": "pilot/admin/catalog#Core.AppShell@0i5rzks",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1",
+      "sourceSelector": ".shell,.cms-focus-shell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "shell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.PrimarySidebar",
+      "reference": "pilot/admin/catalog#Core.PrimarySidebar@1n98n66",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1",
+      "sourceSelector": ".rail",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "rail"
+        ],
+        "handler": null
+      },
+      "element": "aside",
+      "label": "",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 48,
+        "height": 900
+      },
+      "visibleBounds": {
+        "x": 0,
+        "y": 0,
+        "width": 48,
+        "height": 900
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@02gzqnj",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "railbrand"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Forma",
+      "bounds": {
+        "x": 7.5,
+        "y": 8,
+        "width": 32,
+        "height": 32
+      },
+      "visibleBounds": {
+        "x": 8,
+        "y": 8,
+        "width": 32,
+        "height": 32
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Navigation",
+      "reference": "pilot/admin/catalog#Core.Navigation@1f8wr1b",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1",
+      "sourceSelector": ".nav,.railnav,.f33-pubnav,.f33-portalnav,.f24-pubnav",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "railnav"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 6.5,
+        "y": 57,
+        "width": 34,
+        "height": 404
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 57,
+        "width": 34,
+        "height": 404
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@08yu6am",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Overview",
+      "bounds": {
+        "x": 6.5,
+        "y": 57,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 57,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@08oukln",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:2",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "selected"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Catalog",
+      "bounds": {
+        "x": 6.5,
+        "y": 94,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 94,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@08euywo",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:3",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Bookings",
+      "bounds": {
+        "x": 6.5,
+        "y": 131,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 131,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@0acs6rh",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:4",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "System administration",
+      "bounds": {
+        "x": 6.5,
+        "y": 168,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 168,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@0a2sl2i",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:5",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "UI foundation",
+      "bounds": {
+        "x": 6.5,
+        "y": 205,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 205,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@09sszdj",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:6",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Workspaces",
+      "bounds": {
+        "x": 6.5,
+        "y": 242,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 242,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@09itdok",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:7",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "CMS",
+      "bounds": {
+        "x": 6.5,
+        "y": 279,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 279,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@070wyft",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:8",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Files",
+      "bounds": {
+        "x": 6.5,
+        "y": 316,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 316,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@06qxcqu",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:9",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Directory",
+      "bounds": {
+        "x": 6.5,
+        "y": 353,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 353,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@0lxt54a",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:10",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Platform",
+      "bounds": {
+        "x": 6.5,
+        "y": 390,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 390,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@0m7sqt9",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:1/a:11",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Studio",
+      "bounds": {
+        "x": 6.5,
+        "y": 427,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 427,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@12gmgjv",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:2/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "System information",
+      "bounds": {
+        "x": 6.5,
+        "y": 821,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 821,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Avatar",
+      "reference": "pilot/admin/catalog#Core.Avatar@12qm28u",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:1/div:2/a:2",
+      "sourceSelector": ".avatar,.avatar24,.d29-avatar,.fl-avatar,.cms-avatar",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "avatar"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Account / sign in",
+      "bounds": {
+        "x": 6.5,
+        "y": 858,
+        "width": 34,
+        "height": 34
+      },
+      "visibleBounds": {
+        "x": 7,
+        "y": 858,
+        "width": 34,
+        "height": 34
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.ContextSidebar",
+      "reference": "pilot/admin/catalog#Core.ContextSidebar@1mz91h7",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2",
+      "sourceSelector": ".context",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "context"
+        ],
+        "handler": null
+      },
+      "element": "aside",
+      "label": "",
+      "bounds": {
+        "x": 48,
+        "y": 0,
+        "width": 192,
+        "height": 900
+      },
+      "visibleBounds": {
+        "x": 48,
+        "y": 0,
+        "width": 192,
+        "height": 900
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.WorkspaceSwitcher",
+      "reference": "pilot/admin/catalog#Core.WorkspaceSwitcher@1joxs1l",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2/div:2/button:1",
+      "sourceSelector": ".switcher",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "switcher"
+        ],
+        "handler": null
+      },
+      "element": "button",
+      "label": "PPilot workspace2 modules · 7 actions",
+      "bounds": {
+        "x": 56,
+        "y": 50,
+        "width": 175,
+        "height": 41.8
+      },
+      "visibleBounds": {
+        "x": 56,
+        "y": 50,
+        "width": 175,
+        "height": 42
+      },
+      "state": {
+        "disabled": false,
+        "expanded": "false",
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Navigation",
+      "reference": "pilot/admin/catalog#Core.Navigation@024x0hk",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2/nav:1",
+      "sourceSelector": ".nav,.railnav,.f33-pubnav,.f33-portalnav,.f24-pubnav",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "nav"
+        ],
+        "handler": null
+      },
+      "element": "nav",
+      "label": "",
+      "bounds": {
+        "x": 56,
+        "y": 128.8,
+        "width": 175,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 56,
+        "y": 129,
+        "width": 175,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@0sm1ibd",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2/nav:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "active"
+        ],
+        "handler": null
+      },
+      "element": "a",
+      "label": "Catalog",
+      "bounds": {
+        "x": 56,
+        "y": 128.8,
+        "width": 175,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 56,
+        "y": 129,
+        "width": 175,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Navigation",
+      "reference": "pilot/admin/catalog#Core.Navigation@1vlem30",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2/div:4/div:1",
+      "sourceSelector": ".nav,.railnav,.f33-pubnav,.f33-portalnav,.f24-pubnav",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "nav"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 56,
+        "y": 800,
+        "width": 175,
+        "height": 61
+      },
+      "visibleBounds": {
+        "x": 56,
+        "y": 800,
+        "width": 175,
+        "height": 61
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@014uj6t",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2/div:4/div:1/a:1",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "System pages",
+      "bounds": {
+        "x": 56,
+        "y": 800,
+        "width": 175,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 56,
+        "y": 800,
+        "width": 175,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Link",
+      "reference": "pilot/admin/catalog#Core.Link@00avq3w",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/aside:2/div:4/div:1/a:2",
+      "sourceSelector": "a",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "a",
+      "label": "View website",
+      "bounds": {
+        "x": 56,
+        "y": 831,
+        "width": 175,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 56,
+        "y": 831,
+        "width": 175,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.MainContent",
+      "reference": "pilot/admin/catalog#Core.MainContent@1y0qupl",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1",
+      "sourceSelector": "main",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "main"
+        ],
+        "handler": null
+      },
+      "element": "main",
+      "label": "",
+      "bounds": {
+        "x": 240,
+        "y": 0,
+        "width": 1200,
+        "height": 900
+      },
+      "visibleBounds": {
+        "x": 240,
+        "y": 0,
+        "width": 1200,
+        "height": 900
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.TopBar",
+      "reference": "pilot/admin/catalog#Core.TopBar@1b9tepy",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/header:1",
+      "sourceSelector": ".main .top,.f33-accounthead,.f33-pubhead,.f24-pubhead",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "top"
+        ],
+        "handler": null
+      },
+      "element": "header",
+      "label": "",
+      "bounds": {
+        "x": 240,
+        "y": 0,
+        "width": 1200,
+        "height": 44
+      },
+      "visibleBounds": {
+        "x": 240,
+        "y": 0,
+        "width": 1200,
+        "height": 44
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Breadcrumb",
+      "reference": "pilot/admin/catalog#Core.Breadcrumb@0xlwlid",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/header:1/div:1/span:1",
+      "sourceSelector": ".crumb,.fl-bread,.cms-path,.record-trail",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "crumb"
+        ],
+        "handler": null
+      },
+      "element": "span",
+      "label": "",
+      "bounds": {
+        "x": 258,
+        "y": 12.5,
+        "width": 130.6,
+        "height": 18
+      },
+      "visibleBounds": {
+        "x": 258,
+        "y": 13,
+        "width": 131,
+        "height": 18
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.HeaderActions",
+      "reference": "pilot/admin/catalog#Core.HeaderActions@0vpcxju",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/header:1/div:2",
+      "sourceSelector": ".master-actions,.topright",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "topright"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1188.1,
+        "y": 6.5,
+        "width": 233.9,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1188,
+        "y": 7,
+        "width": 234,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1nwqhwq",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/header:1/div:2/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "p30-headerbtn"
+        ],
+        "handler": "p30Command"
+      },
+      "element": "button",
+      "label": "Global search",
+      "bounds": {
+        "x": 1188.1,
+        "y": 6.5,
+        "width": 114.4,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1188,
+        "y": 7,
+        "width": 114,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1nmqw7r",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/header:1/div:2/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "p30-headerbtn"
+        ],
+        "handler": "p30Go"
+      },
+      "element": "button",
+      "label": "Notifications",
+      "bounds": {
+        "x": 1308.4,
+        "y": 6.5,
+        "width": 35,
+        "height": 30
+      },
+      "visibleBounds": {
+        "x": 1308,
+        "y": 7,
+        "width": 35,
+        "height": 30
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.MainContent",
+      "reference": "pilot/admin/catalog#Core.MainContent@0yzve5g",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/div:1",
+      "sourceSelector": ".main .content,.f33-pubmain,.f24-pubmain",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "content"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 240,
+        "y": 44,
+        "width": 1200,
+        "height": 497.3
+      },
+      "visibleBounds": {
+        "x": 240,
+        "y": 44,
+        "width": 1200,
+        "height": 497
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.MasterPage",
+      "reference": "pilot/admin/catalog#Core.MasterPage@0dchiyx",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/div:1/div:1",
+      "sourceSelector": ".master-page",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "master-page"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 260,
+        "y": 62,
+        "width": 1160,
+        "height": 415.3
+      },
+      "visibleBounds": {
+        "x": 260,
+        "y": 62,
+        "width": 1160,
+        "height": 415
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.MasterHeader",
+      "reference": "pilot/admin/catalog#Core.MasterHeader@06kmvbq",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/div:1/div:1/header:1",
+      "sourceSelector": ".master-heading",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "master-heading"
+        ],
+        "handler": null
+      },
+      "element": "header",
+      "label": "",
+      "bounds": {
+        "x": 260,
+        "y": 62,
+        "width": 1160,
+        "height": 59.8
+      },
+      "visibleBounds": {
+        "x": 260,
+        "y": 62,
+        "width": 1160,
+        "height": 60
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.PageTitle",
+      "reference": "pilot/admin/catalog#Core.PageTitle@0xvl47e",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/div:1/div:1/header:1/div:2",
+      "sourceSelector": ".master-title",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "master-title"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 305,
+        "y": 62,
+        "width": 1106,
+        "height": 46.8
+      },
+      "visibleBounds": {
+        "x": 305,
+        "y": 62,
+        "width": 1106,
+        "height": 47
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Heading",
+      "reference": "pilot/admin/catalog#Core.Heading@1nhwax5",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/div:1/div:1/header:1/div:2/h1:1",
+      "sourceSelector": "h1",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "h1",
+      "label": "Catalog",
+      "bounds": {
+        "x": 305,
+        "y": 62,
+        "width": 1106,
+        "height": 26.4
+      },
+      "visibleBounds": {
+        "x": 305,
+        "y": 62,
+        "width": 1106,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable",
+      "reference": "pilot/admin/catalog#Core.DataTable@15ttix8",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#app/div:1/div:1/div:1/main:1/div:1/div:1/section:1",
+      "sourceSelector": ".dt-container,.p30-table,.cms-table,.f33-table",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-container"
+        ],
+        "handler": null
+      },
+      "element": "section",
+      "label": "",
+      "bounds": {
+        "x": 260,
+        "y": 133.8,
+        "width": 1160,
+        "height": 343.5
+      },
+      "visibleBounds": {
+        "x": 260,
+        "y": 134,
+        "width": 1160,
+        "height": 344
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Toolbar",
+      "reference": "pilot/admin/catalog#Core.DataTable.Toolbar@0ggwc57",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1",
+      "sourceSelector": ".dt-toolbar",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-toolbar"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 134.8,
+        "width": 1158,
+        "height": 42
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 135,
+        "width": 1158,
+        "height": 42
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Filter",
+      "reference": "pilot/admin/catalog#Core.DataTable.Filter@16ge2ru",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1/div:1",
+      "sourceSelector": ".dt-pop,.dt-searchwrap",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-searchwrap"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 270,
+        "y": 141.8,
+        "width": 320,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 270,
+        "y": 142,
+        "width": 320,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Input",
+      "reference": "pilot/admin/catalog#Core.Input@17juefl",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt-search",
+      "sourceSelector": "input[type=\"text\"]",
+      "sourceHint": {
+        "domId": "dt-search",
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Search records",
+      "bounds": {
+        "x": 270,
+        "y": 141.8,
+        "width": 320,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 270,
+        "y": 142,
+        "width": 320,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1vrx2c5",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPopup"
+      },
+      "element": "button",
+      "label": "Filter",
+      "bounds": {
+        "x": 595,
+        "y": 142.3,
+        "width": 60.5,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 595,
+        "y": 142,
+        "width": 61,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1uxy998",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPopup"
+      },
+      "element": "button",
+      "label": "Columns",
+      "bounds": {
+        "x": 660.5,
+        "y": 142.3,
+        "width": 62.4,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 661,
+        "y": 142,
+        "width": 62,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1v7xuy7",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPopup"
+      },
+      "element": "button",
+      "label": "Sort",
+      "bounds": {
+        "x": 728,
+        "y": 142.3,
+        "width": 55.9,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 728,
+        "y": 142,
+        "width": 56,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1udz1va",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1/button:4",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPopup"
+      },
+      "element": "button",
+      "label": "View",
+      "bounds": {
+        "x": 788.9,
+        "y": 142.3,
+        "width": 60,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 789,
+        "y": 142,
+        "width": 60,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1unynk9",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:1/button:5",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPopup"
+      },
+      "element": "button",
+      "label": "More table actions",
+      "bounds": {
+        "x": 853.9,
+        "y": 142.3,
+        "width": 30,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 854,
+        "y": 142,
+        "width": 30,
+        "height": 27
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Header",
+      "reference": "pilot/admin/catalog#Core.DataTable.Header@068mbjt",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:1",
+      "sourceSelector": ".dt-header,.fl-table-head,.d29-tablehead",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-grid",
+          "dt-header"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 202.3,
+        "width": 1158,
+        "height": 40
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 202,
+        "width": 1158,
+        "height": 40
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/admin/catalog#Core.Checkbox@0lecmu7",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:1/input:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Select page",
+      "bounds": {
+        "x": 275,
+        "y": 215.3,
+        "width": 14,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 275,
+        "y": 215,
+        "width": 14,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@02ghcsz",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtSort"
+      },
+      "element": "button",
+      "label": "Name",
+      "bounds": {
+        "x": 299,
+        "y": 208.3,
+        "width": 386.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 208,
+        "width": 387,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@02qgyhy",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:1/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtSort"
+      },
+      "element": "button",
+      "label": "Identifier",
+      "bounds": {
+        "x": 695.9,
+        "y": 208.3,
+        "width": 281.4,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 696,
+        "y": 208,
+        "width": 281,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@030gk6x",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:1/button:3",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtSort"
+      },
+      "element": "button",
+      "label": "Price (THB)",
+      "bounds": {
+        "x": 987.3,
+        "y": 208.3,
+        "width": 175.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 987,
+        "y": 208,
+        "width": 176,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@03ag5vw",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:1/button:4",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtSort"
+      },
+      "element": "button",
+      "label": "Status",
+      "bounds": {
+        "x": 1173.1,
+        "y": 208.3,
+        "width": 175.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 208,
+        "width": 176,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Row",
+      "reference": "pilot/admin/catalog#Core.DataTable.Row@05enigw",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2",
+      "sourceSelector": ".dt-row",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-grid",
+          "dt-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 242.3,
+        "width": 1158,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 242,
+        "width": 1158,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/admin/catalog#Core.Checkbox@0rkmz7i",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/input:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Select Organic Coffee",
+      "bounds": {
+        "x": 275,
+        "y": 254.3,
+        "width": 14,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 275,
+        "y": 254,
+        "width": 14,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1tvuo31",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:1",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-first"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 299,
+        "y": 247.3,
+        "width": 386.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 247,
+        "width": 387,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1nutgov",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-name"
+        ],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Organic Coffee",
+      "bounds": {
+        "x": 299,
+        "y": 247.3,
+        "width": 87.7,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 247,
+        "width": 88,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1t1vv04",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:2",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 695.9,
+        "y": 252.8,
+        "width": 281.4,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 696,
+        "y": 253,
+        "width": 281,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1tbvgp3",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:3",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-number"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 987.3,
+        "y": 252.8,
+        "width": 175.9,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 987,
+        "y": 253,
+        "width": 176,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1shwnm6",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:4",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 249.8,
+        "width": 175.9,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 250,
+        "width": 176,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.StatusBadge",
+      "reference": "pilot/admin/catalog#Core.StatusBadge@1t9xjqq",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:4/span:1",
+      "sourceSelector": ".badge,.cms-pill,.d29-status,.m32-status,.s31-status,.pill24,.f33-tag",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "badge"
+        ],
+        "handler": null
+      },
+      "element": "span",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 249.8,
+        "width": 46.5,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 250,
+        "width": 47,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@01cz417",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtExpand"
+      },
+      "element": "button",
+      "label": "Expand record",
+      "bounds": {
+        "x": 1361,
+        "y": 248.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1361,
+        "y": 249,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@01mypq6",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:2/div:5/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Inspect record",
+      "bounds": {
+        "x": 1386,
+        "y": 248.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1386,
+        "y": 249,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Row",
+      "reference": "pilot/admin/catalog#Core.DataTable.Row@05on45v",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3",
+      "sourceSelector": ".dt-row",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-grid",
+          "dt-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 281.3,
+        "width": 1158,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 281,
+        "width": 1158,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/admin/catalog#Core.Checkbox@1amb0tx",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/input:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Select Signature Tea Set",
+      "bounds": {
+        "x": 275,
+        "y": 293.3,
+        "width": 14,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 275,
+        "y": 293,
+        "width": 14,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1unmcpe",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:1",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-first"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 299,
+        "y": 286.3,
+        "width": 386.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 286,
+        "width": 387,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@113h902",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-name"
+        ],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Signature Tea Set",
+      "bounds": {
+        "x": 299,
+        "y": 286.3,
+        "width": 102.5,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 286,
+        "width": 103,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1udmr0f",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:2",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 695.9,
+        "y": 291.8,
+        "width": 281.4,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 696,
+        "y": 292,
+        "width": 281,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1u3n5bg",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:3",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-number"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 987.3,
+        "y": 291.8,
+        "width": 175.9,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 987,
+        "y": 292,
+        "width": 176,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1ttnjmh",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:4",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 288.8,
+        "width": 175.9,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 289,
+        "width": 176,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.StatusBadge",
+      "reference": "pilot/admin/catalog#Core.StatusBadge@11zbvkr",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:4/span:1",
+      "sourceSelector": ".badge,.cms-pill,.d29-status,.m32-status,.s31-status,.pill24,.f33-tag",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "badge"
+        ],
+        "handler": null
+      },
+      "element": "span",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 288.8,
+        "width": 46.5,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 289,
+        "width": 47,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@0ywaw6m",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtExpand"
+      },
+      "element": "button",
+      "label": "Expand record",
+      "bounds": {
+        "x": 1361,
+        "y": 287.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1361,
+        "y": 288,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@0ymbahn",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:3/div:5/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Inspect record",
+      "bounds": {
+        "x": 1386,
+        "y": 287.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1386,
+        "y": 288,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Row",
+      "reference": "pilot/admin/catalog#Core.DataTable.Row@072l4mq",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4",
+      "sourceSelector": ".dt-row",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-grid",
+          "dt-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 320.3,
+        "width": 1158,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 320,
+        "width": 1158,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/admin/catalog#Core.Checkbox@0vd7h90",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/input:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Select Single Origin",
+      "bounds": {
+        "x": 275,
+        "y": 332.3,
+        "width": 14,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 275,
+        "y": 332,
+        "width": 14,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@0u52brf",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:1",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-first"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 299,
+        "y": 325.3,
+        "width": 386.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 325,
+        "width": 387,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@090hap1",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-name"
+        ],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Single Origin",
+      "bounds": {
+        "x": 299,
+        "y": 325.3,
+        "width": 74.5,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 325,
+        "width": 74,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@0uf1xge",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:2",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 695.9,
+        "y": 330.8,
+        "width": 281.4,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 696,
+        "y": 331,
+        "width": 281,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@0up1j5d",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:3",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-number"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 987.3,
+        "y": 330.8,
+        "width": 175.9,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 987,
+        "y": 331,
+        "width": 176,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@0uz14uc",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:4",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 327.8,
+        "width": 175.9,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 328,
+        "width": 176,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.StatusBadge",
+      "reference": "pilot/admin/catalog#Core.StatusBadge@0frl56s",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:4/span:1",
+      "sourceSelector": ".badge,.cms-pill,.d29-status,.m32-status,.s31-status,.pill24,.f33-tag",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "badge"
+        ],
+        "handler": null
+      },
+      "element": "span",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 327.8,
+        "width": 46.5,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 328,
+        "width": 47,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@0i2jmqh",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtExpand"
+      },
+      "element": "button",
+      "label": "Expand record",
+      "bounds": {
+        "x": 1361,
+        "y": 326.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1361,
+        "y": 327,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@0h8ktnk",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:4/div:5/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Inspect record",
+      "bounds": {
+        "x": 1386,
+        "y": 326.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1386,
+        "y": 327,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Row",
+      "reference": "pilot/admin/catalog#Core.DataTable.Row@07ckqbp",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5",
+      "sourceSelector": ".dt-row",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-grid",
+          "dt-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 359.3,
+        "width": 1158,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 359,
+        "width": 1158,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/admin/catalog#Core.Checkbox@1ijexnf",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/input:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Select Ceramic Cup",
+      "bounds": {
+        "x": 275,
+        "y": 371.3,
+        "width": 14,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 275,
+        "y": 371,
+        "width": 14,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@068q0qw",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:1",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-first"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 299,
+        "y": 364.3,
+        "width": 386.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 364,
+        "width": 387,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1tv8kzk",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-name"
+        ],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Ceramic Cup",
+      "bounds": {
+        "x": 299,
+        "y": 364.3,
+        "width": 75.3,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 364,
+        "width": 75,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@072ottt",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:2",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 695.9,
+        "y": 369.8,
+        "width": 281.4,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 696,
+        "y": 370,
+        "width": 281,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@06sp84u",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:3",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-number"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 987.3,
+        "y": 369.8,
+        "width": 175.9,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 987,
+        "y": 370,
+        "width": 176,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@07mo17r",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:4",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 366.8,
+        "width": 175.9,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 367,
+        "width": 176,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.StatusBadge",
+      "reference": "pilot/admin/catalog#Core.StatusBadge@115woxx",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:4/span:1",
+      "sourceSelector": ".badge,.cms-pill,.d29-status,.m32-status,.s31-status,.pill24,.f33-tag",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "badge",
+          "warn"
+        ],
+        "handler": null
+      },
+      "element": "span",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 366.8,
+        "width": 39.6,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 367,
+        "width": 40,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@0yw58tg",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtExpand"
+      },
+      "element": "button",
+      "label": "Expand record",
+      "bounds": {
+        "x": 1361,
+        "y": 365.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1361,
+        "y": 366,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@0zq41wd",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:5/div:5/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Inspect record",
+      "bounds": {
+        "x": 1386,
+        "y": 365.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1386,
+        "y": 366,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Row",
+      "reference": "pilot/admin/catalog#Core.DataTable.Row@06ilx8s",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6",
+      "sourceSelector": ".dt-row",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-grid",
+          "dt-row"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 398.3,
+        "width": 1158,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 398,
+        "width": 1158,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Checkbox",
+      "reference": "pilot/admin/catalog#Core.Checkbox@0dsditm",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/input:1",
+      "sourceSelector": "input[type=\"checkbox\"]",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "input",
+      "label": "Select Daily Blend",
+      "bounds": {
+        "x": 275,
+        "y": 410.3,
+        "width": 14,
+        "height": 14
+      },
+      "visibleBounds": {
+        "x": 275,
+        "y": 410,
+        "width": 14,
+        "height": 14
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": false,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1ejh075",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:1",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-first"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 299,
+        "y": 403.3,
+        "width": 386.9,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 403,
+        "width": 387,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1t1erij",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:1/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-name"
+        ],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Daily Blend",
+      "bounds": {
+        "x": 299,
+        "y": 403.3,
+        "width": 65.2,
+        "height": 28
+      },
+      "visibleBounds": {
+        "x": 299,
+        "y": 403,
+        "width": 65,
+        "height": 28
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1dpi748",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:2",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 695.9,
+        "y": 408.8,
+        "width": 281.4,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 696,
+        "y": 409,
+        "width": 281,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1dzhst7",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:3",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell",
+          "dt-number"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 987.3,
+        "y": 408.8,
+        "width": 175.9,
+        "height": 17
+      },
+      "visibleBounds": {
+        "x": 987,
+        "y": 409,
+        "width": 176,
+        "height": 17
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Cell",
+      "reference": "pilot/admin/catalog#Core.DataTable.Cell@1fdfta2",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:4",
+      "sourceSelector": ".dt-cell",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-cell"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 405.8,
+        "width": 175.9,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 406,
+        "width": 176,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.StatusBadge",
+      "reference": "pilot/admin/catalog#Core.StatusBadge@0z0fxmu",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:4/span:1",
+      "sourceSelector": ".badge,.cms-pill,.d29-status,.m32-status,.s31-status,.pill24,.f33-tag",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "badge"
+        ],
+        "handler": null
+      },
+      "element": "span",
+      "label": "",
+      "bounds": {
+        "x": 1173.1,
+        "y": 405.8,
+        "width": 46.5,
+        "height": 23
+      },
+      "visibleBounds": {
+        "x": 1173,
+        "y": 406,
+        "width": 47,
+        "height": 23
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1do2h5r",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtExpand"
+      },
+      "element": "button",
+      "label": "Expand record",
+      "bounds": {
+        "x": 1361,
+        "y": 404.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1361,
+        "y": 405,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1dy22uq",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:4/div:6/div:5/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtInspect"
+      },
+      "element": "button",
+      "label": "Inspect record",
+      "bounds": {
+        "x": 1386,
+        "y": 404.5,
+        "width": 23,
+        "height": 25.5
+      },
+      "visibleBounds": {
+        "x": 1386,
+        "y": 405,
+        "width": 23,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.DataTable.Pagination",
+      "reference": "pilot/admin/catalog#Core.DataTable.Pagination@0hkuqx3",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:5",
+      "sourceSelector": ".dt-footer,.fl-footer,.d29-footer",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "dt-footer"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 261,
+        "y": 437.3,
+        "width": 1158,
+        "height": 39
+      },
+      "visibleBounds": {
+        "x": 261,
+        "y": 437,
+        "width": 1158,
+        "height": 39
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Select",
+      "reference": "pilot/admin/catalog#Core.Select@1oz4jjp",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:5/label:1/select:1",
+      "sourceSelector": "select",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": null
+      },
+      "element": "select",
+      "label": "Rows 25102050",
+      "bounds": {
+        "x": 1273,
+        "y": 443.8,
+        "width": 53,
+        "height": 26
+      },
+      "visibleBounds": {
+        "x": 1273,
+        "y": 444,
+        "width": 53,
+        "height": 26
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1vv74nd",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:5/button:1",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPaint"
+      },
+      "element": "button",
+      "label": "‹",
+      "bounds": {
+        "x": 1332,
+        "y": 443.3,
+        "width": 20.4,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 1332,
+        "y": 443,
+        "width": 20,
+        "height": 27
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.Button",
+      "reference": "pilot/admin/catalog#Core.Button@1v18bkg",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#dt/div:5/button:2",
+      "sourceSelector": "button",
+      "sourceHint": {
+        "domId": null,
+        "classes": [],
+        "handler": "dtPaint"
+      },
+      "element": "button",
+      "label": "›",
+      "bounds": {
+        "x": 1388.6,
+        "y": 443.3,
+        "width": 20.4,
+        "height": 27
+      },
+      "visibleBounds": {
+        "x": 1389,
+        "y": 443,
+        "width": 20,
+        "height": 27
+      },
+      "state": {
+        "disabled": true,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.AI.Chathead",
+      "reference": "pilot/admin/catalog#Core.AI.Chathead@0g1oi0q",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#forma-chathead",
+      "sourceSelector": "#forma-chathead",
+      "sourceHint": {
+        "domId": "forma-chathead",
+        "classes": [
+          "forma-chathead"
+        ],
+        "handler": null
+      },
+      "element": "div",
+      "label": "",
+      "bounds": {
+        "x": 1372,
+        "y": 832,
+        "width": 56,
+        "height": 56
+      },
+      "visibleBounds": {
+        "x": 1372,
+        "y": 832,
+        "width": 56,
+        "height": 56
+      },
+      "state": {
+        "disabled": false,
+        "expanded": null,
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    },
+    {
+      "component": "Core.AI.Launcher",
+      "reference": "pilot/admin/catalog#Core.AI.Launcher@1p42y2y",
+      "route": "pilot/admin/catalog",
+      "instancePath": "#forma-chathead/button:1",
+      "sourceSelector": ".ch-launch",
+      "sourceHint": {
+        "domId": null,
+        "classes": [
+          "ch-launch"
+        ],
+        "handler": "openChathead"
+      },
+      "element": "button",
+      "label": "Open assistant",
+      "bounds": {
+        "x": 1372,
+        "y": 832,
+        "width": 56,
+        "height": 56
+      },
+      "visibleBounds": {
+        "x": 1372,
+        "y": 832,
+        "width": 56,
+        "height": 56
+      },
+      "state": {
+        "disabled": false,
+        "expanded": "false",
+        "selected": null,
+        "checked": null,
+        "readOnly": false
+      }
+    }
+  ]
+}
