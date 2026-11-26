@@ -27,6 +27,21 @@ Base text 13px, metadata 11px, compact control 30px, standard 34px, comfortable 
 
 Primary icon rail + contextual navigation + main content + assistant side panel. Whole canvas shifts to reveal navigation/assistant. No floating navigation drawer. Desktop contextual width adjustable 168–256px. Mobile retains the canvas motion and uses a dedicated bottom launcher dock; mobile preview bubble suppressed to prevent obscured controls. Full-screen authoring tools omit the launcher. Large forms may use a full-screen dialog; context actions use a sheet on mobile.
 
+## Layout templates (V34.1)
+
+Layout work starts from a template, not from a component. Model every screen as **Application Shell × Content Layout**:
+
+- Application shell: primary rail, context sidebar, top bar or top navigation, workspace toolbar and assistant sidebar. It owns canvas sliding.
+- Content layout: page header, toolbar, content, split panes, properties inspector and footer. It never replaces the shell.
+- Templates: `sidebar`, `semi`, `full`, `fullscreen`, `split`, `centered`, `inspector`, `public`. Read `LAYOUT_REGISTRY.json`; do not invent a ninth template without an approved registry change.
+- Layout identities are explicit: `Core.Layout.<Template>` on the content root, `Core.Layout.<Slot>` on every slot, plus `data-ui-id` and `data-layout-slot`. Shell and content stay separate in markup and data.
+- Public keeps the existing `publiccanvas` exception: no canvas slide and no assistant. Fullscreen suppresses the mobile launcher, matching editor behavior.
+- The layout playground previews inside a container-scoped in-page stage (not an iframe). Fixed simulated widths (1440/768/390/320) scroll inside their stage only; the document never overflows.
+
+Slot labels occupy a reserved top band instead of floating over content (30px inside content slots, 66px on the primary rail). Each label names the stable slot and its semantic component, for example `content · Core.Layout.Content`. General labels use 10px and the rail uses 9px; text wraps rather than truncating the identity. Toggle labels without removing Inspector identities and never allow them to overlap content or create horizontal page overflow.
+
+Provisional layout tokens: inspector 280px (240–320), split list 320px (280–360), content measure 960px standard / 680px narrow, centered card 420px, slot label 11px with a 4px radius. Keep controls compact 30px, standard 34px and touch 44px at ≤768px. Use existing semantic color pairs only; reduced motion removes sliding transitions.
+
 ## Reusable component contracts
 
 These are implementation handoff contracts, not backend contracts.

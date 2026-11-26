@@ -7,6 +7,7 @@
 3. Use the top-bar **Debug** control on desktop or the bottom-left control on narrow/editor views. `Alt+Shift+D` also toggles the Inspector.
 4. Select **Pick**, choose an element, and copy or export its structured reference.
 5. Use the matching issue form and attach a clean screenshot plus the reference JSON when available.
+6. Review layout templates at `#pilot/admin/f33layouts`, open a direct template route (`#pilot/admin/f33layouts/<id>`) or configure one in `#pilot/admin/f33playground`.
 
 The Preview is static. It needs no install, backend, account or database.
 
@@ -16,6 +17,8 @@ Run commands from the repository root:
 
 ```bash
 python3 scripts/forma_ui.py verify
+python3 scripts/forma_ui.py layouts
+python3 scripts/forma_ui.py layout sidebar
 python3 scripts/forma_ui.py pages catalog
 python3 scripts/forma_ui.py components Core.DataTable
 python3 scripts/forma_ui.py keys forma.collection.adaptive
@@ -33,7 +36,7 @@ python3 scripts/forma_ui.py issue references/examples/example-reference-1440.jso
 python3 scripts/forma_ui.py compare before.json after.json
 ```
 
-Read `SKILL.md` before implementation. Resolve the exact component, route, reference and Visual Key, then inspect the consuming application's contracts and tests. Use `references/UI_INSPECTOR_CONTRACT.md` for identity and evidence rules.
+Read `SKILL.md` before implementation. Resolve the composition in order: **Layout Template → Page Pattern → Component**, then the exact route, reference and Visual Key, then inspect the consuming application's contracts and tests. Use `references/UI_INSPECTOR_CONTRACT.md` for identity and evidence rules.
 
 Browser capture is optional and requires Python Playwright plus Chromium:
 

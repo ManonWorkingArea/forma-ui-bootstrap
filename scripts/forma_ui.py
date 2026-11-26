@@ -11,6 +11,11 @@ def emit(x): print(json.dumps(x, ensure_ascii=False, indent=2))
 def registry(): return load(REF/'COMPONENT_REGISTRY.json')['components']
 def pages(): return load(REF/'PAGE_INDEX.json')['pages']
 def visual(): return load(REF/'VISUAL_KEYS.json')
+def layouts(): return load(REF/'LAYOUT_REGISTRY.json')['templates']
+def layout(id):
+    for row in layouts():
+        if row['id']==id: return row
+    raise ValueError(f"Unknown layout id: {id}. Use 'layouts' to list valid ids.")
 def search(rows,q): return [x for x in rows if q.casefold() in json.dumps(x,ensure_ascii=False).casefold()]
 def manifest(): return load(REF/'MANIFEST.json')
 def check_manifest():
@@ -113,9 +118,10 @@ def capture(args):
 def main():
     p=argparse.ArgumentParser(description=__doc__);s=p.add_subparsers(dest='cmd',required=True)
     s.add_parser('verify');s.add_parser('tokens')
-    for cmd in ('components','pages','keys'):
+    for cmd in ('components','pages','keys','layouts'):
         q=s.add_parser(cmd);q.add_argument('query',nargs='?',default='')
     q=s.add_parser('context');q.add_argument('component')
+    q=s.add_parser('layout');q.add_argument('id')
     q=s.add_parser('locate');q.add_argument('literal');q.add_argument('--limit',type=int,default=8)
     q=s.add_parser('inspect');q.add_argument('inventory');q.add_argument('query',nargs='?',default='')
     q=s.add_parser('issue');q.add_argument('reference');q.add_argument('--problem',required=True);q.add_argument('--expected',required=True)
@@ -128,6 +134,8 @@ def main():
         elif a.cmd=='components':r=search(registry(),a.query)
         elif a.cmd=='pages':r=search(pages(),a.query)
         elif a.cmd=='keys':r=search(visual()['keys'],a.query)
+        elif a.cmd=='layouts':r=search(layouts(),a.query)
+        elif a.cmd=='layout':r=layout(a.id)
         elif a.cmd=='context':r=context(a.component)
         elif a.cmd=='locate':r=locate(a.literal,max(1,min(a.limit,30)))
         elif a.cmd=='inspect':

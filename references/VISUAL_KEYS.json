@@ -93,7 +93,38 @@
       430,
       390,
       320
-    ]
+    ],
+    "layout": {
+      "inspectorWidthPx": {
+        "value": 280,
+        "min": 240,
+        "max": 320,
+        "status": "provisional"
+      },
+      "splitListWidthPx": {
+        "value": 320,
+        "min": 280,
+        "max": 360,
+        "status": "provisional"
+      },
+      "contentWidthPx": {
+        "narrow": 680,
+        "standard": 960,
+        "fluid": null,
+        "status": "provisional"
+      },
+      "centeredFormPx": {
+        "form": 420,
+        "wizard": 560,
+        "status": "provisional"
+      },
+      "slotLabel": {
+        "fontSizePx": 11,
+        "radiusPx": 4,
+        "padding": "2px 6px",
+        "status": "provisional"
+      }
+    }
   },
   "keys": [
     {

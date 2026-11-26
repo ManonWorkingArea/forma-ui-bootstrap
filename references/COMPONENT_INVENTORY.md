@@ -10,6 +10,7 @@ Coverage means a reference specimen or existing working mockup is present, not p
 | Text/code | Advanced components | Contenteditable rich text, basic formatting, links/image/table; JSON validation, sandboxed HTML/CSS preview |
 | File/media | Files; Advanced components | Existing explorer/pickers, gallery/zoom/navigation, file metadata/drop specimen |
 | Layout | Page patterns; Mobile patterns | Resizable split, collapse/restore, responsive data collection, wizard, mobile selection/reorder |
+| Layout templates | Layout templates; Layout Playground | Eight shell/content templates with explicit `Core.Layout.*` slots, locks, slot labels, light/dark preview, 1440/768/390/320 behavior, copy reference/config and normalized JSON export |
 | States | UX states | 20 visual states, retry/progress/partial result/conflict/unsaved examples |
 | Master screens | Page patterns | 15 patterns; full-screen editor links into existing CMS/Studio |
 | Account | Account journeys | 14 routes, sign in, registration, verification, recovery, invitations, onboarding, setup, switching, preferences/lock/expired |
@@ -26,6 +27,7 @@ Coverage means a reference specimen or existing working mockup is present, not p
 - Rich editor has basic formatting; no complete schema, history/export pipeline or complex table editing.
 - Code editor is a textarea with validation and sandbox preview, not syntax-complete IDE.
 - Page pattern examples reuse current components or link to existing real mock screens; not every legacy screen is rebuilt.
+- Layout templates are additive compositions, not new business screens. The playground preview mirrors the shell contract in a container-scoped stage; it is not a second application runtime.
 - Account and frontend support flows are local specimens, not account or messaging services.
 - AI context is a local selected record reference; requests are deterministic previews, not actual context-aware LLM calls. Confirmed writes remain disabled.
 - Thai/English shell and selected system labels are implemented; complete translation of every older page and UI string is pending. Locale and currency presentation is not a full data formatting migration.

@@ -1,10 +1,12 @@
 # Forma V34 — UI Inspector
 
-V33 remains the baseline UI Foundation review candidate. V34 adds a developer-facing debug overlay, without adding business features.
+V33 remains the baseline UI Foundation review candidate. V34 adds a developer-facing debug overlay, without adding business features. V34.1 adds the Layout Templates catalog, eight direct layout routes and the Layout Playground on top of the same F33 extension pattern.
 
-Open `standalone.html` (or `index.html`). Navigate to Catalog or any other screen. Use Debug, Alt+Shift+D, Pick, Parent, Copy reference or Export visible JSON. `screenshots/` contains actual Chromium captures; `example-reference-1440.json` and `example-reference-390.json` are selected Filter button references, and `example-inventory-*.json` are real downloaded inventories.
+Open `standalone.html` (or `index.html`). Navigate to Catalog or any other screen. Choose **UI foundation → Layout templates** (`#pilot/admin/f33layouts`), open a layout (`#pilot/admin/f33layouts/<id>`), or use **Layout playground** (`#pilot/admin/f33playground`). Use Debug, Alt+Shift+D, Pick, Parent, Copy reference or Export visible JSON. `screenshots/` contains actual Chromium captures; `example-reference-1440.json` and `example-reference-390.json` are selected Filter button references, and `example-inventory-*.json` are real downloaded inventories.
 
 - `UI_INSPECTOR_CONTRACT.md`: naming, identity and implementation handoff.
+- `LAYOUT_REGISTRY.json`: eight layout templates, slot identities, locks, defaults, responsive behavior and `forma.layout.config.v1`.
+- `MANIFEST.json` pins current V34.1 member checksums; `.github/package-baseline.json` keeps the original `skill.zip` digest as separate provenance.
 - `COMPONENT_REGISTRY.json`: semantic adapter mappings.
 - `source/ui-inspector.js`: standalone inspector source; the full merged application is in `standalone.html`.
 - `TEST_REPORT.json`: initial run, post-fix observations and final focused checks.
