@@ -6,6 +6,8 @@ All notable repository and design-reference changes are recorded here. The UI mo
 
 ### Fixed
 
+- Files rows/cards use shared long press and multi-select while preserving checkboxes and the existing Move/Copy/Trash sheet; Gallery viewer uses shared pinch with native scroll preserved; F33 DataTable has touch selection, a visible action bar and persisted column-width gesture.
+- Chat and Inbox swipes mutate read/archive state with visible buttons; Directory long press mutates `d29Selected`; Theme controls are 44px and hover-free; the real Layout Playground split separator uses shared resize and updates actual pane geometry.
 - Real Kanban movement now mutates `f24Tasks` status and order and survives re-render; Gantt drag/resize mutates `start`/`len`; Calendar swipe changes `wDate`; Workflow order mutates `wNodes`/`f24NodeTypes`; Studio part order mutates `s31Current().parts`.
 - Sortable is model-backed through `FormaTouch.defineSortable(group,{apply,undo,redo})`; undo/redo uses inverse model operations and survives DOM replacement. Ctrl+Z is scoped to the focused sortable container.
 - Keyboard parity: Space starts, Arrow moves, Space commits, Escape restores; Alt+Arrow is an immediate alias with one live announcement per state change.

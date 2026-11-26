@@ -9,8 +9,8 @@
   "files": [
     {
       "path": "README.md",
-      "bytes": 2929,
-      "sha256": "5fafda6f3fcf8092f85fb65c47ecab96574434bed9c4545a2ee32e26db94ccd0"
+      "bytes": 3033,
+      "sha256": "1b74b90859c6a09db8b60c032720bf705f70d00b2258671505c621872e19c574"
     },
     {
       "path": "SKILL.md",
@@ -154,8 +154,8 @@
     },
     {
       "path": "assets/mockup/standalone.html",
-      "bytes": 1128968,
-      "sha256": "f361090b6208a9c7ca491942a980bffb0758ff0d59684a941206080334e2ed69"
+      "bytes": 1135892,
+      "sha256": "519a88fdf5713e2d50e1726cbf557ce79f0ec394f580ccfc7d0afb97e7c2e062"
     },
     {
       "path": "assets/mockup/ui-inspector.js",
@@ -164,8 +164,8 @@
     },
     {
       "path": "references/COMPONENT_INVENTORY.md",
-      "bytes": 4020,
-      "sha256": "eba1d2adadfbf213137b2dea6203ee5ae4f2d28e13ae503bfba19597cde579dd"
+      "bytes": 4177,
+      "sha256": "5214cf31f4814a2c2ef4932a7c9d83803d5abb961e56eef997adb93827094425"
     },
     {
       "path": "references/COMPONENT_REGISTRY.json",
@@ -174,13 +174,13 @@
     },
     {
       "path": "references/DESIGN_SYSTEM.md",
-      "bytes": 7517,
-      "sha256": "84685c564c251a7269e33ab126b0a591a485f999bdc823276542791a5fc13bce"
+      "bytes": 7602,
+      "sha256": "8c7437c7fba67ac62f92b8c49a4d9f48524b2945c9a58cc252046db608f1b840"
     },
     {
       "path": "references/MANIFEST.json",
       "bytes": 1250,
-      "sha256": "ca752f33d0737763087f244c154744a811e05044d3cafda92763f041395e0d74"
+      "sha256": "6d550f366f65ee03c74e4cb09c4cc9a5d6e97e4c2c86c5d0ff2635c2a7049064"
     },
     {
       "path": "references/MOCKUP_V34_README.md",
@@ -199,8 +199,8 @@
     },
     {
       "path": "references/TOOLS.md",
-      "bytes": 5642,
-      "sha256": "de9dc3fe3e5799029b95644e69561f2ad88eb7ba12b1cc85d4525e7a629bdb5d"
+      "bytes": 5717,
+      "sha256": "6222809e4eee381cb517de1b58d98017f00908dd8d34f1c2507cb15fe73b0d5f"
     },
     {
       "path": "references/UI_INSPECTOR_CONTRACT.md",

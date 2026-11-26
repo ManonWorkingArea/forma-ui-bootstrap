@@ -795,22 +795,22 @@
     },
     {
       "id": "files.swipe",
-      "name": "Files row swipe",
-      "component": "Core.Touch.Swipe",
+      "name": "Files long press and move",
+      "component": "Core.Touch.LongPress",
       "specimen": "swipe",
       "route": "pilot/admin/f33touchlab",
       "modules": [
         "files"
       ],
       "gestures": [
-        "swipe"
+        "long-press"
       ],
       "pointerTypes": [
         "mouse",
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "long-press selection plus existing Move/Copy/Trash sheet",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -819,28 +819,27 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
       "id": "gallery.swipe",
-      "name": "Gallery swipe",
-      "component": "Core.Touch.Swipe",
+      "name": "Gallery pinch zoom",
+      "component": "Core.Touch.Pinch",
       "specimen": "swipe",
       "route": "pilot/admin/f33touchlab",
       "modules": [
         "gallery"
       ],
       "gestures": [
-        "swipe"
+        "pinch"
       ],
       "pointerTypes": [
         "mouse",
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "viewer zoom; native scroll preserved",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -849,14 +848,13 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
       "id": "datatable.row-swipe",
-      "name": "DataTable row swipe",
-      "component": "Core.Touch.Swipe",
+      "name": "F33 DataTable selection and column width",
+      "component": "Core.Touch.Tap",
       "specimen": "swipe",
       "route": "pilot/admin/f33touchlab",
       "modules": [
@@ -864,14 +862,14 @@
         "catalog"
       ],
       "gestures": [
-        "swipe"
+        "tap"
       ],
       "pointerTypes": [
         "mouse",
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "selected row set and column width state",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -880,8 +878,7 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
@@ -1010,8 +1007,8 @@
     },
     {
       "id": "theme.preview-pan",
-      "name": "Theme preview pan",
-      "component": "Core.Touch.Pan",
+      "name": "Theme touch target parity",
+      "component": "Core.Touch.Tap",
       "specimen": "shell-canvas",
       "route": "pilot/admin/f33touchlab",
       "modules": [
@@ -1019,14 +1016,14 @@
         "cms"
       ],
       "gestures": [
-        "pan"
+        "tap"
       ],
       "pointerTypes": [
         "mouse",
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "44px controls and keyboard/tap parity",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1035,13 +1032,12 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
       "id": "chat.swipe-archive",
-      "name": "Chat swipe archive",
+      "name": "Chat read state",
       "component": "Core.Touch.Swipe",
       "specimen": "swipe",
       "route": "pilot/admin/f33touchlab",
@@ -1058,7 +1054,7 @@
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "unread/read state",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1067,28 +1063,27 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
       "id": "directory.swipe",
-      "name": "Directory swipe action",
-      "component": "Core.Touch.Swipe",
+      "name": "Directory long press multi-select",
+      "component": "Core.Touch.LongPress",
       "specimen": "swipe",
       "route": "pilot/admin/f33touchlab",
       "modules": [
         "directory"
       ],
       "gestures": [
-        "swipe"
+        "long-press"
       ],
       "pointerTypes": [
         "mouse",
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "d29Selected bulk selection",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1097,13 +1092,12 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
       "id": "layout.playground-panel",
-      "name": "Playground panel resize",
+      "name": "Layout Playground split resize",
       "component": "Core.Touch.PanelResize",
       "specimen": "panel-resize",
       "route": "pilot/admin/f33touchlab",
@@ -1118,7 +1112,7 @@
         "touch",
         "pen"
       ],
-      "state": "Lab specimen only · module surface not wired in this round",
+      "state": "actual split percentage and pane width",
       "keyboard": "Documented in the Touch Interaction Lab card",
       "cancel": "pointercancel and lostpointercapture restore the prior state",
       "visualKeys": [
@@ -1127,8 +1121,7 @@
         "forma.touch.announcement"
       ],
       "evidence": [
-        "lab-only",
-        "pending-module-wiring"
+        "pointer-fallback"
       ]
     },
     {
@@ -1170,21 +1163,26 @@
     "physicalDevice": "Pending Owner Review"
   },
   "testedSurfaces": [
+    "shell",
+    "touch-lab",
     "kanban",
     "gantt",
     "calendar",
     "workflow",
     "studio-parts",
-    "shell",
-    "touch-lab"
+    "files",
+    "gallery",
+    "datatable",
+    "chat",
+    "inbox",
+    "directory",
+    "theme",
+    "layout-playground"
   ],
-  "labOnly": [
-    "chat.swipe-archive",
-    "datatable.row-swipe",
-    "directory.swipe",
-    "files.swipe",
-    "gallery.swipe",
-    "layout.playground-panel",
-    "theme.preview-pan"
+  "labOnly": [],
+  "limitations": [
+    "Page builder admin route redirects to CMS; no drag coverage claimed there.",
+    "Physical-device review remains Pending Owner Review.",
+    "WebKit/Firefox native touch is not claimed; pointer fallback only."
   ]
 }

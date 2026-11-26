@@ -249,8 +249,12 @@ for row in interaction_rows:
     if not row.get("visualKeys") or any(key not in visual_ids for key in row.get("visualKeys", [])):
         fail(f"{row.get('id')}: interaction Visual Key missing")
 coverage = (REF / "INTERACTION_COVERAGE.md").read_text(encoding="utf-8")
-if "lab-only" not in coverage or "Pending Owner Review" not in coverage:
-    fail("coverage matrix must distinguish lab-only surfaces and pending physical review")
+if "Page builder" not in coverage or "Pending Owner Review" not in coverage:
+    fail("coverage matrix must state the Page Builder limitation and pending physical review")
+if interaction_registry.get("labOnly"):
+    fail("interaction registry must not retain lab-only module claims")
+if "Page builder admin route redirects" not in " ".join(interaction_registry.get("limitations", [])):
+    fail("interaction registry must document the Page Builder redirect limitation")
 for template in layout_templates:
     if "touch" not in layout_registry:
         fail("layout registry must describe touch interaction impact")
