@@ -1006,7 +1006,7 @@
       ]
     },
     {
-      "id": "theme.preview-pan",
+      "id": "theme.control-targets",
       "name": "Theme touch target parity",
       "component": "Core.Touch.Tap",
       "specimen": "shell-canvas",

@@ -19,7 +19,7 @@ One shared Pointer Events engine (`FormaTouch`) owns gesture recognition. Module
 | Chat (`chat19`) | all engines | swipe marks read/unread; visible **Mark unread** button | pointer fallback |
 | Inbox (`inbox19`) | all engines | swipe archives or toggles read; visible Archive button | pointer fallback |
 | Directory (`d29people`) | all engines | long press mutates `d29Selected`; visible bulk-action bar | pointer fallback |
-| Theme builder | all engines | controls are ≥44px, tap/keyboard reachable; no hover-only action | pointer fallback |
+| Theme builder (`theme.control-targets`) | all engines | controls are ≥44px, tap/keyboard reachable; no hover-only action | pointer fallback |
 | Layout Playground split | all engines | shared separator resize updates the actual split percentage and pane width | pointer fallback |
 | UI Inspector pick | Chromium | one reference, underlying lab action suppressed | Chromium native touch |
 
