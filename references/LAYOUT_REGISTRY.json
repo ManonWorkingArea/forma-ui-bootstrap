@@ -1,0 +1,1869 @@
+{
+  "format": "forma-layout-registry.v1",
+  "baseline": "V34.1",
+  "configSchema": "forma.layout.config.v1",
+  "note": "Additive V34.1 layout templates for the existing F33 Design System routes. Application Shell and Content Layout are separate identities. All examples are generic Core patterns with synthetic content; no business module, backend or real write. Preview widths are simulated in an in-page container-scoped stage.",
+  "regions": {
+    "application-shell": {
+      "attribute": "data-layout-region",
+      "value": "shell",
+      "description": "Application chrome: primary rail, context sidebar, top bar or top navigation, workspace toolbar and assistant sidebar."
+    },
+    "content-layout": {
+      "attribute": "data-layout-region",
+      "value": "content",
+      "description": "The page inside the shell: page header, toolbar, content, split panes, inspector and footer."
+    }
+  },
+  "identity": {
+    "rootComponent": "Core.Layout.<Template>",
+    "slotComponent": "Core.Layout.<Slot>",
+    "attributes": [
+      "data-ui-component",
+      "data-ui-id",
+      "data-layout-slot"
+    ],
+    "idPattern": "layout.<template>.<slot>",
+    "playgroundIdPattern": "layout.playground.<template>.<slot>",
+    "referenceFormat": "forma.layout.reference.v1",
+    "referencePattern": "route#data-ui-id"
+  },
+  "config": {
+    "format": "forma.layout.config.v1",
+    "fields": {
+      "template": {
+        "type": "enum",
+        "allowed": [
+          "sidebar",
+          "semi",
+          "full",
+          "fullscreen",
+          "split",
+          "centered",
+          "inspector",
+          "public"
+        ],
+        "default": "sidebar",
+        "description": "Layout template id from this registry."
+      },
+      "viewport": {
+        "type": "integer",
+        "allowed": [
+          1440,
+          768,
+          390,
+          320
+        ],
+        "default": 1440,
+        "description": "Simulated preview width in CSS pixels. Preview setting only."
+      },
+      "theme": {
+        "type": "enum",
+        "allowed": [
+          "light",
+          "dark"
+        ],
+        "default": "light",
+        "description": "Preview theme through existing semantic tokens. Preview setting only."
+      },
+      "primarySidebar": {
+        "type": "boolean",
+        "default": true,
+        "description": "Primary navigation rail."
+      },
+      "contextSidebar": {
+        "type": "boolean",
+        "default": true,
+        "description": "Context navigation sidebar. Locked by some templates."
+      },
+      "pageHeader": {
+        "type": "boolean",
+        "default": true,
+        "description": "Page header slot inside the content layout."
+      },
+      "toolbar": {
+        "type": "boolean",
+        "default": true,
+        "description": "Toolbar slot inside the content layout."
+      },
+      "footer": {
+        "type": "boolean",
+        "default": true,
+        "description": "Page footer slot inside the content layout."
+      },
+      "aiAssistant": {
+        "type": "boolean",
+        "default": false,
+        "description": "Assistant sidebar slot. Locked off by Public Layout."
+      },
+      "inspectorPanel": {
+        "type": "boolean",
+        "default": false,
+        "description": "Properties inspector slot. Used by Fullscreen and Inspector layouts."
+      },
+      "contentWidth": {
+        "type": "enum",
+        "allowed": [
+          "fluid",
+          "standard",
+          "narrow"
+        ],
+        "default": "fluid",
+        "description": "Content measure inside the frame: fluid, 960 px standard, or 680 px narrow."
+      }
+    },
+    "normalization": [
+      "Unknown fields are dropped.",
+      "Locked fields are overwritten with the template value and reported in warnings.",
+      "viewport and theme are preview settings and do not change the layout structure.",
+      "Export always contains the normalized effective configuration, never sample content."
+    ]
+  },
+  "responsiveWidths": [
+    1440,
+    768,
+    390,
+    320
+  ],
+  "templates": [
+    {
+      "id": "sidebar",
+      "name": "Sidebar Layout",
+      "description": "Primary and context sidebars frame a stacked content layout.",
+      "use_cases": [
+        "Operational backoffice with persistent context navigation",
+        "Multi-section workspace with frequent section switching"
+      ],
+      "route": "pilot/admin/f33layouts/sidebar",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/sidebar",
+      "shell": {
+        "mode": "sidebar",
+        "region": "shell",
+        "label": "Primary + Context sidebar",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "sidebar",
+        "region": "content",
+        "component": "Core.Layout.Sidebar",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "primary-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.PrimarySidebar",
+          "required": false
+        },
+        {
+          "name": "context-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.ContextSidebar",
+          "required": false
+        },
+        {
+          "name": "top-bar",
+          "region": "shell",
+          "component": "Core.Layout.TopBar",
+          "required": true
+        },
+        {
+          "name": "ai-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.AISidebar",
+          "required": false
+        },
+        {
+          "name": "page-header",
+          "region": "content",
+          "component": "Core.Layout.PageHeader",
+          "required": false
+        },
+        {
+          "name": "toolbar",
+          "region": "content",
+          "component": "Core.Layout.Toolbar",
+          "required": false
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "footer",
+          "region": "content",
+          "component": "Core.Layout.Footer",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "primary-sidebar",
+        "context-sidebar",
+        "ai-sidebar",
+        "page-header",
+        "toolbar",
+        "footer"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Sidebar",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.TopBar"
+        ],
+        "optional": [
+          "Core.Layout.PrimarySidebar",
+          "Core.Layout.ContextSidebar",
+          "Core.Layout.AISidebar",
+          "Core.Layout.PageHeader",
+          "Core.Layout.Toolbar",
+          "Core.Layout.Footer"
+        ]
+      },
+      "locked": {
+        "inspectorPanel": {
+          "value": false,
+          "reason": "Sidebar Layout uses a full content page"
+        }
+      },
+      "defaults": {
+        "primarySidebar": true,
+        "contextSidebar": true,
+        "pageHeader": true,
+        "toolbar": true,
+        "footer": true,
+        "aiAssistant": false,
+        "inspectorPanel": false
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": true
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": true
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": true
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": true
+          },
+          "footer": {
+            "type": "boolean",
+            "default": true
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Sidebar Layout uses a full content page"
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": true,
+          "contextSidebar": true,
+          "pageHeader": true,
+          "toolbar": true,
+          "footer": true,
+          "aiAssistant": false,
+          "inspectorPanel": false
+        },
+        "locked": [
+          "inspectorPanel"
+        ]
+      },
+      "responsive": {
+        "1440": "Rail 56 px, context 216 px, stacked page with 14 px content padding.",
+        "768": "Rail 56 px; context opens as a drawer; the page stays one column.",
+        "390": "Rail 52 px; context drawer; single column; 44 px touch targets.",
+        "320": "Rail 52 px; 10 px padding; toolbar wraps; single column."
+      },
+      "visual_keys": [
+        "forma.shell.canvas-slide",
+        "forma.type.hierarchy",
+        "forma.spacing.compact",
+        "forma.theme.semantic"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": true,
+        "mobile_launcher": true,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"sidebar\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.sidebar.shell\">\n    <nav class=\"f33pv-rail\" data-layout-region=\"shell\" data-layout-slot=\"primary-sidebar\" data-ui-component=\"Core.Layout.PrimarySidebar\" data-ui-id=\"layout.sidebar.primary-sidebar\" aria-label=\"Primary\"></nav>\n    <nav class=\"f33pv-context\" data-layout-region=\"shell\" data-layout-slot=\"context-sidebar\" data-ui-component=\"Core.Layout.ContextSidebar\" data-ui-id=\"layout.sidebar.context-sidebar\" aria-label=\"Context\"></nav>\n    <div class=\"f33pv-main\">\n      <header class=\"f33pv-topbar\" data-layout-region=\"shell\" data-layout-slot=\"top-bar\" data-ui-component=\"Core.Layout.TopBar\" data-ui-id=\"layout.sidebar.top-bar\"></header>\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"sidebar\" data-ui-component=\"Core.Layout.Sidebar\" data-ui-id=\"layout.sidebar\">\n        <div class=\"f33pv-pageheader\" data-layout-region=\"content\" data-layout-slot=\"page-header\" data-ui-component=\"Core.Layout.PageHeader\" data-ui-id=\"layout.sidebar.page-header\"></div>\n        <div class=\"f33pv-toolbar\" data-layout-region=\"content\" data-layout-slot=\"toolbar\" data-ui-component=\"Core.Layout.Toolbar\" data-ui-id=\"layout.sidebar.toolbar\"></div>\n        <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.sidebar.content\" data-content-width=\"fluid\"></div>\n        <footer class=\"f33pv-footer\" data-layout-region=\"content\" data-layout-slot=\"footer\" data-ui-component=\"Core.Layout.Footer\" data-ui-id=\"layout.sidebar.footer\"></footer>\n      </section>\n    </div>\n  </div>\n  <aside class=\"f33pv-ai\" data-layout-region=\"shell\" data-layout-slot=\"ai-sidebar\" data-ui-component=\"Core.Layout.AISidebar\" data-ui-id=\"layout.sidebar.ai-sidebar\" aria-label=\"AI assistant\"></aside>\n</div>"
+    },
+    {
+      "id": "semi",
+      "name": "Semi Layout",
+      "description": "Primary sidebar only, so the page keeps a wider content area.",
+      "use_cases": [
+        "Focused record work with one navigation level",
+        "Pages that need more content width than the full sidebar template"
+      ],
+      "route": "pilot/admin/f33layouts/semi",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/semi",
+      "shell": {
+        "mode": "sidebar",
+        "region": "shell",
+        "label": "Primary + expanded content",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "semi",
+        "region": "content",
+        "component": "Core.Layout.Semi",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "primary-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.PrimarySidebar",
+          "required": false
+        },
+        {
+          "name": "top-bar",
+          "region": "shell",
+          "component": "Core.Layout.TopBar",
+          "required": true
+        },
+        {
+          "name": "ai-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.AISidebar",
+          "required": false
+        },
+        {
+          "name": "page-header",
+          "region": "content",
+          "component": "Core.Layout.PageHeader",
+          "required": false
+        },
+        {
+          "name": "toolbar",
+          "region": "content",
+          "component": "Core.Layout.Toolbar",
+          "required": false
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "footer",
+          "region": "content",
+          "component": "Core.Layout.Footer",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "primary-sidebar",
+        "ai-sidebar",
+        "page-header",
+        "toolbar",
+        "footer"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Semi",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.TopBar"
+        ],
+        "optional": [
+          "Core.Layout.PrimarySidebar",
+          "Core.Layout.AISidebar",
+          "Core.Layout.PageHeader",
+          "Core.Layout.Toolbar",
+          "Core.Layout.Footer"
+        ]
+      },
+      "locked": {
+        "contextSidebar": {
+          "value": false,
+          "reason": "Fixed off by Semi Layout"
+        },
+        "inspectorPanel": {
+          "value": false,
+          "reason": "Semi Layout uses the expanded content area"
+        }
+      },
+      "defaults": {
+        "primarySidebar": true,
+        "contextSidebar": false,
+        "pageHeader": true,
+        "toolbar": true,
+        "footer": true,
+        "aiAssistant": false,
+        "inspectorPanel": false
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": true
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Semi Layout"
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": true
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": true
+          },
+          "footer": {
+            "type": "boolean",
+            "default": true
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Semi Layout uses the expanded content area"
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": true,
+          "contextSidebar": false,
+          "pageHeader": true,
+          "toolbar": true,
+          "footer": true,
+          "aiAssistant": false,
+          "inspectorPanel": false
+        },
+        "locked": [
+          "contextSidebar",
+          "inspectorPanel"
+        ]
+      },
+      "responsive": {
+        "1440": "Rail 56 px; context stays closed; content uses the available width.",
+        "768": "Rail 56 px; one column; context control is disabled by the template.",
+        "390": "Rail 52 px; single column; 44 px touch targets and wrapped toolbar.",
+        "320": "Rail 52 px; 10 px padding; stacked actions."
+      },
+      "visual_keys": [
+        "forma.shell.canvas-slide",
+        "forma.spacing.compact",
+        "forma.controls.density",
+        "forma.theme.semantic"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": true,
+        "mobile_launcher": true,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"sidebar\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.semi.shell\">\n    <nav class=\"f33pv-rail\" data-layout-region=\"shell\" data-layout-slot=\"primary-sidebar\" data-ui-component=\"Core.Layout.PrimarySidebar\" data-ui-id=\"layout.semi.primary-sidebar\" aria-label=\"Primary\"></nav>\n    <div class=\"f33pv-main\">\n      <header class=\"f33pv-topbar\" data-layout-region=\"shell\" data-layout-slot=\"top-bar\" data-ui-component=\"Core.Layout.TopBar\" data-ui-id=\"layout.semi.top-bar\"></header>\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"semi\" data-ui-component=\"Core.Layout.Semi\" data-ui-id=\"layout.semi\">\n        <div class=\"f33pv-pageheader\" data-layout-region=\"content\" data-layout-slot=\"page-header\" data-ui-component=\"Core.Layout.PageHeader\" data-ui-id=\"layout.semi.page-header\"></div>\n        <div class=\"f33pv-toolbar\" data-layout-region=\"content\" data-layout-slot=\"toolbar\" data-ui-component=\"Core.Layout.Toolbar\" data-ui-id=\"layout.semi.toolbar\"></div>\n        <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.semi.content\" data-content-width=\"fluid\"></div>\n        <footer class=\"f33pv-footer\" data-layout-region=\"content\" data-layout-slot=\"footer\" data-ui-component=\"Core.Layout.Footer\" data-ui-id=\"layout.semi.footer\"></footer>\n      </section>\n    </div>\n  </div>\n  <aside class=\"f33pv-ai\" data-layout-region=\"shell\" data-layout-slot=\"ai-sidebar\" data-ui-component=\"Core.Layout.AISidebar\" data-ui-id=\"layout.semi.ai-sidebar\" aria-label=\"AI assistant\"></aside>\n</div>"
+    },
+    {
+      "id": "full",
+      "name": "Full Layout",
+      "description": "Top navigation replaces both sidebars for a full-width page.",
+      "use_cases": [
+        "High-density dashboards and reporting pages",
+        "Screens that need nearly the whole canvas for content"
+      ],
+      "route": "pilot/admin/f33layouts/full",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/full",
+      "shell": {
+        "mode": "full",
+        "region": "shell",
+        "label": "Top navigation + full-width content",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "full",
+        "region": "content",
+        "component": "Core.Layout.Full",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "top-nav",
+          "region": "shell",
+          "component": "Core.Layout.TopNav",
+          "required": true
+        },
+        {
+          "name": "ai-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.AISidebar",
+          "required": false
+        },
+        {
+          "name": "page-header",
+          "region": "content",
+          "component": "Core.Layout.PageHeader",
+          "required": false
+        },
+        {
+          "name": "toolbar",
+          "region": "content",
+          "component": "Core.Layout.Toolbar",
+          "required": false
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "footer",
+          "region": "content",
+          "component": "Core.Layout.Footer",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "ai-sidebar",
+        "page-header",
+        "toolbar",
+        "footer"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Full",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.TopNav"
+        ],
+        "optional": [
+          "Core.Layout.AISidebar",
+          "Core.Layout.PageHeader",
+          "Core.Layout.Toolbar",
+          "Core.Layout.Footer"
+        ]
+      },
+      "locked": {
+        "primarySidebar": {
+          "value": false,
+          "reason": "Fixed off by Full Layout"
+        },
+        "contextSidebar": {
+          "value": false,
+          "reason": "Fixed off by Full Layout"
+        },
+        "inspectorPanel": {
+          "value": false,
+          "reason": "Full Layout uses the full content width"
+        }
+      },
+      "defaults": {
+        "primarySidebar": false,
+        "contextSidebar": false,
+        "pageHeader": true,
+        "toolbar": true,
+        "footer": true,
+        "aiAssistant": false,
+        "inspectorPanel": false
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Full Layout"
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Full Layout"
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": true
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": true
+          },
+          "footer": {
+            "type": "boolean",
+            "default": true
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Full Layout uses the full content width"
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": false,
+          "contextSidebar": false,
+          "pageHeader": true,
+          "toolbar": true,
+          "footer": true,
+          "aiAssistant": false,
+          "inspectorPanel": false
+        },
+        "locked": [
+          "primarySidebar",
+          "contextSidebar",
+          "inspectorPanel"
+        ]
+      },
+      "responsive": {
+        "1440": "Top navigation spans the frame; content is full width.",
+        "768": "Top navigation wraps; one column; context control disabled.",
+        "390": "Compact top navigation; wrapped toolbar; 44 px touch targets.",
+        "320": "Brand text hides; actions wrap; 10 px padding."
+      },
+      "visual_keys": [
+        "forma.shell.canvas-slide",
+        "forma.spacing.compact",
+        "forma.touch.geometry",
+        "forma.theme.semantic"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": true,
+        "mobile_launcher": true,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"full\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.full.shell\">\n    <header class=\"f33pv-topnav\" data-layout-region=\"shell\" data-layout-slot=\"top-nav\" data-ui-component=\"Core.Layout.TopNav\" data-ui-id=\"layout.full.top-nav\"></header>\n    <div class=\"f33pv-main\">\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"full\" data-ui-component=\"Core.Layout.Full\" data-ui-id=\"layout.full\">\n        <div class=\"f33pv-pageheader\" data-layout-region=\"content\" data-layout-slot=\"page-header\" data-ui-component=\"Core.Layout.PageHeader\" data-ui-id=\"layout.full.page-header\"></div>\n        <div class=\"f33pv-toolbar\" data-layout-region=\"content\" data-layout-slot=\"toolbar\" data-ui-component=\"Core.Layout.Toolbar\" data-ui-id=\"layout.full.toolbar\"></div>\n        <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.full.content\" data-content-width=\"fluid\"></div>\n        <footer class=\"f33pv-footer\" data-layout-region=\"content\" data-layout-slot=\"footer\" data-ui-component=\"Core.Layout.Footer\" data-ui-id=\"layout.full.footer\"></footer>\n      </section>\n    </div>\n  </div>\n  <aside class=\"f33pv-ai\" data-layout-region=\"shell\" data-layout-slot=\"ai-sidebar\" data-ui-component=\"Core.Layout.AISidebar\" data-ui-id=\"layout.full.ai-sidebar\" aria-label=\"AI assistant\"></aside>\n</div>"
+    },
+    {
+      "id": "fullscreen",
+      "name": "Fullscreen Layout",
+      "description": "Immersive workspace for focused editing or analysis, with an optional properties panel.",
+      "use_cases": [
+        "Full-screen authoring or analysis tools",
+        "Focused work that should hide ordinary navigation"
+      ],
+      "route": "pilot/admin/f33layouts/fullscreen",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/fullscreen",
+      "shell": {
+        "mode": "immersive",
+        "region": "shell",
+        "label": "Immersive workspace",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "fullscreen",
+        "region": "content",
+        "component": "Core.Layout.Fullscreen",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "workspace-toolbar",
+          "region": "shell",
+          "component": "Core.Layout.WorkspaceToolbar",
+          "required": true
+        },
+        {
+          "name": "ai-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.AISidebar",
+          "required": false
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "inspector",
+          "region": "content",
+          "component": "Core.Layout.InspectorPanel",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "ai-sidebar",
+        "inspector"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Fullscreen",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.WorkspaceToolbar"
+        ],
+        "optional": [
+          "Core.Layout.AISidebar",
+          "Core.Layout.InspectorPanel"
+        ]
+      },
+      "locked": {
+        "primarySidebar": {
+          "value": false,
+          "reason": "Fixed off by Fullscreen Layout"
+        },
+        "contextSidebar": {
+          "value": false,
+          "reason": "Fixed off by Fullscreen Layout"
+        },
+        "pageHeader": {
+          "value": false,
+          "reason": "Fullscreen uses the workspace toolbar"
+        },
+        "toolbar": {
+          "value": false,
+          "reason": "Fullscreen uses the workspace toolbar"
+        },
+        "footer": {
+          "value": false,
+          "reason": "Fullscreen omits the page footer"
+        }
+      },
+      "defaults": {
+        "primarySidebar": false,
+        "contextSidebar": false,
+        "pageHeader": false,
+        "toolbar": false,
+        "footer": false,
+        "aiAssistant": false,
+        "inspectorPanel": true
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Fullscreen Layout"
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Fullscreen Layout"
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fullscreen uses the workspace toolbar"
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fullscreen uses the workspace toolbar"
+          },
+          "footer": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fullscreen omits the page footer"
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": true
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": false,
+          "contextSidebar": false,
+          "pageHeader": false,
+          "toolbar": false,
+          "footer": false,
+          "aiAssistant": false,
+          "inspectorPanel": true
+        },
+        "locked": [
+          "primarySidebar",
+          "contextSidebar",
+          "pageHeader",
+          "toolbar",
+          "footer"
+        ]
+      },
+      "responsive": {
+        "1440": "Workspace toolbar spans the frame; canvas plus 280 px inspector.",
+        "768": "Inspector stacks below the canvas; toolbar wraps.",
+        "390": "Canvas only; inspector stacks; mobile launcher is suppressed.",
+        "320": "Canvas only; 10 px padding; toolbar wraps."
+      },
+      "visual_keys": [
+        "forma.shell.canvas-slide",
+        "forma.editor.lifecycle",
+        "forma.ai.launcher",
+        "forma.spacing.compact"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": true,
+        "mobile_launcher": false,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"immersive\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.fullscreen.shell\">\n    <div class=\"f33pv-main\">\n      <div class=\"f33pv-wstoolbar\" data-layout-region=\"shell\" data-layout-slot=\"workspace-toolbar\" data-ui-component=\"Core.Layout.WorkspaceToolbar\" data-ui-id=\"layout.fullscreen.workspace-toolbar\"></div>\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"fullscreen\" data-ui-component=\"Core.Layout.Fullscreen\" data-ui-id=\"layout.fullscreen\">\n        <div class=\"f33pv-bodyrow\">\n          <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.fullscreen.content\" data-content-width=\"fluid\"></div>\n          <aside class=\"f33pv-inspector\" data-layout-region=\"content\" data-layout-slot=\"inspector\" data-ui-component=\"Core.Layout.InspectorPanel\" data-ui-id=\"layout.fullscreen.inspector\" aria-label=\"Properties\"></aside>\n        </div>\n      </section>\n    </div>\n  </div>\n  <aside class=\"f33pv-ai\" data-layout-region=\"shell\" data-layout-slot=\"ai-sidebar\" data-ui-component=\"Core.Layout.AISidebar\" data-ui-id=\"layout.fullscreen.ai-sidebar\" aria-label=\"AI assistant\"></aside>\n</div>"
+    },
+    {
+      "id": "split",
+      "name": "Split Layout",
+      "description": "A list pane and a detail pane share the content area.",
+      "use_cases": [
+        "Records list with a selected record detail",
+        "Review queues where selection is frequent"
+      ],
+      "route": "pilot/admin/f33layouts/split",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/split",
+      "shell": {
+        "mode": "sidebar",
+        "region": "shell",
+        "label": "Primary + list/detail content",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "split",
+        "region": "content",
+        "component": "Core.Layout.Split",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "primary-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.PrimarySidebar",
+          "required": false
+        },
+        {
+          "name": "context-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.ContextSidebar",
+          "required": false
+        },
+        {
+          "name": "top-bar",
+          "region": "shell",
+          "component": "Core.Layout.TopBar",
+          "required": true
+        },
+        {
+          "name": "ai-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.AISidebar",
+          "required": false
+        },
+        {
+          "name": "page-header",
+          "region": "content",
+          "component": "Core.Layout.PageHeader",
+          "required": false
+        },
+        {
+          "name": "toolbar",
+          "region": "content",
+          "component": "Core.Layout.Toolbar",
+          "required": false
+        },
+        {
+          "name": "list-pane",
+          "region": "content",
+          "component": "Core.Layout.ListPane",
+          "required": true
+        },
+        {
+          "name": "detail-pane",
+          "region": "content",
+          "component": "Core.Layout.DetailPane",
+          "required": true
+        },
+        {
+          "name": "footer",
+          "region": "content",
+          "component": "Core.Layout.Footer",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "primary-sidebar",
+        "context-sidebar",
+        "ai-sidebar",
+        "page-header",
+        "toolbar",
+        "footer"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Split",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.TopBar",
+          "Core.Layout.ListPane",
+          "Core.Layout.DetailPane"
+        ],
+        "optional": [
+          "Core.Layout.PrimarySidebar",
+          "Core.Layout.ContextSidebar",
+          "Core.Layout.AISidebar",
+          "Core.Layout.PageHeader",
+          "Core.Layout.Toolbar",
+          "Core.Layout.Footer"
+        ]
+      },
+      "locked": {
+        "inspectorPanel": {
+          "value": false,
+          "reason": "Split Layout uses the detail pane"
+        }
+      },
+      "defaults": {
+        "primarySidebar": true,
+        "contextSidebar": false,
+        "pageHeader": true,
+        "toolbar": true,
+        "footer": true,
+        "aiAssistant": false,
+        "inspectorPanel": false
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": true
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": true
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": true
+          },
+          "footer": {
+            "type": "boolean",
+            "default": true
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Split Layout uses the detail pane"
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": true,
+          "contextSidebar": false,
+          "pageHeader": true,
+          "toolbar": true,
+          "footer": true,
+          "aiAssistant": false,
+          "inspectorPanel": false
+        },
+        "locked": [
+          "inspectorPanel"
+        ]
+      },
+      "responsive": {
+        "1440": "List pane 320 px beside the detail pane.",
+        "768": "Two panes remain with a 280 px list.",
+        "390": "One pane at a time with a Back control; 44 px rows.",
+        "320": "One pane at a time; compact rows; 10 px padding."
+      },
+      "visual_keys": [
+        "forma.collection.adaptive",
+        "forma.detail.full-page",
+        "forma.shell.canvas-slide",
+        "forma.touch.geometry"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": true,
+        "mobile_launcher": true,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"sidebar\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.split.shell\">\n    <nav class=\"f33pv-rail\" data-layout-region=\"shell\" data-layout-slot=\"primary-sidebar\" data-ui-component=\"Core.Layout.PrimarySidebar\" data-ui-id=\"layout.split.primary-sidebar\" aria-label=\"Primary\"></nav>\n    <nav class=\"f33pv-context\" data-layout-region=\"shell\" data-layout-slot=\"context-sidebar\" data-ui-component=\"Core.Layout.ContextSidebar\" data-ui-id=\"layout.split.context-sidebar\" aria-label=\"Context\"></nav>\n    <div class=\"f33pv-main\">\n      <header class=\"f33pv-topbar\" data-layout-region=\"shell\" data-layout-slot=\"top-bar\" data-ui-component=\"Core.Layout.TopBar\" data-ui-id=\"layout.split.top-bar\"></header>\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"split\" data-ui-component=\"Core.Layout.Split\" data-ui-id=\"layout.split\">\n        <div class=\"f33pv-pageheader\" data-layout-region=\"content\" data-layout-slot=\"page-header\" data-ui-component=\"Core.Layout.PageHeader\" data-ui-id=\"layout.split.page-header\"></div>\n        <div class=\"f33pv-toolbar\" data-layout-region=\"content\" data-layout-slot=\"toolbar\" data-ui-component=\"Core.Layout.Toolbar\" data-ui-id=\"layout.split.toolbar\"></div>\n        <div class=\"f33pv-splitbody\">\n          <div class=\"f33pv-list\" data-layout-region=\"content\" data-layout-slot=\"list-pane\" data-ui-component=\"Core.Layout.ListPane\" data-ui-id=\"layout.split.list-pane\"></div>\n          <div class=\"f33pv-detail\" data-layout-region=\"content\" data-layout-slot=\"detail-pane\" data-ui-component=\"Core.Layout.DetailPane\" data-ui-id=\"layout.split.detail-pane\"></div>\n        </div>\n        <footer class=\"f33pv-footer\" data-layout-region=\"content\" data-layout-slot=\"footer\" data-ui-component=\"Core.Layout.Footer\" data-ui-id=\"layout.split.footer\"></footer>\n      </section>\n    </div>\n  </div>\n  <aside class=\"f33pv-ai\" data-layout-region=\"shell\" data-layout-slot=\"ai-sidebar\" data-ui-component=\"Core.Layout.AISidebar\" data-ui-id=\"layout.split.ai-sidebar\" aria-label=\"AI assistant\"></aside>\n</div>"
+    },
+    {
+      "id": "centered",
+      "name": "Centered Layout",
+      "description": "A centered column for short, focused tasks such as sign-in, forms and wizards.",
+      "use_cases": [
+        "Sign-in and account utility pages",
+        "Short forms and step-by-step wizards"
+      ],
+      "route": "pilot/admin/f33layouts/centered",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/centered",
+      "shell": {
+        "mode": "bare",
+        "region": "shell",
+        "label": "Bare shell with centered content",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "centered",
+        "region": "content",
+        "component": "Core.Layout.Centered",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "top-bar",
+          "region": "shell",
+          "component": "Core.Layout.TopBar",
+          "required": true
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "footer",
+          "region": "content",
+          "component": "Core.Layout.Footer",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "footer"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Centered",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.TopBar"
+        ],
+        "optional": [
+          "Core.Layout.Footer"
+        ]
+      },
+      "locked": {
+        "primarySidebar": {
+          "value": false,
+          "reason": "Fixed off by Centered Layout"
+        },
+        "contextSidebar": {
+          "value": false,
+          "reason": "Fixed off by Centered Layout"
+        },
+        "aiAssistant": {
+          "value": false,
+          "reason": "Fixed off by Centered Layout"
+        },
+        "pageHeader": {
+          "value": false,
+          "reason": "Centered Layout omits the page header"
+        },
+        "toolbar": {
+          "value": false,
+          "reason": "Centered Layout omits the toolbar"
+        },
+        "inspectorPanel": {
+          "value": false,
+          "reason": "Centered Layout has no inspector panel"
+        }
+      },
+      "defaults": {
+        "primarySidebar": false,
+        "contextSidebar": false,
+        "pageHeader": false,
+        "toolbar": false,
+        "footer": true,
+        "aiAssistant": false,
+        "inspectorPanel": false
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Centered Layout"
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Centered Layout"
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Centered Layout omits the page header"
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Centered Layout omits the toolbar"
+          },
+          "footer": {
+            "type": "boolean",
+            "default": true
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Centered Layout"
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Centered Layout has no inspector panel"
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": false,
+          "contextSidebar": false,
+          "pageHeader": false,
+          "toolbar": false,
+          "footer": true,
+          "aiAssistant": false,
+          "inspectorPanel": false
+        },
+        "locked": [
+          "primarySidebar",
+          "contextSidebar",
+          "aiAssistant",
+          "pageHeader",
+          "toolbar",
+          "inspectorPanel"
+        ]
+      },
+      "responsive": {
+        "1440": "420 px centered card inside the frame.",
+        "768": "360 px centered card; single column.",
+        "390": "Full-width card with 44 px controls.",
+        "320": "Full-width card; 10 px padding."
+      },
+      "visual_keys": [
+        "forma.type.hierarchy",
+        "forma.controls.density",
+        "forma.touch.geometry",
+        "forma.theme.semantic"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": false,
+        "mobile_launcher": true,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"bare\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.centered.shell\">\n    <div class=\"f33pv-main\">\n      <header class=\"f33pv-topbar\" data-layout-region=\"shell\" data-layout-slot=\"top-bar\" data-ui-component=\"Core.Layout.TopBar\" data-ui-id=\"layout.centered.top-bar\"></header>\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"centered\" data-ui-component=\"Core.Layout.Centered\" data-ui-id=\"layout.centered\">\n        <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.centered.content\" data-content-width=\"fluid\"></div>\n        <footer class=\"f33pv-footer\" data-layout-region=\"content\" data-layout-slot=\"footer\" data-ui-component=\"Core.Layout.Footer\" data-ui-id=\"layout.centered.footer\"></footer>\n      </section>\n    </div>\n  </div>\n</div>"
+    },
+    {
+      "id": "inspector",
+      "name": "Inspector Layout",
+      "description": "A workspace page with a persistent properties inspector beside the content.",
+      "use_cases": [
+        "Record editing with visible properties",
+        "Monitoring pages where context must stay visible"
+      ],
+      "route": "pilot/admin/f33layouts/inspector",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/inspector",
+      "shell": {
+        "mode": "sidebar",
+        "region": "shell",
+        "label": "Primary + inspector panel",
+        "component": "Core.AppShell"
+      },
+      "content": {
+        "layout": "inspector",
+        "region": "content",
+        "component": "Core.Layout.Inspector",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "primary-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.PrimarySidebar",
+          "required": false
+        },
+        {
+          "name": "context-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.ContextSidebar",
+          "required": false
+        },
+        {
+          "name": "top-bar",
+          "region": "shell",
+          "component": "Core.Layout.TopBar",
+          "required": true
+        },
+        {
+          "name": "ai-sidebar",
+          "region": "shell",
+          "component": "Core.Layout.AISidebar",
+          "required": false
+        },
+        {
+          "name": "page-header",
+          "region": "content",
+          "component": "Core.Layout.PageHeader",
+          "required": false
+        },
+        {
+          "name": "toolbar",
+          "region": "content",
+          "component": "Core.Layout.Toolbar",
+          "required": false
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "inspector",
+          "region": "content",
+          "component": "Core.Layout.InspectorPanel",
+          "required": false
+        },
+        {
+          "name": "footer",
+          "region": "content",
+          "component": "Core.Layout.Footer",
+          "required": false
+        }
+      ],
+      "optional_slots": [
+        "primary-sidebar",
+        "context-sidebar",
+        "ai-sidebar",
+        "page-header",
+        "toolbar",
+        "inspector",
+        "footer"
+      ],
+      "components": {
+        "required": [
+          "Core.Layout.Inspector",
+          "Core.AppShell",
+          "Core.Layout.Content",
+          "Core.Layout.TopBar"
+        ],
+        "optional": [
+          "Core.Layout.PrimarySidebar",
+          "Core.Layout.ContextSidebar",
+          "Core.Layout.AISidebar",
+          "Core.Layout.PageHeader",
+          "Core.Layout.Toolbar",
+          "Core.Layout.InspectorPanel",
+          "Core.Layout.Footer"
+        ]
+      },
+      "locked": {},
+      "defaults": {
+        "primarySidebar": true,
+        "contextSidebar": false,
+        "pageHeader": true,
+        "toolbar": true,
+        "footer": true,
+        "aiAssistant": false,
+        "inspectorPanel": true
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": true
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": true
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": true
+          },
+          "footer": {
+            "type": "boolean",
+            "default": true
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": true
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": true,
+          "contextSidebar": false,
+          "pageHeader": true,
+          "toolbar": true,
+          "footer": true,
+          "aiAssistant": false,
+          "inspectorPanel": true
+        },
+        "locked": []
+      },
+      "responsive": {
+        "1440": "Content plus a 280 px inspector column.",
+        "768": "Inspector stacks below content; one column.",
+        "390": "Inspector stacks; 44 px controls.",
+        "320": "Inspector stacks; 10 px padding."
+      },
+      "visual_keys": [
+        "forma.detail.full-page",
+        "forma.shell.canvas-slide",
+        "forma.spacing.compact",
+        "forma.theme.semantic"
+      ],
+      "canvas": {
+        "slides": true,
+        "ai": true,
+        "mobile_launcher": true,
+        "public_exception": false
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"sidebar\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.AppShell\" data-ui-id=\"layout.inspector.shell\">\n    <nav class=\"f33pv-rail\" data-layout-region=\"shell\" data-layout-slot=\"primary-sidebar\" data-ui-component=\"Core.Layout.PrimarySidebar\" data-ui-id=\"layout.inspector.primary-sidebar\" aria-label=\"Primary\"></nav>\n    <nav class=\"f33pv-context\" data-layout-region=\"shell\" data-layout-slot=\"context-sidebar\" data-ui-component=\"Core.Layout.ContextSidebar\" data-ui-id=\"layout.inspector.context-sidebar\" aria-label=\"Context\"></nav>\n    <div class=\"f33pv-main\">\n      <header class=\"f33pv-topbar\" data-layout-region=\"shell\" data-layout-slot=\"top-bar\" data-ui-component=\"Core.Layout.TopBar\" data-ui-id=\"layout.inspector.top-bar\"></header>\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"inspector\" data-ui-component=\"Core.Layout.Inspector\" data-ui-id=\"layout.inspector\">\n        <div class=\"f33pv-pageheader\" data-layout-region=\"content\" data-layout-slot=\"page-header\" data-ui-component=\"Core.Layout.PageHeader\" data-ui-id=\"layout.inspector.page-header\"></div>\n        <div class=\"f33pv-toolbar\" data-layout-region=\"content\" data-layout-slot=\"toolbar\" data-ui-component=\"Core.Layout.Toolbar\" data-ui-id=\"layout.inspector.toolbar\"></div>\n        <div class=\"f33pv-bodyrow\">\n          <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.inspector.content\" data-content-width=\"fluid\"></div>\n          <aside class=\"f33pv-inspector\" data-layout-region=\"content\" data-layout-slot=\"inspector\" data-ui-component=\"Core.Layout.InspectorPanel\" data-ui-id=\"layout.inspector.inspector\" aria-label=\"Properties\"></aside>\n        </div>\n        <footer class=\"f33pv-footer\" data-layout-region=\"content\" data-layout-slot=\"footer\" data-ui-component=\"Core.Layout.Footer\" data-ui-id=\"layout.inspector.footer\"></footer>\n      </section>\n    </div>\n  </div>\n  <aside class=\"f33pv-ai\" data-layout-region=\"shell\" data-layout-slot=\"ai-sidebar\" data-ui-component=\"Core.Layout.AISidebar\" data-ui-id=\"layout.inspector.ai-sidebar\" aria-label=\"AI assistant\"></aside>\n</div>"
+    },
+    {
+      "id": "public",
+      "name": "Public Layout",
+      "description": "A public document layout using the existing no-slide, no-assistant canvas exception.",
+      "use_cases": [
+        "Public website pages and resource documents",
+        "Customer-facing content that owns the whole canvas"
+      ],
+      "route": "pilot/admin/f33layouts/public",
+      "catalog_route": "pilot/admin/f33layouts",
+      "example_route": "pilot/admin/f33layouts/public",
+      "shell": {
+        "mode": "public",
+        "region": "shell",
+        "label": "Public document shell",
+        "component": "Core.FrontendShell"
+      },
+      "content": {
+        "layout": "public",
+        "region": "content",
+        "component": "Core.Layout.Public",
+        "root_slot": "content-layout"
+      },
+      "slots": [
+        {
+          "name": "public-header",
+          "region": "content",
+          "component": "Core.Layout.PublicHeader",
+          "required": true
+        },
+        {
+          "name": "content",
+          "region": "content",
+          "component": "Core.Layout.Content",
+          "required": true
+        },
+        {
+          "name": "public-footer",
+          "region": "content",
+          "component": "Core.Layout.PublicFooter",
+          "required": true
+        }
+      ],
+      "optional_slots": [],
+      "components": {
+        "required": [
+          "Core.Layout.Public",
+          "Core.FrontendShell",
+          "Core.Layout.Content",
+          "Core.Layout.PublicHeader",
+          "Core.Layout.PublicFooter"
+        ],
+        "optional": []
+      },
+      "locked": {
+        "primarySidebar": {
+          "value": false,
+          "reason": "Fixed off by Public Layout"
+        },
+        "contextSidebar": {
+          "value": false,
+          "reason": "Fixed off by Public Layout"
+        },
+        "aiAssistant": {
+          "value": false,
+          "reason": "Public Layout keeps the no-assistant canvas exception"
+        },
+        "pageHeader": {
+          "value": false,
+          "reason": "Public Layout uses the website header"
+        },
+        "toolbar": {
+          "value": false,
+          "reason": "Public Layout has no application toolbar"
+        },
+        "footer": {
+          "value": false,
+          "reason": "Public Layout uses the website footer"
+        },
+        "inspectorPanel": {
+          "value": false,
+          "reason": "Public Layout has no inspector panel"
+        }
+      },
+      "defaults": {
+        "primarySidebar": false,
+        "contextSidebar": false,
+        "pageHeader": false,
+        "toolbar": false,
+        "footer": false,
+        "aiAssistant": false,
+        "inspectorPanel": false
+      },
+      "config": {
+        "schema": {
+          "template": {
+            "type": "enum",
+            "allowed": [
+              "sidebar",
+              "semi",
+              "full",
+              "fullscreen",
+              "split",
+              "centered",
+              "inspector",
+              "public"
+            ]
+          },
+          "viewport": {
+            "type": "integer",
+            "allowed": [
+              1440,
+              768,
+              390,
+              320
+            ]
+          },
+          "theme": {
+            "type": "enum",
+            "allowed": [
+              "light",
+              "dark"
+            ]
+          },
+          "primarySidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Public Layout"
+          },
+          "contextSidebar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Fixed off by Public Layout"
+          },
+          "pageHeader": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Public Layout uses the website header"
+          },
+          "toolbar": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Public Layout has no application toolbar"
+          },
+          "footer": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Public Layout uses the website footer"
+          },
+          "aiAssistant": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Public Layout keeps the no-assistant canvas exception"
+          },
+          "inspectorPanel": {
+            "type": "boolean",
+            "default": false,
+            "locked": true,
+            "value": false,
+            "reason": "Public Layout has no inspector panel"
+          },
+          "contentWidth": {
+            "type": "enum",
+            "allowed": [
+              "fluid",
+              "standard",
+              "narrow"
+            ]
+          }
+        },
+        "defaults": {
+          "primarySidebar": false,
+          "contextSidebar": false,
+          "pageHeader": false,
+          "toolbar": false,
+          "footer": false,
+          "aiAssistant": false,
+          "inspectorPanel": false
+        },
+        "locked": [
+          "primarySidebar",
+          "contextSidebar",
+          "aiAssistant",
+          "pageHeader",
+          "toolbar",
+          "footer",
+          "inspectorPanel"
+        ]
+      },
+      "responsive": {
+        "1440": "Website header, full content width and footer; no canvas slide.",
+        "768": "Header navigation wraps; single column; no canvas slide.",
+        "390": "Compact header; single column; no assistant.",
+        "320": "Compact header; 10 px padding; no assistant."
+      },
+      "visual_keys": [
+        "forma.frontend.separate",
+        "forma.type.hierarchy",
+        "forma.spacing.compact",
+        "forma.theme.semantic"
+      ],
+      "canvas": {
+        "slides": false,
+        "ai": false,
+        "mobile_launcher": false,
+        "public_exception": true
+      },
+      "example_html": "<div class=\"f33pv-canvas\">\n  <div class=\"f33pv-shell\" data-shell-mode=\"public\" data-layout-region=\"shell\" data-layout-slot=\"application-shell\" data-ui-component=\"Core.FrontendShell\" data-ui-id=\"layout.public.shell\">\n    <div class=\"f33pv-main\">\n      <section class=\"f33pv-layout\" data-layout-region=\"content\" data-layout-slot=\"content-layout\" data-layout-template=\"public\" data-ui-component=\"Core.Layout.Public\" data-ui-id=\"layout.public\">\n        <header class=\"f33pv-publicheader\" data-layout-region=\"content\" data-layout-slot=\"public-header\" data-ui-component=\"Core.Layout.PublicHeader\" data-ui-id=\"layout.public.public-header\"></header>\n        <div class=\"f33pv-content\" data-layout-region=\"content\" data-layout-slot=\"content\" data-ui-component=\"Core.Layout.Content\" data-ui-id=\"layout.public.content\" data-content-width=\"fluid\"></div>\n        <footer class=\"f33pv-publicfooter\" data-layout-region=\"content\" data-layout-slot=\"public-footer\" data-ui-component=\"Core.Layout.PublicFooter\" data-ui-id=\"layout.public.public-footer\"></footer>\n      </section>\n    </div>\n  </div>\n</div>"
+    }
+  ]
+}

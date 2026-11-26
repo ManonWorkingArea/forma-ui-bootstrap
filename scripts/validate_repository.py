@@ -41,6 +41,7 @@ required = [
     "release.json",
     "release-manifest.json",
     ".gitignore",
+    "references/LAYOUT_REGISTRY.json",
     "docs/QUICKSTART.md",
     "docs/LIFECYCLE.md",
     "docs/RELEASES.md",
@@ -85,15 +86,15 @@ for name in issue_templates:
 
 baseline = load_json(ROOT / ".github/package-baseline.json")
 if baseline.get("file_count") != 60 or len(baseline.get("files", [])) != 60:
-    fail("package baseline must contain exactly 60 files")
+    fail("authorized dev baseline must contain exactly 60 tracked files")
 for row in baseline.get("files", []):
     path = ROOT / row["path"]
     if not path.is_file():
-        fail(f"original package file missing: {row['path']}")
+        fail(f"tracked baseline file missing: {row['path']}")
     elif path.stat().st_size != row["bytes"]:
-        fail(f"original package file size changed: {row['path']}")
+        fail(f"tracked baseline file size changed: {row['path']}")
     elif sha256(path) != row["sha256"]:
-        fail(f"original package file checksum changed: {row['path']}")
+        fail(f"tracked baseline file checksum changed: {row['path']}")
 
 manifest = load_json(REF / "MANIFEST.json")
 for rel, expected in manifest.get("sha256", {}).items():
@@ -104,20 +105,102 @@ for rel, expected in manifest.get("sha256", {}).items():
 registry = load_json(REF / "COMPONENT_REGISTRY.json")
 page_index = load_json(REF / "PAGE_INDEX.json")
 visual = load_json(REF / "VISUAL_KEYS.json")
-if len(registry.get("components", [])) != 114:
-    fail("component registry must contain 114 mappings")
+if len(registry.get("components", [])) != 140:
+    fail("component registry must contain 140 mappings")
 pages = page_index.get("pages", [])
-if len(pages) != 116 or len({row.get("route") for row in pages}) != 116:
-    fail("page index must contain 116 unique routes")
+if len(pages) != 126 or len({row.get("route") for row in pages}) != 126:
+    fail("page index must contain 126 unique routes")
 keys = visual.get("keys", [])
 if len(keys) != 16 or len({row.get("id") for row in keys}) != 16:
     fail("visual keys must contain 16 unique IDs")
 if registry.get("format") != "forma-ui-component-registry.v1":
     fail("unexpected component registry format")
-if page_index.get("baseline") != "V34":
+if not str(page_index.get("baseline", "")).startswith("V34"):
     fail("page index baseline is not V34")
 if not str(visual.get("baseline", "")).startswith("V34"):
     fail("visual keys baseline is not V34")
+
+classify_rule = "kind:/^Core\\.Layout(\\.|$)/.test(explicit)||el.hasAttribute('data-layout-slot')?'layout':'content'"
+for rel in ("assets/mockup/ui-inspector.js", "assets/mockup/standalone.html"):
+    if classify_rule not in (ROOT / rel).read_text(encoding="utf-8"):
+        fail(f"layout classification rule is out of sync in {rel}")
+
+layout_registry = load_json(REF / "LAYOUT_REGISTRY.json")
+layout_ids = ["sidebar", "semi", "full", "fullscreen", "split", "centered", "inspector", "public"]
+layout_templates = layout_registry.get("templates", [])
+component_names = {row.get("component") for row in registry.get("components", [])}
+visual_ids = {row.get("id") for row in keys}
+page_routes = {row.get("route") for row in pages}
+if layout_registry.get("format") != "forma-layout-registry.v1":
+    fail("unexpected layout registry format")
+if layout_registry.get("configSchema") != "forma.layout.config.v1":
+    fail("layout registry config schema must be forma.layout.config.v1")
+if layout_registry.get("responsiveWidths") != [1440, 768, 390, 320]:
+    fail("layout registry responsive widths must be 1440, 768, 390, 320")
+if [row.get("id") for row in layout_templates] != layout_ids:
+    fail("layout registry must contain exactly the eight layout ids in order")
+layout_fields = layout_registry.get("config", {}).get("fields", {})
+for field in ("template", "viewport", "theme", "contentWidth", "aiAssistant", "inspectorPanel"):
+    if field not in layout_fields:
+        fail(f"layout config schema missing field: {field}")
+for required_route in ["pilot/admin/f33layouts", "pilot/admin/f33playground"] + [
+    f"pilot/admin/f33layouts/{layout_id}" for layout_id in layout_ids
+]:
+    if required_route not in page_routes:
+        fail(f"page index missing layout route: {required_route}")
+for template in layout_templates:
+    tid = template.get("id")
+    if template.get("route") != f"pilot/admin/f33layouts/{tid}" or template.get("example_route") != template.get("route"):
+        fail(f"{tid}: layout route does not match the direct route")
+    shell = template.get("shell", {})
+    content = template.get("content", {})
+    if shell.get("region") != "shell" or content.get("region") != "content":
+        fail(f"{tid}: shell and content regions must stay separate")
+    if shell.get("component") not in component_names or content.get("component") not in component_names:
+        fail(f"{tid}: layout root component missing from COMPONENT_REGISTRY")
+    slots = template.get("slots", [])
+    if not slots:
+        fail(f"{tid}: layout has no slots")
+    slot_names = [slot.get("name") for slot in slots]
+    if len(slot_names) != len(set(slot_names)):
+        fail(f"{tid}: duplicate slot names")
+    for slot in slots:
+        if slot.get("region") not in {"shell", "content"}:
+            fail(f"{tid}.{slot.get('name')}: invalid slot region")
+        if slot.get("component") not in component_names:
+            fail(f"{tid}.{slot.get('name')}: slot component missing from COMPONENT_REGISTRY")
+    components = template.get("components", {})
+    for name in components.get("required", []) + components.get("optional", []):
+        if name not in component_names:
+            fail(f"{tid}: layout component missing from COMPONENT_REGISTRY: {name}")
+    defaults = template.get("defaults", {})
+    for field in ("primarySidebar", "contextSidebar", "pageHeader", "toolbar", "footer", "aiAssistant", "inspectorPanel"):
+        if field not in defaults or not isinstance(defaults[field], bool):
+            fail(f"{tid}: layout defaults missing boolean {field}")
+    schema = template.get("config", {}).get("schema", {})
+    for field in layout_fields:
+        if field not in schema:
+            fail(f"{tid}: per-layout schema missing {field}")
+    for field, lock in template.get("locked", {}).items():
+        if field not in layout_fields or not isinstance(lock.get("value"), bool) or not lock.get("reason"):
+            fail(f"{tid}: invalid lock for {field}")
+        if defaults.get(field) != lock.get("value"):
+            fail(f"{tid}: lock value must match the default for {field}")
+    responsive = template.get("responsive", {})
+    if set(responsive) != {"1440", "768", "390", "320"} or not all(responsive.values()):
+        fail(f"{tid}: responsive behavior must cover 1440, 768, 390 and 320")
+    for key in template.get("visual_keys", []):
+        if key not in visual_ids:
+            fail(f"{tid}: unknown Visual Key {key}")
+    example = template.get("example_html", "")
+    if f'data-ui-id="layout.{tid}"' not in example:
+        fail(f"{tid}: example_html missing the content layout root id")
+    for slot in slots:
+        slot_id = f'data-ui-id="layout.{tid}.{slot["name"]}"'
+        if slot_id not in example:
+            fail(f"{tid}: example_html missing {slot_id}")
+        if f'data-layout-slot="{slot["name"]}"' not in example:
+            fail(f"{tid}: example_html missing data-layout-slot for {slot["name"]}")
 
 release = load_json(ROOT / "release.json")
 release_manifest = load_json(ROOT / "release-manifest.json")
@@ -215,9 +298,9 @@ if ERRORS:
         print(f"- {error}", file=sys.stderr)
     raise SystemExit(1)
 print("Repository validation: PASS")
-print(f"- original package: {baseline['file_count']} byte-identical files")
-print("- registry: 114 mappings")
-print("- page index: 116 unique routes")
+print(f"- authorized dev baseline: {baseline['file_count']} tracked files (original source hash retained)")
+print("- registry: 140 mappings")
+print("- page index: 126 unique routes")
 print("- visual keys: 16 unique IDs")
 print("- issue templates: 5 complete")
 print("- public safety: no disallowed secrets, URLs, emails or PNG metadata")

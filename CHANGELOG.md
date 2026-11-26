@@ -2,6 +2,23 @@
 
 All notable repository and design-reference changes are recorded here. The UI mockup itself is versioned by baseline and remains unchanged in this release candidate unless an Owner-approved issue explicitly records a design revision.
 
+## Unreleased - V34.1 layout templates
+
+### Added
+
+- Eight layout templates (`sidebar`, `semi`, `full`, `fullscreen`, `split`, `centered`, `inspector`, `public`) under `#pilot/admin/f33layouts`, each with a direct route and a generic interactive example.
+- `#pilot/admin/f33playground`: template selector, shell/content controls, 1440/768/390/320 viewport, light/dark preview, locked-control reasons, copy layout reference, copy configuration, normalized `forma.layout.config.v1` JSON export and a bounded `window.FormaLayouts` test API.
+- `references/LAYOUT_REGISTRY.json` (`forma-layout-registry.v1`) with shell/content separation, slot metadata, required/optional components, locks, defaults, responsive behavior, Visual Keys and agent-ready HTML examples.
+- CLI `layouts [query]` and `layout <id>`; unknown ids exit non-zero.
+- Explicit `Core.Layout.*` / `data-layout-slot` Inspector identities and layout-kind classification in both inspector implementations.
+
+### Changed
+
+- `PAGE_INDEX.json` now lists 126 routes including the layout catalog, eight layout routes and the playground; `COMPONENT_REGISTRY.json` lists 140 mappings including layout and slot identities.
+- `VISUAL_KEYS.json` keeps the same 16 key IDs and adds provisional layout tokens.
+- Layout workflow is now Layout Template → Page Pattern → Component in `SKILL.md` and the documentation.
+- Refreshed `MANIFEST.json` and the authorized dev package baseline. No release metadata, workflows, screenshots, examples or release assets changed.
+
 ## v1.0.0-rc.1 - 2026-11-26
 
 ### Added

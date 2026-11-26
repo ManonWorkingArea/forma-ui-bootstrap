@@ -571,6 +571,136 @@
       "component": "Core.Tabs",
       "selector": ".tabs",
       "kind": "control"
+    },
+    {
+      "component": "Core.Layout",
+      "selector": "[data-ui-component^=\"Core.Layout\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Shell",
+      "selector": "[data-layout-slot=\"application-shell\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Slot",
+      "selector": "[data-layout-slot]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Sidebar",
+      "selector": "[data-layout-template=\"sidebar\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Semi",
+      "selector": "[data-layout-template=\"semi\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Full",
+      "selector": "[data-layout-template=\"full\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Fullscreen",
+      "selector": "[data-layout-template=\"fullscreen\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Split",
+      "selector": "[data-layout-template=\"split\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Centered",
+      "selector": "[data-layout-template=\"centered\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Inspector",
+      "selector": "[data-layout-template=\"inspector\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Public",
+      "selector": "[data-layout-template=\"public\"]",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.PrimarySidebar",
+      "selector": ".f33pv-rail",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.ContextSidebar",
+      "selector": ".f33pv-context",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.TopBar",
+      "selector": ".f33pv-topbar",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.TopNav",
+      "selector": ".f33pv-topnav",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.WorkspaceToolbar",
+      "selector": ".f33pv-wstoolbar",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.AISidebar",
+      "selector": ".f33pv-ai",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.PageHeader",
+      "selector": ".f33pv-pageheader",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Toolbar",
+      "selector": ".f33pv-toolbar",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Content",
+      "selector": ".f33pv-content",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.ListPane",
+      "selector": ".f33pv-list",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.DetailPane",
+      "selector": ".f33pv-detail",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.InspectorPanel",
+      "selector": ".f33pv-inspector",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.Footer",
+      "selector": ".f33pv-footer",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.PublicHeader",
+      "selector": ".f33pv-publicheader",
+      "kind": "layout"
+    },
+    {
+      "component": "Core.Layout.PublicFooter",
+      "selector": ".f33pv-publicfooter",
+      "kind": "layout"
     }
   ]
 }

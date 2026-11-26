@@ -1,6 +1,6 @@
 {
   "format": "forma-page-index.v1",
-  "baseline": "V34",
+  "baseline": "V34.1",
   "note": "Pilot example routes derived from passing V33 test entries, with public/admin surface inferred from dispatch and report order. Not an exhaustive manifest or V34 retest. Dynamic IDs are fixture examples.",
   "pages": [
     {
@@ -155,6 +155,136 @@
         320
       ],
       "hash": "#pilot/admin/f33frontend"
+    },
+    {
+      "route": "pilot/admin/f33layouts",
+      "title": "Layout templates",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts"
+    },
+    {
+      "route": "pilot/admin/f33layouts/sidebar",
+      "title": "Sidebar Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/sidebar"
+    },
+    {
+      "route": "pilot/admin/f33layouts/semi",
+      "title": "Semi Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/semi"
+    },
+    {
+      "route": "pilot/admin/f33layouts/full",
+      "title": "Full Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/full"
+    },
+    {
+      "route": "pilot/admin/f33layouts/fullscreen",
+      "title": "Fullscreen Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/fullscreen"
+    },
+    {
+      "route": "pilot/admin/f33layouts/split",
+      "title": "Split Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/split"
+    },
+    {
+      "route": "pilot/admin/f33layouts/centered",
+      "title": "Centered Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/centered"
+    },
+    {
+      "route": "pilot/admin/f33layouts/inspector",
+      "title": "Inspector Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/inspector"
+    },
+    {
+      "route": "pilot/admin/f33layouts/public",
+      "title": "Public Layout",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33layouts/public"
+    },
+    {
+      "route": "pilot/admin/f33playground",
+      "title": "Layout playground",
+      "group": "foundation",
+      "evidence": "V34.1 layout registry",
+      "widths": [
+        1440,
+        768,
+        390,
+        320
+      ],
+      "hash": "#pilot/admin/f33playground"
     },
     {
       "route": "pilot/public/f33landing",

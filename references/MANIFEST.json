@@ -1,14 +1,15 @@
 {
   "format": "forma-bootstrap-manifest.v1",
-  "baseline": "V34",
+  "baseline": "V34.1",
   "status": "REVIEW CANDIDATE; no design freeze",
   "sha256": {
-    "assets/mockup/standalone.html": "f5e52dbd28b99a3fde542078274758d4ca19d21ea313c693326baeec07b3be0b",
-    "assets/mockup/ui-inspector.js": "0bd0f2d3290c73e26a3331054a8b5565f2f055627a819e696cfa24dfb9155e1e",
-    "references/COMPONENT_REGISTRY.json": "560f4a45bbfed85acc42b7cb2102ca86660a90fbefe42be811678faf9133727c",
-    "references/DESIGN_SYSTEM.md": "d444daca66987e26231c8490a59a7e8d63b1caf10637731078b5ccb32777d744",
-    "references/PAGE_INDEX.json": "79994520034476fb0c4f2b68cb42d08dd77a1c38d3ce39b0cd5e7e49edf0fde1",
-    "references/UI_INSPECTOR_CONTRACT.md": "6fa8412840f48247682a72c4e8539703998019ebd02126662f5a612a2af74279",
-    "references/VISUAL_KEYS.json": "0ad1724236dfb04903b461e7dfb465c4e8ee6f9a1fea68778ac4fb6b89d1f5b7"
+    "assets/mockup/standalone.html": "b717669b81a7ad6324d9b971fb4551f2270ab52dbeb079f38ad2554d190e1ff1",
+    "assets/mockup/ui-inspector.js": "53162848b2793826573f1a377186c532586ff3913033aa86d774e08a7098fb6a",
+    "references/LAYOUT_REGISTRY.json": "8de3c7c1d3b0f7846de7a799fde50eb2bfaaa02a7e0f25bc7b8ba0c48c270108",
+    "references/COMPONENT_REGISTRY.json": "3250543b7119c7a7158e85feaa8799b051a5d7fde95d80c52e3e7a63561ff02f",
+    "references/DESIGN_SYSTEM.md": "7fa70d6a8ea9d00843d8e6a458296be43e6e21aa2bf56de970dc48739f762e10",
+    "references/PAGE_INDEX.json": "f52728eaec961b3268cd4a73f6bcdf0af4c937ebe14ad3ae2179719c1eb58682",
+    "references/UI_INSPECTOR_CONTRACT.md": "3da9be0a9d3d7e24cbc91acfdfdb669126a4550630a229374314f3bf8f6f08c5",
+    "references/VISUAL_KEYS.json": "1fff39a0b0a11b412c9e24e5c4c5ff5087969ccfb25c666436ed40e661eb89b5"
   }
 }
